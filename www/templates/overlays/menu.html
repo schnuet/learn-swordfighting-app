@@ -1,0 +1,30 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">Menü</h1>
+		<button class="button button-icon button-clear pull-left ion-navicon" ng-click="closeMenu();">
+    	</button>
+	</ion-header-bar>
+	<ion-content>
+		<ion-list>
+
+			<ion-item nav-clear ng-click="gotoNextLesson(); closeMenu();">
+				Nächstes Kapitel in der Lernkampagne
+	        </ion-item>
+			<ion-item nav-clear ng-click="closeMenu();" href="#/menu/start">
+				Lerntour
+	        </ion-item>
+	        <ion-item nav-clear ng-click="closeMenu();" href="#/menu/kampagne">
+				Katalog
+	        </ion-item>
+			<ion-item nav-clear ng-click="closeMenu();" href="#/menu/test2">
+				Glossar
+	        </ion-item>
+			<ion-item nav-clear ng-click="closeMenu();" href="#/menu/test2">
+				Hilfe
+	        </ion-item>
+			<ion-item nav-clear ng-click="closeMenu();" href="#/menu/test2">
+				Impressum
+	        </ion-item>
+		</ion-list>
+	</ion-content>
+</ion-modal-view>

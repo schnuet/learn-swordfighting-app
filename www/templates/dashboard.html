@@ -1,0 +1,52 @@
+<ion-view view-title="Übersicht">
+  <ion-content class="padding">
+	<div class="row responsive-md"> 
+	
+		<div class="col">
+			<div class="card">
+				<div class="item item-divider">
+					Profilinfos:
+				</div>
+				<div class="item item-text-wrap">
+					<span>Name: {{Data.user.name}}</span><br>
+					<span>Punkte: {{Data.user.score}}</span><br>
+					<span>Geschaffte Level: {{Data.user.levelprogress}}</span><br>
+				</div>
+			</div>
+		</div>
+		<div class="col"></div>
+		<div class="col">
+			<ion-list>
+				<ion-item ng-click="gotoState('menu.campaign-lesson-1');">
+					1: Schwertbegriffe
+				</ion-item>
+				<ion-item ng-class="{disabled: Data.user.levelprogress < 2}" ng-click="gotoState('menu.campaign-lesson-2');">
+					2: Grundpositionen
+				</ion-item>
+				<ion-item ng-class="{disabled: Data.user.levelprogress < 3}" ng-click="gotoState('menu.campaign-lesson-3');">
+					3: Haltung
+				</ion-item>
+				<ion-item ng-class="{disabled: Data.user.levelprogress < 4}" ng-click="gotoState('menu.campaign-lesson-4');">
+					4: Quellen
+				</ion-item>
+				<ion-item ng-class="{disabled: Data.user.levelprogress < 5}" ng-click="gotoState('menu.campaign-lesson-5');">
+					5: Angriffe
+				</ion-item>
+				<ion-item ng-class="{disabled: Data.user.levelprogress < 6}" ng-click="gotoState('menu.campaign-lesson-6');">
+					6: Das scharfe Schwert
+				</ion-item>
+				<ion-item ng-class="{disabled: Data.user.levelprogress < 7}" ng-click="gotoState('menu.campaign-lesson-7');">
+					7: Schutzausrüstung
+				</ion-item>
+				<ion-item ng-class="{disabled: Data.user.levelprogress < 8}" ng-click="gotoState('menu.campaign-lesson-8');">
+					8: Prinzipien
+				</ion-item>
+				<ion-item ng-class="{disabled: Data.user.levelprogress < 9}" ng-click="gotoState('menu.campaign-lesson-9');">
+					9: Eine Fechtgruppe finden
+				</ion-item>
+			</ion-list>
+			
+		</div>
+	</div>
+  </ion-content>
+</ion-view>
