@@ -1,0 +1,55 @@
+<ion-view view-title="Lektion 7" cache-view="false">
+	<ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)">
+	<!-- SEITENINHALT START: -->
+
+	<!-- SEITE 1 -->
+	  <ion-slide>
+	  	<ion-content class="padding" has-bouncing="false">
+		    <div class="row responsive-md"> 
+				<div class="col col-67">
+					<h1>Asterix im Land der Goten</h1>
+					<p>Im diesem Band der Asterix-Serie suchen Asterix und Obelix ihren Druiden im Land der Goten, der wegen seinem mächtigen Zaubertrank entführt wurde.</p>
+					<div style="background-color: green; width:200px; height:700px;"></div>
+				</div>
+				<div class="col"></div>
+			</div>
+		</ion-content>
+	  </ion-slide>
+
+	<!-- SEITE 2 -->
+	  <ion-slide>
+	  	<ion-content class="padding" has-bouncing="false">
+		    <div class="row responsive-md"> 
+				<div class="col col-67">
+					<h1>Lektion 1 - Schwertbegriffe</h1>
+					<h5>Was wollte Asterix im Land der Goten?</h5>
+					<multiple-choice choices="Miraculix retten, Haudraufwienix suchen, Krautsalat probieren, Römer verjagen" right-choice="0" callback="Lesson.end()">
+
+					</multiple-choice>
+				</div>
+				<div class="col"></div>
+			</div>
+		</ion-content>
+	  </ion-slide>
+
+	<!-- SEITE 3 -->
+	  <ion-slide>
+	  	<ion-content class="padding" scroll="false" has-bouncing="false">
+			<game-dress-up onwin="Lesson.end()">
+				<div class="game-container dress-up">
+					<div class="target-box">
+						<div id="helmet-target"></div>
+						<div id="pants-target"></div>
+					</div>
+					<div class="clothes">
+						<img id="helmet" class="drag-item">
+						<img id="pants" class="drag-item"> 
+					</div>
+				</div>
+			</game-dress-up>
+		</ion-content>
+	  </ion-slide>
+
+	  <!-- SEITENINHALT ENDE -->
+	</ion-slide-box>
+</ion-view>

@@ -1,0 +1,43 @@
+.game-container.dress-up {
+	background-color: #e0e0e0;
+
+	.clothes {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		left: 67%;
+	}
+
+	#helmet {
+		height: 40px;
+		width: 40px;
+		display: block;
+		background-color: red;
+	}
+	#helmet-target {
+		top: 10%;
+		left: 60px;
+		width: 100px;
+		height: 100px;
+		display: block;
+		background-color: red;
+		position: absolute;
+	}
+	#pants {
+		top: 5px;
+		left: 50px;
+		height: 40px;
+		width: 40px;
+		display: block;
+		background-color: yellow;
+	}
+	#pants-target {
+		top: 70%;
+		left: 50px;
+		width: 50px;
+		height: 100px;
+		display: block;
+		background-color: yellow;
+		position: absolute;
+	}
+}

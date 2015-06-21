@@ -26,6 +26,16 @@ angular.module('starter')
     controller: 'ProfileCreationCtrl'
   })  
 
+  // Impressum:
+  .state('menu.Impressum', {
+    url: '/impressum',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/impressum.html'
+      }
+    }
+  })
+
 
 	// Startseite:
 	.state('menu.dashboard', {
@@ -38,34 +48,100 @@ angular.module('starter')
 	})
 
   .state('menu.campaign-lesson-1', {
-    url: '/kampagne/lektion',
-    params : { lessonnumber: 1 },
+    url: '/lesson1/',
+    params : { campaign: true },
     views: {
       'menuContent': {
-        templateUrl: 'templates/lessons/1-schwertbegriffe/1.html',
-        controller: 'CampaignCtrl'
+        templateUrl: 'templates/lessons/1-schwertbegriffe/lesson_01.html',
+        controller: '01_SchwertbegriffeCtrl'
       }
     }
   })
 
   .state('menu.campaign-lesson-2', {
-    url: '/kampagne/lektion',
-    params : { lessonnumber: 2 },
+    url: '/lesson2/',
+    params : { campaign: true },
     views: {
       'menuContent': {
-        templateUrl: 'templates/lessons/2-grundpositionen/1.html',
-        controller: 'CampaignCtrl'
+        templateUrl: 'templates/lessons/2-grundpositionen/lesson_02.html',
+        controller: '02_GrundpositionenCtrl'
       }
     }
   })
 
   .state('menu.campaign-lesson-3', {
-    url: '/kampagne/lektion',
-    params : { lessonnumber: 3 },
+    url: '/lesson3/',
+    params : { campaign: true },
     views: {
       'menuContent': {
-        templateUrl: 'templates/lessons/3-haltung/1.html',
-        controller: 'CampaignCtrl'
+        templateUrl: 'templates/lessons/3-haltung/lesson_03.html',
+        controller: '03_HaltungCtrl'
+      }
+    }
+  })
+
+  .state('menu.campaign-lesson-4', {
+    url: '/lesson4/',
+    params : { campaign: true },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/4-quellen/lesson_04.html',
+        controller: '04_QuellenCtrl'
+      }
+    }
+  })
+
+  .state('menu.campaign-lesson-5', {
+    url: '/lesson5/',
+    params : { campaign: true },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/5-angriffe/lesson_05.html',
+        controller: '05_AngriffeCtrl'
+      }
+    }
+  })
+
+  .state('menu.campaign-lesson-6', {
+    url: '/lesson6/',
+    params : { campaign: true },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/6-das-scharfe-schwert/lesson_06.html',
+        controller: '06_DasScharfeSchwertCtrl'
+      }
+    }
+  })
+
+  .state('menu.campaign-lesson-7', {
+    url: '/lesson7/',
+    params : { campaign: true },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/7-schutzausruestung/lesson_07.html',
+        controller: '07_SchutzausruestungCtrl'
+      }
+    }
+  })
+
+  .state('menu.campaign-lesson-8', {
+    url: '/lesson8/',
+    params : { campaign: true },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/8-prinzipien/lesson_08.html',
+        controller: '08_PrinzipienCtrl'
+      }
+    }
+  })
+
+  .state('menu.campaign-lesson-9', {
+    url: '/lesson9/',
+    params : { campaign: true },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/9-eine-fechtgruppe-finden/lesson_09.html',
+        controller: '09_FechtgruppeFindenCtrl'
       }
     }
   });

@@ -3,4 +3,18 @@
 }
 .lesson-page-container.slider {
 	height: 100%;
+
+	.scroll-content {
+		bottom: $bar-footer-height;
+	}
+
+	&:after {
+		display: block;
+		height: $bar-footer-height;
+		content: '';
+		width: 100%;
+		position: absolute;
+		bottom: 0px;
+		background-color: $positive;
+	}
 }
