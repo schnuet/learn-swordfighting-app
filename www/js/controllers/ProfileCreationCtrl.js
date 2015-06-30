@@ -7,6 +7,8 @@ function($scope, Data, Profile, $state) {
 	$scope.data = {};
 	$scope.data.username = '';
 
+	$scope.data.userList = Profile.getListOfUsers();
+
 	$scope.createChar = function () {
 		console.log ($scope.data.username);
 		if ($scope.data.username.length === 0) return;

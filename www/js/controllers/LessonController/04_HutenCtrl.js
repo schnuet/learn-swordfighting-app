@@ -1,13 +1,19 @@
 angular.module('starter.controllers')
 
-.controller('05_AngriffeCtrl', 
+.controller('04_HutenCtrl', 
 ['$scope', 'Data', '$ionicSlideBoxDelegate', 'Campaign',
 function($scope, Data, $ionicSlideBoxDelegate, Campaign) {
-	$scope.data = Data;
+	
+	/*
+		Startup-functions:
+	*/
+	$scope.$on('$ionicView.enter', function () {
 
-	$scope.Lesson = Campaign;
+		$scope.Lesson = Campaign;
+		$scope.data = Data;
 
-	Campaign.start (5, $scope);
+		Campaign.start (4, $scope);
+	});
 
 	/*
 		Slidebox-related functions

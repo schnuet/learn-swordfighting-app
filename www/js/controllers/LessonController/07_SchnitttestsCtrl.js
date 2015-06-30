@@ -1,13 +1,19 @@
 angular.module('starter.controllers')
 
-.controller('06_DasScharfeSchwertCtrl', 
+.controller('07_SchnitttestsCtrl', 
 ['$scope', 'Data', '$ionicSlideBoxDelegate', 'Campaign',
 function($scope, Data, $ionicSlideBoxDelegate, Campaign) {
-	$scope.data = Data;
 
-	$scope.Lesson = Campaign;
+	/*
+		Startup-functions:
+	*/
+	$scope.$on('$ionicView.enter', function () {
 
-	Campaign.start (6, $scope);
+		$scope.Lesson = Campaign;
+		$scope.data = Data;
+
+		Campaign.start (7, $scope);
+	});
 
 	/*
 		Slidebox-related functions

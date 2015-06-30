@@ -1,13 +1,19 @@
 angular.module('starter.controllers')
 
-.controller('08_PrinzipienCtrl', 
+.controller('09_DieFuenfWoerterCtrl', 
 ['$scope', 'Data', '$ionicSlideBoxDelegate', 'Campaign',
 function($scope, Data, $ionicSlideBoxDelegate, Campaign) {
-	$scope.data = Data;
 
-	$scope.Lesson = Campaign;
+	/*
+		Startup-functions:
+	*/
+	$scope.$on('$ionicView.enter', function () {
 
-	Campaign.start (8, $scope);
+		$scope.Lesson = Campaign;
+		$scope.data = Data;
+
+		Campaign.start (10, $scope);
+	});
 
 	/*
 		Slidebox-related functions

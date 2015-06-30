@@ -7648,7 +7648,8 @@ a.button {
   min-height: 100%; }
 
 .lesson-page-container.slider {
-  height: 100%; }
+  height: 100%;
+  background-color: #FFFDF8; }
   .lesson-page-container.slider .scroll-content {
     bottom: 44px; }
   .lesson-page-container.slider:after {
@@ -7658,20 +7659,83 @@ a.button {
     width: 100%;
     position: absolute;
     bottom: 0px;
-    background-color: #387ef5; }
+    background-color: #F4F1E4;
+    background-image: url(../img/bar-end-stroke.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top; }
+
+.scroll-content {
+  background-color: #FFFDF8; }
+  .scroll-content .col {
+    background-color: #FFFDF8; }
 
 .item.disabled {
   opacity: 0.4;
   pointer-events: none;
   cursor: default; }
 
+.bar.bar-primary {
+  border-color: #F4F1E4;
+  background-color: #f4f1e4;
+  background-image: linear-gradient(0deg, #F4F1E4, #F4F1E4 50%, transparent 50%);
+  color: #AE3E3B; }
+  .bar.bar-primary .title {
+    color: #AE3E3B; }
+  .bar.bar-primary.bar-header {
+    background-image: url(../img/bar-end-stroke.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    text-transform: uppercase; }
+  .bar.bar-primary .title {
+    font-weight: bold;
+    text-align: left;
+    left: 0px;
+    height: auto;
+    top: auto;
+    bottom: 0px;
+    height: 24px;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: -4px;
+    margin-left: -29px; }
+  .bar.bar-primary.bar-footer {
+    background-image: linear-gradient(180deg, #F4F1E4, #F4F1E4 50%, transparent 50%); }
+
+.popup-container.infoPopup {
+  pointer-events: auto !important; }
+  .popup-container.infoPopup .popup {
+    border: 2px solid grey; }
+
+.glossarwort {
+  color: #AE3E3B; }
+
+.clickable {
+  cursor: pointer; }
+
+.hidden {
+  display: none; }
+
+.popover .glossartext {
+  padding: 1em; }
+
 .game-container.dress-up {
   background-color: #e0e0e0; }
+  .game-container.dress-up .person {
+    left: 0px;
+    width: 33%; }
   .game-container.dress-up .clothes {
     width: 33%;
     height: 100%;
     position: absolute;
-    left: 67%; }
+    left: 33%; }
+  .game-container.dress-up .textContainer {
+    width: 33%;
+    left: 67%;
+    height: 100%;
+    padding: 1em;
+    position: absolute; }
   .game-container.dress-up #helmet {
     height: 40px;
     width: 40px;
@@ -7705,6 +7769,8 @@ a.button {
   height: 100%;
   width: 100%;
   position: relative; }
+  .game-container .hidden {
+    display: none; }
   .game-container .target-box {
     height: 100%;
     width: 50%;
@@ -7712,9 +7778,9 @@ a.button {
   .game-container .object-positioned {
     position: absolute;
     left: 0px;
-    top: 0px;
-    -webkit-transition: all 10s; }
+    top: 0px; }
   .game-container .drag-item {
+    cursor: default;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -7724,3 +7790,239 @@ a.button {
     position: absolute;
     left: 0px;
     top: 0px; }
+  .game-container .drag-target {
+    position: absolute;
+    left: 0px;
+    top: 0px; }
+
+.game-container.sword-parts .swordparts {
+  width: 33%;
+  height: 100%;
+  left: 33%;
+  position: absolute; }
+  .game-container.sword-parts .swordparts .sword-text {
+    width: 8em; }
+    .game-container.sword-parts .swordparts .sword-text.dragged-item {
+      width: auto; }
+  .game-container.sword-parts .swordparts #begriff-knauf {
+    top: 0px; }
+  .game-container.sword-parts .swordparts #begriff-griff {
+    top: 2em; }
+  .game-container.sword-parts .swordparts #begriff-parierstange {
+    top: 4em; }
+  .game-container.sword-parts .swordparts #begriff-staerke {
+    top: 6em; }
+  .game-container.sword-parts .swordparts #begriff-schwaeche {
+    top: 8em; }
+  .game-container.sword-parts .swordparts #begriff-ort {
+    top: 10em; }
+  .game-container.sword-parts .swordparts #begriff-klinge {
+    top: 12em; }
+  .game-container.sword-parts .swordparts #begriff-heft {
+    top: 14em; }
+.game-container.sword-parts div {
+  height: 0px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute; }
+.game-container.sword-parts .sword-text {
+  height: 2em;
+  overflow: hidden;
+  position: absolute;
+  background-color: royalblue; }
+.game-container.sword-parts .textContainer {
+  width: 33%;
+  height: 100%;
+  position: absolute;
+  left: 67%; }
+.game-container.sword-parts .target-box {
+  width: 33%;
+  height: 100%; }
+.game-container.sword-parts .sword-ratio-container {
+  width: 67.5%;
+  padding-top: 120%;
+  position: absolute;
+  top: 0px; }
+.game-container.sword-parts .transparent {
+  opacity: 0; }
+.game-container.sword-parts #knauf {
+  top: 90%;
+  width: 100%;
+  padding-top: 16%;
+  background-image: url(../img/lessons/01/knauf.png); }
+.game-container.sword-parts #knauf-target {
+  top: 0%;
+  width: 100%;
+  padding-top: 16%;
+  height: 100%; }
+.game-container.sword-parts #griff {
+  top: 38%;
+  width: 100%;
+  padding-top: 22%;
+  background-image: url(../img/lessons/01/griff.png); }
+.game-container.sword-parts #griff-target {
+  margin-top: calc(-8.5% * 1.78);
+  top: 8.5%;
+  width: 100%;
+  padding-top: 22%;
+  height: 100%; }
+.game-container.sword-parts #parierstange {
+  top: 83%;
+  padding-top: 14%;
+  width: 100%;
+  background-image: url(../img/lessons/01/kreuz.png); }
+.game-container.sword-parts #parierstange-target {
+  margin-top: calc(-20.5% * 1.78);
+  top: 20.5%;
+  width: 100%;
+  padding-top: 14%;
+  height: 100%; }
+.game-container.sword-parts #staerke {
+  top: 51%;
+  padding-top: 56%;
+  width: 100%;
+  background-image: url(../img/lessons/01/staerke.png); }
+.game-container.sword-parts #staerke-target {
+  margin-top: calc(-22% * 1.78);
+  top: 22%;
+  width: 100%;
+  padding-top: 56%;
+  height: 100%; }
+.game-container.sword-parts #schwaeche {
+  top: 0%;
+  padding-top: 66%;
+  width: 100%;
+  background-image: url(../img/lessons/01/schwaeche.png); }
+.game-container.sword-parts #schwaeche-target {
+  margin-top: calc(-53.5% * 1.78);
+  top: 53.5%;
+  width: 100%;
+  padding-top: 66%;
+  height: 100%; }
+.game-container.sword-parts #ort {
+  top: 86%;
+  padding-top: 14%;
+  width: 100%;
+  background-image: url(../img/lessons/01/ort.png); }
+.game-container.sword-parts #ort-target {
+  margin-top: calc(-90.5% * 1.78);
+  top: 90.5%;
+  width: 100%;
+  padding-top: 14%;
+  height: 100%; }
+.game-container.sword-parts #begriff-ort-target {
+  top: 90.5%;
+  width: 100%;
+  height: auto;
+  padding-top: 14%; }
+.game-container.sword-parts #begriff-schwaeche-target {
+  top: 53.5%;
+  width: 100%;
+  height: auto;
+  padding-top: 66%; }
+.game-container.sword-parts #begriff-staerke-target {
+  top: 22%;
+  width: 100%;
+  height: auto;
+  padding-top: 56%; }
+.game-container.sword-parts #begriff-parierstange-target {
+  top: 19%;
+  width: 100%;
+  height: auto;
+  padding-top: 14%; }
+.game-container.sword-parts #begriff-griff-target {
+  top: 8.5%;
+  width: 100%;
+  height: auto;
+  padding-top: 22%; }
+.game-container.sword-parts #begriff-knauf-target {
+  top: 0%;
+  width: 100%;
+  height: auto;
+  padding-top: 16%; }
+.game-container.sword-parts #begriff-klinge-target {
+  top: 20.5%;
+  width: 100%;
+  height: auto;
+  padding-top: 130%;
+  background-color: limegreen; }
+.game-container.sword-parts #begriff-heft-target {
+  top: 0%;
+  width: 100%;
+  height: auto;
+  padding-top: 40%;
+  background-color: orange; }
+
+.game-container.choose-video .video {
+  width: 100%;
+  height: auto;
+  padding-top: 56.25%;
+  position: relative; }
+  .game-container.choose-video .video video {
+    position: absolute;
+    top: 0px; }
+  .game-container.choose-video .video .video-overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: #fff; }
+
+.game-container.cutting-up .cut-instruction {
+  font-weight: bold;
+  -webkit-animation: bouncing 0.8s cubic-bezier(0.65, 0.05, 0.36, 1) 0s infinite;
+  -moz-animation: bouncing 0.8s cubic-bezier(0.65, 0.05, 0.36, 1) 0s infinite;
+  -o-animation: bouncing 0.8s cubic-bezier(0.65, 0.05, 0.36, 1) 0s infinite;
+  animation: bouncing 0.8s cubic-bezier(0.65, 0.05, 0.36, 1) 0s infinite; }
+
+@-webkit-keyframes bouncing {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.8); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2); }
+
+  100% {
+    opacity: 0.8;
+    transform: scale(0.8); } }
+
+@-moz-keyframes bouncing {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.8); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2); }
+
+  100% {
+    opacity: 0.8;
+    transform: scale(0.8); } }
+
+@-o-keyframes bouncing {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.8); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2); }
+
+  100% {
+    opacity: 0.8;
+    transform: scale(0.8); } }
+
+@keyframes bouncing {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.8); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2); }
+
+  100% {
+    opacity: 0.8;
+    transform: scale(0.8); } }

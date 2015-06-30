@@ -1,6 +1,6 @@
 angular.module('starter.services')
 
-.factory ('Profile', ['DataStorage', function (DataStorage) {
+.factory ('Profile', ['DataStorage', 'Utility', function (DataStorage, Utility) {
 
 	var _self = {
 
@@ -15,7 +15,7 @@ angular.module('starter.services')
 		},
 
 		loadLastUser : function () {
-			var username = DataStorage.get ('username');
+			var username = DataStorage.getRaw ('username');
 			console.log ('username loaded from memory: ' + username);
 			if (username === null) return false;
 			
@@ -29,7 +29,7 @@ angular.module('starter.services')
 		}, 
 
 		createNew : function (username) {
-			DataStorage.set ('username', username);
+			DataStorage.setRaw ('username', username);
 
 			// set the data to the default set of data
 			_self.data = {
@@ -41,18 +41,42 @@ angular.module('starter.services')
 				}
 			}
 
+			// add the profile to the list of existing profiles
+			var p = DataStorage.get('profiles');
+			var p = Utility.mergeStringArrays (p, [username]);
+			console.log (p);
+			DataStorage.set ('profiles', p);
+			p = null;
+
 			_self.save ();
 			return _self.data;
 		},
 
+		getListOfUsers: function () {
+			var p = DataStorage.get('profiles');
+			if (p === null) {
+				DataStorage.set ('profiles', []);
+				p = [];
+			}
+			console.log (p);
+			var r = [];
+			var i = p.length;
+			while (i--) {
+				r[i] = {
+					name : p[i],
+					account: normalizeName (p[i])
+				};
+			}
+			return r;
+		},
+
 		save : function () {
-			var dataAsStr = JSON.stringify (_self.data);
-			DataStorage.set ('user_' + normalizeName(_self.data.name), dataAsStr);
+			DataStorage.set ('user_' + normalizeName(_self.data.name), _self.data);
 		}, 
 		load : function (name) {
 			name = normalizeName (name);
 			var d = DataStorage.get ('user_' + name);
-			return JSON.parse (d);
+			return d;
 		}
 	};
 

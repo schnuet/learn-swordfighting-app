@@ -1,13 +1,19 @@
 angular.module('starter.controllers')
 
-.controller('09_FechtgruppeFindenCtrl', 
+.controller('02_DerGriffCtrl', 
 ['$scope', 'Data', '$ionicSlideBoxDelegate', 'Campaign',
 function($scope, Data, $ionicSlideBoxDelegate, Campaign) {
-	$scope.data = Data;
+	
+	/*
+		Startup-functions:
+	*/
+	$scope.$on('$ionicView.enter', function () {
 
-	$scope.Lesson = Campaign;
+		$scope.Lesson = Campaign;
+		$scope.data = Data;
 
-	Campaign.start (9, $scope);
+		Campaign.start (2, $scope);
+	});
 
 	/*
 		Slidebox-related functions

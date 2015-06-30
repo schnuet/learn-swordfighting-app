@@ -1,0 +1,18 @@
+.game-container.cutting-up {
+	canvas {
+		
+	}
+	.cut-instruction {
+		font-weight: bold;
+		-webkit-animation: bouncing 0.8s cubic-bezier(0.65, 0.05, 0.36, 1) 0s infinite;
+		   -moz-animation: bouncing 0.8s cubic-bezier(0.65, 0.05, 0.36, 1) 0s infinite;
+        	 -o-animation: bouncing 0.8s cubic-bezier(0.65, 0.05, 0.36, 1) 0s infinite;
+			    animation: bouncing 0.8s cubic-bezier(0.65, 0.05, 0.36, 1) 0s infinite;
+	}
+
+}
+
+@-webkit-keyframes bouncing { 0% {opacity: 0.8; transform: scale(0.8);} 50% {opacity: 1; transform: scale(1.2);} 100% {opacity: 0.8; transform: scale(0.8);} }
+   @-moz-keyframes bouncing { 0% {opacity: 0.8; transform: scale(0.8);} 50% {opacity: 1; transform: scale(1.2);} 100% {opacity: 0.8; transform: scale(0.8);} }
+     @-o-keyframes bouncing { 0% {opacity: 0.8; transform: scale(0.8);} 50% {opacity: 1; transform: scale(1.2);} 100% {opacity: 0.8; transform: scale(0.8);} }
+        @keyframes bouncing { 0% {opacity: 0.8; transform: scale(0.8);} 50% {opacity: 1; transform: scale(1.2);} 100% {opacity: 0.8; transform: scale(0.8);} }

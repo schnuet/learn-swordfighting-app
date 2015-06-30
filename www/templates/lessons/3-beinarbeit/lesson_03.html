@@ -1,0 +1,83 @@
+<ion-view view-title="Lektion 3" cache-view="false">
+	<ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)">
+	<!-- SEITENINHALT START: -->
+
+	<!-- SEITE 1 -->
+	  <ion-slide>
+	  	<ion-content class="padding" has-bouncing="false">
+		    <div class="row responsive-md"> 
+				<div class="col col-67">
+					<h1>Asterix im Land der Goten</h1>
+					<p>Im diesem Band der Asterix-Serie suchen Asterix und Obelix ihren Druiden im Land der Goten, der wegen seinem mächtigen Zaubertrank entführt wurde.</p>
+					<div style="background-color: green; width:200px; height:700px;"></div>
+				</div>
+				<div class="col"></div>
+			</div>
+		</ion-content>
+	  </ion-slide>
+
+	<!-- SEITE 2 -->
+	  <ion-slide>
+	  	<ion-content class="padding" has-bouncing="false">
+		    <div class="row responsive-md"> 
+				<div class="col col-67">
+					<h1>Lektion 1 - Schwertbegriffe</h1>
+					<h5>Was wollte Asterix im Land der Goten?</h5>
+					<multiple-choice choices="Miraculix retten, Haudraufwienix suchen, Krautsalat probieren, Römer verjagen" right-choice="0" callback="Lesson.end()">
+
+					</multiple-choice>
+				</div>
+				<div class="col"></div>
+			</div>
+		</ion-content>
+	  </ion-slide>
+
+	<!-- SEITE 3 -->
+	  <ion-slide>
+	  	<ion-content class="padding" scroll="false" has-bouncing="false">
+			<button id="gameStartButton" class="button button-assertive" ng-click="game.start();">Spiel Starten!</button>
+			<div class="game-container choose-video hidden">
+				<div class="row"> 
+					<div class="col col-67">
+						<div class="video" id="video-halberschritt">
+							<video width="100%" id="vid0">
+								<source src="../img/lessons/03/halberschritt.mp4" type="video/mp4">
+								Ups - dein Gerät unterstützt unsere Videodateien anscheinend nicht.
+								Du darfst die Übung offiziell überspringen.
+							</video>
+							<div class="video-overlay">
+								<h3>Erstes Video: Halber Schritt</h3>
+								<button class="button button-block button-balanced" ng-click="game.startVideo(0);">Video starten</button>
+							</div>
+						</div>
+						<div class="video hidden" id="video-passierschritt">
+							<video width="100%" id="vid1">
+								<source src="../img/lessons/03/passierschritt.mp4" type="video/mp4">
+								Ups - dein Gerät unterstützt unsere Videodateien anscheinend nicht.
+								Du darfst die Übung offiziell überspringen.
+							</video>
+							<div class="video-overlay">
+								<h3>Zweites Video: Passierschritt</h3>
+								<button class="button button-block button-balanced" ng-click="game.startVideo(1);">Video starten</button>
+							</div>
+						</div>
+					</div>
+					<div class="col col-33" id="button-box">
+						<button class="button" ng-click="game.choose(1);">Erste Version</button>
+						<button class="button" ng-click="game.choose(2);">Zweite Version</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-67">
+						<h4>Welches war die richtige Schrittfolge?</h4>
+						<p>Du bekommst Videos gezeigt, in denen ein Schritt auf zwei verschiedene Arten gezeigt wird.<br>
+						Nur eine davon ist richtig! Wähle die richtige aus.</p>
+					</div>
+				</div>
+			</div>
+		</ion-content>
+	  </ion-slide>
+
+	  <!-- SEITENINHALT ENDE -->
+	</ion-slide-box>
+</ion-view>

@@ -11,14 +11,16 @@
 					<p>Im diesem Band der Asterix-Serie suchen Asterix und Obelix ihren Druiden im Land der Goten, der wegen seinem mächtigen Zaubertrank entführt wurde.</p>
 					<div style="background-color: green; width:200px; height:700px;"></div>
 				</div>
-				<div class="col"></div>
+				<div class="col">
+					<span glossar="vor">Vor</span>
+				</div>
 			</div>
 		</ion-content>
 	  </ion-slide>
 
 	<!-- SEITE 2 -->
 	  <ion-slide>
-	  	<ion-content class="padding" has-bouncing="false">
+	  	<ion-content class="padding" scroll="false" has-bouncing="false">
 		    <div class="row responsive-md"> 
 				<div class="col col-67">
 					<h1>Lektion 1 - Schwertbegriffe</h1>
@@ -35,18 +37,50 @@
 	<!-- SEITE 3 -->
 	  <ion-slide>
 	  	<ion-content class="padding" scroll="false" has-bouncing="false">
-			<game-dress-up onwin="Lesson.end()">
-				<div class="game-container dress-up">
+			<game-sword-parts>
+				<div class="game-container sword-parts">
 					<div class="target-box">
-						<div id="helmet-target"></div>
-						<div id="pants-target"></div>
+						<div class="sword-ratio-container">
+							<div id="knauf-target" class="drag-target hidden"></div>
+							<div id="griff-target" class="drag-target hidden"></div>
+							<div id="parierstange-target" class="drag-target hidden"></div>
+							<div id="staerke-target" class="drag-target hidden"></div>
+							<div id="schwaeche-target" class="drag-target hidden"></div>
+							<div id="ort-target" class="drag-target hidden"></div>
+
+							<div id="begriff-knauf-target" class="drag-target hidden"></div>
+							<div id="begriff-griff-target" class="drag-target hidden"></div>
+							<div id="begriff-parierstange-target" class="drag-target hidden"></div>
+							<div id="begriff-staerke-target" class="drag-target hidden"></div>
+							<div id="begriff-schwaeche-target" class="drag-target hidden"></div>
+							<div id="begriff-ort-target" class="drag-target hidden"></div>
+							<div id="begriff-klinge-target" class="drag-target hidden"></div>
+							<div id="begriff-heft-target" class="drag-target hidden"></div>
+						</div>
 					</div>
-					<div class="clothes">
-						<img id="helmet" class="drag-item">
-						<img id="pants" class="drag-item"> 
+					<div class="swordparts">
+						<div class="sword-ratio-container">
+							<div id="knauf" class="drag-item sword-part transparent"></div>
+							<div id="griff" class="drag-item sword-part transparent"></div>
+							<div id="parierstange" class="drag-item sword-part transparent"></div>
+							<div id="staerke" class="drag-item sword-part transparent"></div>
+							<div id="schwaeche" class="drag-item sword-part transparent"></div>
+							<div id="ort" class="drag-item sword-part transparent"></div>
+						</div>
+						<div id="begriff-knauf" class="drag-item sword-text transparent hidden">Knauf</div>
+						<div id="begriff-griff" class="drag-item sword-text transparent hidden">Griff</div>
+						<div id="begriff-parierstange" class="drag-item sword-text transparent hidden">Parierstange</div>
+						<div id="begriff-staerke" class="drag-item sword-text transparent hidden">Stärke</div>
+						<div id="begriff-schwaeche" class="drag-item sword-text transparent hidden">Schwäche</div>
+						<div id="begriff-ort" class="drag-item sword-text transparent hidden">Ort</div>
+						<div id="begriff-klinge" class="drag-item sword-text transparent hidden">Klinge</div>
+						<div id="begriff-heft" class="drag-item sword-text transparent hidden">Heft</div>
+					</div>
+					<button id="gameStartButton" class="button button-assertive" ng-click="game.start();">Spiel Starten!</button>
+					<div class="textContainer" ng-bind-html="vars.gameText">
 					</div>
 				</div>
-			</game-dress-up>
+			</game-sword-parts>
 		</ion-content>
 	  </ion-slide>
 

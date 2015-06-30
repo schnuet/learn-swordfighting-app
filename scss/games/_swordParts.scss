@@ -1,0 +1,208 @@
+.game-container.sword-parts {
+
+	// Der Container, in dem die Schwertteile am Anfang liegen:
+	.swordparts {
+		width: 33%;
+		height: 100%;
+		left: 33%;
+		position: absolute;
+		
+		.sword-text {
+			width: 8em;
+			&.dragged-item {
+				width: auto;
+			}
+		}
+
+		#begriff-knauf {
+			top: 0px;
+		}
+		#begriff-griff {
+			top: 2em;
+		}
+		#begriff-parierstange {
+			top: 4em;
+		}
+		#begriff-staerke {
+			top: 6em;
+		}
+		#begriff-schwaeche {
+			top: 8em;
+		}
+		#begriff-ort {
+			top: 10em;
+		}
+		#begriff-klinge {
+			top: 12em;
+		}
+		#begriff-heft {
+			top: 14em;
+		}
+	}
+	div {
+		height: 0px;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		position: absolute;
+	}
+	.sword-text {
+		height: 2em;
+		overflow: hidden;
+		position: absolute;
+		background-color: royalblue;
+	}
+	.textContainer {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		left: 67%;
+	}
+	.target-box {
+		width: 33%;
+		height: 100%;
+	}
+	.sword-ratio-container {
+		width: 67.5%;
+		padding-top: 120%;
+		position: absolute;
+		top: 0px;
+	}
+
+	.transparent {
+		opacity: 0;
+	}
+
+	#knauf {
+		top: 90%;
+		//height: 72px;
+		width: 100%;
+		padding-top: 16%;
+		background-image: url(../img/lessons/01/knauf.png);
+	}
+	#knauf-target {
+		top: 0%;
+		width: 100%;
+		padding-top: 16%;
+		height: 100%;
+	}
+	#griff {
+		top: 38%;
+		//height: 101px;
+		width: 100%;
+		padding-top: 22%;
+		background-image: url(../img/lessons/01/griff.png);
+	}
+	#griff-target {
+		margin-top: calc(-8.5% * 1.78);
+		top: 8.5%;
+		width: 100%;
+		padding-top: 22%;
+		height: 100%;
+	}
+	#parierstange {
+		top: 83%;
+		//height: 40px;
+		padding-top: 14%;
+		width: 100%;
+		background-image: url(../img/lessons/01/kreuz.png);
+	}
+	#parierstange-target {
+		margin-top: calc(-20.5% * 1.78);
+		top: 20.5%;
+		width: 100%;
+		padding-top: 14%;
+		height: 100%;
+	}
+	#staerke {
+		top: 51%;
+		//height: 255px;
+		padding-top: 56%;
+		width: 100%;
+		background-image: url(../img/lessons/01/staerke.png);
+	}
+	#staerke-target {
+		margin-top: calc(-22% * 1.78);
+		top: 22%;
+		width: 100%;
+		padding-top: 56%;
+		height: 100%;
+	}
+	#schwaeche {
+		top: 0%;
+		//height: 300px;
+		padding-top: 66%;
+		width: 100%;
+		background-image: url(../img/lessons/01/schwaeche.png);
+	}
+	#schwaeche-target {
+		margin-top: calc(-53.5% * 1.78);
+		top: 53.5%;
+		width: 100%;
+		padding-top: 66%;
+		height: 100%;
+	}
+	#ort {
+		top: 86%;
+		//height: 67px;
+		padding-top: 14%;
+		width: 100%;
+		background-image: url(../img/lessons/01/ort.png);
+	}
+	#ort-target {
+		margin-top: calc(-90.5% * 1.78);
+		top: 90.5%;
+		width: 100%;
+		padding-top: 14%;
+		height: 100%;
+	}
+	#begriff-ort-target {
+		top: 90.5%;
+		width: 100%;
+		height: auto;
+		padding-top: 14%;
+	}
+	#begriff-schwaeche-target {
+		top: 53.5%;
+		width: 100%;
+		height: auto;
+		padding-top: 66%;
+	}
+	#begriff-staerke-target {
+		top: 22%;
+		width: 100%;
+		height: auto;
+		padding-top: 56%;
+	}
+	#begriff-parierstange-target {
+		top: 19%;
+		width: 100%;
+		height: auto;
+		padding-top: 14%;
+	}
+	#begriff-griff-target {
+		top: 8.5%;
+		width: 100%;
+		height: auto;
+		padding-top: 22%;
+	}
+	#begriff-knauf-target {
+		top: 0%;
+		width: 100%;
+		height: auto;
+		padding-top: 16%;
+	}
+	#begriff-klinge-target {
+		top: 20.5%;
+		width: 100%;
+		height: auto;
+		padding-top: 130%;
+		background-color: limegreen;
+	}
+	#begriff-heft-target {
+		top: 0%;
+		width: 100%;
+		height: auto;
+		padding-top: 40%;
+		background-color: orange;
+	}
+}

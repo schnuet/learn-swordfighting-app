@@ -4,19 +4,9 @@ angular.module('starter.controllers')
 ['$scope', '$ionicModal', '$ionicHistory', '$state', 'Profile', 'Data',
 function($scope, $ionicModal, $ionicHistory, $state, Profile, Data) {
 
-	var user = Profile.loadLastUser ();
-	if (!user) {
-		$state.go ('profileCreation');
-		return;
-	} 
-	else {
-		Data.user = Profile.data;
-		$scope.Data = Data;
-		console.log (user);
-	}
+	var user = null;
 	
-
-	$ionicModal.fromTemplateUrl('/templates/overlays/menu.html', {
+	$ionicModal.fromTemplateUrl('templates/overlays/menu.html', {
 		scope: $scope,
 		animation: 'slide-in-down'
 	}).then(function(modal) {
@@ -36,11 +26,6 @@ function($scope, $ionicModal, $ionicHistory, $state, Profile, Data) {
 			expire: 300
 		});
 	};
-	
-	//Cleanup the modal when we're done with it!
-	$scope.$on('$destroy', function() {
-		$scope.modal.remove();
-	});
 
 	$scope.gotoState = function (chosenState) {
 		console.log ('going to: ' + chosenState);
@@ -50,4 +35,22 @@ function($scope, $ionicModal, $ionicHistory, $state, Profile, Data) {
 	$scope.gotoNextLesson = function () {
 		$state.go ('menu.campaign-lesson-'+ Data.user.levelprogress);
 	}
+
+	$scope.$on('$ionicView.enter', function () {
+		user = Profile.loadLastUser ();
+		if (!user) {
+			$state.go ('profileCreation');
+			return;
+		} 
+		else {
+			Data.user = Profile.data;
+			$scope.Data = Data;
+			console.log (user);
+		}
+	});
+
+	//Cleanup the modal when we're done with it!
+	$scope.$on('$destroy', function() {
+		$scope.modal.remove();
+	});
 }])

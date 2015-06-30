@@ -36,6 +36,16 @@ angular.module('starter')
     }
   })
 
+  // Glossar:
+  .state('menu.glossar', {
+    url: '/glossar',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/glossar.html'
+      }
+    }
+  })
+
 
 	// Startseite:
 	.state('menu.dashboard', {
@@ -63,8 +73,8 @@ angular.module('starter')
     params : { campaign: true },
     views: {
       'menuContent': {
-        templateUrl: 'templates/lessons/2-grundpositionen/lesson_02.html',
-        controller: '02_GrundpositionenCtrl'
+        templateUrl: 'templates/lessons/2-der-griff/lesson_02.html',
+        controller: '02_DerGriffCtrl'
       }
     }
   })
@@ -74,8 +84,8 @@ angular.module('starter')
     params : { campaign: true },
     views: {
       'menuContent': {
-        templateUrl: 'templates/lessons/3-haltung/lesson_03.html',
-        controller: '03_HaltungCtrl'
+        templateUrl: 'templates/lessons/3-beinarbeit/lesson_03.html',
+        controller: '03_BeinarbeitCtrl'
       }
     }
   })
@@ -85,8 +95,8 @@ angular.module('starter')
     params : { campaign: true },
     views: {
       'menuContent': {
-        templateUrl: 'templates/lessons/4-quellen/lesson_04.html',
-        controller: '04_QuellenCtrl'
+        templateUrl: 'templates/lessons/4-huten/lesson_04.html',
+        controller: '04_HutenCtrl'
       }
     }
   })
@@ -96,8 +106,8 @@ angular.module('starter')
     params : { campaign: true },
     views: {
       'menuContent': {
-        templateUrl: 'templates/lessons/5-angriffe/lesson_05.html',
-        controller: '05_AngriffeCtrl'
+        templateUrl: 'templates/lessons/5-quellen/lesson_05.html',
+        controller: '05_QuellenCtrl'
       }
     }
   })
@@ -107,8 +117,8 @@ angular.module('starter')
     params : { campaign: true },
     views: {
       'menuContent': {
-        templateUrl: 'templates/lessons/6-das-scharfe-schwert/lesson_06.html',
-        controller: '06_DasScharfeSchwertCtrl'
+        templateUrl: 'templates/lessons/6-angriffe/lesson_06.html',
+        controller: '06_AngriffeCtrl'
       }
     }
   })
@@ -118,8 +128,8 @@ angular.module('starter')
     params : { campaign: true },
     views: {
       'menuContent': {
-        templateUrl: 'templates/lessons/7-schutzausruestung/lesson_07.html',
-        controller: '07_SchutzausruestungCtrl'
+        templateUrl: 'templates/lessons/7-schnitttests/lesson_07.html',
+        controller: '07_SchnitttestsCtrl'
       }
     }
   })
@@ -129,8 +139,8 @@ angular.module('starter')
     params : { campaign: true },
     views: {
       'menuContent': {
-        templateUrl: 'templates/lessons/8-prinzipien/lesson_08.html',
-        controller: '08_PrinzipienCtrl'
+        templateUrl: 'templates/lessons/8-schutzausruestung/lesson_08.html',
+        controller: '08_SchutzausruestungCtrl'
       }
     }
   })
@@ -140,8 +150,19 @@ angular.module('starter')
     params : { campaign: true },
     views: {
       'menuContent': {
-        templateUrl: 'templates/lessons/9-eine-fechtgruppe-finden/lesson_09.html',
-        controller: '09_FechtgruppeFindenCtrl'
+        templateUrl: 'templates/lessons/9-mensur/lesson_09.html',
+        controller: '09_MensurCtrl'
+      }
+    }
+  })
+
+  .state('menu.campaign-lesson-10', {
+    url: '/lesson10/',
+    params : { campaign: true },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/10-die-fuenf-woerter/lesson_10.html',
+        controller: '10_DieFuenfWoerterCtrl'
       }
     }
   });

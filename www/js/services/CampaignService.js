@@ -5,30 +5,54 @@ angular.module('starter.services')
 */
 
 .factory ('Campaign', 
-['Data', '$ionicModal', '$ionicSlideBoxDelegate', 'Profile',
-function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile) {
+['Data', '$ionicModal', '$ionicSlideBoxDelegate', 'Profile', '$ionicPopup', '$timeout',
+function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, $ionicPopup, $timeout) {
 
-	var s = null;
+	var scope = null;
 
 	var _self = {
 
 		lessonnumber : 0,
+
+		showInfoPopup : function (title, text, cssClass) {
+			if (typeof cssClass === 'undefined') cssClass = '';
+			// An elaborate, custom popup
+			var myPopup = $ionicPopup.show({
+				template: text,
+				cssClass: 'infoPopup ' + cssClass,
+				title: title,
+				subTitle: '',
+				scope: scope,
+				buttons: [
+				]
+			});
+			$timeout (function () {
+				var el = document.getElementsByClassName('popup-container')[0];
+				console.log (el);
+				angular.element(el).on('click', function () { 
+					myPopup.close(); 
+				});
+			}, 500);
+		},
+
 		/*
 			Starting function - should be called at the beginning of every Lesson
 		*/
 		start : function (lNbr, $scope) {
 			_self.lessonnumber = lNbr;
-			$ionicModal.fromTemplateUrl('/templates/lessons/'+ Data.lessonDirectories[lNbr] +'/intro.html', {
+			$ionicModal.fromTemplateUrl('templates/lessons/'+ Data.lessonDirectories[lNbr] +'/intro.html', {
 				scope: $scope,
-				animation: 'slide-in-up'
+				animation: 'slide-in-up',
+				backdropClickToClose: false
 			}).then(function(modal) {
 				$scope.introModal = modal;
 				modal.show();
 			});
 
-			$ionicModal.fromTemplateUrl('/templates/lessons/'+ Data.lessonDirectories[lNbr] +'/outro.html', {
+			$ionicModal.fromTemplateUrl('templates/lessons/'+ Data.lessonDirectories[lNbr] +'/outro.html', {
 				scope: $scope,
-				animation: 'slide-in-up'
+				animation: 'slide-in-up',
+				backdropClickToClose: false
 			}).then(function(modal) {
 				$scope.outroModal = modal;
 			});
@@ -52,7 +76,7 @@ function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile) {
 				_self.end();
 			};*/
 
-			s = $scope;
+			scope = $scope;
 		},
 		end : function () {
 			console.log ('End was called');
@@ -61,8 +85,8 @@ function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile) {
 				Profile.data.score += 200;
 			}
 			Profile.save();
-			s.outroModal.show();
-			s = null;
+			scope.outroModal.show();
+			scope = null;
 		}
 	};
 

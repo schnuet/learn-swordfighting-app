@@ -15,3 +15,19 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+$primary: #F4F1E4 !default;
+$secondary: #FFFDF8 !default;
+$highlight: #AE3E3B !default;
+
+$button-primary-bg:                  $primary !default;
+$button-primary-text:                #AE3E3B !default;
+$button-primary-border:              #AE3E3B !default;
+$button-primary-active-bg:           #E6E7E9 !default;
+$button-primary-active-border:       #AE3E3B !default;
+
+$bar-transparency:                	1;
+$bar-primary-bg:                    rgba($button-primary-bg, $bar-transparency) !default;
+$bar-primary-text:                  $button-primary-text !default;
+$bar-primary-border:                $button-primary-bg !default;
+$bar-primary-active-bg:             $button-primary-active-bg !default;
+$bar-primary-active-border:         $button-primary-active-border !default;

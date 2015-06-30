@@ -3,6 +3,7 @@
 }
 .lesson-page-container.slider {
 	height: 100%;
+	background-color: $secondary;
 
 	.scroll-content {
 		bottom: $bar-footer-height;
@@ -15,6 +16,18 @@
 		width: 100%;
 		position: absolute;
 		bottom: 0px;
-		background-color: $positive;
+		background-color: $primary;
+		background-image: url(../img/bar-end-stroke.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: top;
+	}
+}
+
+.scroll-content {
+	background-color: $secondary;
+
+	.col {
+		background-color: $secondary;
 	}
 }

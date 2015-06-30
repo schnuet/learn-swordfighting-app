@@ -1,0 +1,19 @@
+.game-container.choose-video {
+	.video {
+		width: 100%;
+		height: auto;
+		padding-top: 56.25%;
+		position: relative;
+		video {
+			position: absolute;
+			top: 0px;
+		}
+		.video-overlay {
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0px;
+			background-color: #fff;
+		}
+	}
+}

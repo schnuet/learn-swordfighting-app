@@ -50,14 +50,16 @@ function (CssDoctor, $ionicGesture, $rootScope) {
 	// to be bound with: $ionicGesture.on('release', dragEndEvent, $element);
 	var dragEndEvent = function (e) {
 		if (draggedElement !== null) {
+			var offsets = CssDoctor.getOffsetsInParent(draggedElement, 'game-container');
 			// get the exact coordinates of the object relative to the gamecontainer
-			var l = draggedElement.offsetParent.offsetLeft + draggedElement.offsetLeft;
-			var t = draggedElement.offsetParent.offsetTop + draggedElement.offsetTop;
+			var l = offsets.left; 	//draggedElement.offsetParent.offsetLeft + draggedElement.offsetLeft;
+			var t = offsets.top; 	//draggedElement.offsetParent.offsetTop + draggedElement.offsetTop;
 			
 			// get the exact coordinates of the target relative to the gamecontainer
 			var target = document.getElementById (draggedElement.id + '-target');
-			var tar_l = target.offsetParent.offsetLeft + target.offsetLeft;
-			var tar_t = target.offsetParent.offsetTop + target.offsetTop; 
+			offsets = CssDoctor.getOffsetsInParent(target, 'game-container');
+			var tar_l = offsets.left; 	//target.offsetParent.offsetLeft + target.offsetLeft;
+			var tar_t = offsets.top; 	//target.offsetParent.offsetTop + target.offsetTop; 
 			
 			if (l > tar_l - (draggedElement.offsetWidth/2) && l < tar_l + (target.offsetWidth - draggedElement.offsetWidth/2)) {
 				if (t > tar_t - (draggedElement.offsetHeight/2) && t < tar_t + (target.offsetHeight - draggedElement.offsetHeight/2)) {

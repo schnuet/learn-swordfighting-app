@@ -2,6 +2,11 @@
 	height: 100%;
 	width: 100%;
 	position: relative;
+	//border: 1px solid blue;
+
+	.hidden {
+		display: none;
+	}
 
 	.target-box {
 		height: 100%;
@@ -13,10 +18,11 @@
 		position: absolute;
 		left: 0px;
 		top: 0px;
-		-webkit-transition: all 10s;
+		//-webkit-transition: all 10s;
 	}
 
 	.drag-item {
+		cursor: default;
 		position: absolute;
 		left: 0px;
 		top: 0px;
@@ -27,5 +33,13 @@
 		position: absolute;
 		left: 0px;
 		top: 0px;
+		//border: 1px solid red;
+	}
+
+	.drag-target {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		//outline: 1px solid limegreen;
 	}
 }
