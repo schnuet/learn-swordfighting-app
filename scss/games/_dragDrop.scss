@@ -4,8 +4,19 @@
 	position: relative;
 	//border: 1px solid blue;
 
+	.col {
+		padding: 5px 10px;
+		&.border-left {
+			border-left: 1px solid $highlight;
+			padding-left: 20px;
+		}
+	}
+
 	.hidden {
 		display: none;
+	}
+	.transparent {
+		visibility: hidden;
 	}
 
 	.target-box {
@@ -28,11 +39,14 @@
 		top: 0px;
 		transition: all 1s;
 		-webkit-transition: all 1s;
+		background-color: $secondary;
 	}
 	.dragged-item {
 		position: absolute;
 		left: 0px;
 		top: 0px;
+		transition: scale 1s !important; 
+		-webkit-transition: scale 1s !important;
 		//border: 1px solid red;
 	}
 
@@ -42,4 +56,11 @@
 		top: 0px;
 		//outline: 1px solid limegreen;
 	}
+}
+
+#preGameScreen {
+	position: absolute;
+	top: 0px;
+	height: 100%;
+	width: 100%;	
 }

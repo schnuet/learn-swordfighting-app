@@ -15,6 +15,7 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+/* TYPE: */
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -2566,7 +2567,7 @@ body, .ionic-body {
   color: #000;
   word-wrap: break-word;
   font-size: 14px;
-  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  font-family: "Lato", "Helvetica Neue", "Roboto", sans-serif;
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
@@ -2793,7 +2794,7 @@ cite {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 500;
-  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  font-family: "LatoSemibold", "HelveticaNeue-Semibold", "Roboto-Semibold", sans-serif-bold;
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     font-weight: normal;
@@ -4135,7 +4136,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   white-space: nowrap;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  font-family: "Lato", "Helvetica Neue", "Roboto", sans-serif;
   opacity: 0.7; }
   .tab-item:hover {
     cursor: pointer; }
@@ -5632,7 +5633,7 @@ label, input, button, select, textarea {
   line-height: 1.42857; }
 
 input, button, select, textarea {
-  font-family: "Helvetica Neue", "Roboto", sans-serif; }
+  font-family: "Lato", "Helvetica Neue", "Roboto", sans-serif; }
 
 .item-input {
   display: -webkit-box;
@@ -7603,6 +7604,9 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+/*
+	Von und nach rechts:
+*/
 .slide-in-right {
   -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0); }
@@ -7619,6 +7623,28 @@ a.button {
   -webkit-transition: all ease-in-out 250ms;
   transition: all ease-in-out 250ms; }
 
+/* von rechts nach links */
+.slide-in-right-left {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0); }
+
+.slide-in-right-left.ng-enter, .slide-in-right-left > .ng-enter {
+  -webkit-transition: all cubic-bezier(.1, .7, .1, 1) 400ms;
+  transition: all cubic-bezier(.1, .7, .1, 1) 400ms; }
+
+.slide-in-right-left.ng-enter-active, .slide-in-right-left > .ng-enter-active {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slide-in-right-left.ng-leave-active, .slide-in-right-left > .ng-leave-active {
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0); }
+
+.slide-in-right-left.ng-leave, .slide-in-right-left > .ng-leave {
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms; }
+
+/* von oben */
 .slide-in-down {
   -webkit-transform: translate3d(0, -100%, 0);
   transform: translate3d(0, -100%, 0); }
@@ -7644,6 +7670,18 @@ a.button {
     width: 100%;
     height: 100%; } }
 
+.modal.dragged {
+  -webkit-transition: scale cubic-bezier(.1, .7, .1, 1) 400ms;
+  transition: scale cubic-bezier(.1, .7, .1, 1) 400ms; }
+.modal .hintergrundbild {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1; }
+.modal .charakter {
+  max-height: 60%;
+  position: absolute; }
+
 .scroll {
   min-height: 100%; }
 
@@ -7664,16 +7702,86 @@ a.button {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top; }
+  .lesson-page-container.slider .slider-pager {
+    -webkit-transition: transform cubic-bezier(.1, .7, .1, 1) 1000ms;
+    transition: transform cubic-bezier(.1, .7, .1, 1) 1000ms; }
+    .lesson-page-container.slider .slider-pager.hidden {
+      display: block;
+      transform: translate3d(0px, 50px, 0px);
+      -webkit-transform: translate3d(0px, 50px, 0px); }
+
+.slider.image-slider, .image-slider {
+  height: 100%;
+  width: 100%; }
+  .slider.image-slider .slider-slide img, .image-slider .slider-slide img {
+    max-width: 100%;
+    max-height: 100%; }
+  .slider.image-slider .slider-slide video, .image-slider .slider-slide video {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%; }
+
+.bildname {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #F4F1E4;
+  pointer-events: none;
+  padding: 5px 1em; }
 
 .scroll-content {
   background-color: #FFFDF8; }
+  .scroll-content .row, .scroll-content .col {
+    background-color: #FFFDF8; }
+    .scroll-content .row.height-50, .scroll-content .col.height-50 {
+      height: 50%; }
+    .scroll-content .row.height-25, .scroll-content .col.height-25 {
+      height: 25%; }
+    .scroll-content .row.height-75, .scroll-content .col.height-75 {
+      height: 75%; }
+    .scroll-content .row.height-33, .scroll-content .col.height-33 {
+      height: 33%; }
+    .scroll-content .row.height-67, .scroll-content .col.height-67 {
+      height: 67%; }
+    .scroll-content .row.height-100, .scroll-content .col.height-100 {
+      height: 100%; }
+  .scroll-content .row.single-row {
+    height: 100%; }
+    .scroll-content .row.single-row > .col {
+      height: 100%; }
   .scroll-content .col {
     background-color: #FFFDF8; }
+
+.instruction-box {
+  min-height: 200px;
+  border: 1px solid grey;
+  background-color: #F4F1E4 !important;
+  padding: 20px;
+  font-size: 1.2em;
+  border-radius: 10px; }
+
+.right {
+  position: absolute;
+  right: 0px; }
 
 .item.disabled {
   opacity: 0.4;
   pointer-events: none;
   cursor: default; }
+
+.button.quelle-button {
+  background-image: url(../img/icons/Quelle.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0px;
+  bottom: 20px;
+  height: 50px;
+  width: 50px;
+  display: block;
+  border: none;
+  outline: none;
+  max-height: 100px;
+  max-width: 100px; }
 
 .bar.bar-primary {
   border-color: #F4F1E4;
@@ -7689,6 +7797,7 @@ a.button {
     background-position: bottom;
     text-transform: uppercase; }
   .bar.bar-primary .title {
+    font-family: "LatoBlack";
     font-weight: bold;
     text-align: left;
     left: 0px;
@@ -7699,7 +7808,8 @@ a.button {
     font-size: 24px;
     line-height: 24px;
     margin-bottom: -4px;
-    margin-left: -29px; }
+    margin-left: -29px;
+    cursor: default; }
   .bar.bar-primary.bar-footer {
     background-image: linear-gradient(180deg, #F4F1E4, #F4F1E4 50%, transparent 50%); }
 
@@ -7707,6 +7817,16 @@ a.button {
   pointer-events: auto !important; }
   .popup-container.infoPopup .popup {
     border: 2px solid grey; }
+.popup-container.congratulation {
+  pointer-events: auto !important; }
+.popup-container.sorry {
+  pointer-events: auto !important; }
+
+h3 {
+  font-size: 1.2em; }
+
+.text-center {
+  text-align: center; }
 
 .glossarwort {
   color: #AE3E3B; }
@@ -7717,19 +7837,293 @@ a.button {
 .hidden {
   display: none; }
 
-.popover .glossartext {
+.popover .glossartext, .popover .quellentext {
   padding: 1em; }
+.popover.quelle {
+  width: 500px; }
+  .popover.quelle .alt {
+    width: 50%;
+    position: absolute;
+    left: 0px;
+    padding: 5px; }
+  .popover.quelle .neu {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    padding: 5px; }
 
+.button.end-lesson {
+  height: 44px;
+  width: 44px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: 4;
+  background-color: crimson; }
+
+.weiter-box {
+  position: absolute;
+  bottom: 2em;
+  width: 100%;
+  font-family: "LatoSemibold", "HelveticaNeue-Semibold", "Roboto-Semibold", sans-serif-bold;
+  color: #AE3E3B; }
+
+.button.weiter-button {
+  display: block;
+  background-image: url(../img/icons/swordToNextLevel.png);
+  height: 49px;
+  width: 155px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all cubic-bezier(.1, .7, .1, 1) 400ms;
+  transition: all cubic-bezier(.1, .7, .1, 1) 400ms; }
+  .button.weiter-button:active {
+    -webkit-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0); }
+
+.outro.modal .row {
+  height: 100%; }
+  .outro.modal .row > .col {
+    height: 100%; }
+.outro.modal .belohnung {
+  max-height: 80%; }
+.outro.modal .abschlusstext {
+  background-color: #F4F1E4;
+  padding: 1em;
+  position: absolute;
+  top: 20%; }
+
+.intro.modal .intro-text-box {
+  background-color: #F4F1E4; }
+
+.intro.modal .scroll-content-false .row, .outro.modal .scroll-content-false .row {
+  background-color: transparent; }
+
+/*
+	the used font is lato - implemented in different weights.
+*/
+@font-face {
+  font-family: 'Lato';
+  src: url('./fonts/lato/Lato-Regular.eot');
+  src: url('./fonts/lato/Lato-Regular.eot?#iefix') format('embedded-opentype'), url('./fonts/lato/Lato-Regular.woff') format('woff'), url('./fonts/lato/Lato-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./fonts/lato/Lato-Italic.eot');
+  src: url('./fonts/lato/Lato-Italic.eot?#iefix') format('embedded-opentype'), url('./fonts/lato/Lato-Italic.woff') format('woff'), url('./fonts/lato/Lato-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'LatoSemibold';
+  src: url('./fonts/lato/Lato-Semibold.eot');
+  src: url('./fonts/lato/Lato-Semibold.eot?#iefix') format('embedded-opentype'), url('./fonts/lato/Lato-Semibold.woff') format('woff'), url('./fonts/lato/Lato-Semibold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'LatoSemibold';
+  src: url('./fonts/lato/Lato-SemiboldItalic.eot');
+  src: url('./fonts/lato/Lato-SemiboldItalic.eot?#iefix') format('embedded-opentype'), url('./fonts/lato/Lato-SemiboldItalic.woff') format('woff'), url('./fonts/lato/Lato-SemiboldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./fonts/lato/Lato-Bold.eot');
+  src: url('./fonts/lato/Lato-Bold.eot?#iefix') format('embedded-opentype'), url('./fonts/lato/Lato-Bold.woff') format('woff'), url('./fonts/lato/Lato-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./fonts/lato/Lato-BoldItalic.eot');
+  src: url('./fonts/lato/Lato-BoldItalic.eot?#iefix') format('embedded-opentype'), url('./fonts/lato/Lato-BoldItalic.woff') format('woff'), url('./fonts/lato/Lato-BoldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: bold;
+  text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'LatoLight';
+  src: url('./fonts/lato/Lato-Light.eot');
+  src: url('./fonts/lato/Lato-Light.eot?#iefix') format('embedded-opentype'), url('./fonts/lato/Lato-Light.woff') format('woff'), url('./fonts/lato/Lato-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'LatoLight';
+  src: url('./fonts/lato/Lato-LightItalic.eot');
+  src: url('./fonts/lato/Lato-LightItalic.eot?#iefix') format('embedded-opentype'), url('./fonts/lato/Lato-LightItalic.woff') format('woff'), url('./fonts/lato/Lato-LightItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'LatoBlack';
+  src: url('./fonts/lato/Lato-Black.eot');
+  src: url('./fonts/lato/Lato-Black.eot?#iefix') format('embedded-opentype'), url('./fonts/lato/Lato-Black.woff') format('woff'), url('./fonts/lato/Lato-Black.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'LatoBlack';
+  src: url('./fonts/lato/Lato-BlackItalic.eot');
+  src: url('./fonts/lato/Lato-BlackItalic.eot?#iefix') format('embedded-opentype'), url('./fonts/lato/Lato-BlackItalic.woff') format('woff'), url('./fonts/lato/Lato-BlackItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+/*
+FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
+
+
+//  Webfont: Medium 
+@font-face {
+    font-family: 'LatoMedium';
+    src: url('./fonts/lato/Lato-Medium.eot'); //  IE9 Compat Modes 
+    src: url('./fonts/lato/Lato-Medium.eot?#iefix') format('embedded-opentype'), //  IE6-IE8 
+         url('./fonts/lato/Lato-Medium.woff') format('woff'), //  Modern Browsers 
+         url('./fonts/lato/Lato-Medium.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+//  MediumItalic 
+@font-face {
+    font-family: 'LatoMedium';
+    src: url('./fonts/lato/Lato-MediumItalic.eot'); //  IE9 Compat Modes 
+    src: url('./fonts/lato/Lato-MediumItalic.eot?#iefix') format('embedded-opentype'), //  IE6-IE8 
+         url('./fonts/lato/Lato-MediumItalic.woff') format('woff'), //  Modern Browsers 
+         url('./fonts/lato/Lato-MediumItalic.ttf') format('truetype'); 
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+// Heavy
+@font-face {
+    font-family: 'LatoHeavy';
+    src: url('./fonts/lato/Lato-Heavy.eot'); //  IE9 Compat Modes 
+    src: url('./fonts/lato/Lato-Heavy.eot?#iefix') format('embedded-opentype'), //  IE6-IE8 
+         url('./fonts/lato/Lato-Heavy.woff') format('woff'), //  Modern Browsers 
+         url('./fonts/lato/Lato-Heavy.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+// HeavyItalic
+@font-face {
+    font-family: 'LatoHeavy';
+    src: url('./fonts/lato/Lato-HeavyItalic.eot'); //  IE9 Compat Modes 
+    src: url('./fonts/lato/Lato-HeavyItalic.eot?#iefix') format('embedded-opentype'), //  IE6-IE8 
+         url('./fonts/lato/Lato-HeavyItalic.woff') format('woff'), //  Modern Browsers 
+         url('./fonts/lato/Lato-HeavyItalic.ttf') format('truetype'); 
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+// Thin 
+@font-face {
+    font-family: 'LatoThin';
+    src: url('./fonts/lato/Lato-Thin.eot'); //  IE9 Compat Modes 
+    src: url('./fonts/lato/Lato-Thin.eot?#iefix') format('embedded-opentype'), //  IE6-IE8 
+         url('./fonts/lato/Lato-Thin.woff') format('woff'), //  Modern Browsers 
+         url('./fonts/lato/Lato-Thin.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+// Thin-Italic
+@font-face {
+    font-family: 'LatoThin';
+    src: url('./fonts/lato/Lato-ThinItalic.eot'); //  IE9 Compat Modes 
+    src: url('./fonts/lato/Lato-ThinItalic.eot?#iefix') format('embedded-opentype'), //  IE6-IE8 
+         url('./fonts/lato/Lato-ThinItalic.woff') format('woff'), //  Modern Browsers 
+         url('./fonts/lato/Lato-ThinItalic.ttf') format('truetype'); 
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+// Hairline 
+@font-face {
+    font-family: 'LatoHairline';
+    src: url('./fonts/lato/Lato-Hairline.eot'); //  IE9 Compat Modes 
+    src: url('./fonts/lato/Lato-Hairline.eot?#iefix') format('embedded-opentype'), //  IE6-IE8 
+         url('./fonts/lato/Lato-Hairline.woff') format('woff'), //  Modern Browsers 
+         url('./fonts/lato/Lato-Hairline.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+// HairlineItalic 
+@font-face {
+    font-family: 'LatoHairline';
+    src: url('./fonts/lato/Lato-HairlineItalic.eot'); //  IE9 Compat Modes 
+    src: url('./fonts/lato/Lato-HairlineItalic.eot?#iefix') format('embedded-opentype'), //  IE6-IE8 
+         url('./fonts/lato/Lato-HairlineItalic.woff') format('woff'), //  Modern Browsers 
+         url('./fonts/lato/Lato-HairlineItalic.ttf') format('truetype'); 
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+*/
 .game-container.dress-up {
   background-color: #e0e0e0; }
+  .game-container.dress-up img.drag-item {
+    max-width: 200px; }
   .game-container.dress-up .person {
+    left: 33%;
+    width: 33%;
+    height: 100%;
+    position: absolute;
+    text-align: center; }
+    .game-container.dress-up .person .width-limiter {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: inline-block; }
+    .game-container.dress-up .person .aspect-ratio-container {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      padding-top: 200%; }
+    .game-container.dress-up .person .object-positioned {
+      display: none; }
+  .game-container.dress-up .bg-image-box {
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    width: 100%;
+    height: 100%; }
+  .game-container.dress-up .bg-image {
+    max-width: 100%;
+    position: relative;
+    display: inline-block;
+    top: 0px;
     left: 0px;
-    width: 33%; }
+    right: 0px;
+    max-height: 100%; }
+    .game-container.dress-up .bg-image.hidden {
+      display: none; }
   .game-container.dress-up .clothes {
     width: 33%;
     height: 100%;
     position: absolute;
-    left: 33%; }
+    left: 0%; }
+    .game-container.dress-up .clothes .drag-item, .game-container.dress-up .clothes .dragged-item {
+      width: 50%; }
   .game-container.dress-up .textContainer {
     width: 33%;
     left: 67%;
@@ -7737,40 +8131,80 @@ a.button {
     padding: 1em;
     position: absolute; }
   .game-container.dress-up #helmet {
-    height: 40px;
-    width: 40px;
-    display: block;
-    background-color: red; }
+    top: 0px;
+    left: 0px; }
   .game-container.dress-up #helmet-target {
-    top: 10%;
-    left: 60px;
-    width: 100px;
-    height: 100px;
-    display: block;
-    background-color: red;
-    position: absolute; }
-  .game-container.dress-up #pants {
-    top: 5px;
-    left: 50px;
-    height: 40px;
-    width: 40px;
-    display: block;
-    background-color: yellow; }
-  .game-container.dress-up #pants-target {
-    top: 70%;
-    left: 50px;
-    width: 50px;
-    height: 100px;
-    display: block;
-    background-color: yellow;
-    position: absolute; }
+    top: 2%;
+    left: 25%;
+    width: 50%;
+    height: 20%; }
+  .game-container.dress-up #headthing {
+    top: 0px;
+    left: 50%; }
+  .game-container.dress-up #headthing-target {
+    top: 2%;
+    left: 25%;
+    width: 50%;
+    height: 20%; }
+  .game-container.dress-up #hand {
+    top: 25%;
+    left: 0px; }
+  .game-container.dress-up #hand-target {
+    top: 37%;
+    left: 0%;
+    width: 100%;
+    height: 20%;
+    background-color: green; }
+  .game-container.dress-up #knee {
+    top: 25%;
+    left: 50%; }
+  .game-container.dress-up #knee-target {
+    top: 65%;
+    left: 10%;
+    width: 80%;
+    height: 20%;
+    background-color: orange; }
+  .game-container.dress-up #neck {
+    top: 50%;
+    left: 0px; }
+  .game-container.dress-up #neck-target {
+    top: 15%;
+    left: 30%;
+    width: 40%;
+    height: 10%;
+    background-color: blue; }
+  .game-container.dress-up #jacket {
+    top: 50%;
+    left: 50%; }
+  .game-container.dress-up #jacket-target {
+    top: 18%;
+    left: 25%;
+    width: 50%;
+    height: 25%;
+    background-color: royalblue; }
+  .game-container.dress-up #breast {
+    top: 75%;
+    left: 0px; }
+  .game-container.dress-up #breast-target {
+    top: 18%;
+    left: 35%;
+    width: 30%;
+    height: 18%;
+    background-color: limegreen; }
 
 .game-container {
   height: 100%;
   width: 100%;
   position: relative; }
+  .game-container .col {
+    padding: 5px 10px; }
+    .game-container .col.border-left {
+      border-left: 1px solid #AE3E3B;
+      padding-left: 20px; }
   .game-container .hidden {
     display: none; }
+  .game-container .transparent {
+    visibility: hidden; }
   .game-container .target-box {
     height: 100%;
     width: 50%;
@@ -7785,15 +8219,24 @@ a.button {
     left: 0px;
     top: 0px;
     transition: all 1s;
-    -webkit-transition: all 1s; }
+    -webkit-transition: all 1s;
+    background-color: #FFFDF8; }
   .game-container .dragged-item {
     position: absolute;
     left: 0px;
-    top: 0px; }
+    top: 0px;
+    transition: scale 1s !important;
+    -webkit-transition: scale 1s !important; }
   .game-container .drag-target {
     position: absolute;
     left: 0px;
     top: 0px; }
+
+#preGameScreen {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%; }
 
 .game-container.sword-parts .swordparts {
   width: 33%;
@@ -7960,13 +8403,24 @@ a.button {
   position: relative; }
   .game-container.choose-video .video video {
     position: absolute;
-    top: 0px; }
+    top: 40px;
+    max-height: calc(100% - 40px); }
   .game-container.choose-video .video .video-overlay {
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0px;
+    top: 40px;
     background-color: #fff; }
+  .game-container.choose-video .video h3 {
+    position: absolute;
+    top: 5px; }
+.game-container.choose-video #video-container {
+  position: relative; }
+.game-container.choose-video #button-box {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  text-align: center; }
 
 .game-container.cutting-up .cut-instruction {
   font-weight: bold;
@@ -8026,3 +8480,35 @@ a.button {
   100% {
     opacity: 0.8;
     transform: scale(0.8); } }
+
+.game-container.mensur #abstand_ziehbereich {
+  position: relative;
+  background-image: url(../img/bar-end-stroke.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom; }
+.game-container.mensur #abstand_zieher {
+  height: 100%;
+  width: 50%;
+  background-image: url(../img/lessons/09/game/abstand-figur_links.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0px;
+  transition: transform ease 1s; }
+.game-container.mensur #abstand_ziel {
+  height: 100%;
+  width: 50%;
+  background-image: url(../img/lessons/09/game/abstand-figur_rechts.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  pointer-events: none; }
+
+.game-container.huten .armstellungen img, .game-container.huten .beinstellungen img {
+  width: 100%;
+  max-height: 100%; }
+  .game-container.huten .armstellungen img.selected, .game-container.huten .beinstellungen img.selected {
+    outline: 2px solid #AE3E3B; }

@@ -18,6 +18,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "components/_popups.scss";
 @import "components/_text.scss";
 @import "components/_popover.scss";
+@import "components/_campaign.scss";
+@import "components/_font.scss";
 
 @import "games/_dressUp.scss";
 @import "games/_dragDrop.scss";
@@ -25,3 +27,5 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "games/_chooseVideo.scss";
 @import "games/_pullPosition.scss";
 @import "games/_cuttingUp.scss";
+@import "games/_mensur.scss";
+@import "games/_huten.scss";

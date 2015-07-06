@@ -10,6 +10,7 @@
 
 		}
 		.title {
+			font-family: "LatoBlack";
 			font-weight: bold;
 			text-align: left;
 			left: 0px;
@@ -21,6 +22,7 @@
 			line-height: 24px;
 			margin-bottom: -4px;
 			margin-left: -29px;
+			cursor: default;
 		}
 		&.bar-footer{
 			background-image: linear-gradient(180deg, $bar-primary-border, $bar-primary-border 50%, transparent 50%);

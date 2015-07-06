@@ -1,11 +1,14 @@
-<ion-modal-view>
+<ion-modal-view class="intro">
 	<ion-content>
-		<div class="row">
-			<div class="col"></div>
-			<div class="col">
-				<center>Intro!
-				Das ist das Intro von Lektion 1.</center>
-				<button class="button button-block button-balanced" ng-click="closeIntro()">Los geht's!</button>
+		<!-- SEITENFÜLLENDES HINTERGRUNDBILD -->
+	  	<img class="hintergrundbild" src="../img/01/bg01.png">
+	  	<img src="../img/04/char04.png"class="charakter" />
+		<div class="row"> 
+			<!-- SPALTE: col-x definiert breite. -->
+			<div class="col col-33 col-offset-67  intro-text-box">
+				<h1>Huten</h1>				<p>Die Grundlagen der Körperhaltung beherrscht du inzwischen. <br> In dieser Lektion geht es um die Ausgangspositionen in denen du mit dem Schwert stehst. Aus diesen Positionen hast kannst du schnell Angreifen und dich ebenso schnell Verteidigen!
+</p>
+				<button class="button button-block button-balanced" ng-click="closeIntro()">LOS GEHT`S!</button>
 			</div>
 			<div class="col"></div>
 		</div>

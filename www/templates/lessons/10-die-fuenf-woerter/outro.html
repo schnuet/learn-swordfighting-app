@@ -1,12 +1,20 @@
-<ion-modal-view>
-	<ion-content>
+<ion-modal-view class="outro">
+	<ion-content scroll="false">
 		<div class="row">
-			<div class="col"></div>
-			<div class="col">
-				<center>Geschafft!</center>
+			<div class="col col-67">
+				<h2>Deine Belohnung</h2>
+				<!-- BILD (Belohnung) -->
+				<img src="./img/lessons/10/10.png" class="belohnung" />				
+			</div>			
+			<div class="col col-33">				
+				<div class="abschlusstext">					
+					<h4>Die fünf Wörter</h4>
+					<p>
+						Herzlichen Glückwunsch! Das war das zehnte und letzte Kapitel der Lerntour. <br>Dieses Pferd soll dich auf deinem weiteren Weg standesgemäß zu neuen Fechtlehrern tragen! Sein Name ist Plötze.<br>Du kennst jetzt die Grundlagen des historischen Schwertkampfes der deutschen Schule. Damit bist du bestens ausgerüstet dir eine eigene Trainingsgruppe zu suchen oder Seminare von Fechtlehrern zu besuchen. <br>Bleib offen für neue Eindrücke! Der Schwertkampf basiert auf vielen unterschiedlichen Interpretationen der Quellen und jeder Lehrer hat seine eigene Art eine Technik auszuführen und eigene Tricks zu zeigen. Versuche welche der Variationen dir am besten liegen und finde heraus welcher Stil für dich am besten funktioniert.<br>Weißt du nicht ob es in deiner Nähe einen Verein gibt? Kein Problem.<br>Auf der nächsten Seite findest du eine Karte auf der du den Verein finden kannst, der deinem Wohnort am nächsten liegt.
+					</p>
+				</div>
 				<button class="button button-block button-balanced" ng-click="closeOutro(); gotoState('menu.dashboard');">Zum Kampagnenmenü</button>
 			</div>
-			<div class="col"></div>
 		</div>
 	</ion-content>
 </ion-modal-view>

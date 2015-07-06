@@ -2,51 +2,130 @@
 	<ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)">
 	<!-- SEITENINHALT START: -->
 
-	<!-- SEITE 1 -->
-	  <ion-slide>
-	  	<ion-content class="padding" has-bouncing="false">
-		    <div class="row responsive-md"> 
-				<div class="col col-67">
-					<h1>Asterix im Land der Goten</h1>
-					<p>Im diesem Band der Asterix-Serie suchen Asterix und Obelix ihren Druiden im Land der Goten, der wegen seinem mächtigen Zaubertrank entführt wurde.</p>
-					<div style="background-color: green; width:200px; height:700px;"></div>
-				</div>
-				<div class="col"></div>
+<!-- SEITE 1 -->
+	<ion-slide>
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<h1>Schutzausrüstung</h1>
+			<!-- BREITES BILD -->
+			<div class="row height-67"> 
+				<img class="breitbild" src="./img/lessons/01/bild.png">
 			</div>
+			<!-- DARUNTER LIEGENDER TEXT -->
+			<div class="row height-25">
+				<!-- Spalte 1 -->
+				<div class="col col-33">
+					<p>
+						Zwar gab es noch im 18. Jahrhundert das Sprichwort, einen Fechtmeister erkenne man an der Augenklappe und den fehlenden Zähnen, trotzdem wurden auch im Mittelalter schon Trainingsschwerter verwendet. 
+					</p>
+				</div>
+				<!-- Spalte 2 --> 
+				<div class="col col-33">
+					<p>
+						Heutzutage ist Schutzausrüstung natürlich nicht nur versicherungstechnisch unumgänglich, sondern dient auch dazu, dem Trainingspartner ein sicheres übungsziel zu bieten.
+					</p>
+				</div>
+				<!-- Spalte 3 -->
+				<div class="col col-33">
+					<p>
+						Wie viel Schutzausrüstung für welche Art von Training oder Turnier nötig ist, ist oft umstritten. Je mehr Ausrüstung getragen wird, desto mehr behindert sie die Bewegung, je weniger desto höher ist das Verletzungsrisiko.
+					</p>
+				</div >	
+			</div>
+
 		</ion-content>
-	  </ion-slide>
+	</ion-slide>
 
 	<!-- SEITE 2 -->
 	  <ion-slide>
-	  	<ion-content class="padding" has-bouncing="false">
-		    <div class="row responsive-md"> 
-				<div class="col col-67">
-					<h1>Lektion 1 - Schwertbegriffe</h1>
-					<h5>Was wollte Asterix im Land der Goten?</h5>
-					<multiple-choice choices="Miraculix retten, Haudraufwienix suchen, Krautsalat probieren, Römer verjagen" right-choice="0" callback="Lesson.end()">
-
-					</multiple-choice>
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
+			<div class="row">
+				<div class="col col-33">					
+					<h1>Schutzausrüstung</h1>					
+					<p>
+						Meist wird also die Ausrüstung an die Intensität des Widerstands angepasst, den der Partner bei den Übungen leisten darf. <br>
+						Die Entwicklung professioneller Ausrüstung für das Historische Fechten ist derzeit noch im Anfangsstadium. Zwar gibt es meist schon speziell angefertigte Ausrüstung, diese passt allerdings nicht jedem oder ist relativ teuer, deshalb behilft man sich häufig noch mit Schutzausrüstung aus anderen Sportarten.<br>
+						Für Anfänger empfiehlt sich zunächst vor allem eine Fechtmaske und ein gutes Paar Handschuhe. Je nach Training können weitere Ausrüstungsteile sinnvoll sein.
+					</p>
+				
 				</div>
-				<div class="col"></div>
+				<div class="col col-67">
+					<!-- BILD _ HÖHE VON 75 % -->
+					<!-- Bilder zum weiterschalten -->
+					<div class="row height-75 image-slider"> 
+						<div class="slider-slide">
+							<img src="./img/lessons/08/Ausrüstungsteile/07.png" class="normalbild" />
+							<div class="bildname">
+								<p>Fechtjacke</p>
+							</div>
+						</div>
+					</div>
+					
+					<!-- DARUNTER LIEGENDER TEXT -->
+					<div class="row height-25"> 
+						<div class="col col-33"></div>
+						<div class="col col-33"></div>
+					</div>
+				</div>
 			</div>
 		</ion-content>
 	  </ion-slide>
 
 	<!-- SEITE 3 -->
 	  <ion-slide>
-	  	<ion-content class="padding" scroll="false" has-bouncing="false">
-			<game-dress-up onwin="Lesson.end()">
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<game-dress-up onwin="Lesson.addEnd()">
 				<div class="game-container dress-up">
-					<div class="target-box">
-						<div id="helmet-target"></div>
-						<div id="pants-target"></div>
+					<div class="bg-image-box">
+						<img id="helmet-bg" class="bg-image hidden" src="./img/lessons/08/game/person/01.png">
+						<img id="headthing-bg" class="bg-image hidden" src="./img/lessons/08/game/person/03.png">
+						<img id="hand-bg" class="bg-image hidden" src="./img/lessons/08/game/person/02.png">
+						<img id="jacket-bg" class="bg-image hidden" src="./img/lessons/08/game/person/06.png">
+						<img id="knee-bg" class="bg-image hidden" src="./img/lessons/08/game/person/05.png">
+						<img id="neck-bg" class="bg-image hidden" src="./img/lessons/08/game/person/07.png">
+						<img id="breast-bg" class="bg-image hidden" src="./img/lessons/08/game/person/08.png">
+						<img id="bg" class="bg-image" src="./img/lessons/08/game/person/09.png">
+					</div>
+					<div class="person">
+						<!-- Diese krasse Kombination von Boxen sichert das Seitenverhältnis für jede größe. --> 
+						<div class="width-limiter">
+							<div class="aspect-ratio-container">
+								<div id="helmet-target" class="drag-target transparent"></div>
+								<div id="headthing-target" class="drag-target transparent"></div>
+								<div id="hand-target" class="drag-target transparent"></div>
+								<div id="jacket-target" class="drag-target transparent"></div>
+								<div id="knee-target" class="drag-target transparent"></div>
+								<div id="neck-target" class="drag-target transparent"></div>
+								<div id="breast-target" class="drag-target transparent"></div>
+							</div>
+						</div>
 					</div>
 					<div class="clothes">
-						<img id="helmet" class="drag-item">
-						<img id="pants" class="drag-item"> 
+						<img id="helmet" class="drag-item" src="./img/lessons/08/game/items/01.png" alt="helmet">
+						<img  id="headthing" class="drag-item" src="./img/lessons/08/game/items/02.png" alt="headthing">
+						<img id="hand" class="drag-item" src="./img/lessons/08/game/items/03.png" alt="hand">
+						<img id="jacket" class="drag-item" src="./img/lessons/08/game/items/07.png" alt="jacket">
+						<img id="knee" class="drag-item" src="./img/lessons/08/game/items/06.png" alt="knee">
+						<img id="neck" class="drag-item" src="./img/lessons/08/game/items/08.png" alt="neck">
+						<img id="breast" class="drag-item" src="./img/lessons/08/game/items/09.png" alt="breast">
 					</div>
 				</div>
 			</game-dress-up>
+			<div class="row" id="preGameScreen"> 
+				<div class="col col-80 col-offset-10 text-center">
+					<h3>Übung: Ausrüsten!</h3>
+					<div class="row"> 
+						<div class="col col-80 col-offset-10 instruction-box">
+							<p>Ziehe die Ausrüstungsteile in der richtigen Reihenfolge an!</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-30 col-offset-40">
+							<button class="button button-positive" ng-click="game.start();">Spiel Starten!</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</ion-content>
 	  </ion-slide>
 

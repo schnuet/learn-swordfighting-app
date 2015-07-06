@@ -1,0 +1,55 @@
+.button.end-lesson {
+	height: 44px;
+	width: 44px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	z-index: 4;
+	background-color: crimson;
+}
+.weiter-box {
+	position: absolute;
+	bottom: 2em;
+	width: 100%;
+	font-family: $font-family-semibold-sans-serif;
+	color: $highlight;
+}
+.button.weiter-button {
+	display: block;
+	background-image: url(../img/icons/swordToNextLevel.png);
+	height: 49px;
+	width: 155px;
+	background-size: cover;
+	background-repeat: no-repeat; 
+	@include transition(all cubic-bezier(.1, .7, .1, 1) 400ms);
+	&:active {
+		@include translate3d(20px, 0, 0);
+	}
+}
+.outro.modal {
+	.row {
+		height: 100%;
+		& > .col {
+			height: 100%;
+		}
+	}
+	.belohnung {
+		max-height: 80%;
+	}
+	.abschlusstext {
+		background-color: $primary;
+		padding: 1em;
+		position: absolute;
+		top: 20%;
+	}
+}
+.intro.modal {
+	.intro-text-box {
+		background-color: $primary;
+	}
+}
+.intro.modal, .outro.modal {
+	.scroll-content-false .row {
+		background-color: transparent;
+	}
+}

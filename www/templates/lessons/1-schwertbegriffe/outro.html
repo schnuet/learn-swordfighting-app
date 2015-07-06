@@ -1,13 +1,25 @@
-<ion-modal-view>
-	<ion-content>
+<ion-modal-view class="outro">
+	<ion-content scroll="false">
 		<div class="row">
-			<div class="col"></div>
-			<div class="col">
-				<center>Geschafft!</center>
-				<button class="button button-block button-balanced" ng-click="closeOutro(); gotoState('menu.campaign-lesson-' + (Lesson.lessonnumber+1));">Zur nächsten Lektion</button>
-				<button class="button button-block button-balanced" ng-click="closeOutro(); gotoState('menu.dashboard');">Zum Kampagnenmenü</button>
+			<div class="col col-67">
+				<h2>Deine Belohnung</h2>
+				<!-- BILD (Belohnung) -->
+				<img src="./img/lessons/01/1.png" class="belohnung" />	
 			</div>
-			<div class="col"></div>
+			<div class="col col-33">
+
+				<div class="abschlusstext">
+					<h4>Schwertbegriffe</h4>
+					<p>
+						Klasse! Die erste Lektion hast du mit Bravour gemeistert! <br>Jetzt, wo du die Teile des Schwertes benennen kannst, erhältst du dein erstes eigenes Übungsschwert! <br>In der nächsten Lektion lernst du wie du dein Schwert richtig hältst.
+					</p>
+				</div>
+
+				<div class="weiter-box">
+					<span>AUF ZUR LEKTION</span>
+					<button class="button button-clear weiter-button" ng-click="closeOutro(); gotoState('menu.campaign-lesson-' + (Lesson.lessonnumber+1));"></button>
+				</div>
+			</div>
 		</div>
 	</ion-content>
 </ion-modal-view>

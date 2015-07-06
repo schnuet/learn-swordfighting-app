@@ -57,8 +57,11 @@ angular.module('starter')
 		}
 	})
 
+  /*
+    CAMPAIGN-LESSONS
+  */
   .state('menu.campaign-lesson-1', {
-    url: '/lesson1/',
+    url: '/campaign_lesson1/',
     params : { campaign: true },
     views: {
       'menuContent': {
@@ -69,7 +72,7 @@ angular.module('starter')
   })
 
   .state('menu.campaign-lesson-2', {
-    url: '/lesson2/',
+    url: '/campaign_lesson2/',
     params : { campaign: true },
     views: {
       'menuContent': {
@@ -80,7 +83,7 @@ angular.module('starter')
   })
 
   .state('menu.campaign-lesson-3', {
-    url: '/lesson3/',
+    url: '/campaign_lesson3/',
     params : { campaign: true },
     views: {
       'menuContent': {
@@ -91,7 +94,7 @@ angular.module('starter')
   })
 
   .state('menu.campaign-lesson-4', {
-    url: '/lesson4/',
+    url: '/campaign_lesson4/',
     params : { campaign: true },
     views: {
       'menuContent': {
@@ -102,7 +105,7 @@ angular.module('starter')
   })
 
   .state('menu.campaign-lesson-5', {
-    url: '/lesson5/',
+    url: '/campaign_lesson5/',
     params : { campaign: true },
     views: {
       'menuContent': {
@@ -113,7 +116,7 @@ angular.module('starter')
   })
 
   .state('menu.campaign-lesson-6', {
-    url: '/lesson6/',
+    url: '/campaign_lesson6/',
     params : { campaign: true },
     views: {
       'menuContent': {
@@ -124,7 +127,7 @@ angular.module('starter')
   })
 
   .state('menu.campaign-lesson-7', {
-    url: '/lesson7/',
+    url: '/campaign_lesson7/',
     params : { campaign: true },
     views: {
       'menuContent': {
@@ -135,7 +138,7 @@ angular.module('starter')
   })
 
   .state('menu.campaign-lesson-8', {
-    url: '/lesson8/',
+    url: '/campaign_lesson8/',
     params : { campaign: true },
     views: {
       'menuContent': {
@@ -146,7 +149,7 @@ angular.module('starter')
   })
 
   .state('menu.campaign-lesson-9', {
-    url: '/lesson9/',
+    url: '/campaign_lesson9/',
     params : { campaign: true },
     views: {
       'menuContent': {
@@ -157,8 +160,122 @@ angular.module('starter')
   })
 
   .state('menu.campaign-lesson-10', {
-    url: '/lesson10/',
+    url: '/campaign_lesson10/',
     params : { campaign: true },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/10-die-fuenf-woerter/lesson_10.html',
+        controller: '10_DieFuenfWoerterCtrl'
+      }
+    }
+  })
+
+
+  /*
+    CATALOG - LESSONS:
+  */
+  .state('menu.lesson-1', {
+    url: '/lesson1/',
+    params : { campaign: false },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/1-schwertbegriffe/lesson_01.html',
+        controller: '01_SchwertbegriffeCtrl'
+      }
+    }
+  })
+
+  .state('menu.lesson-2', {
+    url: '/lesson2/',
+    params : { campaign: false },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/2-der-griff/lesson_02.html',
+        controller: '02_DerGriffCtrl'
+      }
+    }
+  })
+
+  .state('menu.lesson-3', {
+    url: '/lesson3/',
+    params : { campaign: false },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/3-beinarbeit/lesson_03.html',
+        controller: '03_BeinarbeitCtrl'
+      }
+    }
+  })
+
+  .state('menu.lesson-4', {
+    url: '/lesson4/',
+    params : { campaign: false },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/4-huten/lesson_04.html',
+        controller: '04_HutenCtrl'
+      }
+    }
+  })
+
+  .state('menu.lesson-5', {
+    url: '/lesson5/',
+    params : { campaign: false },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/5-quellen/lesson_05.html',
+        controller: '05_QuellenCtrl'
+      }
+    }
+  })
+
+  .state('menu.lesson-6', {
+    url: '/lesson6/',
+    params : { campaign: false },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/6-angriffe/lesson_06.html',
+        controller: '06_AngriffeCtrl'
+      }
+    }
+  })
+
+  .state('menu.lesson-7', {
+    url: '/lesson7/',
+    params : { campaign: false },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/7-schnitttests/lesson_07.html',
+        controller: '07_SchnitttestsCtrl'
+      }
+    }
+  })
+
+  .state('menu.lesson-8', {
+    url: '/lesson8/',
+    params : { campaign: false },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/8-schutzausruestung/lesson_08.html',
+        controller: '08_SchutzausruestungCtrl'
+      }
+    }
+  })
+
+  .state('menu.lesson-9', {
+    url: '/lesson9/',
+    params : { campaign: false },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/lessons/9-mensur/lesson_09.html',
+        controller: '09_MensurCtrl'
+      }
+    }
+  })
+
+  .state('menu.lesson-10', {
+    url: '/lesson10/',
+    params : { campaign: false },
     views: {
       'menuContent': {
         templateUrl: 'templates/lessons/10-die-fuenf-woerter/lesson_10.html',

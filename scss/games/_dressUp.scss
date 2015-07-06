@@ -1,15 +1,59 @@
 .game-container.dress-up {
 	background-color: #e0e0e0;
 
+	img.drag-item {
+		max-width: 200px;
+	}
 	.person {
-		left: 0px;
+		left: 33%;
 		width: 33%;
+		height: 100%;
+		position: absolute;
+		text-align: center;
+		.width-limiter {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: inline-block;
+		}
+		.aspect-ratio-container {
+			position: absolute;
+			width: 100%;
+			height: auto;
+			max-height: 100%;
+			padding-top: 200%;
+		}
+		.object-positioned {
+			display: none;
+		}
+	}
+	.bg-image-box {
+		position: absolute;
+		top: 0px;
+		text-align: center;
+		width: 100%;
+		height: 100%;
+	}
+	.bg-image {
+		max-width: 100%;
+		position: relative; 
+		display: inline-block;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		max-height: 100%;
+		&.hidden {
+			display: none;
+		}
 	}
 	.clothes {
 		width: 33%;
 		height: 100%;
 		position: absolute;
-		left: 33%;
+		left: 0%;
+		.drag-item, .dragged-item {
+			width: 50%;
+		}
 	}
 	.textContainer {
 		width: 33%;
@@ -20,35 +64,78 @@
 	}
 
 	#helmet {
-		height: 40px;
-		width: 40px;
-		display: block;
-		background-color: red;
+		top: 0px;
+		left: 0px;
 	}
 	#helmet-target {
-		top: 10%;
-		left: 60px;
-		width: 100px;
-		height: 100px;
-		display: block;
-		background-color: red;
-		position: absolute;
+		top: 2%;
+		left: 25%;
+		width: 50%;
+		height: 20%;
 	}
-	#pants {
-		top: 5px;
-		left: 50px;
-		height: 40px;
-		width: 40px;
-		display: block;
-		background-color: yellow;
+	#headthing {
+		top: 0px;
+		left: 50%;
 	}
-	#pants-target {
-		top: 70%;
-		left: 50px;
-		width: 50px;
-		height: 100px;
-		display: block;
-		background-color: yellow;
-		position: absolute;
+	#headthing-target {
+		top: 2%;
+		left: 25%;
+		width: 50%;
+		height: 20%;
+	}
+	#hand {
+		top: 25%;
+		left: 0px;
+	}
+	#hand-target {
+		top: 37%;
+		left: 0%;
+		width: 100%;
+		height: 20%;
+		background-color: green;
+	}
+	#knee {
+		top: 25%;
+		left: 50%;
+	}
+	#knee-target {
+		top: 65%;
+		left: 10%;
+		width: 80%;
+		height: 20%;
+		background-color: orange;
+	}
+	#neck {
+		top: 50%;
+		left: 0px;
+	}
+	#neck-target {
+		top: 15%;
+		left: 30%;
+		width: 40%;
+		height: 10%;
+		background-color: blue;
+	}
+	#jacket {
+		top: 50%;
+		left: 50%;
+	}
+	#jacket-target {
+		top: 18%;
+		left: 25%;
+		width: 50%;
+		height: 25%;
+		background-color: royalblue;
+	}
+	#breast {
+		top: 75%;
+		left: 0px;
+	}
+	#breast-target {
+		top: 18%;
+		left: 35%;
+		width: 30%;
+		height: 18%;
+		background-color: limegreen;
 	}
 }

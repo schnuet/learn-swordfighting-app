@@ -5,63 +5,51 @@ angular.module('starter.services')
 */
 
 .factory ('Campaign', 
-['Data', '$ionicModal', '$ionicSlideBoxDelegate', 'Profile', '$ionicPopup', '$timeout',
-function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, $ionicPopup, $timeout) {
+['Data', '$ionicModal', '$ionicSlideBoxDelegate', 'Profile', 'Feedback',
+function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, Feedback) {
 
-	var scope = null;
+	var scopes = [];
 
 	var _self = {
 
 		lessonnumber : 0,
 
-		showInfoPopup : function (title, text, cssClass) {
-			if (typeof cssClass === 'undefined') cssClass = '';
-			// An elaborate, custom popup
-			var myPopup = $ionicPopup.show({
-				template: text,
-				cssClass: 'infoPopup ' + cssClass,
-				title: title,
-				subTitle: '',
-				scope: scope,
-				buttons: [
-				]
-			});
-			$timeout (function () {
-				var el = document.getElementsByClassName('popup-container')[0];
-				console.log (el);
-				angular.element(el).on('click', function () { 
-					myPopup.close(); 
-				});
-			}, 500);
-		},
+		showInfoPopup : Feedback.info,
 
 		/*
 			Starting function - should be called at the beginning of every Lesson
 		*/
 		start : function (lNbr, $scope) {
+
+			// save the scope for other functions
+			scopes.push ($scope);
+
 			_self.lessonnumber = lNbr;
+
+			// create the modals:
 			$ionicModal.fromTemplateUrl('templates/lessons/'+ Data.lessonDirectories[lNbr] +'/intro.html', {
 				scope: $scope,
-				animation: 'slide-in-up',
+				animation: 'slide-in-right-left',
 				backdropClickToClose: false
 			}).then(function(modal) {
 				$scope.introModal = modal;
 				modal.show();
 			});
-
 			$ionicModal.fromTemplateUrl('templates/lessons/'+ Data.lessonDirectories[lNbr] +'/outro.html', {
 				scope: $scope,
-				animation: 'slide-in-up',
+				animation: 'slide-in-right-left',
 				backdropClickToClose: false
 			}).then(function(modal) {
 				$scope.outroModal = modal;
 			});
 
-			//Cleanup the modal when we're done with it!
+			// clean up the modals when we leave the page:
 			$scope.$on('$destroy', function() {
 				console.log ('destroyed scope!');
 				$scope.introModal.remove();
 				$scope.outroModal.remove();
+
+				scopes[scopes.indexOf($scope)] = null;
 			});
 
 			$scope.closeIntro = function () {
@@ -75,8 +63,34 @@ function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, $ionicPopup, $time
 				$scope.outroModal.show();
 				_self.end();
 			};*/
+		},
+		addEnd : function () {
 
-			scope = $scope;
+			console.log ('END FUNCTION CALLED!');
+			// only add the button if the scope was defined
+			if (scopes.length === 0 || scopes[scopes.length-1] === null) {
+				console.log ('No scope defined.');
+				return;
+			}
+			var btn = angular.element(document.getElementById("endLessonButton"));        // Create a <button> element
+			btn.removeClass('hidden');                  	// Append <button> to <body>
+			
+			// add a click handler to the button
+			var nextLessonButtonClick = function () {
+				btn.addClass('hidden');
+				btn.off('click', nextLessonButtonClick);
+				btn = null;
+				_self.end ();
+			};
+			angular.element(btn).on('click', nextLessonButtonClick);
+
+			scopes[scopes.length-1].$on('$destroy', function () {
+				if (btn !== null) {
+					btn.addClass('hidden');
+					btn.off('click', nextLessonButtonClick);
+					btn = null;
+				} 
+			});
 		},
 		end : function () {
 			console.log ('End was called');
@@ -85,8 +99,7 @@ function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, $ionicPopup, $time
 				Profile.data.score += 200;
 			}
 			Profile.save();
-			scope.outroModal.show();
-			scope = null;
+			scopes[scopes.length-1].outroModal.show();
 		}
 	};
 

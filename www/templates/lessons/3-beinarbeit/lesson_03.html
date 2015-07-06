@@ -4,74 +4,150 @@
 
 	<!-- SEITE 1 -->
 	  <ion-slide>
-	  	<ion-content class="padding" has-bouncing="false">
-		    <div class="row responsive-md"> 
-				<div class="col col-67">
-					<h1>Asterix im Land der Goten</h1>
-					<p>Im diesem Band der Asterix-Serie suchen Asterix und Obelix ihren Druiden im Land der Goten, der wegen seinem mächtigen Zaubertrank entführt wurde.</p>
-					<div style="background-color: green; width:200px; height:700px;"></div>
-				</div>
-				<div class="col"></div>
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<!-- SPALTE: col-x definiert breite. -->
+			<h1>Beinarbeit</h1>
+			<!-- BREITES BILD -->
+			<div class="row height-67"> 
+				<img class="breitbild" src="./img/lessons/01/bild.png">
 			</div>
+
+			<!-- DARUNTER LIEGENDER TEXT -->					
+			<div class="row height-25">
+				<!-- Spalte 1 -->
+				<div class="col col-33">
+					<p>
+						Um schnell und flexibel in alle Richtungen angreifen und ausweichen zu können, ist ein guter Stand wichtig. Die Schritte werden zunächst nur vorwärts und rückwärts ausgeführt, können aber in alle Richtungen angewendet werden. 
+					</p>
+				</div>
+				<!-- Spalte 2 -->                        
+				<div class="col col-33">
+					<p>
+						Die Füße haben einen Abstand von etwa zwei Fußlängen, der vordere Fuß zeigt zum Gegner, der hintere Fuß steht etwa im 45°-Winkel zum vorderen Fuß. 
+					</p>
+				</div >                        
+				<!-- Spalte 3 -->
+				<div class="col col-33">
+					<p>
+						Hierbei muss man vor allem darauf achten, dass die Knie in dieselbe Richtung wie die Füße weisen und nicht wegknicken. Die Knie sind gebeugt und das Körpergewicht gleichmäßig auf beiden Beinen verteilt.<br> Der Rücken bleibt dabei gerade.
+					</p>
+				</div >	
+			</div>
+					
 		</ion-content>
 	  </ion-slide>
 
 	<!-- SEITE 2 -->
 	  <ion-slide>
-	  	<ion-content class="padding" has-bouncing="false">
-		    <div class="row responsive-md"> 
-				<div class="col col-67">
-					<h1>Lektion 1 - Schwertbegriffe</h1>
-					<h5>Was wollte Asterix im Land der Goten?</h5>
-					<multiple-choice choices="Miraculix retten, Haudraufwienix suchen, Krautsalat probieren, Römer verjagen" right-choice="0" callback="Lesson.end()">
-
-					</multiple-choice>
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
+			<div class="row"> 
+				<!-- SPALTE: col-x definiert breite. -->
+				 <!-- Spalte 1 (hohe Spalte)-->				
+				<div class="col col-33">					
+					<h1>Beinarbeit</h1>					
+					<h3>Passierschritt </h3>
+					<p>
+						Der Passierschritt oder auch „ganzer Schritt" ist ein Schritt, bei dem die Fußstellung wechselt. Der hintere Fuß passiert dabei den vorderen und bleibt vorne gerade ausgerichtet stehen. Währenddessen dreht sich der andere Fuß um 45° ein. <br>TIPP: „Hoppeln" vermeiden: Schaue beim üben in einen Spiegel. Die Schultern sollen beim Laufen immer auf derselben Höhe bleiben.<h3>Halber Schritt</h3><br>Beim halben Schritt bleibt derselbe Fuß vorne. Der vordere Fuß wird gehoben und mit der Ferse zuerst ein Stück nach vorne gesetzt, dann wird der hintere Fuß nachgezogen. Beim Rückwärtsgehen wird der hintere Fuß zuerst angehoben.<br>TIPP: Beim Nachziehen die Füße nicht über den Boden schleifen lassen. Das funktioniert nur auf sauberen und glatten Böden.
+					</p>
+				
 				</div>
-				<div class="col"></div>
+				<div class="col col-67">
+					<!-- BILD _ HÖHE VON 75 % -->
+					
+					<div class="row height-75"> 
+						<!-- Hier werden die Videos Passierschritt und Halber Schritt eingebunden -->
+						<ion-slide-box class="image-slider" prevent-drag>
+							<ion-slide>
+								<video controls>
+									<source src="./img/lessons/03/Halber_Schritt.mp4" type="video/mp4" />
+								</video>
+								<div class="bildname">
+									<p>Passierschritt</p>
+								</div>
+							</ion-slide>
+							<ion-slide>
+								<video controls>
+									<source src="./img/lessons/03/Passierschritt_.mp4" type="video/mp4" />
+								</video>
+								<div class="bildname">
+									<p>Halber Schritt</p>
+								</div>
+							</ion-slide>
+						</ion-slide-box>
+					</div>
+					
+					<!-- DARUNTER LIEGENDER TEXT -->
+					<div class="row height-25"> 
+					<!-- Spalte 2 -->
+						<div class="col col-33">
+							<p></p>
+
+						</div>
+					<!-- Spalte 3 -->
+						<div class="col col-33">
+							<p></p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</ion-content>
-	  </ion-slide>
+	</ion-slide>
 
 	<!-- SEITE 3 -->
 	  <ion-slide>
-	  	<ion-content class="padding" scroll="false" has-bouncing="false">
-			<button id="gameStartButton" class="button button-assertive" ng-click="game.start();">Spiel Starten!</button>
-			<div class="game-container choose-video hidden">
-				<div class="row"> 
-					<div class="col col-67">
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<div class="game-container choose-video">
+				<div class="row height-100"> 
+					<div class="col col-67" id="video-container">
 						<div class="video" id="video-halberschritt">
+							<h3>Erstes Video: Halber Schritt</h3>
 							<video width="100%" id="vid0">
-								<source src="../img/lessons/03/halberschritt.mp4" type="video/mp4">
+								<source src="./img/lessons/03/halberschritt.mp4" type="video/mp4">
 								Ups - dein Gerät unterstützt unsere Videodateien anscheinend nicht.
 								Du darfst die Übung offiziell überspringen.
 							</video>
 							<div class="video-overlay">
-								<h3>Erstes Video: Halber Schritt</h3>
 								<button class="button button-block button-balanced" ng-click="game.startVideo(0);">Video starten</button>
 							</div>
 						</div>
 						<div class="video hidden" id="video-passierschritt">
+							<h3>Zweites Video: Passierschritt</h3>
 							<video width="100%" id="vid1">
-								<source src="../img/lessons/03/passierschritt.mp4" type="video/mp4">
+								<source src="./img/lessons/03/passierschritt.mp4" type="video/mp4">
 								Ups - dein Gerät unterstützt unsere Videodateien anscheinend nicht.
 								Du darfst die Übung offiziell überspringen.
 							</video>
 							<div class="video-overlay">
-								<h3>Zweites Video: Passierschritt</h3>
 								<button class="button button-block button-balanced" ng-click="game.startVideo(1);">Video starten</button>
 							</div>
 						</div>
+						<div class="hidden" id="button-box">
+							<h4>Was war richtig?</h4>
+							<button class="button" ng-click="game.choose(1);">Erste Version</button>
+							<button class="button" ng-click="game.choose(2);">Zweite Version</button>
+						</div>
 					</div>
-					<div class="col col-33" id="button-box">
-						<button class="button" ng-click="game.choose(1);">Erste Version</button>
-						<button class="button" ng-click="game.choose(2);">Zweite Version</button>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col col-67">
+					<div class="col col-33 border-left">
 						<h4>Welches war die richtige Schrittfolge?</h4>
 						<p>Du bekommst Videos gezeigt, in denen ein Schritt auf zwei verschiedene Arten gezeigt wird.<br>
 						Nur eine davon ist richtig! Wähle die richtige aus.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="preGameScreen"> 
+				<div class="col col-80 col-offset-10 text-center">
+					<h3>Übung: Schrittfolgen erkennen</h3>
+					<div class="row"> 
+						<div class="col col-80 col-offset-10 instruction-box">
+							<p>Bei einer Schrittfolge ist schnell etwas falsch gemacht - erkennst du, was?</p>
+							<p>Du bekommst mehrere Videos gezeigt, wähle davon das Video aus, bei dem die Schritte <strong>richtig</strong> gemacht wurden.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-30 col-offset-40">
+							<button class="button button-positive" ng-click="game.start();">Spiel Starten!</button>
+						</div>
 					</div>
 				</div>
 			</div>

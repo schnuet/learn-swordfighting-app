@@ -24,6 +24,7 @@ function (CssDoctor, $ionicGesture, $rootScope) {
 	var e = null;
 	var pos_x = 0;
 	var pos_y = 0;
+	var moveAutomatically = true;
 
 	var gesturesToWatchArray = [];
 
@@ -35,15 +36,21 @@ function (CssDoctor, $ionicGesture, $rootScope) {
 
 			aElement.removeClass ('drag-item');
 			aElement.addClass ('dragged-item');
+			/* old
 			pos_x = e.target.offsetLeft;
-			pos_y = e.target.offsetTop;
+			pos_y = e.target.offsetTop;*/
 		}
 	};
 	// to be bound with: $ionicGesture.on('drag', dragEvent, $element);
 	var dragEvent = function (e) {
 		if (draggedElement !== null) {
+			/* old
 			draggedElement.style.left = (pos_x + e.gesture.deltaX) + 'px';
 			draggedElement.style.top = (pos_y + e.gesture.deltaY) + 'px';
+			*/
+
+			var trans = 'translate3d(' + e.gesture.deltaX + 'px, ' + e.gesture.deltaY +'px, 0)';
+			draggedElement.style[ionic.CSS.TRANSFORM] = trans;
 			//console.log (draggedElement.style.left);
 		}
 	};
@@ -52,14 +59,21 @@ function (CssDoctor, $ionicGesture, $rootScope) {
 		if (draggedElement !== null) {
 			var offsets = CssDoctor.getOffsetsInParent(draggedElement, 'game-container');
 			// get the exact coordinates of the object relative to the gamecontainer
+
+			/* old
 			var l = offsets.left; 	//draggedElement.offsetParent.offsetLeft + draggedElement.offsetLeft;
-			var t = offsets.top; 	//draggedElement.offsetParent.offsetTop + draggedElement.offsetTop;
+			var t = offsets.top; 	//draggedElement.offsetParent.offsetTop + draggedElement.offsetTop;*/
+			var l = offsets.left + e.gesture.deltaX;
+			var t = offsets.top +  e.gesture.deltaY;
 			
 			// get the exact coordinates of the target relative to the gamecontainer
 			var target = document.getElementById (draggedElement.id + '-target');
 			offsets = CssDoctor.getOffsetsInParent(target, 'game-container');
 			var tar_l = offsets.left; 	//target.offsetParent.offsetLeft + target.offsetLeft;
 			var tar_t = offsets.top; 	//target.offsetParent.offsetTop + target.offsetTop; 
+
+			// log the important coordinates:
+			//console.log ('' + l + ', ' + t + '; ' + tar_l + ', ' + tar_t);
 			
 			if (l > tar_l - (draggedElement.offsetWidth/2) && l < tar_l + (target.offsetWidth - draggedElement.offsetWidth/2)) {
 				if (t > tar_t - (draggedElement.offsetHeight/2) && t < tar_t + (target.offsetHeight - draggedElement.offsetHeight/2)) {
@@ -69,12 +83,13 @@ function (CssDoctor, $ionicGesture, $rootScope) {
 					onRightTarget (target);
 				}
 				else {
-					notOnTarget ();
+					release ();
 				}
 			}
 			else {
-				notOnTarget ();
+				release ();
 			}
+			draggedElement.style[ionic.CSS.TRANSFORM] = '';
 			draggedElement = null;
 		}
     };
@@ -84,33 +99,37 @@ function (CssDoctor, $ionicGesture, $rootScope) {
     */
 	var onRightTarget = function (target) {
 
-		$rootScope.$broadcast('dragndrop_right-target', {id : draggedElement.id});
-
+		$rootScope.$broadcast('dragndrop_right-target', {id : draggedElement.id, target: target});
+	};
+	/*
+		The function to move the item to its target:
+	*/
+	var moveToTarget = function (target) {
 		var t_parent = angular.element (target).parent();
 
 		aElement.removeClass('dragged-item');
 		aElement.addClass('object-positioned');
-		console.log (draggedElement.offsetWidth);
+		//console.log (draggedElement.offsetWidth);
 
 		t_parent.append(aElement);
 		draggedElement.style.left = CssDoctor.getStyleRuleValue('left', '#' + draggedElement.id + '-target');
 		draggedElement.style.top = CssDoctor.getStyleRuleValue('top', '#' + draggedElement.id + '-target');
 	};
+
 	/*
 		The function to call when the item is dropped anywhere BUT on the target:
 	*/
-	var notOnTarget = function () {
+	var release = function () {
 		aElement.addClass('drag-item');
 		aElement.removeClass('dragged-item');
-		draggedElement.style.left = '';
-		draggedElement.style.top = '';
 	};
 
 	var watchElement = function ($element) {
+		if (angular.isUndefined (moveAutomatically)) moveAutomatically = true;
 		gesturesToWatchArray.push ({
 			start: $ionicGesture.on('dragstart', _self.dragStart, $element),
 			drag: $ionicGesture.on('drag', _self.drag, $element),
-			end: $ionicGesture.on('release', _self.dragEnd, $element)
+			end: $ionicGesture.on('release', _self.dragEnd, $element), 
 		});
 
 		// returns the index of the array where the gestures are saved. 
@@ -132,6 +151,8 @@ function (CssDoctor, $ionicGesture, $rootScope) {
 		dragStart : dragStartEvent,
 		drag : dragEvent, 
 		dragEnd : dragEndEvent, 
+		moveToTarget: moveToTarget,
+		release : release,
 
 		watchElement: watchElement,
 		removeWatches : removeWatches

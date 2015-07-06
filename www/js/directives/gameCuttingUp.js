@@ -1,7 +1,7 @@
 angular.module('starter.directives')
 
-.directive('gameCuttingUp', ['$ionicGesture', '$ionicSlideBoxDelegate', 'CssDoctor', '$timeout',
-function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout) {
+.directive('gameCuttingUp', ['$ionicGesture', '$ionicSlideBoxDelegate', 'CssDoctor', '$timeout', 'GameHelper',
+function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper) {
 
   
 
@@ -10,8 +10,13 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout) {
     replace: true,
     link: function($scope, $element, $attributes) {
 
+      // create a var 
+      var doneRight = 0;
+
+      // get the image of the person:
       var personImg = $element.find('img')[0];
 
+      // get the canvas and create the context
       var canvasElement = $element.find('canvas');
       var canvas = canvasElement[0];
       var ctx = canvas.getContext ("2d");
@@ -28,13 +33,13 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout) {
       var canDraw = false;
 
       var globalToLocalX = function (x) {
-        var lx = x - offsets.left - 20;
+        var lx = x - offsets.left ;
         return lx;
       };
       var globalToLocalY = function (y) {
         // there is a strange bug when trying to get the offset the normal way, 
         // so we substract the head bar manually: 
-        var ly = y - offsets.top - 44 - 20;
+        var ly = y - offsets.top - 44 ;
         return ly;
       };
 
@@ -55,9 +60,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout) {
       };
       var drag = function (e) {
         if (canDraw === false) return;
-        //ctx.lineTo(dX + e.gesture.deltaX, dY + e.gesture.deltaY);
         pointsOnLine.push([dX + e.gesture.deltaX, dY + e.gesture.deltaY]);
-        //ctx.fillRect(dX + e.gesture.deltaX, dY + e.gesture.deltaY, 10, 10);
       };
       var dragEnd = function (e) {
         if (canDraw === false || successfullStart === false) return;
@@ -127,8 +130,8 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout) {
 
       $scope.game = {};
       $scope.game.start = function () {
-        angular.element(canvas).removeClass('hidden');
-        angular.element(document.getElementById('gameStartButton')).addClass('hidden');
+        angular.element(document.getElementById('preGameScreen')).addClass('hidden');
+        GameHelper.deactivateScrolling();
         ctx.drawImage (personImg, 0, 0, 377, 699, 300, 0, 234.22, 450);
 
         $scope.game.instruction = 'Bereitmachen...!';
@@ -173,12 +176,12 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout) {
       var isRechts = false;
 
       // create paths:
-      function oberhauLinks () {
+      function oberhauRechts () {
 
         isOberhau = true;
         isRechts = false;
 
-        $scope.game.instruction = 'Zeichne Oberhau Links!';
+        $scope.game.instruction = 'Zeichne Oberhau Rechts!';
         $scope.$apply();
         ctx.beginPath();
         ctx.moveTo(480, 30);
@@ -190,29 +193,12 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout) {
         //console.log (ctx.isPointInPath (335, 35));
       }
       // create paths:
-      function oberhauRechts () {
+      function oberhauLinks () {
 
         isOberhau = true;
         isRechts = true;
 
-        $scope.game.instruction = 'Zeichne Oberhau Rechts!';
-        $scope.$apply();
-        ctx.beginPath();
-        ctx.moveTo(330, 30);
-        ctx.lineTo(650, 350);
-        ctx.lineTo(550, 370);
-        ctx.lineTo(300, 30);
-        ctx.closePath();
-        //ctx.fill();
-        //console.log (ctx.isPointInPath (335, 35));
-      }
-      // create paths:
-      function unterhauLinks () {
-
-        isOberhau = false;
-        isRechts = false;
-
-        $scope.game.instruction = 'Zeichne Unterhau Links!';
+        $scope.game.instruction = 'Zeichne Oberhau Links!';
         $scope.$apply();
         ctx.beginPath();
         ctx.moveTo(330, 30);
@@ -227,9 +213,26 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout) {
       function unterhauRechts () {
 
         isOberhau = false;
-        isRechts = true;
+        isRechts = false;
 
         $scope.game.instruction = 'Zeichne Unterhau Rechts!';
+        $scope.$apply();
+        ctx.beginPath();
+        ctx.moveTo(330, 30);
+        ctx.lineTo(650, 350);
+        ctx.lineTo(550, 370);
+        ctx.lineTo(300, 30);
+        ctx.closePath();
+        //ctx.fill();
+        //console.log (ctx.isPointInPath (335, 35));
+      }
+      // create paths:
+      function unterhauLinks () {
+
+        isOberhau = false;
+        isRechts = true;
+
+        $scope.game.instruction = 'Zeichne Unterhau Links!';
         $scope.$apply();
         ctx.beginPath();
         ctx.moveTo(480, 30);
@@ -254,17 +257,12 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout) {
       }
 
       /*
-        prevent dragging of page slider:
+        PAGE SLIDER
       */
-      var pageSlider = $ionicSlideBoxDelegate.$getByHandle('pageSlidebox');
-      var reportEvent = function (e) {
-        if (e.target.id === 'gameCanvas') {
-          pageSlider.enableSlide(false);
-        } else {
-          pageSlider.enableSlide(true);
-        }
-      };
-      $ionicGesture.on('touch', reportEvent, $element);
+
+      // get the page slidebox:
+      var pageSlider = GameHelper.getPageSlider();
+      $ionicGesture.on('touch', GameHelper.preventSlide, $element);
 
       
 
@@ -276,8 +274,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout) {
     template: '<div class="game-container cutting-up">'+
                 '<div class="row">' +
                   '<div class="col col-67">' +
-                    '<button id="gameStartButton" class="button button-assertive" ng-click="game.start();">Spiel Starten!</button>' +
-                    '<canvas width="800px" height="450px" id="gameCanvas" class="hidden"></canvas>' +
+                    '<canvas width="800px" height="450px" id="gameCanvas"></canvas>' +
                     '<img class="hidden" src="../img/lessons/06/schnittlinien-figur.png">' +
                   '</div>' +
                   '<div class="col">' +

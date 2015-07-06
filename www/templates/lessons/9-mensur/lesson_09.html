@@ -4,49 +4,125 @@
 
 	<!-- SEITE 1 -->
 	  <ion-slide>
-	  	<ion-content class="padding" has-bouncing="false">
-		    <div class="row responsive-md"> 
-				<div class="col col-67">
-					<h1>Asterix im Land der Goten</h1>
-					<p>Im diesem Band der Asterix-Serie suchen Asterix und Obelix ihren Druiden im Land der Goten, der wegen seinem mächtigen Zaubertrank entführt wurde.</p>
-					<div style="background-color: green; width:200px; height:700px;"></div>
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<h1>Mensur</h1>
+			<!-- BREITES BILD -->
+			<div class="row height-67"> 
+				<img class="breitbild" src="./img/lessons/01/bild.png">
+			</div>
+			<!-- DARUNTER LIEGENDER TEXT -->
+			<div class="row height-25">
+				<!-- Spalte 1 -->
+				<div class="col col-33">
+					<p>
+						Die Mensur bezeichnet den Abstand, in dem zwei Kämpfer zueinander stehen. Dieser Abstand wird nicht in absoluten Zahlen gemessen, sondern kann von Fechter zu Fechter unterschiedlich sein.
+					</p>
 				</div>
-				<div class="col"></div>
+				<div class="col col-33"></div>
+				<div class="col col-33"></div>	
 			</div>
 		</ion-content>
 	  </ion-slide>
 
 	<!-- SEITE 2 -->
 	  <ion-slide>
-	  	<ion-content class="padding" has-bouncing="false">
-		    <div class="row responsive-md"> 
-				<div class="col col-67">
-					<h1>Lektion 1 - Schwertbegriffe</h1>
-					<h5>Was wollte Asterix im Land der Goten?</h5>
-					<multiple-choice choices="Miraculix retten, Haudraufwienix suchen, Krautsalat probieren, Römer verjagen" right-choice="0" callback="Lesson.end()">
-
-					</multiple-choice>
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
+			<div class="row"> 
+				<div class="col col-33">
+					<h1>Mensur</h1>
+					<h3>Weite Mensur und Mittlere Mensur - Zufechten</h3>
+					<p>
+						Das Zufechten schließt alle Abstände ein, in denen sich die Klingen der beiden Gegner nicht berühren – bis zu dem Punkt, an dem ein Gegner den anderen gerade mit einem Schritt und Hieb oder Stich treffen kann.
+					</p>
+					<h3>Nahe Mensur – Krieg</h3>
+					<p>
+						Im Krieg berühren sich die Klingen bereits. Der Gegner kann bereits jetzt, oder nach einem Schritt durch einen Hieb oder Stich getroffen werden.
+					</p>
+					<h3>Enge Mensur – Ringen</h3>
+					<p>
+						Im Ringen kann ein Fechter den anderen bereits mit den Händen greifen. Das Schwert kann hier nicht wie bisher verwendet werden, da es zu lang für diese Distanz ist. Es wird in das Ringen am Schwert übergegangen. Dabei wird beispielsweise der Knauf zum Schlagen eingesetzt oder das Schwert als Hebel beim Ringen verwendet.
+					</p>
+				
 				</div>
-				<div class="col"></div>
+				<div class="col col-67">
+					<!-- BILD _ HÖHE VON 75 % -->
+					<!-- Bilder zum weiterschalten -->
+					<div class="row height-75"> 
+						<ion-slide-box class="image-slider" prevent-drag>
+							<ion-slide>
+								<img src="./img/lessons/09/Abstand/01.png" class="normalbild" />
+								<div class="bildname">
+									<p>Zufechten</p>
+								</div>
+							</ion-slide>
+							<ion-slide>
+								<img src="./img/lessons/09/Abstand/02.png" class="normalbild" />
+								<div class="bildname">
+									<p>Krieg</p>
+								</div>
+							</ion-slide>
+							<ion-slide>
+								<img src="./img/lessons/09/Abstand/03.png" class="normalbild" />
+								<div class="bildname">
+									<p>Ringen</p>
+								</div>
+							</ion-slide>
+						</ion-slide-box> 
+					</div>
+					  
+					  
+					
+					<!-- DARUNTER LIEGENDER TEXT -->
+					<div class="row height-25"> 
+						<div class="col col-50"></div>
+						<div class="col col-50"></div>
+					</div>
+				</div>
 			</div>
+			
 		</ion-content>
 	  </ion-slide>
 
 	<!-- SEITE 3 -->
 	  <ion-slide>
-	  	<ion-content class="padding" scroll="false" has-bouncing="false">
-			<game-dress-up onwin="Lesson.end()">
-				<div class="game-container dress-up">
-					<div class="target-box">
-						<div id="helmet-target"></div>
-						<div id="pants-target"></div>
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<game-mensur>
+				<div class="game-container mensur">
+					<div class="row height-67"> 
+						<div id="abstand_ziehbereich" class="col height-100 ziehbereich">
+							<div id="abstand_zieher"></div>
+							<div id="abstand_ziel"></div>
+						</div>
 					</div>
-					<div class="clothes">
-						<img id="helmet" class="drag-item">
-						<img id="pants" class="drag-item"> 
+					<div class="row height-33">
+						<div class="col">
+							
+						</div>
+						<div class="col">
+							
+						</div>
+						<div class="col">
+							
+						</div>
 					</div>
 				</div>
-			</game-dress-up>
+			</game-mensur>
+			<div class="row" id="preGameScreen"> 
+				<div class="col col-80 col-offset-10 text-center">
+					<h3>Übung: Abstand finden</h3>
+					<div class="row"> 
+						<div class="col col-80 col-offset-10 instruction-box">
+							<p>Bewege deinen Fechter an passende Stellen, um Infos zu den Abständen zu bekommen.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-30 col-offset-40">
+							<button class="button button-positive" ng-click="game.start();">Spiel Starten!</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</ion-content>
 	  </ion-slide>
 

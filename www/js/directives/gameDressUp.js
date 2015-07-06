@@ -1,53 +1,79 @@
 angular.module('starter.directives')
 
-.directive('gameDressUp', ['$ionicGesture', '$ionicSlideBoxDelegate', 'DragNDropHelper',
-function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper) {
+.directive('gameDressUp', ['$ionicGesture', '$ionicSlideBoxDelegate', 'DragNDropHelper', 'Campaign', 'GameHelper',
+function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper, Campaign, GameHelper) {
 
   
 
   return {
     restrict: 'E',
-    scope: {
-      winCallback : '&onwin'
-    },
     replace: false,
     link: function($scope, $element, $attributes) {
 
+      $scope.game = {};
+
       var watches = DragNDropHelper.watchElement ($element);
 
-      var itemsToPutOn = ['helmet', 'pants'];
+      var itemsToPutOn = ['breast', 'neck', 'jacket', 'knee', 'headthing', 'hand', 'helmet'];
+
+      var differentPoses = document.getElementsByClassName('bg-image');
+      var posesLength = differentPoses.length;
 
       var onRight = function (e, droppedObject) {
         console.log (droppedObject);
-        var i = itemsToPutOn.indexOf (droppedObject.id);
-        if (i !== -1) {
-          itemsToPutOn.splice(i, 1);
+        //var i = itemsToPutOn.indexOf (droppedObject.id);
+        if (droppedObject.id === itemsToPutOn[0]) {
+          DragNDropHelper.moveToTarget(droppedObject.target);
+          itemsToPutOn.splice(0, 1);
           console.log (itemsToPutOn);
-          if (itemsToPutOn.length === 0) {
-            $scope.winCallback();
+          for (var i = 0; i < posesLength; i++) {
+            if (differentPoses[i].id === droppedObject.id + '-bg') {
+              angular.element (differentPoses[i]).removeClass('hidden');
+            } 
+            else {
+              angular.element (differentPoses[i]).addClass('hidden');
+            }
           }
-          else console.log ('still got items to put on');
+
+          /* END OF GAME, all dressed up: */
+          if (itemsToPutOn.length === 0) {
+            Campaign.addEnd();
+
+            // restart the sliding of the page slider
+            GameHelper.activateScrolling();
+            $scope.vars.slideEnabled = true;
+          }
         }
         else {
-          console.log (droppedObject.id + ' is not in item list.');
+          DragNDropHelper.release();
+          console.log (droppedObject.id + ' can not be worn right now.');
         }
       };
 
       $scope.$on ('dragndrop_right-target', onRight);
 
+      $scope.game.start = function () {
+        document.getElementById('preGameScreen').className = 'hidden';
+        // stop the sliding of the page slider
+        GameHelper.deactivateScrolling();
+        $scope.vars.slideEnabled = false;
+      };
+
       /*
         prevent dragging of page slider:
       */
-      var pageSlider = $ionicSlideBoxDelegate.$getByHandle('pageSlidebox');
-      var reportEvent = function (e) {
-        if (e.target.className.indexOf('drag-item') !== -1) {
-          pageSlider.enableSlide(false);
-        } else {
-          pageSlider.enableSlide(true);
-        }
-      };
-      $ionicGesture.on('touch', reportEvent, $element);
+      var pageSlider = GameHelper.getPageSlider();
+      $ionicGesture.on('touch', GameHelper.preventSlide, $element);
 
+      // limiting the size of the person: (needed for aspect ratio preservation)
+      // in timeout to let the page load first
+      setTimeout(function() {
+        var apc = document.getElementsByClassName('aspect-ratio-container')[0];
+        var mw = (document.getElementsByClassName('game-container')[0].offsetHeight-44)/2;
+        document.getElementsByClassName('width-limiter')[0].style.maxWidth = mw + 'px';
+        //apc.style.left = 'calc((100% - '+mw+'px) / 2)';
+        //console.log (apc.style);
+      }, 1000);
       
 
       $scope.$on('$destroy', function() {

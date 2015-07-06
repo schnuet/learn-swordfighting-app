@@ -1,0 +1,30 @@
+.game-container.mensur {
+	#abstand_ziehbereich {
+		position: relative;
+		background-image: url(../img/bar-end-stroke.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: bottom;
+	}
+	#abstand_zieher {
+		height: 100%;
+		width: 50%;
+		background-image: url(../img/lessons/09/game/abstand-figur_links.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0px;
+		transition: transform ease 1s;
+	}
+	#abstand_ziel {
+		height: 100%;
+		width: 50%;
+		background-image: url(../img/lessons/09/game/abstand-figur_rechts.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		pointer-events: none;
+	}
+}

@@ -1,11 +1,15 @@
-<ion-modal-view>
-	<ion-content>
-		<div class="row">
-			<div class="col"></div>
-			<div class="col">
-				<center>Intro!
-				Das ist das Intro von Lektion 1.</center>
-				<button class="button button-block button-balanced" ng-click="closeIntro()">Los geht's!</button>
+<ion-modal-view class="intro">
+	<ion-content scroll="false">
+<!-- SEITENFÜLLENDES HINTERGRUNDBILD -->
+	  	<img src="./img/lessons/05/Quellenbilder/623px-Ms._KK5013_11v.jpg" class="hintergrundbild" />
+	  	<img src="./img/lessons/05/char05.png" class="charakter" />
+		<div class="row"> 
+			<!-- SPALTE: col-x definiert breite. -->
+			<div class="col col-33 col-offset-67 intro-text-box">
+				<h1>Quellen</h1>
+				<p>Was Huten sind weißt du ja schon, aber woher kommt das Wort Huten eigentlich? <br>Hier lernst du die Ursprünge des historischen Schwertkampfes kennen. Die Quellen aus denen der gesamte moderne Sport abgeleitet wird. <br> Du darfst dich auch selbst an einer Interpretation versuchen!
+</p>
+				<button class="button button-block button-balanced" ng-click="closeIntro()">LOS GEHT`S!</button>
 			</div>
 			<div class="col"></div>
 		</div>

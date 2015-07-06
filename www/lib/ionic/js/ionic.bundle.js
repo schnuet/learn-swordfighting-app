@@ -44969,6 +44969,11 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
         var previousPopup = popupStack[0];
         if (previousPopup) {
           previousPopup.show();
+          //My added code to remove the $ionicBackdrop when more than 2 popups appear at the same time
+          $timeout(function() {
+            $ionicBackdrop.release();
+          }, config.stackPushDelay || 0);
+          //end of My added code
         } else {
           //Remove popup-open & backdrop if this is last popup
           $timeout(function() {

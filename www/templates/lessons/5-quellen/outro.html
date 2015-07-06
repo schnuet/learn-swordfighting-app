@@ -1,13 +1,22 @@
-<ion-modal-view>
-	<ion-content>
+<ion-modal-view class="outro">
+	<ion-content scroll="false">
 		<div class="row">
-			<div class="col"></div>
-			<div class="col">
-				<center>Geschafft!</center>
-				<button class="button button-block button-balanced" ng-click="closeOutro(); gotoState('menu.campaign-lesson-' + (Lesson.lessonnumber+1));">Zur nächsten Lektion</button>
-				<button class="button button-block button-balanced" ng-click="closeOutro(); gotoState('menu.dashboard');">Zum Kampagnenmenü</button>
+			<div class="col col-67">
+				<h2>Deine Belohnung</h2>
+				<!-- BILD (Belohnung) -->
+				<img src="./img/lessons/05/5.png" class="belohnung" />	
 			</div>
-			<div class="col"></div>
+			<div class="col col-33">
+
+				<div class="abschlusstext">
+					<h4>Quellen</h4>					<p>Beeindruckend! Das war sogar schon die fünfte Lektion! <br>Liechtenauer ist jetzt kein Fremdwort mehr für dich! Du kennst die Wurzeln des historischen Schwertkampfes.<br>Damit du unterwegs immer in den Quellen nachlesen kannst bekommst du diesen stabilen Schwertgürtel, an dem du auch deine Manuskripte befestigen kannst.<br>In der nächsten Lektion geht es endlich um die ersten Angriffe!
+</p>
+				</div>
+				<div class="weiter-box">
+					<span>AUF ZUM KAMPF!</span>
+					<button class="button button-clear weiter-button" ng-click="closeOutro(); gotoState('menu.campaign-lesson-' + (Lesson.lessonnumber+1));"></button>
+				</div>
+			</div>
 		</div>
 	</ion-content>
 </ion-modal-view>

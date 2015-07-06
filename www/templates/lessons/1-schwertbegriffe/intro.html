@@ -1,13 +1,16 @@
-<ion-modal-view>
-	<ion-content>
-		<div class="row">
-			<div class="col"></div>
-			<div class="col">
-				<center><h1>Intro!</h1>
-				Das ist das Intro von Lektion 1.</center>
-				<button class="button button-block button-balanced" ng-click="closeIntro()">Los geht's!</button>
+<ion-modal-view class="intro">
+	<ion-content scroll="false">
+		<!-- SEITENFÜLLENDES HINTERGRUNDBILD -->
+	  	<img class="hintergrundbild" src="./img/lessons/01/bg01.png">
+	  	<img src="./img/lessons/01/char01.png" class="charakter" />
+		<div class="row"> 
+			<!-- SPALTE: col-x definiert breite. -->
+			<div class="col col-33 col-offset-67 intro-text-box">
+				<h1>Schwertbegriffe</h1>				<p>Willkommen in der Lerntour! </p>                				<p>Schön, dass du dich entschieden hast die alte Kunst des Schwertkampfes zu erlernen! <br>				Zuerst lernst du hier wie man die einzelnen Teile des Schwerts nennt. Damit wird es leichter für dich die nächsten Lektionen zu verstehen und du bist reif für ein eigenes Schwert!
+</p>
+				
+                <button class="button button-block button-balanced" ng-click="closeIntro()">Los geht's!</button>
 			</div>
-			<div class="col"></div>
 		</div>
 	</ion-content>
 </ion-modal-view>

@@ -6,14 +6,28 @@
 		position: relative;
 		video {
 			position: absolute;
-			top: 0px;
+			top: 40px;
+			max-height: calc(100% - 40px);
 		}
 		.video-overlay {
 			height: 100%;
 			width: 100%;
 			position: absolute;
-			top: 0px;
+			top: 40px;
 			background-color: #fff;
 		}
+		h3 {
+			position: absolute;
+			top: 5px;
+		}
+	}
+	#video-container {
+		position: relative;
+	}
+	#button-box {
+		position: absolute;
+		top: 100px;
+		width: 100%;
+		text-align: center;
 	}
 }

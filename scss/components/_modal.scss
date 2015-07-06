@@ -8,3 +8,18 @@
 		height: 100%;
 	}
 }
+.modal{
+	&.dragged {
+		@include transition(scale cubic-bezier(.1, .7, .1, 1) 400ms);
+	}
+	.hintergrundbild {
+		position: absolute;
+		top: 0px;
+		width: 100%;
+		z-index: -1;
+	}
+	.charakter {
+		max-height: 60%;
+		position: absolute;
+	}
+}

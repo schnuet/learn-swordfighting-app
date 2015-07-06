@@ -1,5 +1,21 @@
 .popover {
-	.glossartext {
+	.glossartext, .quellentext {
 		padding: 1em;
+	}
+	&.quelle {
+		width: 500px;
+
+		.alt {
+			width: 50%;
+			position: absolute;
+			left: 0px;
+			padding: 5px;
+		}
+		.neu {
+			width: 50%;
+			position: absolute;
+			left: 50%;
+			padding: 5px;
+		}
 	}
 }

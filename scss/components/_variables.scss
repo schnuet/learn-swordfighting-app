@@ -31,3 +31,12 @@ $bar-primary-text:                  $button-primary-text !default;
 $bar-primary-border:                $button-primary-bg !default;
 $bar-primary-active-bg:             $button-primary-active-bg !default;
 $bar-primary-active-border:         $button-primary-active-border !default;
+
+/* TYPE: */
+$font-family-sans-serif:          "Lato", "Helvetica Neue", "Roboto", sans-serif !default;
+$font-family-light-sans-serif:    "LatoLight", "HelveticaNeue-Light", "Roboto-Light", sans-serif-light !default;
+$font-family-semibold-sans-serif: "LatoSemibold", "HelveticaNeue-Semibold", "Roboto-Semibold", sans-serif-bold !default;
+
+$font-family-base:                $font-family-sans-serif !default;
+$headings-font-family:            $font-family-semibold-sans-serif !default;
+$headings-font-weight:            500 !default;

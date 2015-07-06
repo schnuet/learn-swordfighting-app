@@ -2,39 +2,12 @@
 	<ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)">
 	<!-- SEITENINHALT START: -->
 
-	<!-- SEITE 1 -->
-	  <ion-slide>
-	  	<ion-content class="padding" has-bouncing="false">
-		    <div class="row responsive-md"> 
-				<div class="col col-67">
-					<h1>Asterix im Land der Goten</h1>
-					<p>Im diesem Band der Asterix-Serie suchen Asterix und Obelix ihren Druiden im Land der Goten, der wegen seinem mächtigen Zaubertrank entführt wurde.</p>
-					<div style="background-color: green; width:200px; height:700px;"></div>
-				</div>
-				<div class="col">
-					<span glossar="vor">Vor</span>
-				</div>
-			</div>
-		</ion-content>
-	  </ion-slide>
+	<!-- RICHTET SICH NACH DEM IONIC GRID: http://ionicframework.com/docs/components/#grid-offset -->
 
-	<!-- SEITE 2 -->
-	  <ion-slide>
-	  	<ion-content class="padding" scroll="false" has-bouncing="false">
-		    <div class="row responsive-md"> 
-				<div class="col col-67">
-					<h1>Lektion 1 - Schwertbegriffe</h1>
-					<h5>Was wollte Asterix im Land der Goten?</h5>
-					<multiple-choice choices="Miraculix retten, Haudraufwienix suchen, Krautsalat probieren, Römer verjagen" right-choice="0" callback="Lesson.end()">
+	<!-- Kapitel 1 hat nur diese Seite -->
+      
 
-					</multiple-choice>
-				</div>
-				<div class="col"></div>
-			</div>
-		</ion-content>
-	  </ion-slide>
-
-	<!-- SEITE 3 -->
+	<!-- SEITE ´4 -->
 	  <ion-slide>
 	  	<ion-content class="padding" scroll="false" has-bouncing="false">
 			<game-sword-parts>
@@ -76,11 +49,25 @@
 						<div id="begriff-klinge" class="drag-item sword-text transparent hidden">Klinge</div>
 						<div id="begriff-heft" class="drag-item sword-text transparent hidden">Heft</div>
 					</div>
-					<button id="gameStartButton" class="button button-assertive" ng-click="game.start();">Spiel Starten!</button>
 					<div class="textContainer" ng-bind-html="vars.gameText">
 					</div>
 				</div>
 			</game-sword-parts>
+			<div class="row" id="preGameScreen"> 
+				<div class="col col-80 col-offset-10 text-center">
+					<h3>Übung: Schwertaufbau</h3>
+					<div class="row"> 
+						<div class="col col-80 col-offset-10 instruction-box">
+							<p>Baue ein Schwert zusammen und ordne die richtigen Fachbegriffe zu!</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-30 col-offset-40">
+							<button class="button button-positive" ng-click="game.start();">Spiel Starten!</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</ion-content>
 	  </ion-slide>
 

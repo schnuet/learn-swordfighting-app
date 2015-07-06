@@ -1,13 +1,24 @@
-<ion-modal-view>
-	<ion-content>
-		<div class="row">
-			<div class="col"></div>
-			<div class="col">
-				<center>Geschafft!</center>
-				<button class="button button-block button-balanced" ng-click="closeOutro(); gotoState('menu.campaign-lesson-' + (Lesson.lessonnumber+1));">Zur nächsten Lektion</button>
-				<button class="button button-block button-balanced" ng-click="closeOutro(); gotoState('menu.dashboard');">Zum Kampagnenmenü</button>
+<ion-modal-view class="outro">
+	<ion-content scroll="false">
+<div class="row">
+			<div class="col col-67">
+				<h2>Deine Belohnung</h2>
+				<!-- BILD (Belohnung) -->
+				<img src="./img/lessons/09/9.png" class="belohnung" />	
 			</div>
-			<div class="col"></div>
+			<div class="col col-33">
+
+				<div class="abschlusstext">
+					<h4>Mensur</h4>
+					<p>
+						Klasse! Die neunte Lektion hast du erfolgreich abgeschlossen! <br>Jetzt kennst du sogar schon die Abstände im Gefecht! <br>Du hast die Tour schon fast abgeschlossen, da wird es Zeit sich herauszuputzen. Dieser schicke Umhang lässt jeden deiner Gegner vor Neid erblassen!<br>In der nächsten und letzten Lektion geht es um die Grundprinzipien der Lehre Liechtenauers.
+					</p>
+				</div>
+				<div class="weiter-box">
+					<span>AUF GEHT'S!</span>
+					<button class="button button-clear weiter-button" ng-click="closeOutro(); gotoState('menu.campaign-lesson-' + (Lesson.lessonnumber+1));"></button>
+				</div>
+			</div>
 		</div>
 	</ion-content>
 </ion-modal-view>

@@ -1,13 +1,24 @@
-<ion-modal-view>
-	<ion-content>
-		<div class="row">
-			<div class="col"></div>
-			<div class="col">
-				<center>Geschafft!</center>
-				<button class="button button-block button-balanced" ng-click="closeOutro(); gotoState('menu.campaign-lesson-' + (Lesson.lessonnumber+1));">Zur nächsten Lektion</button>
-				<button class="button button-block button-balanced" ng-click="closeOutro(); gotoState('menu.dashboard');">Zum Kampagnenmenü</button>
+<ion-modal-view class="outro">
+	<ion-content scroll="false">
+<div class="row">
+			<div class="col col-67">
+				<h2>Deine Belohnung</h2>
+				<!-- BILD (Belohnung) -->
+				<img src="../img/04/4.png" class="belohnung" />	
 			</div>
-			<div class="col"></div>
+			<div class="col col-33">
+
+				<div class="abschlusstext">
+					<h4>Huten</h4>
+					<p>Gut gemacht! Du hast die vierte Lektion geschafft! <br>
+Jetzt kennst du schon die vier wichtigsten Huten! <br>Damit hast du dir diesen tollen Helm verdient! Dein Grundlagenwissen und deine Grundausstattung sind jetzt schon fast vollständig! <br>In der nächsten Lektion lernst du woher das historische Wissen kommt welches du dir bis jetzt angeeignet hast.
+</p>
+				</div>
+				<div class="weiter-box">
+					<span>UND LOS!</span>
+					<button class="button button-clear weiter-button" ng-click="closeOutro(); gotoState('menu.campaign-lesson-' + (Lesson.lessonnumber+1));"></button>
+				</div>
+			</div>
 		</div>
 	</ion-content>
 </ion-modal-view>

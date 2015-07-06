@@ -1,30 +1,66 @@
-<ion-modal-view>
-	<ion-header-bar>
+<ion-modal-view on-drag-up="dragMenu($event)" on-release="endDragMenu($event)">
+	<ion-header-bar class="bar-primary">
 		<h1 class="title">Menü</h1>
 		<button class="button button-icon button-clear pull-left ion-android-arrow-up" ng-click="closeMenu();">
     	</button>
 	</ion-header-bar>
-	<ion-content>
-		<ion-list>
-
-			<ion-item nav-clear ng-click="gotoNextLesson(); closeMenu();">
-				Nächstes Kapitel in der Lernkampagne
-	        </ion-item>
-			<ion-item nav-clear ng-click="closeMenu();" href="#/menu/start">
-				Lerntour
-	        </ion-item>
-	        <ion-item nav-clear ng-click="closeMenu();" href="#/menu/kampagne">
-				Katalog
-	        </ion-item>
-			<ion-item nav-clear ng-click="closeMenu();" href="#/menu/glossar">
-				Glossar
-	        </ion-item>
-			<ion-item nav-clear ng-click="closeMenu();" href="#/menu/test2">
-				Hilfe
-	        </ion-item>
-			<ion-item nav-clear ng-click="closeMenu();" href="#/menu/impressum">
-				Impressum
-	        </ion-item>
-		</ion-list>
+	<ion-content scroll="false">
+		<div class="row">
+			<div class="col">
+				<h2>Menü</h2>
+				<ion-list>
+					<ion-item nav-clear ng-click="gotoNextLesson(); closeMenu();">
+						<img src="./img/icons/Lerntour.svg">Nächstes Kapitel in der Lerntour
+			        </ion-item>
+					<ion-item nav-clear ng-click="closeMenu();" href="#/menu/start">
+						<img src="./img/icons/Profil.svg">Profil
+			        </ion-item>
+					<ion-item nav-clear ng-click="closeMenu();" href="#/menu/glossar">
+						<img src="./img/icons/Glossar.svg">Glossar
+			        </ion-item>
+					<ion-item nav-clear ng-click="closeMenu();" href="#/menu/test2">
+						<img src="./img/icons/Hilfe.svg">Hilfe
+			        </ion-item>
+					<ion-item nav-clear ng-click="closeMenu();" href="#/menu/impressum">
+						<img src="./img/icons/Impressum.svg">Impressum
+			        </ion-item>
+				</ion-list>
+			</div>
+			<div class="col">
+				<h2>Katalog</h2>
+				<ion-list> 
+					<ion-item nav-clear ng-click="gotoState('menu.lesson-1'); closeMenu();">
+						Schwertbegriffe
+			        </ion-item>
+					<ion-item nav-clear ng-click="closeMenu(); gotoState('menu.lesson-8')">
+						Schutzausrüstung
+			        </ion-item>
+			        <ion-item nav-clear ng-click="closeMenu(); gotoState('menu.lesson-5')">
+						Quellen
+			        </ion-item>
+					<ion-item nav-clear ng-click="closeMenu(); gotoState('menu.lesson-7')">
+						Schnittests
+			        </ion-item>
+					<ion-item nav-clear ng-click="closeMenu(); gotoState('menu.lesson-10')">
+						Die fünf Wörter
+			        </ion-item>
+					<ion-item nav-clear ng-click="closeMenu(); gotoState('menu.lesson-2')">
+						Der Griff
+			        </ion-item>
+			        <ion-item nav-clear ng-click="closeMenu(); gotoState('menu.lesson-3')">
+						Beinarbeit
+			        </ion-item>
+			        <ion-item nav-clear ng-click="closeMenu(); gotoState('menu.lesson-4')">
+						Huten
+			        </ion-item>
+			        <ion-item nav-clear ng-click="closeMenu(); gotoState('menu.lesson-6')">
+						Angriffe
+			        </ion-item>
+			        <ion-item nav-clear ng-click="closeMenu(); gotoState('menu.lesson-9')">
+						Mensur
+			        </ion-item>
+				</ion-list>
+			</div>
+		</div>
 	</ion-content>
 </ion-modal-view>

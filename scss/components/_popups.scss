@@ -1,6 +1,14 @@
-.popup-container.infoPopup {
-	pointer-events: auto !important;
-	.popup {
-		border: 2px solid grey;
+.popup-container {
+	&.infoPopup {
+		pointer-events: auto !important;
+		.popup {
+			border: 2px solid grey;
+		}
+	}
+	&.congratulation {
+		pointer-events: auto !important;
+	}
+	&.sorry {
+		pointer-events: auto !important;
 	}
 }

@@ -5,6 +5,7 @@ angular.module('starter.controllers')
 function($scope, $ionicModal, $ionicHistory, $state, Profile, Data) {
 
 	var user = null;
+	var menuModal = null;
 	
 	$ionicModal.fromTemplateUrl('templates/overlays/menu.html', {
 		scope: $scope,
@@ -16,6 +17,7 @@ function($scope, $ionicModal, $ionicHistory, $state, Profile, Data) {
 	$scope.openMenu = function() {
 		console.log ('menu opened');
 	    $scope.modal.show();
+	    menuModal = document.getElementsByClassName('modal slide-in-down')[0];
 	};
 	$scope.closeMenu = function() {
 		$scope.modal.hide();
@@ -27,6 +29,20 @@ function($scope, $ionicModal, $ionicHistory, $state, Profile, Data) {
 		});
 	};
 
+	$scope.dragMenu = function (e) {
+		angular.element(menuModal).addClass('dragged');
+		menuModal.style[ionic.CSS.TRANSFORM] = 'translate3d(0px, '+e.gesture.deltaY+'px, 0px)';
+		if (e.gesture.distance > 400) {
+			$scope.closeMenu();
+			$scope.endDragMenu();
+		}
+	}
+	$scope.endDragMenu = function (e) {
+		console.log ('menu was dragged.');
+		angular.element(menuModal).removeClass('dragged');
+		menuModal.style[ionic.CSS.TRANSFORM] = '';
+	}
+	
 	$scope.gotoState = function (chosenState) {
 		console.log ('going to: ' + chosenState);
 		$state.go (chosenState);

@@ -1,9 +1,17 @@
 angular.module('starter.controllers')
 
 .controller('05_QuellenCtrl', 
-['$scope', 'Data', '$ionicSlideBoxDelegate', 'Campaign',
-function($scope, Data, $ionicSlideBoxDelegate, Campaign) {
+['$scope', 'Data', '$ionicSlideBoxDelegate', 'Campaign', '$stateParams',
+function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams) {
 	
+	$scope.vars = {
+		slideEnabled : true
+	};
+	
+	// check if the lesson was called as a part of the campaign:
+	var isInCampaign = $stateParams.campaign;
+	$scope.isInCampaign = isInCampaign;
+
 	/*
 		Startup-functions:
 	*/
@@ -12,7 +20,9 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign) {
 		$scope.Lesson = Campaign;
 		$scope.data = Data;
 
-		Campaign.start (5, $scope);
+		if (isInCampaign) {
+			Campaign.start (5, $scope);
+		}
 	});
 
 	/*
@@ -20,7 +30,9 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign) {
 	*/
 	var slideBox = $ionicSlideBoxDelegate.$getByHandle('pageSlidebox');
 	$scope.pagerClick = function(index) {
-		$scope.gotoPage(index);
+		if ($scope.vars.slideEnabled) {
+			$scope.gotoPage(index);
+		}
 	};
 	$scope.gotoPage = function (index) {
 		slideBox.slide (index);

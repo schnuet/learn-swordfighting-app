@@ -3,3 +3,18 @@
 	pointer-events: none;
 	cursor: default;
 }
+
+.button.quelle-button {
+	background-image: url(../img/icons/Quelle.svg);
+	background-repeat: no-repeat;
+	position: absolute;
+	right: 0px;
+	bottom: 20px;
+	height: 50px;
+	width: 50px;
+	display: block;
+	border: none;
+	outline: none;
+	max-height: 100px;
+	max-width: 100px;
+}
