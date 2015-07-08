@@ -2713,25 +2713,25 @@ ion-infinite-scroll {
 
 /* If you change these, change platform.scss as well */
 .has-header {
-  top: 44px; }
+  top: 66px; }
 
 .no-header {
   top: 0; }
 
 .has-subheader {
-  top: 88px; }
+  top: 132px; }
 
 .has-tabs-top {
-  top: 93px; }
+  top: 115px; }
 
 .has-header.has-subheader.has-tabs-top {
-  top: 137px; }
+  top: 181px; }
 
 .has-footer {
-  bottom: 44px; }
+  bottom: 66px; }
 
 .has-subfooter {
-  bottom: 88px; }
+  bottom: 132px; }
 
 .has-tabs, .bar-footer.has-tabs {
   bottom: 49px; }
@@ -2740,7 +2740,7 @@ ion-infinite-scroll {
     height: auto; }
 
 .has-footer.has-tabs {
-  bottom: 93px; }
+  bottom: 115px; }
 
 .pane {
   -webkit-transform: translate3d(0, 0, 0);
@@ -3041,7 +3041,7 @@ a.subdued {
   box-sizing: border-box;
   padding: 5px;
   width: 100%;
-  height: 44px;
+  height: 66px;
   border-width: 0;
   border-style: solid;
   border-top: 1px solid transparent;
@@ -3162,13 +3162,13 @@ a.subdued {
     overflow: hidden;
     margin: 0 10px;
     min-width: 30px;
-    height: 43px;
+    height: 65px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 17px;
     font-weight: 500;
-    line-height: 44px; }
+    line-height: 66px; }
     .bar .title.title-left {
       text-align: left; }
     .bar .title.title-right {
@@ -3237,7 +3237,7 @@ a.subdued {
   font-size: 24px; }
 .platform-android .bar .title {
   font-size: 19px;
-  line-height: 44px; }
+  line-height: 66px; }
 
 .bar-light .button {
   border-color: #ddd;
@@ -3445,7 +3445,7 @@ a.subdued {
   border-top-width: 1px;
   border-bottom-width: 0;
   background-position: top;
-  height: 44px; }
+  height: 66px; }
   .bar-footer.item-input-inset {
     position: absolute; }
 
@@ -3453,14 +3453,14 @@ a.subdued {
   padding: 0; }
 
 .bar-subheader {
-  top: 44px;
+  top: 66px;
   display: block;
-  height: 44px; }
+  height: 66px; }
 
 .bar-subfooter {
-  bottom: 44px;
+  bottom: 66px;
   display: block;
-  height: 44px; }
+  height: 66px; }
 
 .nav-bar-block {
   position: absolute;
@@ -4107,7 +4107,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
 /* Allow parent element to have tabs-top */
 /* If you change this, change platform.scss as well */
 .tabs-top > .tabs, .tabs.tabs-top {
-  top: 44px;
+  top: 66px;
   padding-top: 0;
   background-position: bottom;
   border-top-width: 0;
@@ -4316,19 +4316,19 @@ ion-tabs.tabs-color-active-dark .tab-item {
   .modal.ng-leave-active {
     bottom: 0; }
   .platform-ios.platform-cordova .modal-wrapper .modal .bar-header:not(.bar-subheader) {
-    height: 44px; }
+    height: 66px; }
     .platform-ios.platform-cordova .modal-wrapper .modal .bar-header:not(.bar-subheader) > * {
       margin-top: 0; }
   .platform-ios.platform-cordova .modal-wrapper .modal .tabs-top > .tabs, .platform-ios.platform-cordova .modal-wrapper .modal .tabs.tabs-top {
-    top: 44px; }
+    top: 66px; }
   .platform-ios.platform-cordova .modal-wrapper .modal .has-header, .platform-ios.platform-cordova .modal-wrapper .modal .bar-subheader {
-    top: 44px; }
+    top: 66px; }
   .platform-ios.platform-cordova .modal-wrapper .modal .has-subheader {
-    top: 88px; }
+    top: 132px; }
   .platform-ios.platform-cordova .modal-wrapper .modal .has-tabs-top {
-    top: 93px; }
+    top: 115px; }
   .platform-ios.platform-cordova .modal-wrapper .modal .has-header.has-subheader.has-tabs-top {
-    top: 137px; }
+    top: 181px; }
   .modal-backdrop-bg {
     -webkit-transition: opacity 300ms ease-in-out;
     transition: opacity 300ms ease-in-out;
@@ -7442,21 +7442,21 @@ a.button {
  * Platform specific tweaks
  */
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
-  height: 64px; }
+  height: 86px; }
   .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader).item-input-inset .item-input-wrapper {
     margin-top: 19px !important; }
   .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
     margin-top: 20px; }
 .platform-ios.platform-cordova:not(.fullscreen) .tabs-top > .tabs, .platform-ios.platform-cordova:not(.fullscreen) .tabs.tabs-top {
-  top: 64px; }
+  top: 86px; }
 .platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
-  top: 64px; }
+  top: 86px; }
 .platform-ios.platform-cordova:not(.fullscreen) .has-subheader {
-  top: 108px; }
+  top: 152px; }
 .platform-ios.platform-cordova:not(.fullscreen) .has-header.has-tabs-top {
-  top: 113px; }
+  top: 135px; }
 .platform-ios.platform-cordova:not(.fullscreen) .has-header.has-subheader.has-tabs-top {
-  top: 157px; }
+  top: 201px; }
 .platform-ios.platform-cordova.status-bar-hide {
   margin-bottom: 20px; }
 
@@ -7685,17 +7685,17 @@ a.button {
 .scroll {
   min-height: 100%; }
 
-.content.has-header {
+.scroll-content-false.has-header {
   padding: 5px 66px; }
 
 .lesson-page-container.slider {
   height: 100%;
   background-color: #FFFDF8; }
   .lesson-page-container.slider .scroll-content {
-    bottom: 44px; }
+    bottom: 66px; }
   .lesson-page-container.slider:after {
     display: block;
-    height: 44px;
+    height: 66px;
     content: '';
     width: 100%;
     position: absolute;
