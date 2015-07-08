@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<link rel="apple-touch-icon" href="./img/logo/logo_60.png">
 		<link rel="apple-touch-icon" sizes="76x76" href="./img/logo/logo_76.png">
@@ -98,5 +99,23 @@
 			<script src="js/directives/gameWatchSwordfight.js"></script>
 
 		<button class="hidden button button-icon end-lesson" id="endLessonButton"></button>
+
+		<script>
+			document.body.addEventListener('touchmove', function(event) {
+				console.log(event.source);
+				//if (event.source == document.body)
+				event.preventDefault();
+			}, false);
+			
+			/*window.onresize = function() {
+				document.body.width = window.innerWidth;
+				document.body.height = window.innerWidth;
+				//$(document.body).width(window.innerWidth).height(window.innerHeight);
+			}
+			
+			$(function() {
+				window.onresize();
+			});*/
+		</script>
 	</body>
 </html>
