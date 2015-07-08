@@ -43,7 +43,7 @@ angular.module('starter.services')
 
 			// add the profile to the list of existing profiles
 			var p = DataStorage.get('profiles');
-			var p = Utility.mergeStringArrays (p, [username]);
+			p = Utility.mergeStringArrays (p, [username]);
 			console.log (p);
 			DataStorage.set ('profiles', p);
 			p = null;
@@ -77,6 +77,13 @@ angular.module('starter.services')
 			name = normalizeName (name);
 			var d = DataStorage.get ('user_' + name);
 			return d;
+		},
+		remove: function () {
+			// remove the profile from the list of existing profiles
+			var p = DataStorage.get('profiles');
+			p.splice(p.indexOf(_self.data.name), 1);
+			DataStorage.set ('user_' + normalizeName(_self.data.name), null);
+			DataStorage.set ('profiles', p);
 		}
 	};
 

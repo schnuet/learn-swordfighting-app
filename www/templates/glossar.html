@@ -1,14 +1,10 @@
 <ion-view view-title="Glossar">
   <ion-content class="padding">
-    <div class="row responsive-md"> 
-		<div class="col col-67">
-			<table class="glossar-table">
-				<tr ng-repeat="(bez, eintrag) in Data.glossar">
-					<td class="glossar-title">{{eintrag.title}}</td>
-					<td class="glossar-description" ng-bind-html="eintrag.description"></td>
-				</tr>
-			</table>
-		</div>
-	</div>
+	<table class="glossar-table">
+		<tr ng-repeat="(bez, eintrag) in Data.glossar">
+			<td class="glossar-title">{{eintrag.title}}</td>
+			<td class="glossar-description" ng-bind-html="eintrag.description"></td>
+		</tr>
+	</table>
   </ion-content>
 </ion-view>

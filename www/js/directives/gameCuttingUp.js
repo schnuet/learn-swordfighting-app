@@ -1,7 +1,7 @@
 angular.module('starter.directives')
 
-.directive('gameCuttingUp', ['$ionicGesture', '$ionicSlideBoxDelegate', 'CssDoctor', '$timeout', 'GameHelper',
-function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper) {
+.directive('gameCuttingUp', ['$ionicGesture', 'CssDoctor', '$timeout', 'GameHelper', 'Feedback', 'Campaign',
+function($ionicGesture, CssDoctor, $timeout, GameHelper, Feedback, Campaign) {
 
   
 
@@ -10,8 +10,10 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper)
     replace: true,
     link: function($scope, $element, $attributes) {
 
-      // create a var 
-      var doneRight = 0;
+      $scope.game = {};
+
+      // create a var for all rightly done cuts:
+      $scope.game.doneRight = 0;
 
       // get the image of the person:
       var personImg = $element.find('img')[0];
@@ -81,19 +83,23 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper)
         else if (isOberhau && (pointsOnLine[0][1] > pointsOnLine[length-1][1])) {
           // FALSE.
           $scope.game.instruction = 'DER OBERHAU GEHT ANDERS!';
+          $scope.game.doneRight = 0;
         }
         // ascending, the start should not be higher than the end:
         else if (isOberhau === false && (pointsOnLine[0][1] < pointsOnLine[length-1][1])) {
           // FALSE.
           $scope.game.instruction = 'DER UNTERHAU GEHT ANDERS!';
+          $scope.game.doneRight = 0;
         }
         else if (isRechts && (pointsOnLine[0][0] > pointsOnLine[length-1][0])) {
           // FALSE.
-          $scope.game.instruction = 'FALSCHE RICHTUNG! NACH RECHTS!';
+          $scope.game.instruction = 'FALSCHE RICHTUNG! VON LINKS!';
+          $scope.game.doneRight = 0;
         }
         else if (isRechts === false && (pointsOnLine[0][0] < pointsOnLine[length-1][0])) {
           // FALSE.
-          $scope.game.instruction = 'FALSCHE RICHTUNG! NACH LINKS!';
+          $scope.game.instruction = 'FALSCHE RICHTUNG! VON RECHTS!';
+          $scope.game.doneRight = 0;
         }
         else {
           // if more than 70% of the points were in the right area, it was done right.
@@ -102,6 +108,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper)
           if (percentRight > 0.7) {
             // RIGHT!
             $scope.game.instruction = 'RICHTIG!';
+            $scope.game.doneRight++;
           }
           else {
             // FALSE!
@@ -119,16 +126,36 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper)
         }
         ctx.stroke();
 
+        // End game if required number of points are reached:
+        if ($scope.game.doneRight === 5) {
+          Feedback.congratulation('Geschafft!', 'Du hast es geschafft! Die Schläge sitzen. Herzlichen Glückwunsch!')
+          .then (function () {
+            $scope.game.instruction = '';
+            Campaign.addEnd();
+            GameHelper.activateScrolling();
+          });
+          return;
+        }
+
         // reset the points for the next stroke:
         pointsOnLine = [];
-        $timeout(setNextAttack, 3000);
+        timer = $timeout(setNextAttack, 3000);
+        gesture = $ionicGesture.on('touch', setNextAttackNOW, canvasElement);
+      };
+
+      var timer = null;
+      var gesture = null;
+      var setNextAttackNOW = function () {
+        $ionicGesture.off(gesture, 'touch', setNextAttackNOW);
+        $timeout.cancel(timer);
+        setNextAttack();
+        console.log ('timeout cancelled');
       };
 
       $ionicGesture.on('dragstart', dragStart, canvasElement);
       $ionicGesture.on('drag', drag, canvasElement);
       $ionicGesture.on('release', dragEnd, canvasElement);
 
-      $scope.game = {};
       $scope.game.start = function () {
         angular.element(document.getElementById('preGameScreen')).addClass('hidden');
         GameHelper.deactivateScrolling();
@@ -148,9 +175,11 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper)
             }, 1000);
           }, 1000);
         }, 3000);
-      }
+      };
 
       function setNextAttack () {
+
+        $ionicGesture.off(gesture, 'touch', setNextAttackNOW);
 
         ctx.clearRect (0, 0, canvas.width, canvas.height);
         ctx.drawImage (personImg, 0, 0, 377, 699, 300, 0, 234.22, 450);
@@ -181,7 +210,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper)
         isOberhau = true;
         isRechts = false;
 
-        $scope.game.instruction = 'Zeichne Oberhau Rechts!';
+        $scope.game.instruction = 'Oberhau Rechts!';
         $scope.$apply();
         ctx.beginPath();
         ctx.moveTo(480, 30);
@@ -198,7 +227,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper)
         isOberhau = true;
         isRechts = true;
 
-        $scope.game.instruction = 'Zeichne Oberhau Links!';
+        $scope.game.instruction = 'Oberhau Links!';
         $scope.$apply();
         ctx.beginPath();
         ctx.moveTo(330, 30);
@@ -215,7 +244,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper)
         isOberhau = false;
         isRechts = false;
 
-        $scope.game.instruction = 'Zeichne Unterhau Rechts!';
+        $scope.game.instruction = 'Unterhau Rechts!';
         $scope.$apply();
         ctx.beginPath();
         ctx.moveTo(330, 30);
@@ -232,7 +261,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper)
         isOberhau = false;
         isRechts = true;
 
-        $scope.game.instruction = 'Zeichne Unterhau Links!';
+        $scope.game.instruction = 'Unterhau Links!';
         $scope.$apply();
         ctx.beginPath();
         ctx.moveTo(480, 30);
@@ -279,6 +308,10 @@ function($ionicGesture, $ionicSlideBoxDelegate, CssDoctor, $timeout, GameHelper)
                   '</div>' +
                   '<div class="col">' +
                     '<h4>Schneide die Puppe mit der angezeigten Technik!</h4>' +
+                    '<p>Nach fünf erfolgreichen Schlägen in Folge hast du bestanden.</p>' +
+                    '<h5>Bereits geschafft:</h5>' +
+                    '<p><span class="doneRight">{{game.doneRight}}</span> / 5</p>' +
+                    '<h5>Zeichne Jetzt:</h5>' +
                     '<span id="instruction-text" class="">{{game.instruction}}</span>' +
                   '</div>' +
                 '</div>' +

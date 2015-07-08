@@ -1,23 +1,41 @@
-<ion-view view-title="Übersicht">
-  <ion-content class="padding">
-	<div class="row responsive-md"> 
+<ion-view view-title="Profil" class="profile">
+  <ion-content class="padding" scroll="false">
+	<div class="row single-row"> 
 	
-		<div class="col">
-			<div class="card">
-				<div class="item item-divider">
-					Profilinfos:
-				</div>
-				<div class="item item-text-wrap">
-					<span>Name: {{Data.user.name}}</span><br>
-					<span>Punkte: {{Data.user.score}}</span><br>
-					<span>Geschaffte Level: {{Data.user.levelprogress-1}}</span><br>
+		<div class="col col-67">
+			<div class="profile-card">
+				<div class="row single-row profile_text">
+					<div class="col col-50">
+						<h1>
+							Profilinfos:
+						</h1>
+						<p>Willkommen beim Wissensschwert, {{Data.user.name}}! </p>
+						<p>
+							In deinem Profil kannst du deinen aktuellen Lernfortschritt einsehen. Momentan hast du folgende Punkte erreicht und Lektionen bearbeitet: 
+						</p>
+						<span>Punkte:</span>{{Data.user.score}}<br> 
+						<span>Lektion:{{Data.user.levelprogress}}</span> 
+
+						<p>
+							Rechts siehst du deinen Avatar: Um neue Ausrüstungsgegenstände für ihn zu erhalten, bearbeite die nächste Lektion! <br>
+							Oder willst du eine schon behandelte Lektion wiederholen? Dann klicke diese in der Lerntour auf der rechten Seite an.<br>
+							Wenn du ein bestimmtes Kapitel einsehen willst, dass noch nicht freigeschaltet ist, dann gehe über den Menü-Button oben rechts in den Katalog.
+						</p>
+
+						<p>Viel Erfolg bei der nächsten Lektion und viel Spaß beim nächsten Spiel!</p>
+
+						<div class="profile-options">
+							<button class="button button-icon button-small icon ion-gear-a" ng-click="showProfileOptions()"></button>
+						</div>
+					</div>
+					<div class="col col-50" id="profile_character">
+						<img ng-src="./img/character/{{Data.user.levelprogress-1}}.png" alt="Charakter-Bild">
+					</div>
 				</div>
 			</div>
-			<button class="button button-royal" ng-click="gotoState('profileCreation');">Ausloggen</button>
 		</div>
-		<div class="col"></div>
 		<div class="col">
-			<ion-list>
+			<ion-list class="levellist">
 				<ion-item ng-click="gotoState('menu.campaign-lesson-1');">
 					1: Schwertbegriffe
 				</ion-item>
@@ -53,4 +71,6 @@
 		</div>
 	</div>
   </ion-content>
+  <ion-footer-bar class="bar-primary">
+  </ion-footer-bar>
 </ion-view>

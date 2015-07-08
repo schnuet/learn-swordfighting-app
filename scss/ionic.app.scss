@@ -8,7 +8,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-
 // include own scss files
 @import "components/_animations.scss";
 @import "components/_modal.scss";
@@ -20,6 +19,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "components/_popover.scss";
 @import "components/_campaign.scss";
 @import "components/_font.scss";
+@import "components/_buttons.scss";
+
+@import "pages/_profile.scss";
+@import "pages/_menu.scss";
+@import "pages/_glossar.scss";
 
 @import "games/_dressUp.scss";
 @import "games/_dragDrop.scss";
@@ -29,3 +33,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "games/_cuttingUp.scss";
 @import "games/_mensur.scss";
 @import "games/_huten.scss";
+@import "games/_quellen.scss";
+@import "games/_schnittmaterialien.scss";
+@import "games/_watchSwordfight.scss";

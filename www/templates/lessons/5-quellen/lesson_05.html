@@ -1,4 +1,4 @@
-<ion-view view-title="Lektion 8" cache-view="false">
+<ion-view view-title="Lektion 5" cache-view="false">
 	<ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)">
 	<!-- SEITENINHALT START: -->
 <!-- SEITE 1 -->
@@ -9,7 +9,7 @@
 			<h1>Quellen</h1>
 			<!-- BREITES BILD -->
 			<div class="row height-67"> 
-				<img class="breitbild" src="./img/lessons/01/bild.png">
+				<img src="./img/lessons/05/05b.png" class="breitbild" />
 			</div>
 			<!-- DARUNTER LIEGENDER TEXT -->
 			<div class="row height-25">
@@ -60,19 +60,19 @@
 					<div class="row height-75"> 
 						<ion-slide-box class="image-slider" prevent-drag>
 							<ion-slide>
-								<img src="./img/lessons/05/Quellenbilder/Cod.44.A.8_002v.jpg"  class="normalbild" />
+								<img src="./img/lessons/05/q3.png" class="normalbild" />
 								<div class="bildname">
 									<p>Der Fechtmeister Liechtenauer</p>
 								</div>
 							</ion-slide>
 							<ion-slide>
-								<img src="./img/lessons/05/Quellenbilder/Cod.44.A.8_001v.jpg"  class="normalbild" />
+								<img src="./img/lessons/05/q1.png" class="normalbild" />
 								<div class="bildname">
 									<p>Die Huten Pflug und Ochs</p>
 								</div>
 							</ion-slide>
 							<ion-slide>
-								<img src="./img/lessons/05/Quellenbilder/Cod.44.A.8_002r.jpg"  class="normalbild" /> 
+								<img src="./img/lessons/05/q2.png" class="normalbild" /> 
 								<div class="bildname">
 									<p>Die Huten vom Tag und Alber</p>
 								</div>
@@ -126,7 +126,7 @@
 					<div class="row height-75"> 
 						<ion-slide-box class="image-slider" prevent-drag>
 							<ion-slide>
-								<img src="./img/lessons/05/Quellenbilder/Cod.44.A.8_012r.jpg"  class="normalbild" />
+								<img src="./img/lessons/05/q4.png" class="normalbild" />
 								<div class="bildname">
 									<p>Eine Seite aus dem Codex 44.A.8</p>
 								</div>
@@ -153,15 +153,39 @@
 <!-- SEITE 4 -->
 	  <ion-slide>
 		<ion-content class="padding" scroll="false" has-bouncing="false">
-			<div class="row responsive-md"> 
-				<div class="col col-67">
-					<h1>Quellen</h1>
-					<h5>Was wollte Asterix im Land der Goten?</h5>
-					<multiple-choice choices="Miraculix retten, Haudraufwienix suchen, Krautsalat probieren, Römer verjagen" right-choice="0" callback="Lesson.end()">
-
-					</multiple-choice>
+			<game-quellen>
+				<div class="row game-container quellen"> 
+					<div class="col col-67">
+						<div class="quellentext">{{game.text}}</div>
+						<h5>{{game.question}}</h5>
+						<ul>
+							<li ng-repeat="answer in game.answers" class="answer" ng-click="game.selectAnswer($event)">{{answer}}</li>
+						</ul>
+						<button class="button button-balanced" disabled="true" id="finishedButton">{{game.buttonText}}</button>
+					</div>
+					<div class="col col-33 border-left">
+						<button class="button button-block button-primary" ng-click="game.showHelp();">Hilfe anzeigen</button>
+						<span>{{game.help}}</span>
+					</div>
 				</div>
-				<div class="col"></div>
+			</game-quellen>
+			<div class="row" id="preGameScreen"> 
+				<div class="col col-80 col-offset-10 text-center">
+					<h3>Übung: Verständnisfragen</h3>
+					<div class="row"> 
+						<div class="col col-80 col-offset-10 instruction-box">
+							<p>
+								Bei den einzelnen Huten kommt es sowohl auf die Beinstellung als auch auf die Armhaltung an.
+							</p>
+							<p>Stelle die geforderten Huten aus den richtigen Arm- und Beinstellungen zusammen.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-30 col-offset-40">
+							<button class="button button-primary" ng-click="game.start();">Spiel Starten!</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</ion-content>
 	  </ion-slide>

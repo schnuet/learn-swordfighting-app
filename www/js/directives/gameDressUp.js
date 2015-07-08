@@ -1,7 +1,7 @@
 angular.module('starter.directives')
 
-.directive('gameDressUp', ['$ionicGesture', '$ionicSlideBoxDelegate', 'DragNDropHelper', 'Campaign', 'GameHelper',
-function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper, Campaign, GameHelper) {
+.directive('gameDressUp', ['$ionicGesture', 'DragNDropHelper', 'Campaign', 'GameHelper', 'Feedback',
+function($ionicGesture, DragNDropHelper, Campaign, GameHelper, Feedback) {
 
   
 
@@ -37,7 +37,11 @@ function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper, Campaign, GameH
 
           /* END OF GAME, all dressed up: */
           if (itemsToPutOn.length === 0) {
-            Campaign.addEnd();
+            
+            Feedback.congratulation ('Bereit zum Kampf', 'Alle Rüstungsteile wurden erfolgreich angezogen, das Spiel ist bestanden!')
+            .then(function () {
+              Campaign.addEnd();
+            });
 
             // restart the sliding of the page slider
             GameHelper.activateScrolling();

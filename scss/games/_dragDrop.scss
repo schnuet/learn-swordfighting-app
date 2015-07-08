@@ -4,6 +4,12 @@
 	position: relative;
 	//border: 1px solid blue;
 
+	.resolved, &.resolved, img.resolved {
+		@include transition(all cubic-bezier(.1, .7, .1, 1) 1000ms);
+		@include scale(0);
+		opacity: 0;
+	}
+
 	.col {
 		padding: 5px 10px;
 		&.border-left {
@@ -29,6 +35,7 @@
 		position: absolute;
 		left: 0px;
 		top: 0px;
+		pointer-events: none;
 		//-webkit-transition: all 10s;
 	}
 
@@ -39,14 +46,16 @@
 		top: 0px;
 		transition: all 1s;
 		-webkit-transition: all 1s;
-		background-color: $secondary;
+		//background-color: $secondary;
 	}
 	.dragged-item {
+		cursor: pointer;
 		position: absolute;
 		left: 0px;
 		top: 0px;
 		transition: scale 1s !important; 
 		-webkit-transition: scale 1s !important;
+		pointer-events: none;
 		//border: 1px solid red;
 	}
 

@@ -14,8 +14,15 @@
     "gulp-util": "^2.2.14",
     "shelljs": "^0.3.0"
   },
-  "repository" :{ 
-    "type" : "git", 
-    "url" : "https://github.com/schnuet/learn-swordfighting-app.git"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schnuet/learn-swordfighting-app.git"
+  },
+  "cordovaPlugins": [
+    {
+      "locator": "http://github.com/phonegap-build/PushPlugin.git",
+      "id": "com.phonegap.plugins.PushPlugin"
+    }
+  ],
+  "cordovaPlatforms": []
 }

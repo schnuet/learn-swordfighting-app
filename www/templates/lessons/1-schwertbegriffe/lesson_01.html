@@ -4,7 +4,31 @@
 
 	<!-- RICHTET SICH NACH DEM IONIC GRID: http://ionicframework.com/docs/components/#grid-offset -->
 
-	<!-- Kapitel 1 hat nur diese Seite -->
+	<!-- SEITE 1 -->
+	  <ion-slide>
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
+			<h1>Schwertbegriffe</h1>
+			<div class="row height-67"> 
+				<!-- SPALTE: col-x definiert breite. -->
+				<div class="col">
+					<img src="./img/lessons/01/01b.png" class="breitbild" />
+				</div>
+			</div>
+			<!-- DARUNTER LIEGENDER TEXT -->
+			<div class="row height-25">
+				<!-- Spalte 1 -->                        
+				<div class="col col-33">                        	
+					<p> Um den Schwertkampf zu erlernen ist es zunächst wichtig die einzelnen Teile des Schwerts benennen zu können. Später werden diese Begriffe verwendet um Techniken genauer zu erklären, weshalb man sie sich einprägen sollte. </p>
+				</div>
+				<!-- Spalte 2 -->                        
+				<div class="col col-33">
+					<p> </p>
+				</div >
+			</div>
+		</ion-content>
+	  </ion-slide>
+
       
 
 	<!-- SEITE ´4 -->
@@ -31,6 +55,8 @@
 							<div id="begriff-heft-target" class="drag-target hidden"></div>
 						</div>
 					</div>
+					<div class="textContainer border-left" ng-bind-html="vars.gameText">
+					</div>
 					<div class="swordparts">
 						<div class="sword-ratio-container">
 							<div id="knauf" class="drag-item sword-part transparent"></div>
@@ -49,8 +75,6 @@
 						<div id="begriff-klinge" class="drag-item sword-text transparent hidden">Klinge</div>
 						<div id="begriff-heft" class="drag-item sword-text transparent hidden">Heft</div>
 					</div>
-					<div class="textContainer" ng-bind-html="vars.gameText">
-					</div>
 				</div>
 			</game-sword-parts>
 			<div class="row" id="preGameScreen"> 
@@ -59,11 +83,12 @@
 					<div class="row"> 
 						<div class="col col-80 col-offset-10 instruction-box">
 							<p>Baue ein Schwert zusammen und ordne die richtigen Fachbegriffe zu!</p>
+							<p>Pass auf: Während das Spiel läuft, kannst du die anderen Seiten erst mal nicht mehr anschauen!</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col col-30 col-offset-40">
-							<button class="button button-positive" ng-click="game.start();">Spiel Starten!</button>
+							<button class="button button-primary" ng-click="game.start();">Spiel Starten!</button>
 						</div>
 					</div>
 				</div>

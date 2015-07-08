@@ -1,0 +1,59 @@
+.profile {
+	background: pink;
+	#profile_character {
+		text-align: center;
+		position: relative;
+		img {
+			position: absolute;
+			bottom: 0px;
+			right: 0px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	.profile_text {
+		position: relative;
+	}
+	.profile-card {
+		height: 100%;
+		margin-top: 0px;
+		.item-text-wrap {
+			height: calc(100% - 40px);
+			.col {
+				position: relative;
+			}
+			
+		}
+		.profile-options {
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+			text-align: left;
+			button {
+				color: $highlight;
+			}
+			i, span {
+				font-size: 1em;
+				:before {
+					font-size: 1em;
+				}
+			}
+		}
+	}
+	.levellist {
+		.item {
+			color: $highlight;
+			margin-bottom: 0.2em;
+
+			background-image: url(../img/bar-end-stroke.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: bottom;
+			border: none;
+
+			&:nth-of-type(10) {
+				background: none;
+			}
+		}
+	}
+}

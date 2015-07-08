@@ -3,14 +3,15 @@
 	// Der Container, in dem die Schwertteile am Anfang liegen:
 	.swordparts {
 		width: 33%;
-		height: 100%;
-		left: 33%;
+		height: 50%;
+		left: 67%;
+		top: 25%;
 		position: absolute;
 		
 		.sword-text {
 			width: 8em;
 			&.dragged-item {
-				width: auto;
+				text-align: center;
 			}
 		}
 
@@ -51,6 +52,10 @@
 		position: absolute;
 		background-color: royalblue;
 	}
+	.object-positioned {
+		pointer-events: auto;
+		cursor: none;
+	}
 	.textContainer {
 		width: 33%;
 		height: 100%;
@@ -60,6 +65,10 @@
 	.target-box {
 		width: 33%;
 		height: 100%;
+		.sword-ratio-container {
+			//border: 2px solid $highlight;
+			background-color: $primary;
+		}
 	}
 	.sword-ratio-container {
 		width: 67.5%;
@@ -136,7 +145,7 @@
 	}
 	#schwaeche-target {
 		margin-top: calc(-53.5% * 1.78);
-		top: 53.5%;
+		top: 52.5%;
 		width: 100%;
 		padding-top: 66%;
 		height: 100%;
@@ -150,7 +159,7 @@
 	}
 	#ort-target {
 		margin-top: calc(-90.5% * 1.78);
-		top: 90.5%;
+		top: 89%;
 		width: 100%;
 		padding-top: 14%;
 		height: 100%;
@@ -160,49 +169,71 @@
 		width: 100%;
 		height: auto;
 		padding-top: 14%;
+		/*&:hover {
+			background-color: limegreen;
+		}*/
 	}
 	#begriff-schwaeche-target {
 		top: 53.5%;
 		width: 100%;
 		height: auto;
 		padding-top: 66%;
+		/*&:hover {
+			background-color: limegreen;
+		}*/
 	}
 	#begriff-staerke-target {
 		top: 22%;
 		width: 100%;
 		height: auto;
 		padding-top: 56%;
+		/*&:hover {
+			background-color: limegreen;
+		}*/
 	}
 	#begriff-parierstange-target {
 		top: 19%;
 		width: 100%;
 		height: auto;
 		padding-top: 14%;
+		/*&:hover {
+			background-color: limegreen;
+		}*/
 	}
 	#begriff-griff-target {
 		top: 8.5%;
 		width: 100%;
 		height: auto;
 		padding-top: 22%;
+		/*&:hover {
+			background-color: limegreen;
+		}*/
 	}
 	#begriff-knauf-target {
 		top: 0%;
 		width: 100%;
 		height: auto;
 		padding-top: 16%;
+		/*&:hover {
+			background-color: limegreen;
+		}*/
 	}
 	#begriff-klinge-target {
 		top: 20.5%;
 		width: 100%;
 		height: auto;
 		padding-top: 130%;
-		background-color: limegreen;
+		/*&:hover {
+			background-color: limegreen;
+		}*/
 	}
 	#begriff-heft-target {
 		top: 0%;
 		width: 100%;
 		height: auto;
 		padding-top: 40%;
-		background-color: orange;
+		/*&:hover {
+			background-color: limegreen;
+		}*/
 	}
 }

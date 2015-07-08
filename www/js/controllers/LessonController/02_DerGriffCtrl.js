@@ -52,9 +52,9 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, $timeout)
 		if (visitedPages[index] === false) {
 			visitedPages[index] = true;
 			pCount--;
-			if (pCount === 0) {
-				Campaign.addEnd();
-			}
+		}
+		if (pCount === 0) {
+			Campaign.addEnd();
 		}
 		console.log (index + ', ' + pCount);
 		console.log (visitedPages);

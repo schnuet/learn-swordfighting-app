@@ -1,11 +1,10 @@
 .game-container.dress-up {
-	background-color: #e0e0e0;
 
 	img.drag-item {
 		max-width: 200px;
 	}
 	.person {
-		left: 33%;
+		left: 49.5%;
 		width: 33%;
 		height: 100%;
 		position: absolute;
@@ -30,6 +29,7 @@
 	.bg-image-box {
 		position: absolute;
 		top: 0px;
+		left: 16.5%;
 		text-align: center;
 		width: 100%;
 		height: 100%;
@@ -47,6 +47,7 @@
 		}
 	}
 	.clothes {
+		background-color: $primary;
 		width: 33%;
 		height: 100%;
 		position: absolute;

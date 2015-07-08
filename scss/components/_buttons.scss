@@ -1,0 +1,16 @@
+.button {
+	&.button-primary {
+    	@include button-style($secondary, transparent, $primary, transparent, $button-primary-text);
+    	@include button-clear($button-primary-border);
+    	@include button-outline($button-primary-border);
+
+    	&:active {
+    		border: none;
+    	}
+    	font-style: italic;
+    	background-image: url(../img/bar-end-stroke.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: bottom;
+	}
+}

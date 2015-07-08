@@ -1,130 +1,176 @@
-<ion-view view-title="Lektion 8" cache-view="false">
+<ion-view view-title="Lektion 10" cache-view="false">
 	<ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)">
 	<!-- SEITENINHALT START: -->
 
 	<!-- SEITE 1 -->
 	  <ion-slide>
-	  	<ion-content class="padding" has-bouncing="false">
-	  		<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
-			<div class="row"> 				<!-- SPALTE: col-x definiert breite. -->			<h1>Die fünf Wörter</h1>
-				<div class="col col-67">
-				<!-- BREITES BILD -->
-		    <div class="row height-67"> 
-		    	<img class="breitbild" src="./img/lessons/01/bild.png">
-		    </div>
-					<!-- DARUNTER LIEGENDER TEXT -->
-					<div class="row height-25">                        <!-- Spalte 1 -->                        <div class="col col-33">                        	<p>                        Die fünf Wörter sind das Kernkonzept von Liechtenauers Lehre. Stärke und Schwäche beschreiben wie bereits erwähnt die Bereiche der Schwertklinge.
-Vor, Nach und Indes beschreiben, welcher Fechter gerade die Initiative hat.  </p>
-                        </div>
-                        <!-- Spalte 2 -->
-                        <div class="col col-33">
-                        	<p>Entweder ist ein Fechter im Vor und gleichzeitig der andere im Nach oder es befinden sich beide im Indes. Es kann auch passieren, dass keiner im Vor, Nach oder Indes ist, wenn zum Beispiel noch gar kein Angriff statt gefunden hat. </p>
-                        </div >                        <!-- Spalte 3 -->                        <div class="col col-33">                            <p>Das Fühlen gehört zum Indes und ist eine Voraussetzung dafür, in der Bindung vom Nach zum Vor zu wechseln.</p>
-                        </div >	
-					</div>
-                    
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
+			<h1>Die fünf Wörter</h1>
+			<div class="row height-67"> 
+				<img src="./img/lessons/10/10b.png" class="breitbild" />
+			</div>
+			
+			<div class="row height-25">
+				<div class="col col-33">
+					<p>
+						Die fünf Wörter sind das Kernkonzept von Liechtenauers Lehre. Stärke und Schwäche beschreiben wie bereits erwähnt die Bereiche der Schwertklinge.<br>
+						Vor, Nach und Indes beschreiben, welcher Fechter gerade die Initiative hat. 
+					</p>
 				</div>
+				<!-- Spalte 2 -->
+				<div class="col col-33">
+					<p>
+						Entweder ist ein Fechter im Vor und gleichzeitig der andere im Nach oder es befinden sich beide im Indes. Es kann auch passieren, dass keiner im Vor, Nach oder Indes ist, wenn zum Beispiel noch gar kein Angriff statt gefunden hat. 
+					</p>
+				</div >
+				<div class="col col-33">
+					<p>Das Fühlen gehört zum Indes und ist eine Voraussetzung dafür, in der Bindung vom Nach zum Vor zu wechseln.</p>
+				</div >	
 			</div>
 		</ion-content>
 	  </ion-slide>
 
 	<!-- SEITE 2 -->
 	  <ion-slide>
-	  	<ion-content class="padding" scroll="false" has-bouncing="false">
-	  		<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
-			<div class="row"> 				<!-- SPALTE: col-x definiert breite. -->                 <!-- Spalte 1 (hohe Spalte)-->				<div class="col col-33">					<h1>Die fünf Wörter</h1>					<p><h3>Vor </h3> Im Vor zu sein bedeutet, die Initiative zu haben. Man agiert und der Gegner ist gezwungen zu reagieren. Im Vor greift man an und setzt seine eigenen Pläne um. Es ist daher in Freikampf ratsam  nach Möglichkeit im Vor zu sein und den anderen nicht zum agieren kommen zu lassen.<br>TIPP: Im Freikampf ist es schwierig im Vor zu bleiben, wenn man vergisst seinen Ort auf den Gegner ausgerichtet zu lassen. Dieser kann dann ohne bedroht zu werden sofort angreifen. Lässt man den Ort ausgerichtet, muss der Gegner diesen zunächst beseitigen, bevor er angreift.
-</p>
-				
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			
+			<div class="row single-row"> 
+				<div class="col col-33">
+					<h1>Die fünf Wörter</h1>
+					<h3>Vor </h3> 
+					<p>
+						Im Vor zu sein bedeutet, die Initiative zu haben. Man agiert und der Gegner ist gezwungen zu reagieren. Im Vor greift man an und setzt seine eigenen Pläne um. Es ist daher in Freikampf ratsam  nach Möglichkeit im Vor zu sein und den anderen nicht zum agieren kommen zu lassen.<br>
+						TIPP: Im Freikampf ist es schwierig im Vor zu bleiben, wenn man vergisst seinen Ort auf den Gegner ausgerichtet zu lassen. Dieser kann dann ohne bedroht zu werden sofort angreifen. Lässt man den Ort ausgerichtet, muss der Gegner diesen zunächst beseitigen, bevor er angreift.
+					</p>
 				</div>
 				<div class="col col-67">
-					<!-- BILD _ HÖHE VON 75 % -->
-                    <!-- Bilder zum weiterschalten -->
-					<div class="row height-75"> 
-						<video>
-                        	<source src="./img/lessons/10/Vor Nach Indes.mp4" type="video/mp4" />
-                        </video>
+					<div class="row height-75 image-slider"> 
+						<div class="slider-slide">
+							<video>
+								<source src="./img/lessons/10/Vor Nach Indes.mp4" type="video/mp4" />
+							</video>
+							<div class="bildname">
+								<p>Vor, Nach und Indes</p>
+							</div>
+						</div>
 					</div>
-                    <!-- Jedes Bild hat einen Namen/Beschreibung -->
-                    <div class="bildname">
-                    <p>Vor, Nach und Indes</p>
-                    </div>
-                    
+					<!-- Jedes Bild hat einen Namen/Beschreibung -->
+					
 					<!-- DARUNTER LIEGENDER TEXT -->
 					<div class="row height-25"> 
-                    <!-- Spalte 2 -->
-						<div class="col col-33">
- 							<p><h3>Nach</h3>Im Nach ist man, wenn man auf eine Aktion des Gegners reagieren und sich verteidigen muss. Es ist schwieriger aus dem Nach zu treffen, da man nur anhand der Aktion des Gegners wählen kann, was man tut. </p>
+						<div class="col col-50">
+							<h3>Nach</h3>
+							<p>
+								Im Nach ist man, wenn man auf eine Aktion des Gegners reagieren und sich verteidigen muss. Es ist schwieriger aus dem Nach zu treffen, da man nur anhand der Aktion des Gegners wählen kann, was man tut. 
+							</p>
 
 						</div>
-                    <!-- Spalte 3 -->
-                        <div class="col col-33">
- 							<p> Erkennt ein Fechter nicht, dass er im Nach ist, wird er entweder getroffen oder es kommt zu Doppeltreffern, da beide nur agieren, aber keiner der beiden reagiert.</p>
+					<!-- Spalte 3 -->
+						<div class="col col-50">
+							<p> Erkennt ein Fechter nicht, dass er im Nach ist, wird er entweder getroffen oder es kommt zu Doppeltreffern, da beide nur agieren, aber keiner der beiden reagiert.</p>
 						</div>
+					</div>
+				</div>
+			</div>
 
-			<quelle>				<!-- EIN div Altdeutsch -->				<div class="alt">					<p>| Das ist das du albeg solt vor kömen es seÿ mit dem haw oder mit dem stich | ee wenn er | vnd wenn du ee kumpst mit dem haw oder süst das er dir vor setzñ mües | So arbait | Inndes behentlich In der versatzung für dich mit dem swert | oder sünst mit anderñ stucken | So mag er zu° kainen arbait komen ~ </p>
+			<quelle>
+				<!-- EIN div Altdeutsch -->				
+				<div class="alt">
+					<p>| Das ist das du albeg solt vor kömen es seÿ mit dem haw oder mit dem stich | ee wenn er | vnd wenn du ee kumpst mit dem haw oder süst das er dir vor setzñ mües | So arbait | Inndes behentlich In der versatzung für dich mit dem swert | oder sünst mit anderñ stucken | So mag er zu° kainen arbait komen ~ </p>
 				</div>
 				<!-- Ein Div Neudeutsch -->
-				<div class="neu">                	<p>Du sollst ihm stets zuvorkommen, sei es mit einem Hieb oder Stich. Wenn du ihm mit einem Hieb zuvorkommst, oder wenn du siehst, dass er dir versetzen muß, arbeite »indes« geschickt in der Versatzung vor dir mit dem Schwert, oder wende andere Stücke an. So kann er nicht erfolgreich angreifen.
- </p>
+				<div class="neu">
+					<p>Du sollst ihm stets zuvorkommen, sei es mit einem Hieb oder Stich. Wenn du ihm mit einem Hieb zuvorkommst, oder wenn du siehst, dass er dir versetzen muß, arbeite »indes« geschickt in der Versatzung vor dir mit dem Schwert, oder wende andere Stücke an. So kann er nicht erfolgreich angreifen.
+ 					</p>
 				</div>
-			</quelle -->
-            
+			</quelle>
+			
 		</ion-content>
 	  </ion-slide>
-      
-      <!-- SEITE 3 -->
+	  
+	  <!-- SEITE 3 -->
 	  <ion-slide>
-	  	<ion-content class="padding" scroll="false" has-bouncing="false">
-	  		<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->			<div class="row"> 				<!-- SPALTE: col-x definiert breite. -->                 <!-- Spalte 1 (hohe Spalte)-->				<div class="col col-33">					<h1>Die fünf Wörter</h1>					<p><h3>Indes/Fühlen</h3> Indes spielt sich im Moment des Klingenkontakts ab, da hier die Verteilung von Vor und Nach wechseln kann und beide Fechter wieder die Möglichkeit haben, das Vor anzustreben. Das Fühlen gehört zum Indes und beschreibt, was beide Fechter im Moment des Klingenkontakts tun müssen, nämlich fühlen was der Gegner als Nächstes plant. <br>Je nachdem, mit wie viel Kraft und in welche Richtung ein Gegner mit seinem Schwert drückt, kann ein erfahrener Fechter dann die richtige Aktion wählen, um in das Vor zu kommen oder dort zu bleiben.<br><h3>Stärke</h3><br>Wie bereits zu Beginn erwähnt, ist die Stärke der Bereich des Schwertes, der vom Heft bis etwa zur Mitte der Klinge reicht. Ist das Schwert des Gegners in diesem Bereich angebunden, lässt sich leicht eine hohe Kraft darauf ausüben.
-</p>
-				
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<div class="row single-row">
+				<div class="col col-33">
+					<h1>Die fünf Wörter</h1>
+					<h3>Indes/Fühlen</h3>
+					<p> 
+						Indes spielt sich im Moment des Klingenkontakts ab, da hier die Verteilung von Vor und Nach wechseln kann und beide Fechter wieder die Möglichkeit haben, das Vor anzustreben. Das Fühlen gehört zum Indes und beschreibt, was beide Fechter im Moment des Klingenkontakts tun müssen, nämlich fühlen was der Gegner als Nächstes plant. <br>Je nachdem, mit wie viel Kraft und in welche Richtung ein Gegner mit seinem Schwert drückt, kann ein erfahrener Fechter dann die richtige Aktion wählen, um in das Vor zu kommen oder dort zu bleiben.
+					</p>
+					<h3>Stärke</h3>
+					<p>
+						Wie bereits zu Beginn erwähnt, ist die Stärke der Bereich des Schwertes, der vom Heft bis etwa zur Mitte der Klinge reicht. Ist das Schwert des Gegners in diesem Bereich angebunden, lässt sich leicht eine hohe Kraft darauf ausüben.
+					</p>
 				</div>
 				<div class="col col-67">
-					<!-- BILD _ HÖHE VON 75 % -->
-                    <!-- Bilder zum weiterschalten -->
-					<div class="row height-75"> 
-						<video>
-                        	<source src="./img/lessons/10/Vor Nach Indes.mp4" type="video/mp4" />
-                        </video>
+					<div class="row height-75 image-slider"> 
+						<div class="slider-slide">
+							<video>
+								<source src="./img/lessons/10/Vor Nach Indes.mp4" type="video/mp4" />
+							</video>
+							<div class="bildname">
+								<p>Vor, Nach und Indes</p>
+							</div>
+						</div>
 					</div>
-                    <!-- Jedes Bild hat einen Namen/Beschreibung -->
-                    <div class="bildname">
-                    <p>Vor, Nach und Indes</p>
-                    </div>
-                    
+					<!-- Jedes Bild hat einen Namen/Beschreibung -->
+					
 					<!-- DARUNTER LIEGENDER TEXT -->
-					<div class="row height-25"> 
-                    <!-- Spalte 2 -->						<div class="col col-33"> 							<p>Ist die Schwäche des Gegners in der eigenen Stärke, lässt sich dessen Schwert kontrollieren, da man das bessere Hebelverhältnis hat.<h3>Schwäche</h3><br>Die Schwäche reicht etwa von der Klingenmitte bis zum Ort.  </p>
-
+					<div class="row height-25">
+						<div class="col col-50">
+							<p>
+								Ist die Schwäche des Gegners in der eigenen Stärke, lässt sich dessen Schwert kontrollieren, da man das bessere Hebelverhältnis hat.
+							</p>
+							<h3>Schwäche</h3>
+							<p>
+								Die Schwäche reicht etwa von der Klingenmitte bis zum Ort.  
+							</p>
 						</div>
-                    <!-- Spalte 3 -->
-                        <div class="col col-33"> 							<p>  Meist ist dies der Bereich, der den Gegner verletzen soll. Ist die Klinge gebunden, ist es schwieriger, durch diesen Bereich eine hohe Kraft auszuüben und das Schwert des Gegners zum Beispiel zur Seite zu schieben, um den Ort auszurichten und das Vor zu erlangen.</p>
+					<!-- Spalte 3 -->
+						<div class="col col-50">
+							<p>
+								Meist ist dies der Bereich, der den Gegner verletzen soll. Ist die Klinge gebunden, ist es schwieriger, durch diesen Bereich eine hohe Kraft auszuüben und das Schwert des Gegners zum Beispiel zur Seite zu schieben, um den Ort auszurichten und das Vor zu erlangen.
+							</p>
 						</div>
-
-			<quelle>				<!-- EIN div Altdeutsch -->				<div class="alt">					<p>| Das nach das sind die prüch wider alle stuck | vnd häw die man auff dich treibt | vnd das vernÿm also | wenn er ee ku~pt mit dem haw | wenn du das im versetzen muest | So arbait Inndes mit dein° vorsatzung behendlich mit dem swert zu° der nagsten plöss | So prichstu ÿm sein vor mit deinem nach ~</p>				</div>				<!-- Ein Div Neudeutsch -->				<div class="neu">                	<p>Das »Nach« sind die Brüche gegen alle Stücke und Hiebe, die man gegen dich richtet. Das ist so zu verstehen: Wenn er dir mit dem Hieb zuvorkommt und du im diesen versetzen mußt, so arbeite indes mit deiner Versatzung geschickt mit dem Schwert zu der nächsten Blöße. So brichst du ihm sein »Vor« mit deinem »Nach«.
-
- </p>
+					</div>
 				</div>
-			</quelle -->
-            
+			</div>
+
+			<quelle>
+				<div class="alt">
+					<p>| Das nach das sind die prüch wider alle stuck | vnd häw die man auff dich treibt | vnd das vernÿm also | wenn er ee ku~pt mit dem haw | wenn du das im versetzen muest | So arbait Inndes mit dein° vorsatzung behendlich mit dem swert zu° der nagsten plöss | So prichstu ÿm sein vor mit deinem nach ~</p>
+				</div>
+				<div class="neu">
+					<p>Das »Nach« sind die Brüche gegen alle Stücke und Hiebe, die man gegen dich richtet. Das ist so zu verstehen: Wenn er dir mit dem Hieb zuvorkommt und du im diesen versetzen mußt, so arbeite indes mit deiner Versatzung geschickt mit dem Schwert zu der nächsten Blöße. So brichst du ihm sein »Vor« mit deinem »Nach«.
+					</p>
+				</div>
+			</quelle>
+			
 		</ion-content>
 	  </ion-slide>
 
 	<!-- SEITE 4 -->
 	  <ion-slide>
-	  	<ion-content class="padding" scroll="false" has-bouncing="false">
-			<game-dress-up onwin="Lesson.end()">
-				<div class="game-container dress-up">
-					<div class="target-box">
-						<div id="helmet-target"></div>
-						<div id="pants-target"></div>
+		<ion-content class="padding" scroll="false" has-bouncing="false">
+			<game-watch-swordfight>
+			</game-watch-swordfight>
+			<div class="row" id="preGameScreen"> 
+				<div class="col col-80 col-offset-10 text-center">
+					<h3>Übung: Positionen bestimmen</h3>
+					<div class="row"> 
+						<div class="col col-80 col-offset-10 instruction-box">
+							<p>Du wirst Videos gezeigt bekommen, bei denen verschiedene Positionen vorkommen. Entscheide <strong>schnell</strong>, wer im VOR, NACH oder INDES ist.</p>
+						</div>
 					</div>
-					<div class="clothes">
-						<img id="helmet" class="drag-item">
-						<img id="pants" class="drag-item"> 
+					<div class="row">
+						<div class="col col-30 col-offset-40">
+							<button class="button button-primary" ng-click="game.start();">Spiel Starten!</button>
+						</div>
 					</div>
 				</div>
-			</game-dress-up>
+			</div>
 		</ion-content>
 	  </ion-slide>
 

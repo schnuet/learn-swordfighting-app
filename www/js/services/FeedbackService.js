@@ -16,11 +16,15 @@ function (Data, $ionicPopup, $timeout, $q) {
 			if (typeof delay === 'undefined') {
 				delay = 0;
 			}
+			var imageClass = '';
+			if (typeof image !== 'undefined' && image !== null && image !== false) {
+				imageClass = 'image';
+			}
 			// show the popup after the selected delay
 			$timeout (function () {
 				var myPopup = $ionicPopup.show({
 					template: text,
-					cssClass: 'congratulation',
+					cssClass: 'congratulation ' + imageClass,
 					title: title,
 					subTitle: '',
 					buttons: [
@@ -35,7 +39,7 @@ function (Data, $ionicPopup, $timeout, $q) {
 						myPopup.close(); 
 						finishedShowing.resolve(true);
 					});
-				}, 300);
+				}, 400);
 			}, delay);
 			return finishedShowing.promise;
 		},

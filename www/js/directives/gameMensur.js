@@ -1,47 +1,26 @@
 angular.module('starter.directives')
 
-.directive('gameMensur', ['$ionicGesture', '$ionicSlideBoxDelegate', 'Campaign', 'GameHelper',
-function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper) {
+.directive('gameMensur', ['$ionicGesture', 'Campaign', 'GameHelper', 'Feedback',
+function($ionicGesture, Campaign, GameHelper, Feedback) {
 
   
 
   return {
     restrict: 'E',
-    replace: false,
+    replace: true,
     link: function($scope, $element, $attributes) {
 
       $scope.game = {};
 
-/*      var onRight = function (e, droppedObject) {
-        console.log (droppedObject);
-        //var i = itemsToPutOn.indexOf (droppedObject.id);
-        if (droppedObject.id === itemsToPutOn[0]) {
-          itemsToPutOn.splice(0, 1);
-          console.log (itemsToPutOn);
-          for (var i = 0; i < posesLength; i++) {
-            if (differentPoses[i].id === droppedObject.id + '-bg') {
-              angular.element (differentPoses[i]).removeClass('hidden');
-            } 
-            else {
-              angular.element (differentPoses[i]).addClass('hidden');
-            }
-          }
+      $scope.game.instruction = '';
 
-          // END OF GAME, all dressed up: 
-          if (itemsToPutOn.length === 0) {
-            Campaign.addEnd();
+      // a list of all the different positions:
+      var positions = ['zufechten', 'krieg', 'ringen'];
+      var p_c = ['zufechten', 'krieg', 'ringen'];
+      var currentPosition = '';
+      var currentOrder = '';
 
-            // restart the sliding of the page slider
-            GameHelper.activateScrolling();
-            $scope.vars.slideEnabled = true;
-          }
-        }
-        else {
-          console.log (droppedObject.id + ' can not be worn right now.');
-        }
-      };
-
-      $scope.$on ('dragndrop_right-target', onRight);*/
+      var finishedButton = null;
 
       // the active element:
       var zieher_el = null;
@@ -76,15 +55,18 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper) {
           }
           else if (percentMove < 0.46) {
             // 01 - big Abstand
-            console.log ('BIG');
+            console.log ('ZUFECHTEN');
+            currentPosition = 'zufechten';
           }
           else if (percentMove < 0.645) {
             // 02 - Kampfabstand
-            console.log ('MIDDLE');
+            console.log ('KRIEG');
+            currentPosition = 'krieg';
           }
           else if (percentMove < 0.82) {
             // 03 - Nahkampfabstand
-            console.log ('SMALL');
+            console.log ('RINGEN');
+            currentPosition = 'ringen';
           }
 
           // reset in bounds when out of bounds
@@ -98,6 +80,33 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper) {
           }
 
           dragOK = false;
+        }
+      };
+
+      var getNextPosition = function () {
+        if (positions.length === 0) return false;
+        currentOrder = positions.splice(Math.floor(Math.random() * (positions.length)), 1)[0];
+        $scope.game.instruction = currentOrder.charAt(0).toUpperCase() + currentOrder.substr(1);
+      };
+
+      var checkPosition = function () {
+        if (currentOrder === currentPosition) {
+          var picNum = p_c.indexOf(currentPosition) + 1;
+          Feedback.congratulation ('Gut getroffen. So sieht ' + $scope.game.instruction + ' mit echten Leuten aus:', '<img src="./img/lessons/09/Abstand/0'+picNum+'.png">', true)
+          .then(function () {
+            if (getNextPosition() === false) {
+              Feedback.congratulation ('Das Spiel ist bestanden!', 'Du konntest alle Positionen finden! Herzlichen Glückwunsch!');
+              Campaign.addEnd();
+              GameHelper.activateScrolling();
+              $scope.vars.slideEnabled = true;
+              $scope.game.instruction = 'Fertig';
+              finishedButton[0].disabled = true;
+              angular.element(document.getElementById('mensur-instruction-box')).addClass('resolved');
+            }
+          });
+        }
+        else {
+          Feedback.sorry ('Leider noch nicht.', 'Such noch etwas weiter, ' + $scope.game.instruction + ' ist nicht hier.');
         }
       };
 
@@ -118,6 +127,13 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper) {
         zieher_el = angular.element(document.getElementById('abstand_zieher'));
         init_l = zieher_el[0].offsetLeft;
         console.log (init_l);
+
+        finishedButton = angular.element(document.getElementById('finishedButton'));
+        finishedButton.on ('click', checkPosition);
+
+        getNextPosition();
+        // wir starten im zufechten:
+        currentPosition = 'zufechten';
       };
 
       /*
@@ -141,6 +157,27 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper) {
         $element.remove();
       });
 
-    }
+    },
+    template: '<div class="game-container mensur">' +
+         '<div class="row height-67"> ' +
+           '<div id="abstand_ziehbereich" class="col height-100 ziehbereich">' +
+             '<div id="abstand_zieher"></div>' +
+             '<div id="abstand_ziel"></div>' +
+           '</div>' +
+         '</div>' +
+         '<div class="row height-33">' +
+           '<div class="col">' +
+              '<h5>Zurechtziehen</h5>' +
+              '<p>Ziehe den linken Krieger an die passende Position für die jeweils angezeigte Distanz.</p>' +
+           '</div>' +
+           '<div class="col instruction-box" id="mensur-instruction-box">' +
+              '<h5>Bewege ihn zum:</h5>' +
+              '<span>{{game.instruction}}</span>' +
+           '</div>' +
+           '<div class="col button-box">' +
+              '<button class="button button-balanced" id="finishedButton">Fertig</button>' +
+           '</div>' +
+         '</div>' +
+       '</div>'
   };
 }]);

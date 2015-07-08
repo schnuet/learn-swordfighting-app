@@ -1,0 +1,44 @@
+.modal.menu {
+	.col {
+		h1 {
+			margin-left: 15px;
+			width: 100%;
+			text-align: left;
+		}
+	}
+	.levellist {
+		.item {
+			//text-align: center;
+			color: $highlight;
+			height: 3em;
+			margin-top: 0.2em;
+
+			background-image: url(../img/bar-end-stroke.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: bottom;
+			border: none;
+
+			&.level-headline {
+				background: none;
+				text-transform: uppercase;
+				font-weight: bold;
+				margin-left: -100%;
+				position: absolute;
+				text-align: right;
+				width: 100%;
+			}
+
+			&:nth-of-type(13) {
+				background: none;
+			}
+		}
+	}
+	.menu_list {
+		.item {
+			//text-align: center;
+			color: $highlight;
+			border: none;
+		}
+	}
+}

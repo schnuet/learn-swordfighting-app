@@ -25,7 +25,11 @@
 			cursor: default;
 		}
 		&.bar-footer{
-			background-image: linear-gradient(180deg, $bar-primary-border, $bar-primary-border 50%, transparent 50%);
+			background-image: url(../img/bar-end-stroke.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: top;
+			text-transform: uppercase;
 		}
 	}
 }

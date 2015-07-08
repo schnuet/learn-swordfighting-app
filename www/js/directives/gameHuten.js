@@ -1,7 +1,7 @@
 angular.module('starter.directives')
 
-.directive('gameHuten', ['$ionicGesture', '$ionicSlideBoxDelegate', 'Campaign', 'GameHelper', 'Feedback',
-function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper, Feedback) {
+.directive('gameHuten', ['$ionicGesture', '$ionicSlideBoxDelegate', 'Campaign', 'GameHelper', 'Feedback', '$timeout',
+function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper, Feedback, $timeout) {
 
 	return {
 		restrict: 'E',
@@ -23,7 +23,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper, Feedback) 
 			var requiredHute = '';
 
 			$scope.game.nextHute = '';
-			$scope.game.buttonText = 'Wähle Hute...';
+			$scope.game.buttonText = 'Wähle Hut...';
 
 
 			var selectPart = function (e, partClass) {
@@ -51,7 +51,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper, Feedback) 
 				if (partArm !== '' && partBein !== '') {
 					finishedButton[0].disabled = false;
 					$scope.$apply(function () {
-						$scope.game.buttonText = 'Das ist die Hute!';
+						$scope.game.buttonText = 'Das ist die Hut!';
 					});
 					
 				}
@@ -67,13 +67,23 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper, Feedback) 
 						if (getNextHute() === false) {
 							// Spiel gewonnen!
 							Campaign.addEnd();
-							$scope.game.buttonText = 'Spiel bestanden!';
 							$scope.game.nextHute = 'Spiel bestanden!';
+							finishedButton.addClass('hidden');
+							for (var i = 3; i >= 0; i--) {
+								angular.element(armParts[i]).addClass('resolved');
+								angular.element(beinParts[i]).addClass('resolved');
+							};
+							Feedback.congratulation('Herzlichen Glückwunsch!', 'Die Huten scheinst du drauf zu haben! Das Spiel ist bestanden.')
+							.then(function () {
+								// restart the sliding of the page slider
+								GameHelper.activateScrolling();
+								$scope.vars.slideEnabled = true;
+							});
 						}
 					});
 				}
 				else if (partArm === partBein) {
-					Feedback.sorry('Hmm...', 'Die Teile passen zusammen, sind aber eine andere Hute! ' + $scope.game.nextHute + ' sieht anders aus.')
+					Feedback.sorry('Hmm...', 'Die Teile passen zusammen, sind aber eine andere Hut! ' + $scope.game.nextHute + ' sieht anders aus.')
 					.then (function () {
 						deselectAllParts();
 					});
@@ -103,7 +113,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper, Feedback) 
 			var getNextHute = function () {
 				if (moeglicheHuten.length === 0) return false;
 				// get one random part of possible Huten, delete it from the others.
-				$scope.game.nextHute = moeglicheHuten.splice(Math.floor(Math.random() * (moeglicheHuten.length-1)), 1)[0];
+				$scope.game.nextHute = moeglicheHuten.splice(Math.floor(Math.random() * (moeglicheHuten.length)), 1)[0];
 				requiredHute = $scope.game.nextHute.toLowerCase().replace(' ', '_');
 			};
 

@@ -52,7 +52,8 @@ angular.module('starter')
 		url: '/start',
 		views: {
 			'menuContent': {
-				templateUrl: 'templates/dashboard.html'
+				templateUrl: 'templates/dashboard.html', 
+        controller: 'ProfileCtrl'
 			}
 		}
 	})

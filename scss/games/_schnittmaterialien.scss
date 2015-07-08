@@ -1,0 +1,36 @@
+.game-container.schnittmaterialien {
+	.col {
+		padding-top: 25%;
+		position: relative;
+		.drag-target, .drag-item, .object-positioned {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
+		}
+		.drag-target {
+			border: 1px solid $highlight;
+			border-left: none;
+			div.number {
+				pointer-events: none;
+				font-size: 8em;
+				height: 20px;
+				font-weight: bold;
+				color: $primary;
+				position: absolute;
+				top: 50%;
+				margin-top: -10px;
+				width: 100%;
+				text-align: center;
+				vertical-align: middle;
+			}
+		}
+		&:nth-of-type(1) {
+			.drag-target {
+				border-left: 1px solid $highlight;
+			}
+		}
+	}
+}

@@ -1,6 +1,6 @@
 {
   "name": "sidemenu",
-  "app_id": "",
+  "app_id": "6bc893af",
   "gulpStartupTasks": [
     "sass",
     "watch"

@@ -7685,6 +7685,9 @@ a.button {
 .scroll {
   min-height: 100%; }
 
+.content.has-header {
+  padding: 5px 66px; }
+
 .lesson-page-container.slider {
   height: 100%;
   background-color: #FFFDF8; }
@@ -7729,6 +7732,9 @@ a.button {
   pointer-events: none;
   padding: 5px 1em; }
 
+.breitbild {
+  width: 100%; }
+
 .scroll-content {
   background-color: #FFFDF8; }
   .scroll-content .row, .scroll-content .col {
@@ -7745,6 +7751,9 @@ a.button {
       height: 67%; }
     .scroll-content .row.height-100, .scroll-content .col.height-100 {
       height: 100%; }
+    .scroll-content .row.border-left, .scroll-content .col.border-left {
+      border-left: 1px solid #AE3E3B;
+      padding-left: 20px; }
   .scroll-content .row.single-row {
     height: 100%; }
     .scroll-content .row.single-row > .col {
@@ -7754,8 +7763,8 @@ a.button {
 
 .instruction-box {
   min-height: 200px;
-  border: 1px solid grey;
-  background-color: #F4F1E4 !important;
+  /*border: 1px solid grey;
+	background-color: $primary !important;*/
   padding: 20px;
   font-size: 1.2em;
   border-radius: 10px; }
@@ -7763,6 +7772,9 @@ a.button {
 .right {
   position: absolute;
   right: 0px; }
+
+.item:active {
+  background-color: #F4F1E4; }
 
 .item.disabled {
   opacity: 0.4;
@@ -7811,7 +7823,11 @@ a.button {
     margin-left: -29px;
     cursor: default; }
   .bar.bar-primary.bar-footer {
-    background-image: linear-gradient(180deg, #F4F1E4, #F4F1E4 50%, transparent 50%); }
+    background-image: url(../img/bar-end-stroke.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    text-transform: uppercase; }
 
 .popup-container.infoPopup {
   pointer-events: auto !important; }
@@ -7821,6 +7837,28 @@ a.button {
   pointer-events: auto !important; }
 .popup-container.sorry {
   pointer-events: auto !important; }
+.popup-container.image .popup {
+  width: 80%; }
+  .popup-container.image .popup img {
+    max-width: 100%;
+    max-height: 100%; }
+.popup-container.profile_edit #profile-edit-close-button, .popup-container.profile_delete #profile-edit-close-button {
+  position: absolute;
+  top: -20px;
+  right: -20px; }
+  .popup-container.profile_edit #profile-edit-close-button:before, .popup-container.profile_delete #profile-edit-close-button:before {
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+    background-color: #F4F1E4;
+    border: 1px solid grey;
+    border-radius: 15px; }
+
+h1, h2 {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #AE3E3B;
+  text-transform: uppercase; }
 
 h3 {
   font-size: 1.2em; }
@@ -7886,7 +7924,10 @@ h3 {
   .outro.modal .row > .col {
     height: 100%; }
 .outro.modal .belohnung {
-  max-height: 80%; }
+  position: absolute;
+  top: 20%;
+  height: 40%;
+  width: auto; }
 .outro.modal .abschlusstext {
   background-color: #F4F1E4;
   padding: 1em;
@@ -7894,7 +7935,10 @@ h3 {
   top: 20%; }
 
 .intro.modal .intro-text-box {
-  background-color: #F4F1E4; }
+  position: absolute;
+  top: 20%;
+  padding-right: 3em;
+  background-color: transparent; }
 
 .intro.modal .scroll-content-false .row, .outro.modal .scroll-content-false .row {
   background-color: transparent; }
@@ -8078,124 +8122,245 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
     text-rendering: optimizeLegibility;
 }
 */
-.game-container.dress-up {
-  background-color: #e0e0e0; }
-  .game-container.dress-up img.drag-item {
-    max-width: 200px; }
-  .game-container.dress-up .person {
-    left: 33%;
-    width: 33%;
-    height: 100%;
-    position: absolute;
-    text-align: center; }
-    .game-container.dress-up .person .width-limiter {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: inline-block; }
-    .game-container.dress-up .person .aspect-ratio-container {
-      position: absolute;
-      width: 100%;
-      height: auto;
-      max-height: 100%;
-      padding-top: 200%; }
-    .game-container.dress-up .person .object-positioned {
-      display: none; }
-  .game-container.dress-up .bg-image-box {
-    position: absolute;
-    top: 0px;
+.button.button-primary {
+  border-color: transparent;
+  background-color: #FFFDF8;
+  color: #AE3E3B;
+  font-style: italic;
+  background-image: url(../img/bar-end-stroke.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom; }
+  .button.button-primary:hover {
+    color: #AE3E3B;
+    text-decoration: none; }
+  .button.button-primary.active, .button.button-primary.activated {
+    border-color: transparent;
+    background-color: #F4F1E4;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1); }
+  .button.button-primary.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #AE3E3B; }
+  .button.button-primary.button-icon {
+    border-color: transparent;
+    background: none; }
+  .button.button-primary.button-outline {
+    border-color: #AE3E3B;
+    background: transparent;
+    color: #AE3E3B; }
+    .button.button-primary.button-outline.active, .button.button-primary.button-outline.activated {
+      background-color: #AE3E3B;
+      box-shadow: none;
+      color: #fff; }
+  .button.button-primary:active {
+    border: none; }
+
+.profile {
+  background: pink; }
+  .profile #profile_character {
     text-align: center;
-    width: 100%;
-    height: 100%; }
-  .game-container.dress-up .bg-image {
-    max-width: 100%;
-    position: relative;
-    display: inline-block;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    max-height: 100%; }
-    .game-container.dress-up .bg-image.hidden {
-      display: none; }
-  .game-container.dress-up .clothes {
-    width: 33%;
+    position: relative; }
+    .profile #profile_character img {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      max-width: 100%;
+      max-height: 100%; }
+  .profile .profile_text {
+    position: relative; }
+  .profile .profile-card {
     height: 100%;
+    margin-top: 0px; }
+    .profile .profile-card .item-text-wrap {
+      height: calc(100% - 40px); }
+      .profile .profile-card .item-text-wrap .col {
+        position: relative; }
+    .profile .profile-card .profile-options {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      text-align: left; }
+      .profile .profile-card .profile-options button {
+        color: #AE3E3B; }
+      .profile .profile-card .profile-options i, .profile .profile-card .profile-options span {
+        font-size: 1em; }
+        .profile .profile-card .profile-options i :before, .profile .profile-card .profile-options span :before {
+          font-size: 1em; }
+  .profile .levellist .item {
+    color: #AE3E3B;
+    margin-bottom: 0.2em;
+    background-image: url(../img/bar-end-stroke.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    border: none; }
+    .profile .levellist .item:nth-of-type(10) {
+      background: none; }
+
+.modal.menu .col h1 {
+  margin-left: 15px;
+  width: 100%;
+  text-align: left; }
+.modal.menu .levellist .item {
+  color: #AE3E3B;
+  height: 3em;
+  margin-top: 0.2em;
+  background-image: url(../img/bar-end-stroke.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  border: none; }
+  .modal.menu .levellist .item.level-headline {
+    background: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: -100%;
     position: absolute;
-    left: 0%; }
-    .game-container.dress-up .clothes .drag-item, .game-container.dress-up .clothes .dragged-item {
-      width: 50%; }
-  .game-container.dress-up .textContainer {
+    text-align: right;
+    width: 100%; }
+  .modal.menu .levellist .item:nth-of-type(13) {
+    background: none; }
+.modal.menu .menu_list .item {
+  color: #AE3E3B;
+  border: none; }
+
+.glossar-table {
+  width: 100%; }
+  .glossar-table .glossar-title {
     width: 33%;
-    left: 67%;
-    height: 100%;
-    padding: 1em;
-    position: absolute; }
-  .game-container.dress-up #helmet {
-    top: 0px;
-    left: 0px; }
-  .game-container.dress-up #helmet-target {
-    top: 2%;
-    left: 25%;
-    width: 50%;
-    height: 20%; }
-  .game-container.dress-up #headthing {
-    top: 0px;
-    left: 50%; }
-  .game-container.dress-up #headthing-target {
-    top: 2%;
-    left: 25%;
-    width: 50%;
-    height: 20%; }
-  .game-container.dress-up #hand {
-    top: 25%;
-    left: 0px; }
-  .game-container.dress-up #hand-target {
-    top: 37%;
-    left: 0%;
+    font-weight: bold;
+    text-align: right;
+    padding: 0.5em 1em; }
+  .glossar-table .glossar-description {
+    width: 67%;
+    padding: 0.5em 3em 0.5em 1em; }
+
+.game-container.dress-up img.drag-item {
+  max-width: 200px; }
+.game-container.dress-up .person {
+  left: 49.5%;
+  width: 33%;
+  height: 100%;
+  position: absolute;
+  text-align: center; }
+  .game-container.dress-up .person .width-limiter {
+    position: relative;
     width: 100%;
-    height: 20%;
-    background-color: green; }
-  .game-container.dress-up #knee {
-    top: 25%;
-    left: 50%; }
-  .game-container.dress-up #knee-target {
-    top: 65%;
-    left: 10%;
-    width: 80%;
-    height: 20%;
-    background-color: orange; }
-  .game-container.dress-up #neck {
-    top: 50%;
-    left: 0px; }
-  .game-container.dress-up #neck-target {
-    top: 15%;
-    left: 30%;
-    width: 40%;
-    height: 10%;
-    background-color: blue; }
-  .game-container.dress-up #jacket {
-    top: 50%;
-    left: 50%; }
-  .game-container.dress-up #jacket-target {
-    top: 18%;
-    left: 25%;
-    width: 50%;
-    height: 25%;
-    background-color: royalblue; }
-  .game-container.dress-up #breast {
-    top: 75%;
-    left: 0px; }
-  .game-container.dress-up #breast-target {
-    top: 18%;
-    left: 35%;
-    width: 30%;
-    height: 18%;
-    background-color: limegreen; }
+    height: 100%;
+    display: inline-block; }
+  .game-container.dress-up .person .aspect-ratio-container {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    padding-top: 200%; }
+  .game-container.dress-up .person .object-positioned {
+    display: none; }
+.game-container.dress-up .bg-image-box {
+  position: absolute;
+  top: 0px;
+  left: 16.5%;
+  text-align: center;
+  width: 100%;
+  height: 100%; }
+.game-container.dress-up .bg-image {
+  max-width: 100%;
+  position: relative;
+  display: inline-block;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  max-height: 100%; }
+  .game-container.dress-up .bg-image.hidden {
+    display: none; }
+.game-container.dress-up .clothes {
+  background-color: #F4F1E4;
+  width: 33%;
+  height: 100%;
+  position: absolute;
+  left: 0%; }
+  .game-container.dress-up .clothes .drag-item, .game-container.dress-up .clothes .dragged-item {
+    width: 50%; }
+.game-container.dress-up .textContainer {
+  width: 33%;
+  left: 67%;
+  height: 100%;
+  padding: 1em;
+  position: absolute; }
+.game-container.dress-up #helmet {
+  top: 0px;
+  left: 0px; }
+.game-container.dress-up #helmet-target {
+  top: 2%;
+  left: 25%;
+  width: 50%;
+  height: 20%; }
+.game-container.dress-up #headthing {
+  top: 0px;
+  left: 50%; }
+.game-container.dress-up #headthing-target {
+  top: 2%;
+  left: 25%;
+  width: 50%;
+  height: 20%; }
+.game-container.dress-up #hand {
+  top: 25%;
+  left: 0px; }
+.game-container.dress-up #hand-target {
+  top: 37%;
+  left: 0%;
+  width: 100%;
+  height: 20%;
+  background-color: green; }
+.game-container.dress-up #knee {
+  top: 25%;
+  left: 50%; }
+.game-container.dress-up #knee-target {
+  top: 65%;
+  left: 10%;
+  width: 80%;
+  height: 20%;
+  background-color: orange; }
+.game-container.dress-up #neck {
+  top: 50%;
+  left: 0px; }
+.game-container.dress-up #neck-target {
+  top: 15%;
+  left: 30%;
+  width: 40%;
+  height: 10%;
+  background-color: blue; }
+.game-container.dress-up #jacket {
+  top: 50%;
+  left: 50%; }
+.game-container.dress-up #jacket-target {
+  top: 18%;
+  left: 25%;
+  width: 50%;
+  height: 25%;
+  background-color: royalblue; }
+.game-container.dress-up #breast {
+  top: 75%;
+  left: 0px; }
+.game-container.dress-up #breast-target {
+  top: 18%;
+  left: 35%;
+  width: 30%;
+  height: 18%;
+  background-color: limegreen; }
 
 .game-container {
   height: 100%;
   width: 100%;
   position: relative; }
+  .game-container .resolved, .game-container.resolved, .game-container img.resolved {
+    -webkit-transition: all cubic-bezier(.1, .7, .1, 1) 1000ms;
+    transition: all cubic-bezier(.1, .7, .1, 1) 1000ms;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0; }
   .game-container .col {
     padding: 5px 10px; }
     .game-container .col.border-left {
@@ -8212,21 +8377,23 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   .game-container .object-positioned {
     position: absolute;
     left: 0px;
-    top: 0px; }
+    top: 0px;
+    pointer-events: none; }
   .game-container .drag-item {
     cursor: default;
     position: absolute;
     left: 0px;
     top: 0px;
     transition: all 1s;
-    -webkit-transition: all 1s;
-    background-color: #FFFDF8; }
+    -webkit-transition: all 1s; }
   .game-container .dragged-item {
+    cursor: pointer;
     position: absolute;
     left: 0px;
     top: 0px;
     transition: scale 1s !important;
-    -webkit-transition: scale 1s !important; }
+    -webkit-transition: scale 1s !important;
+    pointer-events: none; }
   .game-container .drag-target {
     position: absolute;
     left: 0px;
@@ -8240,13 +8407,14 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
 
 .game-container.sword-parts .swordparts {
   width: 33%;
-  height: 100%;
-  left: 33%;
+  height: 50%;
+  left: 67%;
+  top: 25%;
   position: absolute; }
   .game-container.sword-parts .swordparts .sword-text {
     width: 8em; }
     .game-container.sword-parts .swordparts .sword-text.dragged-item {
-      width: auto; }
+      text-align: center; }
   .game-container.sword-parts .swordparts #begriff-knauf {
     top: 0px; }
   .game-container.sword-parts .swordparts #begriff-griff {
@@ -8273,6 +8441,9 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   overflow: hidden;
   position: absolute;
   background-color: royalblue; }
+.game-container.sword-parts .object-positioned {
+  pointer-events: auto;
+  cursor: none; }
 .game-container.sword-parts .textContainer {
   width: 33%;
   height: 100%;
@@ -8281,6 +8452,8 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
 .game-container.sword-parts .target-box {
   width: 33%;
   height: 100%; }
+  .game-container.sword-parts .target-box .sword-ratio-container {
+    background-color: #F4F1E4; }
 .game-container.sword-parts .sword-ratio-container {
   width: 67.5%;
   padding-top: 120%;
@@ -8338,7 +8511,7 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   background-image: url(../img/lessons/01/schwaeche.png); }
 .game-container.sword-parts #schwaeche-target {
   margin-top: calc(-53.5% * 1.78);
-  top: 53.5%;
+  top: 52.5%;
   width: 100%;
   padding-top: 66%;
   height: 100%; }
@@ -8349,7 +8522,7 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   background-image: url(../img/lessons/01/ort.png); }
 .game-container.sword-parts #ort-target {
   margin-top: calc(-90.5% * 1.78);
-  top: 90.5%;
+  top: 89%;
   width: 100%;
   padding-top: 14%;
   height: 100%; }
@@ -8357,44 +8530,66 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   top: 90.5%;
   width: 100%;
   height: auto;
-  padding-top: 14%; }
+  padding-top: 14%;
+  /*&:hover {
+			background-color: limegreen;
+		}*/ }
 .game-container.sword-parts #begriff-schwaeche-target {
   top: 53.5%;
   width: 100%;
   height: auto;
-  padding-top: 66%; }
+  padding-top: 66%;
+  /*&:hover {
+			background-color: limegreen;
+		}*/ }
 .game-container.sword-parts #begriff-staerke-target {
   top: 22%;
   width: 100%;
   height: auto;
-  padding-top: 56%; }
+  padding-top: 56%;
+  /*&:hover {
+			background-color: limegreen;
+		}*/ }
 .game-container.sword-parts #begriff-parierstange-target {
   top: 19%;
   width: 100%;
   height: auto;
-  padding-top: 14%; }
+  padding-top: 14%;
+  /*&:hover {
+			background-color: limegreen;
+		}*/ }
 .game-container.sword-parts #begriff-griff-target {
   top: 8.5%;
   width: 100%;
   height: auto;
-  padding-top: 22%; }
+  padding-top: 22%;
+  /*&:hover {
+			background-color: limegreen;
+		}*/ }
 .game-container.sword-parts #begriff-knauf-target {
   top: 0%;
   width: 100%;
   height: auto;
-  padding-top: 16%; }
+  padding-top: 16%;
+  /*&:hover {
+			background-color: limegreen;
+		}*/ }
 .game-container.sword-parts #begriff-klinge-target {
   top: 20.5%;
   width: 100%;
   height: auto;
   padding-top: 130%;
-  background-color: limegreen; }
+  /*&:hover {
+			background-color: limegreen;
+		}*/ }
 .game-container.sword-parts #begriff-heft-target {
   top: 0%;
   width: 100%;
   height: auto;
   padding-top: 40%;
-  background-color: orange; }
+  /*&:hover {
+			background-color: limegreen;
+		}*/ }
 
 .game-container.choose-video .video {
   width: 100%;
@@ -8506,9 +8701,63 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   top: 0px;
   right: 0px;
   pointer-events: none; }
+.game-container.mensur .instruction-box {
+  text-align: center;
+  min-height: auto; }
+.game-container.mensur .button-box {
+  text-align: right; }
 
 .game-container.huten .armstellungen img, .game-container.huten .beinstellungen img {
   width: 100%;
   max-height: 100%; }
   .game-container.huten .armstellungen img.selected, .game-container.huten .beinstellungen img.selected {
     outline: 2px solid #AE3E3B; }
+
+.game-container.quellen .quellentext {
+  background-color: #F4F1E4;
+  padding: 1em;
+  -webkit-transition: all cubic-bezier(.1, .7, .1, 1) 400ms;
+  transition: all cubic-bezier(.1, .7, .1, 1) 400ms; }
+.game-container.quellen ul {
+  padding: 1em; }
+.game-container.quellen li {
+  cursor: pointer;
+  border: 1px solid grey;
+  min-height: 3em;
+  display: block;
+  line-height: 1em;
+  padding: 1em; }
+  .game-container.quellen li.selected {
+    outline: 2px solid #AE3E3B;
+    border-color: #AE3E3B; }
+  .game-container.quellen li + li {
+    border-top: none; }
+
+.game-container.schnittmaterialien .col {
+  padding-top: 25%;
+  position: relative; }
+  .game-container.schnittmaterialien .col .drag-target, .game-container.schnittmaterialien .col .drag-item, .game-container.schnittmaterialien .col .object-positioned {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; }
+  .game-container.schnittmaterialien .col .drag-target {
+    border: 1px solid #AE3E3B;
+    border-left: none; }
+    .game-container.schnittmaterialien .col .drag-target div.number {
+      pointer-events: none;
+      font-size: 8em;
+      height: 20px;
+      font-weight: bold;
+      color: #F4F1E4;
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      width: 100%;
+      text-align: center;
+      vertical-align: middle; }
+  .game-container.schnittmaterialien .col:nth-of-type(1) .drag-target {
+    border-left: 1px solid #AE3E3B; }
+

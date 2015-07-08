@@ -22,7 +22,7 @@ function ($ionicPopover) {
                 '<ion-header-bar>' +
                   '<h1 class="title">Quelle</h1>' +  
                 '</ion-header-bar>'+ 
-                '<ion-content class="quellentext"> ' + content + ' </ion-content>'+
+                '<ion-content class="quellentext" scroll="false"> ' + content + ' </ion-content>'+
               '</ion-popover-view>';
 
         // .fromTemplateUrl() method

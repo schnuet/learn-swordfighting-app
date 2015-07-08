@@ -14,30 +14,36 @@ function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper, $timeout, Campa
 
 			var watches = DragNDropHelper.watchElement ($element);
 
-			$scope.vars.gameText = '<p>Baue das Schwert nach dem Text zusammmen!</p>';
+			$scope.vars.gameText = '<p>Lies die erscheinenden Begriffe und bau das Schwert danach zusammen!</p>';
 
 			var droppedIt = function (e, obj) {
 				if (obj.id === 'knauf') {
-					$scope.game.addText('dem Griff, ...', '', '<br>');
+					$scope.game.addText('dem <strong>Griff</strong>, ...', '', '<br>');
 					$scope.game.activateTarget ('griff');
+					$timeout (function () {removeTarget('knauf');}, 100);
 				}
 				else if (obj.id === 'griff') {
-					$scope.game.addText('und der Parierstange.', '', '<br>');
+					$scope.game.addText('und der <strong>Parierstange</strong>.', '', '<br>');
 					$scope.game.activateTarget ('parierstange');
+					$timeout (function () {removeTarget('griff'); }, 100);
 				}
 				else if (obj.id === 'parierstange') {
-					$scope.game.addText('Das zweite Stück ist die Klinge. Sie ist in die Bereiche Stärke, ...', '', '<br>');
+					$scope.game.addText('Das zweite Stück ist die <strong>Klinge</strong>. Sie ist in die Bereiche <strong>Stärke</strong>, ...', '', '<br>');
 					$scope.game.activateTarget ('staerke');
+					$timeout (function () {removeTarget('parierstange');}, 100);
 				}
 				else if (obj.id === 'staerke') {
-					$scope.game.addText('Schwäche, ...', '', '<br>');
+					$scope.game.addText('<strong>Schwäche</strong>, ...', '', '<br>');
 					$scope.game.activateTarget ('schwaeche');
+					$timeout (function () {removeTarget('staerke');}, 100);
 				}
 				else if (obj.id === 'schwaeche') {
-					$scope.game.addText('und Ort eingeteilt.', '', '<br>');
+					$scope.game.addText('und <strong>Ort</strong> eingeteilt.', '', '<br>');
 					$scope.game.activateTarget ('ort');
+					$timeout (function () {removeTarget('schwaeche');}, 100);
 				}
 				else if (obj.id === 'ort') {
+					$timeout (function () {removeTarget('ort');}, 100);
 
 					// remove text:
 					$scope.vars.gameText = '';
@@ -72,58 +78,70 @@ function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper, $timeout, Campa
 					sparts = null;
 				}
 				else if (obj.id === 'begriff-knauf') {
+					$timeout (function () {removeTarget('begriff-knauf'); }, 100);
 					$scope.game.addEventToItem ('begriff-knauf', function() {showInfo('knauf');});
 					showInfo('knauf').then(function () {
 						checkIfEnd(); 
 					});
 				}
 				else if (obj.id === 'begriff-griff') {
+					$timeout (function () {removeTarget('begriff-griff'); }, 100);
 					$scope.game.addEventToItem ('begriff-griff', function() {showInfo('griff');});
 					showInfo('griff').then(function () {
 						checkIfEnd(); 
 					});
 				}
 				else if (obj.id === 'begriff-parierstange') {
+					$timeout (function () {removeTarget('begriff-parierstange'); }, 100);
 					$scope.game.addEventToItem ('begriff-parierstange', function() {showInfo('parierstange');});
 					showInfo('parierstange').then(function () {
 						checkIfEnd(); 
 					});
 				}
 				else if (obj.id === 'begriff-ort') {
+					$timeout (function () {removeTarget('begriff-ort'); }, 100);
 					$scope.game.addEventToItem ('begriff-ort', function() {showInfo('ort');});
 					showInfo('ort').then(function () {
 						checkIfEnd(); 
 					});
 				}
 				else if (obj.id === 'begriff-staerke') {
+					$timeout (function () {removeTarget('begriff-staerke'); }, 100);
 					$scope.game.addEventToItem ('begriff-staerke', function() {showInfo('staerke');});
 					showInfo('staerke').then(function () {
 						checkIfEnd(); 
 					});
 				}
 				else if (obj.id === 'begriff-schwaeche') {
+					$timeout (function () {removeTarget('begriff-schwaeche'); }, 100);
 					$scope.game.addEventToItem ('begriff-schwaeche', function() {showInfo('schwaeche')});
 					showInfo('schwaeche').then(function () {
 						checkIfEnd(); 
 					});
 				}
 				else if (obj.id === 'begriff-klinge') {
+					$timeout (function () {removeTarget('begriff-klinge'); }, 100);
 					$scope.game.addEventToItem ('begriff-klinge', function() {showInfo('klinge');});
 					showInfo('klinge').then(function () { 
 						checkIfEnd(); 
 					});
 				}
 				else if (obj.id === 'begriff-heft') {
+					$timeout (function () {removeTarget('begriff-heft'); }, 100);
 					$scope.game.addEventToItem ('begriff-heft', function() {showInfo('heft');});
 					showInfo('heft').then(function () {
 						checkIfEnd();
 					});
 				}
 			};
-			$scope.$on ('dragndrop_right-target', droppedIt);
+			$scope.$on ('dragndrop_right-target', function (e, item) {
+				droppedIt(e, item);
+				DragNDropHelper.moveToTarget (item.target);
+			});
 
 			$scope.game.addText = function (text, beforeTag, afterTag, delay) {
-				if (typeof delay === 'undefined') delay = 0;
+				$scope.vars.gameText += beforeTag + text + afterTag;
+				/*if (typeof delay === 'undefined') delay = 0;
 				$scope.vars.gameText += beforeTag;
 				var textAsArray = text.split ('');
 				for (var i = 0; i < textAsArray.length; i++) {
@@ -136,7 +154,8 @@ function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper, $timeout, Campa
 				$scope.vars.gameText += afterTag;
 
 				// return the time the latest text will appear:
-				return textAsArray.length * 10;
+				return textAsArray.length * 10;*/
+				return 0;
 			};
 			$scope.game.addEventToItem = function (itemname, happening) {
 				angular.element(document.getElementById (itemname)).on('click', happening);
@@ -146,6 +165,9 @@ function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper, $timeout, Campa
 			};
 			$scope.game.activateItem = function (itemname) {
 				angular.element(document.getElementById (itemname)).removeClass ('hidden');
+			};
+			var removeTarget = function (targetname) {
+				angular.element(document.getElementById (targetname + '-target')).remove();
 			};
 			$scope.game.start = function () {
 				// stop the sliding of the page slider
@@ -159,7 +181,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper, $timeout, Campa
 				}
 				angular.element(document.getElementById('preGameScreen')).addClass('hidden');
 
-				$scope.game.addText('Das Heft des Langen Schwerts besteht aus einem Knauf, ...', '<p>', '<br>');
+				$scope.game.addText('Das Heft des Langen Schwerts besteht aus <br>einem <strong>Knauf</strong>, ...', '<p>', '<br>');
 				$scope.game.activateTarget ('knauf');
 			};
 
@@ -216,10 +238,6 @@ function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper, $timeout, Campa
 					$scope.vars.slideEnabled = true;
 				}
 			}
-
-			$scope.$on ('dragndrop_right-target', function (e, item) {
-				DragNDropHelper.moveToTarget (item.target);
-			});
 
 			/*
 				PAGE SLIDER

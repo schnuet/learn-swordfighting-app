@@ -1,0 +1,25 @@
+.game-container.quellen {
+	.quellentext {
+		background-color: $primary;
+		padding: 1em;
+		@include transition(all cubic-bezier(.1, .7, .1, 1) 400ms);
+	}
+	ul {
+		padding: 1em;
+	}
+	li {
+		cursor: pointer; 
+		border: 1px solid grey;
+		min-height: 3em;
+		display: block;
+		line-height: 1em;
+		padding: 1em;
+		&.selected {
+			outline: 2px solid $highlight;
+			border-color: $highlight;
+		}
+		& + li {
+			border-top: none;
+		}
+	}
+}

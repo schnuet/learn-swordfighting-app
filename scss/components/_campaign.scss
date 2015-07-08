@@ -34,7 +34,10 @@
 		}
 	}
 	.belohnung {
-		max-height: 80%;
+		position: absolute;
+		top: 20%;
+		height: 40%;
+		width: auto;
 	}
 	.abschlusstext {
 		background-color: $primary;
@@ -45,7 +48,10 @@
 }
 .intro.modal {
 	.intro-text-box {
-		background-color: $primary;
+		position: absolute;
+		top: 20%;
+		padding-right: 3em;
+		background-color: transparent;
 	}
 }
 .intro.modal, .outro.modal {

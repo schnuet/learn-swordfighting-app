@@ -9,7 +9,7 @@
 			<h1>Schnitttests</h1>
 			<!-- BREITES BILD -->
 			<div class="row height-67"> 
-				<img class="breitbild" src="./img/lessons/01/bild.png">
+				<img src="./img/lessons/07/07b.png" class="breitbild" />
 			</div>
 			<!-- DARUNTER LIEGENDER TEXT -->
 			<div class="row height-25">
@@ -78,7 +78,7 @@
 							</p>
 						</div>
 						<!-- Spalte 3 -->
-						<div class="col col-33">
+						<div class="col col-50">
 							<p>
 								Im Training mit stumpfen übungswaffen schleichen sich leicht Fehler in die Bewegungsabläufe, welche bei Schnitttests schnell aufgedeckt werden.Um sich nicht zu verletzen, ist ein stabiler Stand und die richtige Führung des Schwertes wichtig.
 							</p>
@@ -133,18 +133,23 @@
 	<!-- SEITE 4 -->
 	  <ion-slide>
 		<ion-content class="padding" scroll="false" has-bouncing="false">
-			<game-dress-up onwin="Lesson.end()">
-				<div class="game-container dress-up">
-					<div class="target-box">
-						<div id="helmet-target"></div>
-						<div id="pants-target"></div>
+			<game-schnittmaterialien></game-schnittmaterialien>
+			<div class="row" id="preGameScreen"> 
+				<div class="col col-80 col-offset-10 text-center">
+					<h3>Übung: Schwierigkeit zuordnen</h3>
+					<div class="row"> 
+						<div class="col col-80 col-offset-10 instruction-box">
+							<p>Seine Schnittest kann man an Unterschiedlichen Objekten durchführen - aber welche sind schwieriger zu schneiden als die anderen?</p>
+							<p>Ordne die Objekte der Schwierigkeit nach aufsteigend!</p>
+						</div>
 					</div>
-					<div class="clothes">
-						<img id="helmet" class="drag-item">
-						<img id="pants" class="drag-item"> 
+					<div class="row">
+						<div class="col col-30 col-offset-40">
+							<button class="button button-primary" ng-click="game.start();">Spiel Starten!</button>
+						</div>
 					</div>
 				</div>
-			</game-dress-up>
+			</div>
 		</ion-content>
 	  </ion-slide>
 
