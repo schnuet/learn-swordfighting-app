@@ -199,7 +199,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper, $timeout, Campa
 						text = 'Griffe sind meistens aus Holz und mit Leder überzogen oder Draht umwickelt. Es ist wichtig, dass der Griff einen guten Halt bietet, damit das Schwert gut geführt werden kann. ';
 						break;
 					case 'parierstange' :
-						title = 'Die Pariertstange'; 
+						title = 'Die Parierstange'; 
 						text = 'Die Parierstange schließt direkt an die Klinge an und dient zum Schutz, kann aber auch zum Angriff eingesetzt werden. Sie erlaubt erst den Kampf aus der Bindung.';
 						break;
 					case 'ort' :

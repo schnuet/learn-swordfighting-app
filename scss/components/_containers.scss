@@ -1,10 +1,49 @@
 .scroll {
 	min-height: 100%;
 }
-ion-content.pagecontent {
-	padding: 5px 66px;
-	width: 100%;
-	height: calc(100% - #{$bar-height} - #{$bar-height})
+.pagecontent, .first-page-container {
+	.first-page-container {
+		height: calc(100% - 50px);
+		top: 50px;
+		position: absolute;
+		width: 100%;
+		& > .row {
+			padding: 5px 0px;
+		} 
+	}
+	padding: 0px;
+	& > .row {
+		margin-left: $bar-height;
+		width: calc(100% - #{$bar-height} - #{$bar-height});
+	}
+	& > h2, & > h1 {
+		position: absolute;
+		left: $bar-height;
+		top: 15px;
+	}
+	.col {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.col:first-of-type {
+		padding-left: 0px;
+	}
+	.col-33:nth-of-type(3), .col-25:nth-of-type(4), .col-50:nth-of-type(2), .col-67:nth-of-type(2) {
+		padding-right: 0px;
+	}
+	// ROWS:
+	// more space to the top:
+	.row:nth-of-type(1), .row.single-row:nth-of-type(1) {
+		padding-top: 10px;
+	}
+	.row + .row {
+		margin-top: 0px;
+	}
+	.row.single-row {
+		padding: 5px 0px;
+	}
+
+
 }
 .lesson-page-container.slider {
 	height: 100%;
@@ -38,6 +77,7 @@ ion-content.pagecontent {
 }
 
 .slider.image-slider, .image-slider {
+	padding: 0px !important;
 	height: 100%;
 	width: 100%;
 	.slider-slide {
@@ -94,6 +134,7 @@ ion-content.pagecontent {
 	}
 	.row.single-row {
 		height: 100%;
+		position: relative;
 		& > .col {
 			height: 100%;
 		}
