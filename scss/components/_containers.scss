@@ -1,6 +1,11 @@
 .scroll {
 	min-height: 100%;
 }
+ion-content.pagecontent {
+	padding: 5px 66px;
+	width: 100%;
+	height: calc(100% - #{$bar-height} - #{$bar-height})
+}
 .lesson-page-container.slider {
 	height: 100%;
 	background-color: $secondary;
@@ -117,4 +122,12 @@
 	&:active {
 		background-color: $primary;
 	}
+}
+
+html, body {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
 }
