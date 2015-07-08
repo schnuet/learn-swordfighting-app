@@ -6,7 +6,7 @@
 		<ion-content class="padding pagecontent" scroll="false" has-bouncing="false" >
 			<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
 
-			<h1>Quellen</h1>
+			<h2>Quellen</h2>
 			<!-- BREITES BILD -->
 			<div class="row height-67"> 
 				<img src="./img/lessons/05/05b.png" class="breitbild" />
@@ -22,7 +22,8 @@
 				<!-- Spalte 2 -->
 				<div class="col col-33">
 					<p>
-						Manchmal wurde sogar zusätzlich ein Maler engagiert, um das Buch mit Illustrationen zu versehen. Die ältesten der uns erhaltenen Quellen stammen aus dem 13. Jahrhundert und beinhalten auch Anleitungen zum Kampf mit anderen Waffen oder zum waffenlosen Kampf.
+						Manchmal wurde sogar zusätzlich ein Maler engagiert, um das Buch mit Illustrationen zu versehen. <br> Die ältesten der uns erhaltenen Quellen stammen aus dem 13. Jahrhundert und beinhalten auch Anleitungen zum Kampf mit anderen Waffen oder zum waffenlosen Kampf.
+
 					</p>
 				</div >
 				<!-- Spalte 3 -->
@@ -45,13 +46,13 @@
 				<!-- SPALTE: col-x definiert breite. -->
 				 <!-- Spalte 1 (hohe Spalte)-->
 				<div class="col col-33">					
-					<h1>Quellen</h1>					
+					<h2>Quellen</h2>					
 					<p>
-						Typische Fechtmeister der italienischen Schule, welche Fechtbücher verfassten, sind Fiore de'i Liberi und Filippo Vadi. <br> In dieser App geht es aber ausschließlich um die deutsche Schule, die auf den Fechtmeister Johannes Liechtenauer zurückgeht. 
+						Typische Fechtmeister der italienischen Schule, welche Fechtbücher verfassten, sind Fiore de'i Liberi und Filippo Vadi. </p><p>In dieser App geht es aber ausschließlich um die deutsche Schule, die auf den Fechtmeister Johannes Liechtenauer zurückgeht. 
 					</p>
 					<h3>Liechtenauer</h3>
 					<p>
-						Obwohl von Liechtenauers Leben nicht viel bekannt ist (es ist nicht mal sicher ob er im 13. oder 14. Jahrhundert lebte), war sein Einfluss auf die deutsche Schule gewaltig. <br> Von ihm selbst stammt nur ein Gedicht mit Merkversen zum Schwertkampf, welches später von anderen Fechtmeistern aufgegriffen und kommentiert wurde. 
+						Obwohl von Liechtenauers Leben nicht viel bekannt ist (es ist nicht mal sicher ob er im 13. oder 14. Jahrhundert lebte), war sein Einfluss auf die deutsche Schule gewaltig. </p><p> Von ihm selbst stammt nur ein Gedicht mit Merkversen zum Schwertkampf, welches später von anderen Fechtmeistern aufgegriffen und kommentiert wurde. 
 					</p>
 				</div>
 				<div class="col col-67">
@@ -112,11 +113,11 @@
 				<!-- SPALTE: col-x definiert breite. -->
 				 <!-- Spalte 1 (hohe Spalte)-->				
 				 <div class="col col-33">
-				 	<h1>Quellen</h1>
+				 	<h2>Quellen</h2>
 				 	<h3>Interpretation</h3>
 				 	<p>
-				 		Selbst bei den detailliertesten textuellen Anweisungen werden natürlich immer wieder Fragen aufgeworfen. Teils zu Details, die es vielleicht nicht in den Text geschafft haben, teils zu den Grundvoraussetzungen, die der Autor zu seiner Zeit für selbstverständlich hielt.<br> 
-				 		Da niemand lebt, dem diese Fragen gestellt werden können, ist es nötig die Texte zu interpretieren. Diese Interpretationen sind es unter anderem, die den Historischen Schwertkampf zu so einer einzigartigen Sportart machen. <br> 
+				 		Selbst bei den detailliertesten textuellen Anweisungen werden natürlich immer wieder Fragen aufgeworfen. Teils zu Details, die es vielleicht nicht in den Text geschafft haben, teils zu den Grundvoraussetzungen, die der Autor zu seiner Zeit für selbstverständlich hielt.</p><p> 
+				 		Da niemand lebt, dem diese Fragen gestellt werden können, ist es nötig die Texte zu interpretieren. Diese Interpretationen sind es unter anderem, die den Historischen Schwertkampf zu so einer einzigartigen Sportart machen. </p><p> 
 				 		Auch wenn in einigen Punkten weitgehend Einigkeit herrscht, so interpretiert doch jeder Einzelne gewisse Details unterschiedlich. 
 					</p>
 				</div>
@@ -140,7 +141,13 @@
 						<!-- Spalte 2 -->						
 						<div class="col col-50"> 							
 							<p>
-								Es ist nicht möglich zu sagen, welche die tatsächlich damals verwendete Version einer Technik war, doch kann davon ausgegangen werden, dass auch im Mittelalter bereits verschiedene Versionen existierten.<br>
+								Es ist nicht möglich zu sagen, welche die tatsächlich damals verwendete Version einer Technik war, doch kann davon ausgegangen werden, dass auch im Mittelalter  
+							</p>
+						</div>
+                        <!-- Spalte 3 -->						
+						<div class="col col-50"> 							
+							<p>
+								bereits verschiedene Versionen existierten.<br>
 								Dies macht den Austausch mit anderen Fechtern zu einem essentiellen Teil des Sports.  
 							</p>
 						</div>
@@ -171,18 +178,19 @@
 			</game-quellen>
 			<div class="row" id="preGameScreen"> 
 				<div class="col col-80 col-offset-10 text-center">
-					<h3>Übung: Verständnisfragen</h3>
+					<h3>Übung: Quellenlesen</h3>
 					<div class="row"> 
 						<div class="col col-80 col-offset-10 instruction-box">
 							<p>
-								Bei den einzelnen Huten kommt es sowohl auf die Beinstellung als auch auf die Armhaltung an.
+								Willst du Quellentexte interpretieren können musst du zunächst lernen sie zu lesen.
 							</p>
-							<p>Stelle die geforderten Huten aus den richtigen Arm- und Beinstellungen zusammen.</p>
+							<p>Lies den Quellentext und beantworte die Frage dazu. </p>
+							<p> Falls du Hilfe brauchst sieh dir die Übersetzung an!</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col col-30 col-offset-40">
-							<button class="button button-primary" ng-click="game.start();">Spiel Starten!</button>
+							<button class="button button-primary" ng-click="game.start();">SPIEL STARTEN!</button>
 						</div>
 					</div>
 				</div>
