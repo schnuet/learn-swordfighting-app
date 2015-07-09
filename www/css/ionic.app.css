@@ -7926,13 +7926,20 @@ h3 {
     padding: 5px; }
 
 .button.end-lesson {
-  height: 44px;
-  width: 44px;
+  height: 66px;
+  width: 100px;
   position: absolute;
   bottom: 0px;
   right: 0px;
   z-index: 4;
-  background-color: crimson; }
+  background-image: url(../img/icons/pfeil.png);
+  -webkit-transition: all cubic-bezier(.1, .7, .1, 1) 400ms;
+  transition: all cubic-bezier(.1, .7, .1, 1) 400ms; }
+  .button.end-lesson.activated, .button.end-lesson:active {
+    -webkit-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+    opacity: 0.8;
+    background-image: url(../img/icons/pfeil.png); }
 
 .weiter-box {
   position: absolute;
