@@ -102,8 +102,12 @@
 
 		<script>
 			document.body.addEventListener('touchmove', function(event) {
-				console.log(event.source);
+				//console.log(event.target);
 				//if (event.source == document.body)
+				if (ionic.DomUtil && ionic.DomUtil.getParentOrSelfWithClass(event.target, 'slider')) {
+					//console.log ('Slider in parent');
+				}
+				
 				event.preventDefault();
 			}, false);
 			

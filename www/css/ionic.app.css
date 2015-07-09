@@ -7685,10 +7685,35 @@ a.button {
 .scroll {
   min-height: 100%; }
 
-ion-content.pagecontent {
-  padding: 5px 66px;
-  width: 100%;
-  height: calc(100% - 66px - 66px); }
+.pagecontent, .first-page-container {
+  padding: 0px; }
+  .pagecontent .first-page-container, .first-page-container .first-page-container {
+    height: calc(100% - 50px);
+    top: 50px;
+    position: absolute;
+    width: 100%; }
+    .pagecontent .first-page-container > .row, .first-page-container .first-page-container > .row {
+      padding: 5px 0px; }
+  .pagecontent > .row, .first-page-container > .row {
+    margin-left: 66px;
+    width: calc(100% - 66px - 66px); }
+  .pagecontent > h2, .pagecontent > h1, .first-page-container > h2, .first-page-container > h1 {
+    position: absolute;
+    left: 66px;
+    top: 15px; }
+  .pagecontent .col, .first-page-container .col {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .pagecontent .col:first-of-type, .first-page-container .col:first-of-type {
+    padding-left: 0px; }
+  .pagecontent .col-33:nth-of-type(3), .pagecontent .col-25:nth-of-type(4), .pagecontent .col-50:nth-of-type(2), .pagecontent .col-67:nth-of-type(2), .first-page-container .col-33:nth-of-type(3), .first-page-container .col-25:nth-of-type(4), .first-page-container .col-50:nth-of-type(2), .first-page-container .col-67:nth-of-type(2) {
+    padding-right: 0px; }
+  .pagecontent .row:nth-of-type(1), .pagecontent .row.single-row:nth-of-type(1), .first-page-container .row:nth-of-type(1), .first-page-container .row.single-row:nth-of-type(1) {
+    padding-top: 10px; }
+  .pagecontent .row + .row, .first-page-container .row + .row {
+    margin-top: 0px; }
+  .pagecontent .row.single-row, .first-page-container .row.single-row {
+    padding: 5px 0px; }
 
 .lesson-page-container.slider {
   height: 100%;
@@ -7716,6 +7741,7 @@ ion-content.pagecontent {
       -webkit-transform: translate3d(0px, 50px, 0px); }
 
 .slider.image-slider, .image-slider {
+  padding: 0px !important;
   height: 100%;
   width: 100%; }
   .slider.image-slider .slider-slide img, .image-slider .slider-slide img {
@@ -7757,7 +7783,8 @@ ion-content.pagecontent {
       border-left: 1px solid #AE3E3B;
       padding-left: 20px; }
   .scroll-content .row.single-row {
-    height: 100%; }
+    height: 100%;
+    position: relative; }
     .scroll-content .row.single-row > .col {
       height: 100%; }
   .scroll-content .col {
@@ -7829,7 +7856,7 @@ html, body {
     font-size: 24px;
     line-height: 24px;
     margin-bottom: -4px;
-    margin-left: 0px;
+    margin-left: 20px;
     cursor: default; }
   .bar.bar-primary.bar-footer {
     background-image: url(../img/bar-end-stroke.svg);
@@ -8411,6 +8438,7 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
 #preGameScreen {
   position: absolute;
   top: 0px;
+  margin-left: 0px;
   height: 100%;
   width: 100%; }
 
