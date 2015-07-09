@@ -256,6 +256,17 @@ function($ionicGesture, $ionicSlideBoxDelegate, DragNDropHelper, $timeout, Campa
 				DragNDropHelper.removeWatches (watches);
 			});
 
+			// limiting the size of the person: (needed for aspect ratio preservation)
+		    // in timeout to let the page load first
+		    setTimeout(function() {
+		    	//var apc = document.getElementsByClassName('sword-ratio-container')[0];
+				var mw = (document.getElementsByClassName('game-container')[0].offsetHeight-44)/2;
+				document.getElementsByClassName('width-limiter')[0].style.maxWidth = mw + 'px';
+				document.getElementsByClassName('width-limiter')[1].style.maxWidth = mw + 'px';
+				//apc.style.left = 'calc((100% - '+mw+'px) / 2)';
+				//console.log (apc.style);
+			}, 1000);
+
 		}
 	};
 }]);

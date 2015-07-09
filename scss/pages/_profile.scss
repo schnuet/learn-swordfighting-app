@@ -13,6 +13,9 @@
 	}
 	.profile_text {
 		position: relative;
+		strong {
+			color: $highlight;
+		}
 	}
 	.profile-card {
 		height: 100%;
@@ -42,17 +45,16 @@
 	}
 	.levellist {
 		.item {
-			color: $highlight;
-			margin-bottom: 0.2em;
+			padding: 0px;
+			background: none;
 
-			background-image: url(../img/bar-end-stroke.svg);
-			background-size: contain;
-			background-repeat: no-repeat;
-			background-position: bottom;
 			border: none;
 
-			&:nth-of-type(10) {
-				background: none;
+			.button.button-primary {
+				margin: 0px;
+				&:nth-of-type(10) {
+					background: none;
+				}
 			}
 		}
 	}

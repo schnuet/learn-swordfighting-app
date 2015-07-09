@@ -7845,7 +7845,7 @@ html, body {
     font-size: 24px;
     line-height: 24px;
     margin-bottom: -4px;
-    margin-left: 20px;
+    margin-left: 7px;
     cursor: default; }
   .bar.bar-primary.bar-footer {
     background-image: url(../img/bar-end-stroke.svg);
@@ -7853,6 +7853,16 @@ html, body {
     background-repeat: no-repeat;
     background-position: top;
     text-transform: uppercase; }
+
+.nav-icon {
+  height: 100%;
+  max-height: 100%;
+  margin-top: 10px;
+  padding: 0px;
+  display: block; }
+  .nav-icon .nav-img {
+    height: 40px;
+    position: relative; }
 
 .popup-container.infoPopup {
   pointer-events: auto !important; }
@@ -7975,7 +7985,8 @@ h3 {
   height: 50%;
   position: absolute;
   bottom: 0px;
-  right: 66px; }
+  right: 66px;
+  pointer-events: none; }
 .intro.modal.intro .scroll-content .col {
   background-color: transparent; }
 
@@ -8258,6 +8269,8 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
       max-height: 100%; }
   .profile .profile_text {
     position: relative; }
+    .profile .profile_text strong {
+      color: #AE3E3B; }
   .profile .profile-card {
     height: 100%;
     margin-top: 0px; }
@@ -8277,15 +8290,13 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
         .profile .profile-card .profile-options i :before, .profile .profile-card .profile-options span :before {
           font-size: 1em; }
   .profile .levellist .item {
-    color: #AE3E3B;
-    margin-bottom: 0.2em;
-    background-image: url(../img/bar-end-stroke.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
+    padding: 0px;
+    background: none;
     border: none; }
-    .profile .levellist .item:nth-of-type(10) {
-      background: none; }
+    .profile .levellist .item .button.button-primary {
+      margin: 0px; }
+      .profile .levellist .item .button.button-primary:nth-of-type(10) {
+        background: none; }
 
 .modal.menu .col h1 {
   margin-left: 15px;
@@ -8315,16 +8326,18 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   .modal.menu .menu_list .list .item, .modal.menu .menu_list .list .item.item-complex {
     color: #AE3E3B;
     border: none;
-    padding: 10px 0px 10px 60px;
+    padding: 0px 0px 0px 0px;
     height: 70px;
     line-height: 70px;
     vertical-align: center; }
     .modal.menu .menu_list .list .item a.item-content, .modal.menu .menu_list .list .item.item-complex a.item-content {
-      padding: 0px 0px 0px 0px;
-      overflow: visible; }
+      padding: 0px 0px 0px 60px;
+      overflow: visible;
+      width: 100%;
+      display: block; }
       .modal.menu .menu_list .list .item a.item-content img, .modal.menu .menu_list .list .item.item-complex a.item-content img {
+        margin-top: 10px;
         display: block;
-        position: absolute;
         margin-left: -60px; }
     .modal.menu .menu_list .list .item img, .modal.menu .menu_list .list .item.item-complex img {
       display: block;
@@ -8342,6 +8355,42 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
     width: 67%;
     padding: 0.5em 3em 0.5em 1em; }
 
+.profile-creation .nameInput {
+  border-bottom: 1px solid #AE3E3B;
+  padding-bottom: 3px;
+  min-width: 200px; }
+.profile-creation .character-pic {
+  max-height: 100%;
+  max-width: 100%;
+  right: 0px;
+  bottom: 0px; }
+.profile-creation .userlist {
+  padding-left: 30px; }
+.profile-creation .button-block.createCharButton {
+  width: 200px; }
+
+.tutorial .slider, .tutorial .slider.slides, .tutorial .slide {
+  height: 100%;
+  width: 100%; }
+.tutorial div.last-slide {
+  text-align: center;
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  overflow: hidden;
+  left: 50%;
+  margin-left: -100px;
+  top: 50%;
+  margin-top: -25px; }
+
+.start {
+  background-color: #000; }
+  .start video {
+    width: 100%; }
+
+.game-container.dress-up .pagecontent {
+  width: calc(100% - 66px - 66px);
+  margin-left: 66px; }
 .game-container.dress-up img.drag-item {
   max-width: 200px; }
 .game-container.dress-up .person {
@@ -8459,7 +8508,8 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
 .game-container {
   height: 100%;
   width: 100%;
-  position: relative; }
+  position: relative;
+  background-color: #FFFDF8; }
   .game-container .resolved, .game-container.resolved, .game-container img.resolved {
     -webkit-transition: all cubic-bezier(.1, .7, .1, 1) 1000ms;
     transition: all cubic-bezier(.1, .7, .1, 1) 1000ms;
@@ -8510,190 +8560,254 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   margin-left: 0px;
   height: 100%;
   width: 100%; }
+  #preGameScreen h2 {
+    position: absolute;
+    left: 66px;
+    width: 100%; }
+    #preGameScreen h2 + div.col {
+      margin-top: 50px; }
 
-.game-container.sword-parts .swordparts {
-  width: 33%;
-  height: 50%;
-  left: 67%;
-  top: 25%;
-  position: absolute; }
-  .game-container.sword-parts .swordparts .sword-text {
-    width: 8em; }
-    .game-container.sword-parts .swordparts .sword-text.dragged-item {
-      text-align: center; }
-  .game-container.sword-parts .swordparts #begriff-knauf {
+.game-container.sword-parts {
+  padding: 15px 66px 0px 66px;
+  position: relative;
+  /*.sword-ratio-container {
+		width: 67.5%;
+		padding-top: 120%;
+		position: absolute;
+		top: 0px;
+	}*/ }
+  .game-container.sword-parts .swordparts {
+    width: 33%;
+    height: 50%;
+    left: 0%;
+    top: 0px;
+    position: absolute; }
+  .game-container.sword-parts .sword-text {
+    height: 2em;
+    overflow: hidden;
+    position: absolute;
+    color: #AE3E3B;
+    font-weight: bold; }
+    .game-container.sword-parts .sword-text.object-positioned {
+      background-color: #FFFDF8; }
+  .game-container.sword-parts .sword-texts {
+    top: 120px; }
+    .game-container.sword-parts .sword-texts .sword-text {
+      width: 8em; }
+  .game-container.sword-parts #begriff-knauf {
     top: 0px; }
-  .game-container.sword-parts .swordparts #begriff-griff {
+    .game-container.sword-parts #begriff-knauf.object-positioned {
+      margin-left: 75%;
+      width: 50%;
+      text-align: center;
+      margin-top: 2%; }
+  .game-container.sword-parts #begriff-griff {
     top: 2em; }
-  .game-container.sword-parts .swordparts #begriff-parierstange {
+    .game-container.sword-parts #begriff-griff.object-positioned {
+      margin-left: 75%;
+      width: 50%;
+      text-align: center;
+      margin-top: 2%; }
+  .game-container.sword-parts #begriff-parierstange {
     top: 4em; }
-  .game-container.sword-parts .swordparts #begriff-staerke {
+    .game-container.sword-parts #begriff-parierstange.object-positioned {
+      margin-left: 75%;
+      width: 50%;
+      text-align: center;
+      margin-top: 0%; }
+  .game-container.sword-parts #begriff-staerke {
     top: 6em; }
-  .game-container.sword-parts .swordparts #begriff-schwaeche {
+    .game-container.sword-parts #begriff-staerke.object-positioned {
+      margin-left: 75%;
+      width: 50%;
+      text-align: center;
+      margin-top: 16%; }
+  .game-container.sword-parts #begriff-schwaeche {
     top: 8em; }
-  .game-container.sword-parts .swordparts #begriff-ort {
+    .game-container.sword-parts #begriff-schwaeche.object-positioned {
+      margin-left: 75%;
+      width: 50%;
+      text-align: center;
+      margin-top: 4%; }
+  .game-container.sword-parts #begriff-ort {
     top: 10em; }
-  .game-container.sword-parts .swordparts #begriff-klinge {
+    .game-container.sword-parts #begriff-ort.object-positioned {
+      margin-left: 75%;
+      width: 50%;
+      text-align: center;
+      margin-top: 0%; }
+  .game-container.sword-parts #begriff-klinge {
     top: 12em; }
-  .game-container.sword-parts .swordparts #begriff-heft {
+    .game-container.sword-parts #begriff-klinge.object-positioned {
+      margin-left: -25%;
+      width: 50%;
+      text-align: center;
+      margin-top: 60%; }
+  .game-container.sword-parts #begriff-heft {
     top: 14em; }
-.game-container.sword-parts div {
-  height: 0px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  position: absolute; }
-.game-container.sword-parts .sword-text {
-  height: 2em;
-  overflow: hidden;
-  position: absolute;
-  background-color: royalblue; }
-.game-container.sword-parts .object-positioned {
-  pointer-events: auto;
-  cursor: none; }
-.game-container.sword-parts .textContainer {
-  width: 33%;
-  height: 100%;
-  position: absolute;
-  left: 67%; }
-.game-container.sword-parts .target-box {
-  width: 33%;
-  height: 100%; }
-  .game-container.sword-parts .target-box .sword-ratio-container {
-    background-color: #F4F1E4; }
-.game-container.sword-parts .sword-ratio-container {
-  width: 67.5%;
-  padding-top: 120%;
-  position: absolute;
-  top: 0px; }
-.game-container.sword-parts .transparent {
-  opacity: 0; }
-.game-container.sword-parts #knauf {
-  top: 90%;
-  width: 100%;
-  padding-top: 16%;
-  background-image: url(../img/lessons/01/knauf.png); }
-.game-container.sword-parts #knauf-target {
-  top: 0%;
-  width: 100%;
-  padding-top: 16%;
-  height: 100%; }
-.game-container.sword-parts #griff {
-  top: 38%;
-  width: 100%;
-  padding-top: 22%;
-  background-image: url(../img/lessons/01/griff.png); }
-.game-container.sword-parts #griff-target {
-  margin-top: calc(-8.5% * 1.78);
-  top: 8.5%;
-  width: 100%;
-  padding-top: 22%;
-  height: 100%; }
-.game-container.sword-parts #parierstange {
-  top: 83%;
-  padding-top: 14%;
-  width: 100%;
-  background-image: url(../img/lessons/01/kreuz.png); }
-.game-container.sword-parts #parierstange-target {
-  margin-top: calc(-20.5% * 1.78);
-  top: 20.5%;
-  width: 100%;
-  padding-top: 14%;
-  height: 100%; }
-.game-container.sword-parts #staerke {
-  top: 51%;
-  padding-top: 56%;
-  width: 100%;
-  background-image: url(../img/lessons/01/staerke.png); }
-.game-container.sword-parts #staerke-target {
-  margin-top: calc(-22% * 1.78);
-  top: 22%;
-  width: 100%;
-  padding-top: 56%;
-  height: 100%; }
-.game-container.sword-parts #schwaeche {
-  top: 0%;
-  padding-top: 66%;
-  width: 100%;
-  background-image: url(../img/lessons/01/schwaeche.png); }
-.game-container.sword-parts #schwaeche-target {
-  margin-top: calc(-53.5% * 1.78);
-  top: 52.5%;
-  width: 100%;
-  padding-top: 66%;
-  height: 100%; }
-.game-container.sword-parts #ort {
-  top: 86%;
-  padding-top: 14%;
-  width: 100%;
-  background-image: url(../img/lessons/01/ort.png); }
-.game-container.sword-parts #ort-target {
-  margin-top: calc(-90.5% * 1.78);
-  top: 89%;
-  width: 100%;
-  padding-top: 14%;
-  height: 100%; }
-.game-container.sword-parts #begriff-ort-target {
-  top: 90.5%;
-  width: 100%;
-  height: auto;
-  padding-top: 14%;
-  /*&:hover {
+    .game-container.sword-parts #begriff-heft.object-positioned {
+      margin-left: -25%;
+      width: 50%;
+      text-align: center;
+      margin-top: 12%; }
+  .game-container.sword-parts div {
+    height: 0px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute; }
+  .game-container.sword-parts .object-positioned {
+    pointer-events: auto;
+    cursor: none; }
+  .game-container.sword-parts .textContainer {
+    width: 33%;
+    height: 100%;
+    position: absolute; }
+  .game-container.sword-parts .target-box {
+    left: 33%;
+    width: 67%;
+    height: 100%;
+    text-align: center; }
+    .game-container.sword-parts .target-box .drop-target-box {
+      background-color: #F4F1E4; }
+  .game-container.sword-parts .width-limiter {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: inline-block; }
+  .game-container.sword-parts .sword-ratio-container {
+    width: 100%;
+    padding-top: 177.8%;
+    position: absolute;
+    top: 0px; }
+  .game-container.sword-parts .transparent {
+    opacity: 0; }
+  .game-container.sword-parts #knauf {
+    top: 90%;
+    width: 100%;
+    padding-top: 16%;
+    background-image: url(../img/lessons/01/knauf.png); }
+  .game-container.sword-parts #knauf-target {
+    top: 0%;
+    width: 100%;
+    padding-top: 16%;
+    height: 100%; }
+  .game-container.sword-parts #griff {
+    top: 38%;
+    width: 100%;
+    padding-top: 22%;
+    background-image: url(../img/lessons/01/griff.png); }
+  .game-container.sword-parts #griff-target {
+    margin-top: calc(-8.5% * 1.78);
+    top: 8.5%;
+    width: 100%;
+    padding-top: 22%;
+    height: 100%; }
+  .game-container.sword-parts #parierstange {
+    top: 83%;
+    padding-top: 14%;
+    width: 100%;
+    background-image: url(../img/lessons/01/kreuz.png); }
+  .game-container.sword-parts #parierstange-target {
+    margin-top: calc(-20.5% * 1.78);
+    top: 20.5%;
+    width: 100%;
+    padding-top: 14%;
+    height: 100%; }
+  .game-container.sword-parts #staerke {
+    top: 51%;
+    padding-top: 56%;
+    width: 100%;
+    background-image: url(../img/lessons/01/staerke.png); }
+  .game-container.sword-parts #staerke-target {
+    margin-top: calc(-22% * 1.78);
+    top: 22%;
+    width: 100%;
+    padding-top: 56%;
+    height: 100%; }
+  .game-container.sword-parts #schwaeche {
+    top: 0%;
+    padding-top: 66%;
+    width: 100%;
+    background-image: url(../img/lessons/01/schwaeche.png); }
+  .game-container.sword-parts #schwaeche-target {
+    margin-top: calc(-53.5% * 1.78);
+    top: 52.5%;
+    width: 100%;
+    padding-top: 66%;
+    height: 100%; }
+  .game-container.sword-parts #ort {
+    top: 86%;
+    padding-top: 14%;
+    width: 100%;
+    background-image: url(../img/lessons/01/ort.png); }
+  .game-container.sword-parts #ort-target {
+    margin-top: calc(-90.5% * 1.78);
+    top: 89%;
+    width: 100%;
+    padding-top: 14%;
+    height: 100%; }
+  .game-container.sword-parts #begriff-ort-target {
+    top: 90.5%;
+    width: 100%;
+    height: auto;
+    padding-top: 14%;
+    /*&:hover {
 			background-color: limegreen;
 		}*/ }
-.game-container.sword-parts #begriff-schwaeche-target {
-  top: 53.5%;
-  width: 100%;
-  height: auto;
-  padding-top: 66%;
-  /*&:hover {
+  .game-container.sword-parts #begriff-schwaeche-target {
+    top: 53.5%;
+    width: 100%;
+    height: auto;
+    padding-top: 66%;
+    /*&:hover {
 			background-color: limegreen;
 		}*/ }
-.game-container.sword-parts #begriff-staerke-target {
-  top: 22%;
-  width: 100%;
-  height: auto;
-  padding-top: 56%;
-  /*&:hover {
+  .game-container.sword-parts #begriff-staerke-target {
+    top: 22%;
+    width: 100%;
+    height: auto;
+    padding-top: 56%;
+    /*&:hover {
 			background-color: limegreen;
 		}*/ }
-.game-container.sword-parts #begriff-parierstange-target {
-  top: 19%;
-  width: 100%;
-  height: auto;
-  padding-top: 14%;
-  /*&:hover {
+  .game-container.sword-parts #begriff-parierstange-target {
+    top: 19%;
+    width: 100%;
+    height: auto;
+    padding-top: 14%;
+    /*&:hover {
 			background-color: limegreen;
 		}*/ }
-.game-container.sword-parts #begriff-griff-target {
-  top: 8.5%;
-  width: 100%;
-  height: auto;
-  padding-top: 22%;
-  /*&:hover {
+  .game-container.sword-parts #begriff-griff-target {
+    top: 8.5%;
+    width: 100%;
+    height: auto;
+    padding-top: 22%;
+    /*&:hover {
 			background-color: limegreen;
 		}*/ }
-.game-container.sword-parts #begriff-knauf-target {
-  top: 0%;
-  width: 100%;
-  height: auto;
-  padding-top: 16%;
-  /*&:hover {
+  .game-container.sword-parts #begriff-knauf-target {
+    top: 0%;
+    width: 100%;
+    height: auto;
+    padding-top: 16%;
+    /*&:hover {
 			background-color: limegreen;
 		}*/ }
-.game-container.sword-parts #begriff-klinge-target {
-  top: 20.5%;
-  width: 100%;
-  height: auto;
-  padding-top: 130%;
-  /*&:hover {
+  .game-container.sword-parts #begriff-klinge-target {
+    top: 20.5%;
+    width: 100%;
+    height: auto;
+    padding-top: 130%;
+    /*&:hover {
 			background-color: limegreen;
 		}*/ }
-.game-container.sword-parts #begriff-heft-target {
-  top: 0%;
-  width: 100%;
-  height: auto;
-  padding-top: 40%;
-  /*&:hover {
+  .game-container.sword-parts #begriff-heft-target {
+    top: 0%;
+    width: 100%;
+    height: auto;
+    padding-top: 40%;
+    /*&:hover {
 			background-color: limegreen;
 		}*/ }
 

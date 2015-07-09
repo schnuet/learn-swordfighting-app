@@ -1,5 +1,19 @@
 .profile-creation {
 	.nameInput {
 		border-bottom: 1px solid $highlight;
+		padding-bottom: 3px;
+		min-width: 200px;
+	}
+	.character-pic {
+		max-height: 100%;
+		max-width: 100%;
+		right: 0px;
+		bottom: 0px;
+	}
+	.userlist {
+		padding-left: 30px;
+	}
+	.button-block.createCharButton {
+		width: 200px;
 	}
 }

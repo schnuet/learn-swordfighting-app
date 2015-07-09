@@ -2,6 +2,7 @@
 	height: 100%;
 	width: 100%;
 	position: relative;
+	background-color: $secondary;
 	//border: 1px solid blue;
 
 	.resolved, &.resolved, img.resolved {
@@ -68,6 +69,15 @@
 }
 
 #preGameScreen {
+	h2 {
+
+		position: absolute;
+		left: $bar-height;
+		width: 100%;
+		& + div.col {
+			margin-top: 50px;
+		}
+	}
 	position: absolute;
 	top: 0px;
 	margin-left: 0px;

@@ -40,16 +40,18 @@
 			//text-align: center;
 			color: $highlight;
 			border: none;
-			padding: 10px 0px 10px 60px;
+			padding: 0px 0px 0px 0px;
 			height: 70px;
 			line-height: 70px;
 			vertical-align: center;
 			a.item-content {
-				padding: 0px 0px 0px 0px;
+				padding: 0px 0px 0px 60px;
 				overflow: visible;
+				width: 100%;
+				display: block;
 				img {
+					margin-top: 10px;
 					display: block;
-					position: absolute;
 					margin-left: -60px;
 				}
 			}

@@ -1,43 +1,106 @@
 .game-container.sword-parts {
+	padding: 15px 66px 0px 66px;
+	position: relative;
 
 	// Der Container, in dem die Schwertteile am Anfang liegen:
 	.swordparts {
 		width: 33%;
 		height: 50%;
-		left: 67%;
-		top: 25%;
+		left: 0%;
+		top: 0px;
 		position: absolute;
-		
+	}
+
+	.sword-text {
+		height: 2em;
+		overflow: hidden;
+		position: absolute;
+		color: $highlight;
+		font-weight: bold;
+		&.object-positioned {
+			background-color: $secondary;
+		}
+	}
+	.sword-texts {
+		top: 120px;
+
 		.sword-text {
 			width: 8em;
 			&.dragged-item {
-				text-align: center;
+				//text-align: center;
 			}
 		}
-
-		#begriff-knauf {
-			top: 0px;
+	}
+	#begriff-knauf {
+		top: 0px;
+		&.object-positioned {
+			margin-left: 75%;
+			width: 50%;
+			text-align: center;
+			margin-top: 2%;
 		}
-		#begriff-griff {
-			top: 2em;
+	}
+	#begriff-griff {
+		top: 2em;
+		&.object-positioned {
+			margin-left: 75%;
+			width: 50%;
+			text-align: center;
+			margin-top: 2%;
 		}
-		#begriff-parierstange {
-			top: 4em;
+	}
+	#begriff-parierstange {
+		top: 4em;
+		&.object-positioned {
+			margin-left: 75%;
+			width: 50%;
+			text-align: center;
+			margin-top: 0%;
 		}
-		#begriff-staerke {
-			top: 6em;
+	}
+	#begriff-staerke {
+		top: 6em;
+		&.object-positioned {
+			margin-left: 75%;
+			width: 50%;
+			text-align: center;
+			margin-top: 16%;
 		}
-		#begriff-schwaeche {
-			top: 8em;
+	}
+	#begriff-schwaeche {
+		top: 8em;
+		&.object-positioned {
+			margin-left: 75%;
+			width: 50%;
+			text-align: center;
+			margin-top: 4%;
 		}
-		#begriff-ort {
-			top: 10em;
+	}
+	#begriff-ort {
+		top: 10em;
+		&.object-positioned {
+			margin-left: 75%;
+			width: 50%;
+			text-align: center;
+			margin-top: 0%;
 		}
-		#begriff-klinge {
-			top: 12em;
+	}
+	#begriff-klinge {
+		top: 12em;
+		&.object-positioned {
+			margin-left: -25%;
+			width: 50%;
+			text-align: center;
+			margin-top: 60%;
 		}
-		#begriff-heft {
-			top: 14em;
+	}
+	#begriff-heft {
+		top: 14em;
+		&.object-positioned {
+			margin-left: -25%;
+			width: 50%;
+			text-align: center;
+			margin-top: 12%;
 		}
 	}
 	div {
@@ -45,12 +108,6 @@
 		background-size: 100%;
 		background-repeat: no-repeat;
 		position: absolute;
-	}
-	.sword-text {
-		height: 2em;
-		overflow: hidden;
-		position: absolute;
-		background-color: royalblue;
 	}
 	.object-positioned {
 		pointer-events: auto;
@@ -60,22 +117,37 @@
 		width: 33%;
 		height: 100%;
 		position: absolute;
-		left: 67%;
 	}
 	.target-box {
-		width: 33%;
+		left: 33%;
+		width: 67%;
 		height: 100%;
-		.sword-ratio-container {
+		text-align: center;
+		.drop-target-box {
 			//border: 2px solid $highlight;
 			background-color: $primary;
 		}
 	}
+
+	// ASPECT RATIO:
+	.width-limiter {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+	}
 	.sword-ratio-container {
+		width: 100%;
+		padding-top: 177.8%;
+		position: absolute;
+		top: 0px;
+	}
+	/*.sword-ratio-container {
 		width: 67.5%;
 		padding-top: 120%;
 		position: absolute;
 		top: 0px;
-	}
+	}*/
 
 	.transparent {
 		opacity: 0;

@@ -18,8 +18,8 @@ function($scope, $ionicHistory, $state, Profile, Data, $ionicPopup, $timeout) {
 		var myPopup = $ionicPopup.show({
 			template: 
 				'<button class="button button-icon ion-close" id="profile-edit-close-button"></button>'+
-				'<button class="button button-block button-royal" id="change-profile-button">Profil wechseln</button>'+
-				'<button class="button button-block button-dark" id="delete-profile-button">Profil löschen</button>'
+				'<button class="button button-block button-primary" id="change-profile-button">Profil wechseln</button>'+
+				'<button class="button button-block button-primary" id="delete-profile-button">Profil löschen</button>'
 
 			,
 			cssClass: 'profile_edit',

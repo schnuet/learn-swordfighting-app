@@ -13,13 +13,9 @@
 						<p>
 							In deinem Profil kannst du deinen aktuellen Lernfortschritt einsehen. Momentan hast du folgende Punkte erreicht und Lektionen bearbeitet: 
 						</p>
-						<span>Punkte:</span>{{Data.user.score}}<br> 
-						<span>Lektion:{{Data.user.levelprogress}}</span> 
-
+						<strong>Punkte:</strong> {{Data.user.score}}, <strong>Lektion:</strong> {{Data.user.levelprogress}} 
 						<p>
-							Rechts siehst du deinen Avatar: Um neue Ausrüstungsgegenstände für ihn zu erhalten, bearbeite die nächste Lektion! <br>
-							Oder willst du eine schon behandelte Lektion wiederholen? Dann klicke diese in der Lerntour auf der rechten Seite an.<br>
-							Wenn du ein bestimmtes Kapitel einsehen willst, dass noch nicht freigeschaltet ist, dann gehe über den Menü-Button oben rechts in den Katalog.
+							Rechts siehst du deinen Avatar: Um ihn weiterzuentwickeln, bearbeite die nächste Lektion! Oder willst du eine schon behandelte Lektion wiederholen? Dann klicke sie in der Lerntour auf der rechten Seite an. Wenn du ein Kapitel einsehen willst, dass noch nicht freigeschaltet ist, dann gehe über den Menü-Button in den Katalog.
 						</p>
 
 						<p>Viel Erfolg bei der nächsten Lektion und viel Spaß beim nächsten Spiel!</p>
@@ -36,35 +32,35 @@
 		</div>
 		<div class="col">
 			<ion-list class="levellist">
-				<ion-item ng-click="gotoCampaignLesson(1);">
-					1: Schwertbegriffe
+				<ion-item>
+					<button class="button button-block button-primary" ng-click="gotoCampaignLesson(1);">1: Schwertbegriffe</button>
 				</ion-item>
 				<ion-item ng-class="{disabled: Data.user.levelprogress < 2}" ng-click="gotoCampaignLesson(2);">
-					2: Der Griff
+					<button class="button button-block button-primary">2: Der Griff</button>
 				</ion-item>
 				<ion-item ng-class="{disabled: Data.user.levelprogress < 3}" ng-click="gotoCampaignLesson(3);">
-					3: Beinarbeit
+					<button class="button button-block button-primary">3: Beinarbeit</button>
 				</ion-item>
 				<ion-item ng-class="{disabled: Data.user.levelprogress < 4}" ng-click="gotoCampaignLesson(4);">
-					4: Huten
+					<button class="button button-block button-primary">4: Huten</button>
 				</ion-item>
 				<ion-item ng-class="{disabled: Data.user.levelprogress < 5}" ng-click="gotoCampaignLesson(5);">
-					5: Quellen
+					<button class="button button-block button-primary">5: Quellen</button>
 				</ion-item>
 				<ion-item ng-class="{disabled: Data.user.levelprogress < 6}" ng-click="gotoCampaignLesson(6);">
-					6: Angriffe
+					<button class="button button-block button-primary">6: Angriffe</button>
 				</ion-item>
 				<ion-item ng-class="{disabled: Data.user.levelprogress < 7}" ng-click="gotoCampaignLesson(7);">
-					7: Schnitttests
+					<button class="button button-block button-primary">7: Schnitttests</button>
 				</ion-item>
 				<ion-item ng-class="{disabled: Data.user.levelprogress < 8}" ng-click="gotoCampaignLesson(8);">
-					8: Schutzausrüstung
+					<button class="button button-block button-primary">8: Schutzausrüstung</button>
 				</ion-item>
 				<ion-item ng-class="{disabled: Data.user.levelprogress < 9}" ng-click="gotoCampaignLesson(9);">
-					9: Mensur
+					<button class="button button-block button-primary">9: Mensur</button>
 				</ion-item>
 				<ion-item ng-class="{disabled: Data.user.levelprogress < 10}" ng-click="gotoCampaignLesson(10);">
-					10: Die fünf Wörter
+					<button class="button button-block button-primary">10: Die fünf Wörter</button>
 				</ion-item>
 			</ion-list>
 			

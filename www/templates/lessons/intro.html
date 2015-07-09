@@ -4,7 +4,6 @@
 	<ion-content scroll="false" class="pagecontent">
 		<!-- SEITENFÜLLENDES HINTERGRUNDBILD -->
 	  	<img ng-src="./img/{{Data.lessonData.introBgImage}}"  class="hintergrundbild" />
-	  	<img ng-src="./img/character/{{Data.user.levelprogress-1}}.png" class="charakter" />
 		<div class="row single-row"> 
 			<!-- SPALTE: col-x definiert breite. -->
 			<div class="col col-33 col-offset-67 intro-text-box">
@@ -13,6 +12,7 @@
                 <button class="button button-block button-primary" ng-click="closeIntro()">LOS GEHT'S!</button>
 			</div>
 		</div>
+		<img ng-src="./img/character/{{Data.user.levelprogress-1}}.png" class="charakter" />
 	</ion-content>
   <ion-footer-bar class="bar-primary">
   </ion-footer-bar>

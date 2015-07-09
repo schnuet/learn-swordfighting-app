@@ -37,37 +37,43 @@
 	  <ion-slide>
 	  	<ion-content class="padding pagecontent" scroll="false" has-bouncing="false" >
 			<game-sword-parts>
-				<div class="game-container sword-parts">
-					<div class="target-box">
-						<div class="sword-ratio-container">
-							<div id="knauf-target" class="drag-target hidden"></div>
-							<div id="griff-target" class="drag-target hidden"></div>
-							<div id="parierstange-target" class="drag-target hidden"></div>
-							<div id="staerke-target" class="drag-target hidden"></div>
-							<div id="schwaeche-target" class="drag-target hidden"></div>
-							<div id="ort-target" class="drag-target hidden"></div>
-
-							<div id="begriff-knauf-target" class="drag-target hidden"></div>
-							<div id="begriff-griff-target" class="drag-target hidden"></div>
-							<div id="begriff-parierstange-target" class="drag-target hidden"></div>
-							<div id="begriff-staerke-target" class="drag-target hidden"></div>
-							<div id="begriff-schwaeche-target" class="drag-target hidden"></div>
-							<div id="begriff-ort-target" class="drag-target hidden"></div>
-							<div id="begriff-klinge-target" class="drag-target hidden"></div>
-							<div id="begriff-heft-target" class="drag-target hidden"></div>
-						</div>
-					</div>
+				<div class="game-container sword-parts pagecontent">
 					<div class="textContainer border-left" ng-bind-html="vars.gameText">
 					</div>
-					<div class="swordparts">
-						<div class="sword-ratio-container">
-							<div id="knauf" class="drag-item sword-part transparent"></div>
-							<div id="griff" class="drag-item sword-part transparent"></div>
-							<div id="parierstange" class="drag-item sword-part transparent"></div>
-							<div id="staerke" class="drag-item sword-part transparent"></div>
-							<div id="schwaeche" class="drag-item sword-part transparent"></div>
-							<div id="ort" class="drag-item sword-part transparent"></div>
+					<div class="target-box">
+						<div class="width-limiter">
+							<div class="sword-ratio-container drop-target-box">
+								<div id="knauf-target" class="drag-target hidden"></div>
+								<div id="griff-target" class="drag-target hidden"></div>
+								<div id="parierstange-target" class="drag-target hidden"></div>
+								<div id="staerke-target" class="drag-target hidden"></div>
+								<div id="schwaeche-target" class="drag-target hidden"></div>
+								<div id="ort-target" class="drag-target hidden"></div>
+
+								<div id="begriff-knauf-target" class="drag-target hidden"></div>
+								<div id="begriff-griff-target" class="drag-target hidden"></div>
+								<div id="begriff-parierstange-target" class="drag-target hidden"></div>
+								<div id="begriff-staerke-target" class="drag-target hidden"></div>
+								<div id="begriff-schwaeche-target" class="drag-target hidden"></div>
+								<div id="begriff-ort-target" class="drag-target hidden"></div>
+								<div id="begriff-klinge-target" class="drag-target hidden"></div>
+								<div id="begriff-heft-target" class="drag-target hidden"></div>
+							</div>
 						</div>
+						<div class="swordparts">
+							<div class="width-limiter">
+								<div class="sword-ratio-container">
+									<div id="knauf" class="drag-item sword-part transparent"></div>
+									<div id="griff" class="drag-item sword-part transparent"></div>
+									<div id="parierstange" class="drag-item sword-part transparent"></div>
+									<div id="staerke" class="drag-item sword-part transparent"></div>
+									<div id="schwaeche" class="drag-item sword-part transparent"></div>
+									<div id="ort" class="drag-item sword-part transparent"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sword-texts">
 						<div id="begriff-knauf" class="drag-item sword-text transparent hidden">Knauf</div>
 						<div id="begriff-griff" class="drag-item sword-text transparent hidden">Griff</div>
 						<div id="begriff-parierstange" class="drag-item sword-text transparent hidden">Parierstange</div>
@@ -80,6 +86,7 @@
 				</div>
 			</game-sword-parts>
 			<div class="row" id="preGameScreen"> 
+				<h2>Schwertbegriffe</h2>
 				<div class="col col-80 col-offset-10 text-center">
 					<h3>Übung: Schwertaufbau</h3>
 					<div class="row"> 

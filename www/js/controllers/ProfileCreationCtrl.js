@@ -12,9 +12,13 @@ function($scope, Data, Profile, $state) {
 	$scope.createChar = function () {
 		console.log ($scope.data.username);
 		if ($scope.data.username.length === 0) return;
-		Profile.createNew ($scope.data.username);
+		Data.user = Profile.createNew ($scope.data.username);
 		$state.go ('menu.dashboard');
 	};
 
+	$scope.selectChar = function (character) {
+		Data.user = Profile.getUser(character);
+		$state.go ('menu.dashboard');
+	};
 
 }]);

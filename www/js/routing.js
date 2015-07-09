@@ -26,6 +26,20 @@ angular.module('starter')
     controller: 'ProfileCreationCtrl'
   })  
 
+  // Neuer Benutzer - Seite:
+  .state('help', {
+    url: '/help',
+    templateUrl: 'templates/help.html',
+    controller: 'HelpCtrl'
+  })  
+
+  // Neuer Benutzer - Seite:
+  .state('start', {
+    url: '/start',
+    templateUrl: 'templates/start.html',
+    controller: 'StartCtrl'
+  })  
+
   // Impressum:
   .state('menu.Impressum', {
     url: '/impressum',
@@ -286,6 +300,6 @@ angular.module('starter')
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('menu/start');
+  $urlRouterProvider.otherwise('start');
 
 });

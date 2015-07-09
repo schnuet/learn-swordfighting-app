@@ -1,0 +1,25 @@
+.tutorial {
+	.slider, .slider.slides, .slide {
+		height: 100%;
+		width: 100%;
+	}
+	div.last-slide {
+		text-align: center;
+		position: absolute;
+		width: 200px;
+		height: 50px;
+		overflow: hidden;
+		left: 50%;
+		margin-left: -100px;
+		top: 50%;
+		margin-top: -25px;
+	}
+}
+
+.start {
+	background-color: #000;
+	
+	video {
+		width: 100%;
+	}
+}

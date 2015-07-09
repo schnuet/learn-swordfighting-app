@@ -162,15 +162,16 @@
 <!-- SEITE 4 -->
 	  <ion-slide>
 		<ion-content class="padding pagecontent" scroll="false" has-bouncing="false" >
-			<game-quellen>
-				<div class="row game-container quellen"> 
+			<game-quellen class="pagecontent">
+				<div class="row single-row game-container quellen"> 
 					<div class="col col-67">
+						<h2>Quellen</h2>
 						<div class="quellentext">{{game.text}}</div>
 						<h5>{{game.question}}</h5>
 						<ul>
 							<li ng-repeat="answer in game.answers" class="answer" ng-click="game.selectAnswer($event)">{{answer}}</li>
 						</ul>
-						<button class="button button-balanced" disabled="true" id="finishedButton">{{game.buttonText}}</button>
+						<button class="button button-block button-primary" disabled="true" id="finishedButton">{{game.buttonText}}</button>
 					</div>
 					<div class="col col-33 border-left">
 						<button class="button button-block button-primary" ng-click="game.showHelp();">Hilfe anzeigen</button>
@@ -179,6 +180,7 @@
 				</div>
 			</game-quellen>
 			<div class="row" id="preGameScreen"> 
+				<h2>Quellen</h2>
 				<div class="col col-80 col-offset-10 text-center">
 					<h3>Übung: Quellenlesen</h3>
 					<div class="row"> 

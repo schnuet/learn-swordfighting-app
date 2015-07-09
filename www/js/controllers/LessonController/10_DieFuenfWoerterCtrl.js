@@ -1,8 +1,8 @@
 angular.module('starter.controllers')
 
 .controller('10_DieFuenfWoerterCtrl', 
-['$scope', 'Data', '$ionicSlideBoxDelegate', 'Campaign', '$stateParams',
-function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams) {
+['$scope', 'Data', '$ionicSlideBoxDelegate', 'Campaign', '$stateParams', '$timeout',
+function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, $timeout) {
 
 	$scope.vars = {
 		slideEnabled : true
@@ -29,6 +29,19 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams) {
 		Slidebox-related functions
 	*/
 	var slideBox = $ionicSlideBoxDelegate.$getByHandle('pageSlidebox');
+
+	var visitedPages = [];
+	var pCount = 0;
+	$timeout (function () {
+		pCount = slideBox.slidesCount();
+		for (var i = 0; i < pCount; i++) {
+			visitedPages[i] = false;
+		};
+		// do reduction for first page:
+		pCount--;
+		visitedPages[0] = true;
+	}, 100);
+
 	$scope.pagerClick = function(index) {
 		if ($scope.vars.slideEnabled) {
 			$scope.gotoPage(index);
@@ -36,5 +49,17 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams) {
 	};
 	$scope.gotoPage = function (index) {
 		slideBox.slide (index);
+	};
+
+	$scope.slideHasChanged = function (index) {
+		if (visitedPages[index] === false) {
+			visitedPages[index] = true;
+			pCount--;
+		}
+		if (pCount === 0) {
+			Campaign.addEnd();
+		}
+		console.log (index + ', ' + pCount);
+		console.log (visitedPages);
 	};
 }]);

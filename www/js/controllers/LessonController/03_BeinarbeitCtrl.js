@@ -83,7 +83,7 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 	$scope.game.choose = function (nbr) {
 		if ($scope.game.video === 0) {
 			// right:
-			if (nbr === 1) {
+			if (nbr === 2) {
 				angular.element(document.getElementById('button-box')).addClass ('hidden');
 
 				angular.element(document.getElementById('video-halberschritt')).addClass ('hidden');

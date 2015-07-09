@@ -1,4 +1,8 @@
 .game-container.dress-up {
+	.pagecontent {
+		width: calc(100% - #{$bar-height} - #{$bar-height});
+		margin-left: $bar-height;
+	}
 
 	img.drag-item {
 		max-width: 200px;
