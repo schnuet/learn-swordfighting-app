@@ -38,6 +38,8 @@
 		top: 20%;
 		height: 40%;
 		width: auto;
+		left: 50%;
+		margin-left: -30%;
 	}
 	.abschlusstext {
 		background-color: $primary;
@@ -52,6 +54,27 @@
 		top: 20%;
 		padding-right: 3em;
 		background-color: transparent;
+	}
+
+	// --- INTRO MODAL ---
+	.hintergrundbild {
+		position: absolute;
+		top: 0px;
+		width: 100%;
+		z-index: -1;
+	}
+
+	.charakter {
+		height: 50%;
+		position: absolute;
+		bottom: 0px;
+		right: 66px;
+	}
+
+	&.intro {
+		.scroll-content .col {
+			background-color: transparent;
+		}
 	}
 }
 .intro.modal, .outro.modal {

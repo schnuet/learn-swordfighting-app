@@ -41,27 +41,74 @@ function($scope, $ionicModal, $ionicHistory, $state, Profile, Data) {
 		console.log ('menu was dragged.');
 		angular.element(menuModal).removeClass('dragged');
 		menuModal.style[ionic.CSS.TRANSFORM] = '';
-	}
+	};
 	
 	$scope.gotoState = function (chosenState) {
 		console.log ('going to: ' + chosenState);
 		$state.go (chosenState);
-	}
+	};
+	$scope.gotoCampaignLesson = function (chosenLesson) {
+		if (Data.outroModal.isShown()){
+			Data.outroModal.hide().then(function () {
+				Data.lessonData = Data.lessons[chosenLesson-1];
+				Data.introModal.show().then(function() {
+					$state.go('menu.campaign-lesson-' + chosenLesson);
+				});
+			});
+		} 
+		else {
+			Data.lessonData = Data.lessons[chosenLesson-1];
+			Data.introModal.show().then(function() {
+				$state.go('menu.campaign-lesson-' + chosenLesson);
+			});
+		}
+	};
 
 	$scope.gotoNextLesson = function () {
 		$state.go ('menu.campaign-lesson-'+ Data.user.levelprogress);
 	}
 
-	$scope.$on('$ionicView.enter', function () {
-		user = Profile.loadLastUser ();
-		if (!user) {
-			$state.go ('profileCreation');
-			return;
-		} 
-		else {
-			Data.user = Profile.data;
-			$scope.Data = Data;
-			console.log (user);
+	$scope.$on('$ionicView.enter', function (e) {
+		if (e.targetScope.$id === $scope.$id) {
+			user = Profile.loadLastUser ();
+			if (!user) {
+				$state.go ('profileCreation');
+				return;
+			} 
+			else {
+				Data.user = Profile.data;
+				$scope.Data = Data;
+				console.log (user);
+			}
+		}
+	});
+
+	$scope.$on('$ionicView.loaded', function (e) {
+
+		if (e.targetScope.$id === $scope.$id) {
+			// create the modals:
+			Data.outroModal = $ionicModal.fromTemplateUrl('templates/lessons/outro.html', {
+				scope: $scope,
+				animation: 'slide-in-right-left',
+				backdropClickToClose: false
+			}).then(function(modal) {
+				Data.outroModal = modal;
+			});
+			Data.introModal = $ionicModal.fromTemplateUrl('templates/lessons/intro.html', {
+				scope: $scope,
+				animation: 'slide-in-right-left',
+				backdropClickToClose: false
+			}).then(function(modal) {
+				Data.introModal = modal;
+			});
+			$scope.closeIntro = function () {
+				console.log ('trying to close intro');
+				Data.introModal.hide();
+			};
+			$scope.closeOutro = function () {
+				Data.outroModal.hide();
+			};
+			console.log (e);
 		}
 	});
 

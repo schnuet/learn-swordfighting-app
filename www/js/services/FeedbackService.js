@@ -8,6 +8,21 @@ angular.module('starter.services')
 ['Data','$ionicPopup', '$timeout', '$q',
 function (Data, $ionicPopup, $timeout, $q) {
 
+	var addCloseHandler = function (elclassname, popuphandle, promise) {
+		var el = document.getElementsByClassName(elclassname)[0];
+		if (typeof el === 'undefined') {
+			$timeout (function () {
+				addCloseHandler (elclassname, popuphandle, promise);
+			}, 300);
+			return false;
+		}
+		console.log (el);
+		angular.element(el).on('click', function () { 
+			console.log ('closing congratulation');
+			popuphandle.close(); 
+			promise.resolve(true);
+		});
+	};
 
 	var _self = {
 		congratulation : function (title, text, image, delay) {
@@ -32,13 +47,7 @@ function (Data, $ionicPopup, $timeout, $q) {
 				});
 				// add a close event to the popup:
 				$timeout (function () {
-					var el = document.getElementsByClassName('congratulation')[0];
-					console.log (el);
-					angular.element(el).on('click', function () { 
-						console.log ('closing congratulation');
-						myPopup.close(); 
-						finishedShowing.resolve(true);
-					});
+					addCloseHandler ('congratulation', myPopup, finishedShowing);
 				}, 400);
 			}, delay);
 			return finishedShowing.promise;

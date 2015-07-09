@@ -32,6 +32,11 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 	$scope.game.video = 0;
 	var vid0 = null;
 	var vid1 = null;
+
+	/*currentVideo = null;
+
+	var canVideoPlay = false;*/
+
 	$scope.game.start = function () {
 		GameHelper.deactivateScrolling();
 		angular.element(document.getElementById('preGameScreen')).addClass('hidden');
@@ -39,12 +44,36 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 		vid1 = document.getElementById('vid1');
 		vid0.addEventListener ("ended", onVideoEnd, false);
 		vid1.addEventListener ("ended", onVideoEnd, false);
+
+		/*vid0.addEventListener ("onloadeddata", onCanPlayVideo, false);
+		//vid1.addEventListener ("onloadeddata", onCanPlayVideo, false);
+		vid0.src = './img/lessons/03/halberschritt.mp4';
+		vid0.addEventListener ('error', function(e) {
+			console.log (e);
+		}, false);*/
+	};
+	var onCanPlayVideo = function () {
+		console.log ('video ready');
+		canVideoPlay = true;
+		if (currentVideo !== null) {
+			currentVideo.removeEventListener('onloadeddata', onCanPlayVideo);
+			currentVideo.play();
+			currentVideo = null;
+		}
 	};
 	$scope.game.startVideo = function (videoNbr) {
 		angular.element(document.getElementsByClassName('video-overlay')[videoNbr]).addClass('hidden');
 		if (videoNbr === 0) {
 			angular.element(vid0).removeClass('hidden');
-			vid0.play();
+			/*if (canVideoPlay){
+				console.log ('video can play');*/
+				vid0.play();
+			/*	canVideoPlay = false;
+			} 
+			else {
+				console.log ('video can\'t play');
+				currentVideo = vid0;
+			}		*/
 		}
 		else if (videoNbr === 1) {
 			angular.element(vid1).removeClass('hidden');

@@ -34,11 +34,30 @@
 			}
 		}
 	}
-	.menu_list {
-		.item {
+	.menu_list .list {
+		padding-top: 30px;
+		.item,.item.item-complex {
 			//text-align: center;
 			color: $highlight;
 			border: none;
+			padding: 10px 0px 10px 60px;
+			height: 70px;
+			line-height: 70px;
+			vertical-align: center;
+			a.item-content {
+				padding: 0px 0px 0px 0px;
+				overflow: visible;
+				img {
+					display: block;
+					position: absolute;
+					margin-left: -60px;
+				}
+			}
+			img {
+				display: block;
+				position: absolute;
+				margin-left: -60px;
+			}
 		}
 	}
 }

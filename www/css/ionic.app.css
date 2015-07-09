@@ -7661,6 +7661,10 @@ a.button {
   -webkit-transition: all ease-in-out 250ms;
   transition: all ease-in-out 250ms; }
 
+.modal.dragged {
+  -webkit-transition: scale cubic-bezier(.1, .7, .1, 1) 400ms;
+  transition: scale cubic-bezier(.1, .7, .1, 1) 400ms; }
+
 @media (min-width: 680px) {
   .modal {
     top: 0px;
@@ -7669,21 +7673,6 @@ a.button {
     bottom: 0px;
     width: 100%;
     height: 100%; } }
-
-.modal.dragged {
-  -webkit-transition: scale cubic-bezier(.1, .7, .1, 1) 400ms;
-  transition: scale cubic-bezier(.1, .7, .1, 1) 400ms; }
-.modal .hintergrundbild {
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  z-index: -1; }
-.modal .charakter {
-  max-height: 60%;
-  position: absolute; }
-
-.scroll {
-  min-height: 100%; }
 
 .pagecontent, .first-page-container {
   padding: 0px; }
@@ -7694,6 +7683,22 @@ a.button {
     width: 100%; }
     .pagecontent .first-page-container > .row, .first-page-container .first-page-container > .row {
       padding: 5px 0px; }
+    .pagecontent .first-page-container .row:nth-of-type(1), .first-page-container .first-page-container .row:nth-of-type(1) {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 10px; }
+      .pagecontent .first-page-container .row:nth-of-type(1):after, .first-page-container .first-page-container .row:nth-of-type(1):after {
+        content: '';
+        height: 0.2em;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        background-color: transparent;
+        background-image: url(../img/bar-end-stroke.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom; }
   .pagecontent > .row, .first-page-container > .row {
     margin-left: 66px;
     width: calc(100% - 66px - 66px); }
@@ -7715,6 +7720,21 @@ a.button {
   .pagecontent .row.single-row, .first-page-container .row.single-row {
     padding: 5px 0px; }
 
+.instruction-box {
+  min-height: 200px;
+  /*border: 1px solid grey;
+	background-color: $primary !important;*/
+  padding: 20px;
+  font-size: 1.2em;
+  border-radius: 10px; }
+
+.breitbild {
+  width: 100%;
+  height: auto; }
+
+/*.scroll {
+	min-height: 100%;
+}*/
 .lesson-page-container.slider {
   height: 100%;
   background-color: #FFFDF8; }
@@ -7739,29 +7759,6 @@ a.button {
       display: block;
       transform: translate3d(0px, 50px, 0px);
       -webkit-transform: translate3d(0px, 50px, 0px); }
-
-.slider.image-slider, .image-slider {
-  padding: 0px !important;
-  height: 100%;
-  width: 100%; }
-  .slider.image-slider .slider-slide img, .image-slider .slider-slide img {
-    max-width: 100%;
-    max-height: 100%; }
-  .slider.image-slider .slider-slide video, .image-slider .slider-slide video {
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%; }
-
-.bildname {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  background-color: #F4F1E4;
-  pointer-events: none;
-  padding: 5px 1em; }
-
-.breitbild {
-  width: 100%; }
 
 .scroll-content {
   background-color: #FFFDF8; }
@@ -7789,14 +7786,6 @@ a.button {
       height: 100%; }
   .scroll-content .col {
     background-color: #FFFDF8; }
-
-.instruction-box {
-  min-height: 200px;
-  /*border: 1px solid grey;
-	background-color: $primary !important;*/
-  padding: 20px;
-  font-size: 1.2em;
-  border-radius: 10px; }
 
 .right {
   position: absolute;
@@ -7963,7 +7952,9 @@ h3 {
   position: absolute;
   top: 20%;
   height: 40%;
-  width: auto; }
+  width: auto;
+  left: 50%;
+  margin-left: -30%; }
 .outro.modal .abschlusstext {
   background-color: #F4F1E4;
   padding: 1em;
@@ -7974,6 +7965,18 @@ h3 {
   position: absolute;
   top: 20%;
   padding-right: 3em;
+  background-color: transparent; }
+.intro.modal .hintergrundbild {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1; }
+.intro.modal .charakter {
+  height: 50%;
+  position: absolute;
+  bottom: 0px;
+  right: 66px; }
+.intro.modal.intro .scroll-content .col {
   background-color: transparent; }
 
 .intro.modal .scroll-content-false .row, .outro.modal .scroll-content-false .row {
@@ -8163,6 +8166,7 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   background-color: #FFFDF8;
   color: #AE3E3B;
   font-style: italic;
+  background-color: none;
   background-image: url(../img/bar-end-stroke.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -8192,6 +8196,54 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
       color: #fff; }
   .button.button-primary:active {
     border: none; }
+
+.slider.image-slider, .image-slider {
+  padding: 0px !important;
+  height: 100%;
+  width: 100%; }
+  .slider.image-slider .slider-slide img, .image-slider .slider-slide img {
+    max-width: 100%;
+    max-height: 100%; }
+  .slider.image-slider .slider-slide video, .image-slider .slider-slide video {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%; }
+  .slider.image-slider .bildname, .image-slider .bildname {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    background-color: #FFFDF8;
+    color: #444;
+    font-size: 14px;
+    pointer-events: none;
+    padding: 5px 0px; }
+    .slider.image-slider .bildname p, .image-slider .bildname p {
+      margin: 0px; }
+  .slider.image-slider .button.imagebox-next-button, .image-slider .button.imagebox-next-button {
+    position: absolute;
+    top: 40%;
+    right: 0px; }
+    .slider.image-slider .button.imagebox-next-button:before, .image-slider .button.imagebox-next-button:before {
+      color: #AE3E3B; }
+  .slider.image-slider .button.imagebox-back-button, .image-slider .button.imagebox-back-button {
+    position: absolute;
+    top: 40%;
+    left: 0px; }
+    .slider.image-slider .button.imagebox-back-button:before, .image-slider .button.imagebox-back-button:before {
+      color: #AE3E3B; }
+  .slider.image-slider:after, .image-slider:after {
+    content: '';
+    height: 0.2em;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background-color: transparent;
+    background-image: url(../img/bar-end-stroke.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom; }
 
 .profile {
   background: pink; }
@@ -8258,9 +8310,26 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
     width: 100%; }
   .modal.menu .levellist .item:nth-of-type(13) {
     background: none; }
-.modal.menu .menu_list .item {
-  color: #AE3E3B;
-  border: none; }
+.modal.menu .menu_list .list {
+  padding-top: 30px; }
+  .modal.menu .menu_list .list .item, .modal.menu .menu_list .list .item.item-complex {
+    color: #AE3E3B;
+    border: none;
+    padding: 10px 0px 10px 60px;
+    height: 70px;
+    line-height: 70px;
+    vertical-align: center; }
+    .modal.menu .menu_list .list .item a.item-content, .modal.menu .menu_list .list .item.item-complex a.item-content {
+      padding: 0px 0px 0px 0px;
+      overflow: visible; }
+      .modal.menu .menu_list .list .item a.item-content img, .modal.menu .menu_list .list .item.item-complex a.item-content img {
+        display: block;
+        position: absolute;
+        margin-left: -60px; }
+    .modal.menu .menu_list .list .item img, .modal.menu .menu_list .list .item.item-complex img {
+      display: block;
+      position: absolute;
+      margin-left: -60px; }
 
 .glossar-table {
   width: 100%; }
@@ -8744,6 +8813,10 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
 .game-container.mensur .button-box {
   text-align: right; }
 
+.game-container.huten.single-row .row {
+  padding: 0px 0px 0px 0px; }
+  .game-container.huten.single-row .row .col {
+    padding: 0px 2px 0px 2px; }
 .game-container.huten .armstellungen img, .game-container.huten .beinstellungen img {
   width: 100%;
   max-height: 100%; }

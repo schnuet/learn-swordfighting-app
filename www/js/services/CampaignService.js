@@ -21,13 +21,16 @@ function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, Feedback) {
 		*/
 		start : function (lNbr, $scope) {
 
-			// save the scope for other functions
+			// save the scope for other functions 
 			scopes.push ($scope);
 
 			_self.lessonnumber = lNbr;
+			Data.lessonnumber = lNbr;
+
+			if (Data.lessonData != Data.lessons[lNbr-1]) Data.lessonData = Data.lessons[lNbr-1];
 
 			// create the modals:
-			$ionicModal.fromTemplateUrl('templates/lessons/'+ Data.lessonDirectories[lNbr] +'/intro.html', {
+			/*$ionicModal.fromTemplateUrl('templates/lessons/'+ Data.lessonDirectories[lNbr] +'/intro.html', {
 				scope: $scope,
 				animation: 'slide-in-right-left',
 				backdropClickToClose: false
@@ -41,23 +44,34 @@ function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, Feedback) {
 				backdropClickToClose: false
 			}).then(function(modal) {
 				$scope.outroModal = modal;
-			});
+			});*/
+
+			// SHOW INTRO
+			/*if (typeof Data.introModal.animation === 'string') {
+				Data.introModal.show();
+			}
+			else {
+				Data.introModal.then(function () {
+					Data.introModal.show();
+				});
+			}*/
+			
 
 			// clean up the modals when we leave the page:
 			$scope.$on('$destroy', function() {
 				console.log ('destroyed scope!');
-				$scope.introModal.remove();
-				$scope.outroModal.remove();
+				//Data.introModal.hide();
+				//Data.outroModal.hide();
 
 				scopes[scopes.indexOf($scope)] = null;
 			});
 
-			$scope.closeIntro = function () {
-				$scope.introModal.remove();
+			/*$scope.closeIntro = function () {
+				Data.introModal.close();
 			};
 			$scope.closeOutro = function () {
-				$scope.outroModal.remove();
-			};
+				Data.outroModal.close();
+			};*/
 
 			/*$scope.endLesson = function () {
 				$scope.outroModal.show();
@@ -99,7 +113,7 @@ function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, Feedback) {
 				Profile.data.score += 200;
 			}
 			Profile.save();
-			scopes[scopes.length-1].outroModal.show();
+			Data.outroModal.show();
 		}
 	};
 

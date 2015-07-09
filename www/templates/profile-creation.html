@@ -1,11 +1,13 @@
-<ion-view view-title="Profile Creation" cache-view="false">
-	<ion-content class="padding pagecontent" >
-		<div class="row responsive-md"> 
+<ion-view view-title="Profile Creation" cache-view="false" class="profile-creation">
+	<ion-header-bar class="bar-primary">
+	</ion-header-bar>
+	<ion-content scroll="false" class="padding pagecontent" >
+		<div class="row single-row"> 
 			<div class="col col-67">
 				<h1>Erstelle ein neues Profil!</h1>
 				<form ng-submit="createChar();">
-					<input type="text" placeholder="Dein Name?" ng-model="data.username">
-					<input type="submit" value="Profil erstellen">
+					<input type="text" placeholder="Dein Name?" ng-model="data.username" class="nameInput">
+					<input type="submit" value="Profil erstellen" class="button button-primary">
 				</form>
 
 				
@@ -18,4 +20,6 @@
 			</div>
 		</div>
 	</ion-content>
+	<ion-footer-bar class="bar-primary">
+	</ion-footer-bar>
 </ion-view>
