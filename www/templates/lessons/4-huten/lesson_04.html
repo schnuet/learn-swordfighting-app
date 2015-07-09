@@ -1,4 +1,4 @@
-<ion-view view-title="Lektion 4" cache-view="false">
+<ion-view view-title="Praxis am Schwert" class="praxis_am_schwert" cache-view="false">
   <ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)">
 	<!-- SEITENINHALT START: -->
 
@@ -55,7 +55,7 @@
 					<!-- BILD _ HÖHE VON 75 % -->
 					<!-- Bilder zum weiterschalten -->
 					<div class="row height-67"> 
-						<ion-slide-box class="image-slider" prevent-drag>
+						<ion-slide-box class="image-slider" delegate-handle="img_1" add-controls>
 							<ion-slide>
 								<img src="./img/lessons/04/Grundpositionen/07.png" class="normalbild" />
 								<div class="bildname">
@@ -136,7 +136,7 @@
 					<!-- BILD _ HÖHE VON 75 % -->
 					<!-- Bilder zum weiterschalten -->
 					<div class="row height-67"> 
-						<ion-slide-box class="image-slider" prevent-drag>
+						<ion-slide-box class="image-slider" delegate-handle="img_2" add-controls>
 							<ion-slide>
 								<img src="./img/lessons/04/Grundpositionen/01.png" class="normalbild" />
 								<div class="bildname">
@@ -215,7 +215,7 @@
 					<!-- BILD _ HÖHE VON 75 % -->
 					<!-- Bilder zum weiterschalten -->
 					<div class="row height-67"> 
-						<ion-slide-box class="image-slider" prevent-drag>
+						<ion-slide-box class="image-slider" delegate-handle="img_3" add-controls>
 							<ion-slide>
 								<img src="./img/lessons/04/Grundpositionen/15.png" class="normalbild" />
 								<div class="bildname">
@@ -271,7 +271,7 @@
 	<ion-slide>
 		<ion-content class="padding pagecontent" scroll="false" has-bouncing="false" >
 			<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
-			<div class="row"> 
+			<div class="row single-row"> 
 				<!-- SPALTE: col-x definiert breite. -->
 				<!-- Spalte 1 (hohe Spalte)-->				
 				<div class="col col-33">
@@ -287,7 +287,7 @@
 					<!-- BILD _ HÖHE VON 75 % -->
 					<!-- Bilder zum weiterschalten -->
 					<div class="row height-67"> 
-						<ion-slide-box class="image-slider" prevent-drag>
+						<ion-slide-box class="image-slider" delegate-handle="img_4" add-controls>
 							<ion-slide>
 								<img src="./img/lessons/04/Grundpositionen/11.png" class="normalbild" />
 								<div class="bildname">
@@ -345,8 +345,8 @@
 	  
 	<!-- SEITE 6 -->
 	  <ion-slide>
-		<ion-content class="padding pagecontent" scroll="false" has-bouncing="false" >
-			<game-huten>
+		<ion-content class="padding" scroll="false" has-bouncing="false" >
+			<game-huten class="pagecontent">
 				<div class="row game-container huten single-row">
 					<div class="col col-67">
 						<div class="row height-50 armstellungen">
@@ -384,7 +384,7 @@
 					</div>
 					<div class="row">
 						<div class="col col-30 col-offset-40">
-							<button class="button button-primary" ng-click="game.start();">Spiel Starten!</button>
+							<button class="button button-block button-primary" ng-click="game.start();">Spiel Starten!</button>
 						</div>
 					</div>
 				</div>

@@ -1,3 +1,40 @@
+.modal{
+	// --- DRAG STATE FOR MENU MODAL: ---
+	&.dragged {
+		@include transition(scale cubic-bezier(.1, .7, .1, 1) 400ms);
+	}
+
+	// --- INTRO MODAL ---
+	.hintergrundbild {
+		position: absolute;
+		top: 0px;
+		width: 100%;
+		z-index: -1;
+	}
+
+	.instruction-box {
+		min-height: 200px;
+		/*border: 1px solid grey;
+		background-color: $primary !important;*/
+		padding: 20px;
+		font-size: 1.2em;
+		border-radius: 10px;
+	}
+
+	.charakter {
+		height: 50%;
+		position: absolute;
+		bottom: 0px;
+		right: 66px;
+	}
+
+	&.intro {
+		.scroll-content .col {
+			background-color: transparent;
+		}
+	}
+}
+// MAKING THE MODALS FULLSCREEN ON IPAD (AND BIGGER SCREENS)
 @media (min-width: 680px) {
 	.modal {
 		top: 0px;
@@ -6,20 +43,5 @@
 		bottom: 0px;
 		width: 100%;
 		height: 100%;
-	}
-}
-.modal{
-	&.dragged {
-		@include transition(scale cubic-bezier(.1, .7, .1, 1) 400ms);
-	}
-	.hintergrundbild {
-		position: absolute;
-		top: 0px;
-		width: 100%;
-		z-index: -1;
-	}
-	.charakter {
-		max-height: 60%;
-		position: absolute;
 	}
 }

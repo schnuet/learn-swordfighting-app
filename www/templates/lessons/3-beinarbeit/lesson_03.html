@@ -1,4 +1,4 @@
-<ion-view view-title="Lektion 3" cache-view="false">
+<ion-view view-title="Praxis am Schwert" cache-view="false">
 	<ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)">
 	<!-- SEITENINHALT START: -->
 
@@ -10,31 +10,31 @@
 			<!-- BREITES BILD -->
 
 			<div class="first-page-container">
-			<div class="row height-67"> 
-				<img src="./img/lessons/03/03b.png" class="breitbild" />
-			</div>
-
-			<!-- DARUNTER LIEGENDER TEXT -->					
-			<div class="row height-33">
-				<!-- Spalte 1 -->
-				<div class="col col-33">
-					<p>
-						Um schnell und flexibel in alle Richtungen angreifen und ausweichen zu können, ist ein guter Stand wichtig. Die Schritte werden zunächst nur vorwärts und rückwärts ausgeführt, können aber in alle Richtungen angewendet werden. 
-					</p>
+				<div class="row height-67"> 
+					<img src="./img/lessons/03/03b.png" class="breitbild" />
 				</div>
-				<!-- Spalte 2 -->                        
-				<div class="col col-33">
-					<p>
-						Die Füße haben einen Abstand von etwa zwei Fußlängen, der vordere Fuß zeigt zum Gegner, der hintere Fuß steht etwa im 45°-Winkel zum vorderen Fuß. Hierbei muss man vor allem darauf achten, dass die Knie in dieselbe Richtung wie die Füße weisen und nicht
-					</p>
-				</div >                        
-				<!-- Spalte 3 -->
-				<div class="col col-33">
-					<p>
-						 wegknicken. Die Knie sind gebeugt und das Körpergewicht gleichmäßig auf beiden Beinen verteilt.<br> Der Rücken bleibt dabei gerade.
-					</p>
-				</div >	
-			</div>
+
+				<!-- DARUNTER LIEGENDER TEXT -->					
+				<div class="row height-33">
+					<!-- Spalte 1 -->
+					<div class="col col-33">
+						<p>
+							Um schnell und flexibel in alle Richtungen angreifen und ausweichen zu können, ist ein guter Stand wichtig. Die Schritte werden zunächst nur vorwärts und rückwärts ausgeführt, können aber in alle Richtungen angewendet werden. 
+						</p>
+					</div>
+					<!-- Spalte 2 -->                        
+					<div class="col col-33">
+						<p>
+							Die Füße haben einen Abstand von etwa zwei Fußlängen, der vordere Fuß zeigt zum Gegner, der hintere Fuß steht etwa im 45°-Winkel zum vorderen Fuß. Hierbei muss man vor allem darauf achten, dass die Knie in dieselbe Richtung wie die Füße 
+						</p>
+					</div >                        
+					<!-- Spalte 3 -->
+					<div class="col col-33">
+						<p>
+							 weisen und nicht wegknicken. Die Knie sind gebeugt und das Körpergewicht gleichmäßig auf beiden Beinen verteilt.<br> Der Rücken bleibt dabei gerade.
+						</p>
+					</div >	
+				</div>
 			</div>
 		</ion-content>
 	  </ion-slide>
@@ -43,7 +43,7 @@
 	  <ion-slide>
 		<ion-content class="padding pagecontent" scroll="false" has-bouncing="false" >
 			<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
-			<div class="row"> 
+			<div class="row single-row"> 
 				<!-- SPALTE: col-x definiert breite. -->
 				 <!-- Spalte 1 (hohe Spalte)-->				
 				<div class="col col-33">					
@@ -51,9 +51,14 @@
 					<h3>Passierschritt </h3>
 
 					<p>Der Passierschritt oder auch „ganzer Schritt" ist ein Schritt, bei dem die Fußstellung wechselt. Der hintere Fuß passiert dabei den vorderen und bleibt vorne gerade ausgerichtet stehen. Währenddessen dreht sich der andere Fuß um 45° ein. </p>
-                         <p><em>TIPP: „Hoppeln" vermeiden: Schaue beim üben in einen Spiegel. Die Schultern sollen beim Laufen immer auf derselben Höhe bleiben.<em> </p> 
-                         <h3>Halber Schritt</h3> 
-                         <p>Beim halben Schritt bleibt derselbe Fuß vorne. Der vordere Fuß wird gehoben und mit der Ferse zuerst ein Stück nach vorne gesetzt, dann wird der hintere Fuß nachgezogen. <br> Beim Rückwärtsgehen wird der hintere Fuß zuerst angehoben.
+
+                    <p>
+                    	<em>TIPP: „Hoppeln" vermeiden: Schaue beim üben in einen Spiegel. Die Schultern sollen beim Laufen immer auf derselben Höhe bleiben.</em> 
+                    </p> 
+                    <h3>Halber Schritt</h3> 
+                    <p>
+                    	Beim halben Schritt bleibt derselbe Fuß vorne. Der vordere Fuß wird gehoben und mit der Ferse zuerst ein Stück nach vorne gesetzt, dann wird der hintere Fuß nachgezogen. <br> 
+                    	Beim Rückwärtsgehen wird der hintere Fuß zuerst angehoben.
 					</p>
 				
 				</div>
@@ -62,7 +67,7 @@
 					
 					<div class="row height-67"> 
 						<!-- Hier werden die Videos Passierschritt und Halber Schritt eingebunden -->
-						<ion-slide-box class="image-slider" prevent-drag>
+						<ion-slide-box class="image-slider" delegate-handle="img_1" add-controls>
 							<ion-slide>
 								<video controls preload='metadata'>
 									<source src="./img/lessons/03/Halber_Schritt.mp4" type="video/mp4" />
@@ -85,12 +90,14 @@
 					<!-- DARUNTER LIEGENDER TEXT -->
 					<div class="row height-33"> 
 					<!-- Spalte 2 -->
-						<div class="col col-33">
-							<p><em>TIPP: Beim Nachziehen die Füße nicht über den Boden schleifen lassen. Das funktioniert nur auf sauberen und glatten Böden.</em></p>
+						<div class="col col-50">
+							<p>
+								<em>TIPP: Beim Nachziehen die Füße nicht über den Boden schleifen lassen. Das funktioniert nur auf sauberen und glatten Böden.</em>
+							</p>
 
 						</div>
 					<!-- Spalte 3 -->
-						<div class="col col-33">
+						<div class="col col-50">
 							<p></p>
 						</div>
 					</div>
@@ -102,9 +109,10 @@
 	<!-- SEITE 3 -->
 	  <ion-slide>
 		<ion-content class="padding pagecontent" scroll="false" has-bouncing="false" >
-			<div class="game-container choose-video">
-				<div class="row height-100"> 
+			<div class="game-container choose-video pagecontent">
+				<div class="row single-row"> 
 					<div class="col col-67" id="video-container">
+						<h2>Beinarbeit</h2>
 						<div class="video" id="video-halberschritt">
 							<h3>Erstes Video: Halber Schritt</h3>
 							<video width="100%" id="vid0">
@@ -151,7 +159,7 @@
 					</div>
 					<div class="row">
 						<div class="col col-30 col-offset-40">
-							<button class="button button-primary" ng-click="game.start();">Spiel Starten!</button>
+							<button class="button button-block button-primary" ng-click="game.start();">Spiel Starten!</button>
 						</div>
 					</div>
 				</div>

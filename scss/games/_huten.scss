@@ -1,4 +1,12 @@
 .game-container.huten {
+	&.single-row {
+		.row {
+			padding: 0px 0px 0px 0px;
+			.col {
+				padding: 0px 2px 0px 2px;
+			}
+		}
+	}
 	.armstellungen, .beinstellungen {
 		img {
 			width: 100%;
