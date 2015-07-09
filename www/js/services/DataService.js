@@ -21,7 +21,7 @@ angular.module('starter.services')
 		}, 
 		daumengriff: {
 			title: 'Daumengriff, der',
-			description: 'Bei diesem Griff liegt der Daumen auf der Klingenmitte auf. [LINK]'
+			description: 'Bei diesem Griff liegt der Daumen auf der Klingenmitte auf.'
 		}, 
 		fiore_dei_liberi: {
 			title: 'Fiore De\'i Liberi',
@@ -33,7 +33,7 @@ angular.module('starter.services')
 		}, 
 		fechtbuch: {
 			title: 'Fechtbuch, das',
-			description: 'Die Bezeichnung für ein Manuskript in dem historische Kampftechniken mit dem Schwert erhalten geblieben sind. [LINK]'
+			description: 'Die Bezeichnung für ein Manuskript in dem historische Kampftechniken mit dem Schwert erhalten geblieben sind.'
 		},
 		fechtmeister: {
 			title: 'Fechtmeister, der',
@@ -45,11 +45,11 @@ angular.module('starter.services')
 		},
 		fuehlen: {
 			title: 'Fuehlen, das',
-			description: 'Gehört zum Indes und ist eine Voraussetzung dafür, in der Bindung vom Nach zum Vor zu wechseln. [LINK]'
+			description: 'Gehört zum Indes und ist eine Voraussetzung dafür, in der Bindung vom Nach zum Vor zu wechseln.'
 		},
 		fuenf_woerter: {
 			title: 'Fünf Wörter, die',
-			description: 'Die fünf Wörter sind das Kernkonzept von Liechtenauers Lehre. Dazu gehören Vor, Nach, Indes/Fühlen, Stärke und Schwäche. [LINK]'
+			description: 'Die fünf Wörter sind das Kernkonzept von Liechtenauers Lehre. Dazu gehören Vor, Nach, Indes/Fühlen, Stärke und Schwäche.'
 		},
 		gambeson: {
 			title: 'Gambeson, der',
@@ -57,19 +57,19 @@ angular.module('starter.services')
 		}, 
 		ganzer_schritt: {
 			title: 'Ganzer Schritt, der',
-			description: 'Auch genannt Passierschritt. Bei diesem Schritt wird die Fußstellung gewechselt, danach ist der jeweils andere Fuß vorne. [LINK]'
+			description: 'Auch genannt Passierschritt. Bei diesem Schritt wird die Fußstellung gewechselt, danach ist der jeweils andere Fuß vorne.'
 		}, 
 		griff: {
 			title: 'Griff, der',
-			description: 'Der Teil des Schwerts an dem mit der führenden Hand gegriffen wird. Ist meistens aus Holz und mit Leder überzogen oder Draht umwickelt. [LINK]'
+			description: 'Der Teil des Schwerts an dem mit der führenden Hand gegriffen wird. Ist meistens aus Holz und mit Leder überzogen oder Draht umwickelt.'
 		},
 		halber_schritt: {
 			title: 'Halber Schritt, der',
-			description: 'Ein kurzer Schritt vorwärts mit dem führenden Fuß. Auch genannt Nachstellschritt. Dabei wird die Fußstellung nicht gewechselt. [LINK]'
+			description: 'Ein kurzer Schritt vorwärts mit dem führenden Fuß. Auch genannt Nachstellschritt. Dabei wird die Fußstellung nicht gewechselt.'
 		},
 		hammergriff : {
 			title: 'Hammergriff, der',
-			description: 'Bei diesem Griff liegt der Daumen der führenden Hand auf den anderen Fingern auf. [LINK]'
+			description: 'Bei diesem Griff liegt der Daumen der führenden Hand auf den anderen Fingern auf.'
 		},
 		hau: {
 			title: 'Hau, der/Hieb, der',
@@ -77,7 +77,7 @@ angular.module('starter.services')
 		},
 		heft: {
 			title: 'Heft, das',
-			description: 'Knauf, Griff und Parierstange eines Schwerts. [LINK]'
+			description: 'Knauf, Griff und Parierstange eines Schwerts.'
 		},
 		hut: {
 			title: 'Hut, die',
@@ -85,11 +85,11 @@ angular.module('starter.services')
 		},
 		hut_vom_tag: {
 			title: 'Hut vom Tag, die',
-			description: 'In dieser Hut hält man das Schwert neben seinem Kopf mit dem Ort nach oben zeigend. [LINK]'
+			description: 'In dieser Hut hält man das Schwert neben seinem Kopf mit dem Ort nach oben zeigend.'
 		},
 		indes : {
 			title: 'Indes, das',
-			description: 'Spielt sich im Moment des Klingenkontakts ab, hier kann die Verteilung von Vor und Nach wechseln. [LINK]'
+			description: 'Spielt sich im Moment des Klingenkontakts ab, hier kann die Verteilung von Vor und Nach wechseln.'
 		},
 		italienische_schule: {
 			title: 'italienische Schule, die',
@@ -97,15 +97,15 @@ angular.module('starter.services')
 		},
 		klinge : {
 			title: 'Klinge, die',
-			description: 'Der Bereich des Schwerts über dem Heft. Die Klinge kann auf einer oder auf beiden Seiten [LINK]'
+			description: 'Der Bereich des Schwerts über dem Heft. Die Klinge kann auf einer oder auf beiden Seiten geschliffen sein.'
 		},
 		knauf: {
 			title: 'Knauf, der',
-			description: 'Der Teil des Schwerts unter dem Griff. Am Knauf kann mit der zweiten Hand gegriffen werden. Der Knauf kann auch zu schlagen eingesetzt werden. [LINK]'
+			description: 'Der Teil des Schwerts unter dem Griff. Am Knauf kann mit der zweiten Hand gegriffen werden. Der Knauf kann auch zu schlagen eingesetzt werden.'
 		},
 		krieg: {
 			title: 'Krieg, der',
-			description: 'Kampfphase in der nahen Mensur. Die Klingen berühren sich bereits. Der Gegner kann jetzt, oder nach einem Schritt durch einen Hieb oder Stich getroffen werden. [LINK]'	
+			description: 'Kampfphase in der nahen Mensur. Die Klingen berühren sich bereits. Der Gegner kann jetzt, oder nach einem Schritt durch einen Hieb oder Stich getroffen werden.'	
 		},
 		krumphau: {
 			title: 'Krumphau, der',
@@ -125,7 +125,7 @@ angular.module('starter.services')
 		},
 		liechtenauer: {
 			title: 'Liechtenauer, Johannes',
-			description: 'Fechtmeister aus dem 13. oder 14. Jahrhundert. Gilt als Begründer der deutschen Schule. Von ihm ist nur ein Gedicht mit Merkversen erhalten. [LINK]'
+			description: 'Fechtmeister aus dem 13. oder 14. Jahrhundert. Gilt als Begründer der deutschen Schule. Von ihm ist nur ein Gedicht mit Merkversen erhalten.'
 		},
 		meisterhau: {
 			title: 'Meisterhau, der',
@@ -133,43 +133,43 @@ angular.module('starter.services')
 		},
 		mensur: {
 			title: 'Mensur, die',
-			description: 'Bezeichnet den Abstand, in dem zwei Kämpfer zueinander stehen. [LINK]'
+			description: 'Bezeichnet den Abstand, in dem zwei Kämpfer zueinander stehen.'
 		},
 		nach: {
 			title: 'Nach, das',
-			description: 'Im Nach ist man, wenn man auf eine Aktion des Gegners reagieren und sich verteidigen muss. [LINK]'
+			description: 'Im Nach ist man, wenn man auf eine Aktion des Gegners reagieren und sich verteidigen muss.'
 		},
 		oberhau: {
 			title: 'Oberhau, der',
-			description: 'Ein Hieb von oben zum Kopf oder zum Hals des Gegners. Kann von beiden Seiten geschlagen werden. [LINK]'
+			description: 'Ein Hieb von oben zum Kopf oder zum Hals des Gegners. Kann von beiden Seiten geschlagen werden.'
 		},
 		ochs: {
 			title: 'Ochs, der',
-			description: 'Eine Hut in der das Schwert vor dem Kopf gehalten wird. Der Ort zeigt dabei zum Gegner. [LINK]'
+			description: 'Eine Hut in der das Schwert vor dem Kopf gehalten wird. Der Ort zeigt dabei zum Gegner.'
 		},
 		ort: {
 			title: 'Ort, der',
-			description: 'Die Spitze des Schwerts. [LINK]'
+			description: 'Die Spitze des Schwerts.'
 		},
 		parierstange: {
 			title: 'Parierstange, die',
-			description: 'Der waagrechte Teil des Schwerts über dem Griff. Macht den Kampf aus der Bindung möglich. [LINK]'
+			description: 'Der waagrechte Teil des Schwerts über dem Griff. Macht den Kampf aus der Bindung möglich.'
 		},
 		passierschritt: {
 			title: 'Passierschritt, der',
-			description: 'Auch genannt ganzer Schritt. Die Fußstellung wird dabei verändert. [LINK]'
+			description: 'Auch genannt ganzer Schritt. Die Fußstellung wird dabei verändert. '
 		}, 
 		pflug : {
 			title: 'Pflug, der',
-			description: 'Eine Hut. Man steht dabei mit dem Schwert neben der Hüfte. Der Ort zeigt zum Gegner. [LINK]'
+			description: 'Eine Hut. Man steht dabei mit dem Schwert neben der Hüfte. Der Ort zeigt zum Gegner.'
 		},
 		quelle: {
 			title: 'Quelle, die',
-			description: 'In diesem Zusammenhang sind Fechtbücher gemeint, in denen Techniken historischer Kampfkünste überliefert sind. [LINK]'
+			description: 'In diesem Zusammenhang sind Fechtbücher gemeint, in denen Techniken historischer Kampfkünste überliefert sind.'
 		},
 		ringen: {
 			title: 'Ringen, das',
-			description: 'Im Ringen kann ein Fechter den anderen bereits mit den Händen greifen. [LINK]'
+			description: 'Im Ringen kann ein Fechter den anderen bereits mit den Händen greifen.'
 		},
 		schielhau: {
 			title: 'Schielhau, der',
@@ -177,11 +177,11 @@ angular.module('starter.services')
 		},
 		schnitttest: {
 			title: 'Schnitttest, der',
-			description: 'Zerschneiden verschiedener Gegenstände mit einem scharfen Schwert. [LINK]'
+			description: 'Zerschneiden verschiedener Gegenstände mit einem scharfen Schwert.'
 		},
 		schwaeche: {
 			title: 'Schwäche, die',
-			description: 'Der Bereich des Schwerts von der Mitte der Klinge bis zum Ort. Schwach in der Bindung. [LINK]'
+			description: 'Der Bereich des Schwerts von der Mitte der Klinge bis zum Ort. Schwach in der Bindung.'
 		},
 		sportfechten: {
 			title: 'Sportfechten, das',
@@ -209,11 +209,11 @@ angular.module('starter.services')
 		},
 		vor: {
 			title: 'Vor, das',
-			description: 'In Vor zu sein bedeutet, die Initiative zu haben. Man agiert und der Gegner ist gezwungen zu reagieren. [LINK]'
+			description: 'In Vor zu sein bedeutet, die Initiative zu haben. Man agiert und der Gegner ist gezwungen zu reagieren.'
 		},
 		zufechten: {
 			title: 'Zufechten, das',
-			description: 'Schließt alle Abstände ein, in denen sich die Klingen der beiden Gegner nicht berühren. <a href="http://google.de">[LINK]</a>'
+			description: 'Schließt alle Abstände ein, in denen sich die Klingen der beiden Gegner nicht berühren.'
 		},
 		zwerchhau: {
 			title: 'Zwerchhau, der',
@@ -343,7 +343,7 @@ angular.module('starter.services')
 						'Herzlichen Glückwunsch! Das war das zehnte und letzte Kapitel der Lerntour. <br>Dieses Pferd soll dich auf deinem weiteren Weg standesgemäß zu neuen Fechtlehrern tragen! Sein Name ist Plötze.<br>'+
 						'Du kennst jetzt die Grundlagen des historischen Schwertkampfes der deutschen Schule. Damit bist du bestens ausgerüstet dir eine eigene Trainingsgruppe zu suchen oder Seminare von Fechtlehrern zu besuchen. <br>'+
 						'Bleib offen für neue Eindrücke! Der Schwertkampf basiert auf vielen unterschiedlichen Interpretationen der Quellen und jeder Lehrer hat seine eigene Art eine Technik auszuführen und eigene Tricks zu zeigen. Versuche, welche der Variationen dir am besten liegen und finde heraus, welcher Stil für dich am besten funktioniert.<br>'+
-						'Weißt du nicht ob es in deiner Nähe einen Verein gibt? Kein Problem.<br>Auf der nächsten Seite findest du eine Karte auf der du den Verein finden kannst, der deinem Wohnort am nächsten liegt.</p>',
+						'Weißt du nicht ob es in deiner Nähe einen Verein gibt? Kein Problem.<br> <a href="https://www.google.com/maps/d/viewer?mid=z3ItaHt6Fhqs.knoxa-yaqWs8&ie=UTF8&hl=de&om=1&msa=0&z=6">Hier findest du eine Karte</a> auf der du den Verein suchen kannst, der deinem Wohnort am nächsten liegt.</p>',
 			outroButtonText: 'Abschluss'
 		}
 	];
