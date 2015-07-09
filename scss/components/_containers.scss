@@ -7,6 +7,24 @@
 		& > .row {
 			padding: 5px 0px;
 		} 
+		.row:nth-of-type(1) {
+			position: relative;
+			overflow: hidden;
+			padding-bottom: 10px;
+			&:after {
+				content: '';
+				height: 0.2em;
+				width: 100%;
+				position: absolute;
+				left: 0px;
+				bottom: 0px;
+				background-color: transparent;
+				background-image: url(../img/bar-end-stroke.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: bottom;
+			}
+		}
 	}
 	padding: 0px;
 	& > .row {
@@ -41,8 +59,18 @@
 	}
 }
 
+.instruction-box {
+	min-height: 200px;
+	/*border: 1px solid grey;
+	background-color: $primary !important;*/
+	padding: 20px;
+	font-size: 1.2em;
+	border-radius: 10px;
+}
+
 .breitbild {
 	width: 100%;
+	height: auto;
 }
 /*.scroll {
 	min-height: 100%;

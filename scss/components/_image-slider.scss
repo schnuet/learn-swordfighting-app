@@ -18,9 +18,11 @@
 		bottom: 0px;
 		right: 0px;
 		width: 100%;
-		background-color: $primary;
+		background-color: $secondary;
+		color: #444;
+		font-size: 14px;
 		pointer-events: none;
-		padding: 5px 1em;
+		padding: 5px 0px;
 		p {
 			margin: 0px;
 		}
@@ -42,5 +44,18 @@
 		&:before {
 			color: $highlight;
 		}
+	}
+	&:after {
+		content: '';
+		height: 0.2em;
+		width: 100%;
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+		background-color: transparent;
+		background-image: url(../img/bar-end-stroke.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: bottom;
 	}
 }

@@ -16,4 +16,5 @@ function($scope, Data, Profile, $state) {
 		$state.go ('menu.dashboard');
 	};
 
+
 }]);

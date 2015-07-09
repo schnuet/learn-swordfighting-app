@@ -7664,25 +7664,6 @@ a.button {
 .modal.dragged {
   -webkit-transition: scale cubic-bezier(.1, .7, .1, 1) 400ms;
   transition: scale cubic-bezier(.1, .7, .1, 1) 400ms; }
-.modal .hintergrundbild {
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  z-index: -1; }
-.modal .instruction-box {
-  min-height: 200px;
-  /*border: 1px solid grey;
-		background-color: $primary !important;*/
-  padding: 20px;
-  font-size: 1.2em;
-  border-radius: 10px; }
-.modal .charakter {
-  height: 50%;
-  position: absolute;
-  bottom: 0px;
-  right: 66px; }
-.modal.intro .scroll-content .col {
-  background-color: transparent; }
 
 @media (min-width: 680px) {
   .modal {
@@ -7702,6 +7683,22 @@ a.button {
     width: 100%; }
     .pagecontent .first-page-container > .row, .first-page-container .first-page-container > .row {
       padding: 5px 0px; }
+    .pagecontent .first-page-container .row:nth-of-type(1), .first-page-container .first-page-container .row:nth-of-type(1) {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 10px; }
+      .pagecontent .first-page-container .row:nth-of-type(1):after, .first-page-container .first-page-container .row:nth-of-type(1):after {
+        content: '';
+        height: 0.2em;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        background-color: transparent;
+        background-image: url(../img/bar-end-stroke.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom; }
   .pagecontent > .row, .first-page-container > .row {
     margin-left: 66px;
     width: calc(100% - 66px - 66px); }
@@ -7723,8 +7720,17 @@ a.button {
   .pagecontent .row.single-row, .first-page-container .row.single-row {
     padding: 5px 0px; }
 
+.instruction-box {
+  min-height: 200px;
+  /*border: 1px solid grey;
+	background-color: $primary !important;*/
+  padding: 20px;
+  font-size: 1.2em;
+  border-radius: 10px; }
+
 .breitbild {
-  width: 100%; }
+  width: 100%;
+  height: auto; }
 
 /*.scroll {
 	min-height: 100%;
@@ -7946,7 +7952,9 @@ h3 {
   position: absolute;
   top: 20%;
   height: 40%;
-  width: auto; }
+  width: auto;
+  left: 50%;
+  margin-left: -30%; }
 .outro.modal .abschlusstext {
   background-color: #F4F1E4;
   padding: 1em;
@@ -7957,6 +7965,18 @@ h3 {
   position: absolute;
   top: 20%;
   padding-right: 3em;
+  background-color: transparent; }
+.intro.modal .hintergrundbild {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1; }
+.intro.modal .charakter {
+  height: 50%;
+  position: absolute;
+  bottom: 0px;
+  right: 66px; }
+.intro.modal.intro .scroll-content .col {
   background-color: transparent; }
 
 .intro.modal .scroll-content-false .row, .outro.modal .scroll-content-false .row {
@@ -8193,9 +8213,11 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
     bottom: 0px;
     right: 0px;
     width: 100%;
-    background-color: #F4F1E4;
+    background-color: #FFFDF8;
+    color: #444;
+    font-size: 14px;
     pointer-events: none;
-    padding: 5px 1em; }
+    padding: 5px 0px; }
     .slider.image-slider .bildname p, .image-slider .bildname p {
       margin: 0px; }
   .slider.image-slider .button.imagebox-next-button, .image-slider .button.imagebox-next-button {
@@ -8210,6 +8232,18 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
     left: 0px; }
     .slider.image-slider .button.imagebox-back-button:before, .image-slider .button.imagebox-back-button:before {
       color: #AE3E3B; }
+  .slider.image-slider:after, .image-slider:after {
+    content: '';
+    height: 0.2em;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background-color: transparent;
+    background-image: url(../img/bar-end-stroke.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom; }
 
 .profile {
   background: pink; }

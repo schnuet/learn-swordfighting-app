@@ -221,6 +221,133 @@ angular.module('starter.services')
 		} 
 	};
 
+	var lessons = [
+		{
+			introBgImage: 'lessons/01/01a.png',
+			introText: '<h1>Schwertbegriffe</h1><p>Willkommen in der Lerntour!</p>'+ 
+			'<p>Schön, dass du dich entschieden hast die alte Kunst des Schwertkampfes zu erlernen! </p>'+
+			'<p>Zuerst lernst du hier wie man die einzelnen Teile des Schwerts nennt. Damit wird es leichter für dich die nächsten Lektionen zu verstehen und du bist reif für ein eigenes Schwert!</p>',
+			outroPrizeImage: 'lessons/01/1.png',
+			outroText: '<h4>Schwertbegriffe</h4>' +
+					'<p>Klasse! Die erste Lektion hast du mit Bravour gemeistert!</p>'+
+					'<p> Jetzt, wo du die Teile des Schwertes benennen kannst, erhältst du dein erstes eigenes Übungsschwert! </p>'+
+					'<p>In der nächsten Lektion lernst du wie du dein Schwert richtig hältst.</p>',
+			outroButtonText: 'AUF ZUR LEKTION!'
+		},
+		{
+			introBgImage: 'lessons/02/02a.png',
+			introText: '<h1>Der Griff</h1>'+
+					'<p>Gratulation zu deinem ersten Schwert! </p>'+
+					'<p>In dieser Lektion geht es darum, wie du dein Schwert am besten hältst. <br>'+
+					'Damit kannst du später beim Kämpfen auch deine ganze Kraft in einen Hieb oder eine Verteidigung legen.</p>',
+			outroPrizeImage: 'lessons/02/2.png',
+			outroText: '<h4>Der Griff</h4>'+				
+					'<p>Super! Jetzt hast du schon die zweite Lektion geschafft! <br>'+
+					'Da du jetzt weißt wie man ein Schwert richtig hält, bekommst du diese schicken Handschuhe. Die Handschuhe schützen nicht nur deine Finger, sondern auch das Schwert.</p>'+
+					'<p> Fasst du ein Stahlschwert an, kann die Feuchtigkeit deiner Finger es schnell zum Rosten bringen.</p>'+
+					'<p>In der nächsten Lektion geht es mit der Bewegung los! Zuerst sind die Beine dran!</p>',
+			outroButtonText: 'WEITER GEHT\'S!'
+		},
+		{
+			introBgImage: 'lessons/03/03a.png',
+			introText: '<h1>Beinarbeit</h1>'+
+				'<p>Wie du dein Schwert festhältst weißt du ja schon. Zeit, dass wir uns um deine Beine kümmern!</p>'+
+				'<p>Im Kampf musst du ohne viel nachzudenken immer in die richtige Position kommen. <br>Damit du dabei nicht verwundbar bist, ist es wichtig die richtigen Schritte zu kennen.</p>',
+			outroPrizeImage: 'lessons/03/3.png',
+			outroText: '<h4>Beinarbeit</h4>'+
+				'<p>Toll! Die dritte Lektion hast du erfolgreich abgeschlossen!<br>'+
+				'Inzwischen weißt du schon wie du deine Beine bewegst! Damit du auch weiter fleißig üben kannst, erhältst du diese nagelneuen Lederstiefel!<br>'+
+				'In der nächsten Lektion können wir nun auch die Haltung der Arme üben.</p>',
+			outroButtonText: 'WEITER GEHT\'S!'
+		},
+		{
+			introBgImage: 'lessons/04/04a.png',
+			introText: '<h1>Huten</h1>	'+
+					'<p>Die Grundlagen der Körperhaltung beherrscht du inzwischen. <br> In dieser Lektion geht es um die Ausgangspositionen, in denen du mit dem Schwert stehst. Aus diesen Positionen kannst du schnell angreifen und dich ebenso schnell verteidigen!</p>',
+			outroPrizeImage: 'lessons/04/4.png',
+			outroText: '<h4>Huten</h4>'+
+					'<p>Gut gemacht! Du hast die vierte Lektion geschafft! <br>'+
+					'Jetzt kennst du schon die vier wichtigsten Huten! <br>'+
+					'Damit hast du dir diesen tollen Helm verdient! Dein Grundlagenwissen und deine Grundausstattung sind jetzt schon fast vollständig! <br>In der nächsten Lektion lernst du woher das historische Wissen kommt, welches du dir bis jetzt angeeignet hast.</p>',
+			outroButtonText: 'UND LOS!'
+		},
+		{
+			introBgImage: 'lessons/05/05a.png',
+			introText: '<h1>Quellen</h1>' +
+				'<p>Was Huten sind weißt du ja schon, aber woher kommt das Wort Huten eigentlich? <br>'+
+				'Hier lernst du die Ursprünge des historischen Schwertkampfes kennen. Also die Quellen, aus denen der gesamte moderne Sport abgeleitet wird. <br> Du darfst dich auch selbst an einer Interpretation versuchen!</p>',
+			outroPrizeImage: 'lessons/05/5.png',
+			outroText: '<h4>Quellen</h4>'+
+				'<p>Beeindruckend! Das war sogar schon die fünfte Lektion! <br>'+
+				'Liechtenauer ist jetzt kein Fremdwort mehr für dich! Du kennst die Wurzeln des historischen Schwertkampfes.<br>Damit du unterwegs immer in den Quellen nachlesen kannst, bekommst du diesen stabilen Schwertgürtel, an dem du auch deine Manuskripte befestigen kannst.<br>In der nächsten Lektion geht es endlich um die ersten Angriffe!</p>',
+			outroButtonText: 'AUF ZUM KAMPF!'
+		},
+		{
+			introBgImage: 'lessons/06/06a.png',
+			introText: '<h1>Angriffe</h1>'+
+				'<p>'+
+					'Inzwischen hast du genug Grundlagenwissen angesammelt, um die ersten Angriffe zu erlernen. <br>'+
+					'Angriffe sehen zunächst einfach aus, aber lass dich nicht täuschen. Um das volle Schadenspotential zu entfalten, müssen sie präzise und entschlossen ausgeführt werden.'+
+				'</p>',
+			outroPrizeImage: 'lessons/06/6.png',
+			outroText: '<h4>Angriffe</h4>'+
+					'<p>Super! Du hast die sechste Lektion abgeschlossen! <br>'+
+					'Jetzt beherrscht du schon die ersten Angriffe!<br>'+
+					'Dieser große Schritt Richtung Fechter verlangt nach einer ebenso großen Belohnung! Dieser Brustharnisch soll dich in Zukunft vor Angriffen schützen! <br>'+
+					'In der nächsten Lektion ist Schluss mit Übungsschwertern. Es geht um den Einsatz scharfer Stahlwaffen!</p>',
+			outroButtonText: 'AUF GEHT\'S!'
+		},
+		{
+			introBgImage: 'lessons/07/07a.png',
+			introText: '<h1>Schnitttests</h1>'+
+					'<p>'+
+						'Du kannst jetzt die ersten Angriffe durchführen. Damit bist du weit genug, um auch etwas mehr über scharfe Schwerter zu lernen.<br>'+
+						'In dieser Lektion geht es darum mit scharfen Schwertern Gegenstände zerschneiden zu lernen. Dadurch lernt man die Handhabung des Schwertes viel besser kennen als nur mit Übungsschwertern.'+
+					'</p>',
+			outroPrizeImage: 'lessons/07/7.png',
+			outroText: '<h4>Schnitttests</h4>'+
+					'<p>'+
+						'Großartig! Das war schon die siebte Lektion!<br>Du weißt jetzt sogar schon, wie man mit scharfen Schwertern umgeht!<br>Damit bist du reif für dein erstes eigenes Stahlschwert! <br>Bei so viel gefährlichen Waffen darf der Schutz natürlich nicht zu kurz kommen. Deshalb geht es in der nächsten Lektion um moderne Schutzausrüstung.'+
+					'</p>',
+			outroButtonText: 'VORWÄRTS!'
+		},
+		{
+			introBgImage: 'lessons/08/08a.png',
+			introText: '<h1>Schutzausrüstung</h1>'+
+				'<p>Zuletzt hast du scharfe Schwerter kennen gelernt. Damit du dich auch beim Training mit Übungsschwertern nicht verletzt, sehen wir uns als nächstes an, welche Schutzausrüstung du für den historischen Schwertkampf heutzutage benötigst.</p>',
+			outroPrizeImage: 'lessons/08/8.png',
+			outroText: '<h4>Schutzausrüstung</h4>'+
+					'<p>'+
+						'Toll! Jetzt hast du auch die achte Lektion abgeschlossen!<br>Inzwischen weißt du, welche Schutzausrüstung du noch brauchen wirst und es wird Zeit sie zu vervollständigen. Dafür erhältst du diesen Arm- und Beinpanzer.<br>Als nächstes können wir mit den ersten Partnerübungen loslegen und die verschiedenen Abstände in einem Kampf erklären.'+
+					'</p>',
+			outroButtonText: 'WEITER GEHT\'S!'
+		},
+		{
+			introBgImage: 'lessons/09/09a.png',
+			introText: '<h1>Mensur</h1>'+
+				'<p>Da du inzwischen weißt, wie du dich schützt, können wir mit den Partnerübungen beginnen. <br>In dieser Lektion geht es um die verschiedenen Abstände die du im Kampf zu deinem Gegner haben kannst. Sie zu kennen ist wichtig um immer zu wissen, welche Distanz ein Angriff überbrücken können muss.</p>',
+			outroPrizeImage: 'lessons/09/9.png',
+			outroText: '<h4>Mensur</h4>'+
+					'<p>'+
+						'Klasse! Die neunte Lektion hast du erfolgreich abgeschlossen! <br>Jetzt kennst du sogar schon die Abstände im Gefecht! <br>Du hast die Tour schon fast abgeschlossen, da wird es Zeit sich herauszuputzen. Dieser schicke Umhang lässt jeden deiner Gegner vor Neid erblassen!<br>In der nächsten und letzten Lektion geht es um die Grundprinzipien der Lehre Liechtenauers.'+
+					'</p>',
+			outroButtonText: 'AUF GEHT\'S!'
+		},
+		{
+			introBgImage: 'lessons/10/10a.png',
+			introText: '<h1>Die fünf Wörter</h1>'+
+				'<p>Du bist schon beinahe ein Fechter. Was jetzt noch fehlt sind die fünf Wörter, die eine zentrale Bedeutung für Liechtenauers Lehren haben. Kennst du diese kannst du dich in den meisten Kampfsituationen zurecht finden und auch komplexere Techniken verstehen.</p>',
+			outroPrizeImage: 'lessons/10/10.png',
+			outroText: '<h4>Die fünf Wörter</h4>'+
+					'<p>'+
+						'Herzlichen Glückwunsch! Das war das zehnte und letzte Kapitel der Lerntour. <br>Dieses Pferd soll dich auf deinem weiteren Weg standesgemäß zu neuen Fechtlehrern tragen! Sein Name ist Plötze.<br>'+
+						'Du kennst jetzt die Grundlagen des historischen Schwertkampfes der deutschen Schule. Damit bist du bestens ausgerüstet dir eine eigene Trainingsgruppe zu suchen oder Seminare von Fechtlehrern zu besuchen. <br>'+
+						'Bleib offen für neue Eindrücke! Der Schwertkampf basiert auf vielen unterschiedlichen Interpretationen der Quellen und jeder Lehrer hat seine eigene Art eine Technik auszuführen und eigene Tricks zu zeigen. Versuche, welche der Variationen dir am besten liegen und finde heraus, welcher Stil für dich am besten funktioniert.<br>'+
+						'Weißt du nicht ob es in deiner Nähe einen Verein gibt? Kein Problem.<br>Auf der nächsten Seite findest du eine Karte auf der du den Verein finden kannst, der deinem Wohnort am nächsten liegt.</p>',
+			outroButtonText: 'Abschluss'
+		}
+	];
+
 	var _self = {
 		user : '', 
 		lessonDirectories : [
@@ -236,7 +363,12 @@ angular.module('starter.services')
 			'9-mensur',
 			'10-die-fuenf-woerter'
 		], 
-		glossar : glossar
+		glossar : glossar, 
+		lessons: lessons,
+		introModal: null,
+		outroModal: null,
+		lessonData: lessons[0],
+		lessonnumber: 1
 	};
 	return _self;
 }]);
