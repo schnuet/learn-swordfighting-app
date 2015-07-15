@@ -16,7 +16,7 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $timeout, $stateParams)
 	/*
 		Slidebox-related functions
 	*/
-	var slideBox = $ionicSlideBoxDelegate.$getByHandle('pageSlidebox');
+	var slideBox = null;
 	$scope.pagerClick = function(index) {
 		if ($scope.vars.slideEnabled) {
 			$scope.gotoPage(index);
@@ -31,11 +31,18 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $timeout, $stateParams)
 	*/
 	$scope.$on('$ionicView.enter', function () {
 
+
+		slideBox = $ionicSlideBoxDelegate.$getByHandle('pageSlidebox');
+
 		$scope.Lesson = Campaign;
 		$scope.data = Data;
 
 		if (isInCampaign) {
+			Data.exitIntroButtonVisible = true;
 			Campaign.start (1, $scope);
 		}
+	});
+	$scope.$on('$ionicView.beforeLeave', function () {
+		Data.exitIntroButtonVisible = false;
 	});
 }]);

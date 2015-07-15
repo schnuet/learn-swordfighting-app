@@ -12,23 +12,30 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams) {
 	var isInCampaign = $stateParams.campaign;
 	$scope.isInCampaign = isInCampaign;
 
+	var slideBox = null;
+
 	/*
 		Startup-functions:
 	*/
 	$scope.$on('$ionicView.enter', function () {
 
+		slideBox = $ionicSlideBoxDelegate.$getByHandle('pageSlidebox');
+
 		$scope.Lesson = Campaign;
 		$scope.data = Data;
 
 		if (isInCampaign) {
+			Data.exitIntroButtonVisible = true;
 			Campaign.start (7, $scope);
 		}
+	});
+	$scope.$on('$ionicView.beforeLeave', function () {
+		Data.exitIntroButtonVisible = false;
 	});
 
 	/*
 		Slidebox-related functions
 	*/
-	var slideBox = $ionicSlideBoxDelegate.$getByHandle('pageSlidebox');
 	$scope.pagerClick = function(index) {
 		if ($scope.vars.slideEnabled) {
 			$scope.gotoPage(index);

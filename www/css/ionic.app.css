@@ -7759,6 +7759,8 @@ a.button {
       display: block;
       transform: translate3d(0px, 50px, 0px);
       -webkit-transform: translate3d(0px, 50px, 0px); }
+    .lesson-page-container.slider .slider-pager span.slider-pager-page i:before {
+      color: #AE3E3B; }
 
 .scroll-content {
   background-color: #FFFDF8; }
@@ -7809,10 +7811,11 @@ html, body {
 .button.quelle-button {
   background-image: url(../img/icons/Quelle.svg);
   background-repeat: no-repeat;
+  background-size: contain;
   position: absolute;
-  right: 0px;
+  right: 10px;
   bottom: 20px;
-  height: 50px;
+  height: 40px;
   width: 50px;
   display: block;
   border: none;
@@ -7844,7 +7847,7 @@ html, body {
     height: 24px;
     font-size: 24px;
     line-height: 24px;
-    margin-bottom: -4px;
+    margin-bottom: -2px;
     margin-left: 7px;
     cursor: default; }
   .bar.bar-primary.bar-footer {
@@ -7858,6 +7861,7 @@ html, body {
   height: 100%;
   max-height: 100%;
   margin-top: 10px;
+  margin-right: 5px;
   padding: 0px;
   display: block; }
   .nav-icon .nav-img {
@@ -7909,6 +7913,10 @@ h3 {
 
 .hidden {
   display: none; }
+
+a:link, a:visited {
+  color: #AE3E3B;
+  text-decoration: none; }
 
 .popover .glossartext, .popover .quellentext {
   padding: 1em; }
@@ -8314,6 +8322,7 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   height: 3em;
   margin-top: 0.2em;
   background-image: url(../img/bar-end-stroke.svg);
+  background-color: transparent;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -8336,12 +8345,14 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
     padding: 0px 0px 0px 0px;
     height: 70px;
     line-height: 70px;
-    vertical-align: center; }
+    vertical-align: center;
+    background-color: transparent; }
     .modal.menu .menu_list .list .item a.item-content, .modal.menu .menu_list .list .item.item-complex a.item-content {
       padding: 0px 0px 0px 60px;
       overflow: visible;
       width: 100%;
-      display: block; }
+      display: block;
+      background-color: transparent; }
       .modal.menu .menu_list .list .item a.item-content img, .modal.menu .menu_list .list .item.item-complex a.item-content img {
         margin-top: 10px;
         display: block;
@@ -8379,6 +8390,8 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
 .tutorial .slider, .tutorial .slider.slides, .tutorial .slide {
   height: 100%;
   width: 100%; }
+  .tutorial .slider img, .tutorial .slider.slides img, .tutorial .slide img {
+    width: 100%; }
 .tutorial div.last-slide {
   text-align: center;
   position: absolute;
@@ -8393,7 +8406,9 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
 .start {
   background-color: #000; }
   .start video {
-    width: 100%; }
+    position: absolute;
+    width: 100%;
+    top: 13%; }
 
 .game-container.dress-up .pagecontent {
   width: calc(100% - 66px - 66px);

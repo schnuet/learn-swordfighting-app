@@ -12,6 +12,8 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 	var isInCampaign = $stateParams.campaign;
 	$scope.isInCampaign = isInCampaign;
 
+	var slideBox = null;
+
 	/*
 		Startup-functions:
 	*/
@@ -21,8 +23,15 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 		$scope.data = Data;
 
 		if (isInCampaign) {
+			Data.exitIntroButtonVisible = true;
 			Campaign.start (3, $scope);
+
 		}
+
+		slideBox = GameHelper.getPageSlider();
+	});
+	$scope.$on('$ionicView.beforeLeave', function () {
+		Data.exitIntroButtonVisible = false;
 	});
 
 	/*
@@ -139,7 +148,6 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 	/*
 		Slidebox-related functions
 	*/
-	var slideBox = GameHelper.getPageSlider();
 	$scope.pagerClick = function(index) {
 		if ($scope.vars.slideEnabled) {
 			$scope.gotoPage(index);

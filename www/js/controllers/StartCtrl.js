@@ -5,7 +5,7 @@ angular.module('starter.controllers')
 function($scope, $state, Profile, Data) {
 
 	var onVideoEnd = function () {
-		$state.go ('profileCreation');
+		$state.go ('help');
 	};
 
 	$scope.$on('$ionicView.loaded', function (e) {
@@ -14,7 +14,6 @@ function($scope, $state, Profile, Data) {
 			var vid = document.getElementById('trailer');
 			vid.play();
 			vid.addEventListener('ended', onVideoEnd, false);
-			alert('video should play');
 		} 
 		else {
 			$state.go('menu.dashboard');

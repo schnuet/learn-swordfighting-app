@@ -24,3 +24,7 @@ h3 {
 	display: none;
 }
 
+a:link, a:visited {
+	color: $highlight;
+	text-decoration: none;
+}

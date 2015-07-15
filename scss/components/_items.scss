@@ -7,10 +7,11 @@
 .button.quelle-button {
 	background-image: url(../img/icons/Quelle.svg);
 	background-repeat: no-repeat;
+	background-size: contain;
 	position: absolute;
-	right: 0px;
+	right: 10px;
 	bottom: 20px;
-	height: 50px;
+	height: 40px;
 	width: 50px;
 	display: block;
 	border: none;

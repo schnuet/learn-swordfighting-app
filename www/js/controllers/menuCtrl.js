@@ -101,16 +101,18 @@ function($scope, $ionicModal, $ionicHistory, $state, Profile, Data) {
 			}).then(function(modal) {
 				Data.introModal = modal;
 			});
-			$scope.closeIntro = function () {
-				console.log ('trying to close intro');
-				Data.introModal.hide();
-			};
-			$scope.closeOutro = function () {
-				Data.outroModal.hide();
-			};
 			console.log (e);
 		}
 	});
+
+	$scope.closeIntro = function () {
+		console.log ('trying to close intro');
+		Data.exitIntroButtonVisible = false;
+		Data.introModal.hide();
+	};
+	$scope.closeOutro = function () {
+		Data.outroModal.hide();
+	};
 
 	//Cleanup the modal when we're done with it!
 	$scope.$on('$destroy', function() {

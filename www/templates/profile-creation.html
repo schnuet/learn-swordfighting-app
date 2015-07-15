@@ -17,7 +17,7 @@
 			<div class="col col-33">
 				<img src="./img/character/1.png" class="character-pic" alt="Das Bild des Charakters">
 			</div>
-			<div ng-show="data.userList.length > 0" class="col col-33">
+			<div ng-show="data.userList.length > 0" class="col col-33 ng-hide">
 				<h2>Oder benutze einen der bestehenden Charaktere:</h2> 
 				<ul class="userlist">
 					<li ng-repeat="user in data.userList" class="button button-primary button-block" ng-click="selectChar(user.name);">{{user.name}}</li>

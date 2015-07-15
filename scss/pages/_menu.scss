@@ -14,6 +14,7 @@
 			margin-top: 0.2em;
 
 			background-image: url(../img/bar-end-stroke.svg);
+			background-color: transparent;
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: bottom;
@@ -44,11 +45,13 @@
 			height: 70px;
 			line-height: 70px;
 			vertical-align: center;
+			background-color: transparent;
 			a.item-content {
 				padding: 0px 0px 0px 60px;
 				overflow: visible;
 				width: 100%;
 				display: block;
+				background-color: transparent;
 				img {
 					margin-top: 10px;
 					display: block;

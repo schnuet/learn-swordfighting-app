@@ -12,27 +12,14 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, $timeout)
 	var isInCampaign = $stateParams.campaign;
 	$scope.isInCampaign = isInCampaign;
 
+	var slideBox = null;
+
 	/*
 		Startup-functions:
 	*/
 	$scope.$on('$ionicView.enter', function () {
 
-		$scope.Lesson = Campaign;
-		$scope.data = Data;
-
-		if (isInCampaign) {
-			Campaign.start (10, $scope);
-		}
-	});
-
-	/*
-		Slidebox-related functions
-	*/
-	var slideBox = $ionicSlideBoxDelegate.$getByHandle('pageSlidebox');
-
-	var visitedPages = [];
-	var pCount = 0;
-	$timeout (function () {
+		slideBox = $ionicSlideBoxDelegate.$getByHandle('pageSlidebox');
 		pCount = slideBox.slidesCount();
 		for (var i = 0; i < pCount; i++) {
 			visitedPages[i] = false;
@@ -40,7 +27,25 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, $timeout)
 		// do reduction for first page:
 		pCount--;
 		visitedPages[0] = true;
-	}, 100);
+
+		$scope.Lesson = Campaign;
+		$scope.data = Data;
+
+		if (isInCampaign) {
+			Campaign.start (10, $scope);
+			Data.exitIntroButtonVisible = true;
+		}
+	});
+	$scope.$on('$ionicView.beforeLeave', function () {
+		Data.exitIntroButtonVisible = false;
+	});
+
+	/*
+		Slidebox-related functions
+	*/
+
+	var visitedPages = [];
+	var pCount = 0;
 
 	$scope.pagerClick = function(index) {
 		if ($scope.vars.slideEnabled) {

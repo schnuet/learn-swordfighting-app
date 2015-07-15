@@ -2,6 +2,9 @@
 	.slider, .slider.slides, .slide {
 		height: 100%;
 		width: 100%;
+		img {
+			width: 100%;
+		}
 	}
 	div.last-slide {
 		text-align: center;
@@ -20,6 +23,8 @@
 	background-color: #000;
 	
 	video {
+		position: absolute;
 		width: 100%;
+		top: 13%;
 	}
 }

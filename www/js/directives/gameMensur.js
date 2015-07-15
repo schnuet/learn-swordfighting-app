@@ -92,7 +92,7 @@ function($ionicGesture, Campaign, GameHelper, Feedback) {
       var checkPosition = function () {
         if (currentOrder === currentPosition) {
           var picNum = p_c.indexOf(currentPosition) + 1;
-          Feedback.congratulation ('Gut getroffen. So sieht ' + $scope.game.instruction + ' mit echten Leuten aus:', '<img src="./img/lessons/09/Abstand/0'+picNum+'.png">', true)
+          Feedback.congratulation ('Gut getroffen. So sieht ' + $scope.game.instruction + ' aus:', '<img src="./img/lessons/09/Abstand/0'+picNum+'.png">', true)
           .then(function () {
             if (getNextPosition() === false) {
               Feedback.congratulation ('Das Spiel ist bestanden!', 'Du konntest alle Positionen finden! Herzlichen Glückwunsch!');
@@ -158,7 +158,7 @@ function($ionicGesture, Campaign, GameHelper, Feedback) {
       });
 
     },
-    template: '<div class="game-container mensur">' +
+    template: '<div class="game-container mensur pagecontent">' +
          '<div class="row height-67"> ' +
            '<div id="abstand_ziehbereich" class="col height-100 ziehbereich">' +
              '<div id="abstand_zieher"></div>' +
@@ -175,7 +175,7 @@ function($ionicGesture, Campaign, GameHelper, Feedback) {
               '<span>{{game.instruction}}</span>' +
            '</div>' +
            '<div class="col button-box">' +
-              '<button class="button button-balanced" id="finishedButton">Fertig</button>' +
+              '<button class="button button-primary button-block" id="finishedButton">Fertig</button>' +
            '</div>' +
          '</div>' +
        '</div>'
