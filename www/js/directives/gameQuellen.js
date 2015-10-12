@@ -130,7 +130,8 @@ function($ionicGesture, Campaign, GameHelper, Feedback, $timeout, $q) {
 				}
 				selectedBox = angular.element(e.target);
 				selectedBox.addClass ('selected');
-				selectedAnswer = e.target.innerText;
+				selectedAnswer = e.target.innerText || e.target.textContent;
+				console.log(selectedAnswer);
 				finishedButton[0].disabled = false;
 				$scope.game.buttonText = 'Frage beantworten';
 			};

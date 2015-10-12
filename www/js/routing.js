@@ -55,7 +55,8 @@ angular.module('starter')
     url: '/glossar',
     views: {
       'menuContent': {
-        templateUrl: 'templates/glossar.html'
+        templateUrl: 'templates/glossar.html', 
+        //controller: 'GlossarCtrl'
       }
     }
   })

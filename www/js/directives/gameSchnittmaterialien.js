@@ -66,7 +66,7 @@ function($ionicGesture, DragNDropHelper, Campaign, GameHelper, Feedback) {
     },
     template : 
         '<div class="game-container schnittmaterialien">' +
-          '<div class="row">' +
+          '<div class="row height-50">' +
             '<div class="col col-25">' +
               '<div id="tetra-target" class="drag-target"><div class="number">1</div></div>' +
             '</div>' +
@@ -80,7 +80,7 @@ function($ionicGesture, DragNDropHelper, Campaign, GameHelper, Feedback) {
               '<div id="tatami-target" class="drag-target"><div class="number">4</div></div>' +
             '</div>' +
           '</div>' +
-          '<div class="row">' +
+          '<div class="row height-50">' +
             '<div class="col col-25">' +
               '<img id="bottle" class="drag-item" src="./img/lessons/07/game/bottle.png">' +
             '</div>' +

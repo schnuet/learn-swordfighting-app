@@ -7729,8 +7729,9 @@ a.button {
   border-radius: 10px; }
 
 .breitbild {
-  width: 100%;
-  height: auto; }
+  max-width: 100%;
+  height: auto;
+  pointer-events: none; }
 
 /*.scroll {
 	min-height: 100%;
@@ -7940,14 +7941,18 @@ a:link, a:visited {
   bottom: 0px;
   right: 0px;
   z-index: 4;
-  background-image: url(../img/icons/pfeil.png);
+  background-image: url(../img/icons/pfeil-01.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   -webkit-transition: all cubic-bezier(.1, .7, .1, 1) 400ms;
   transition: all cubic-bezier(.1, .7, .1, 1) 400ms; }
   .button.end-lesson.activated, .button.end-lesson:active {
     -webkit-transform: translate3d(20px, 0, 0);
     transform: translate3d(20px, 0, 0);
     opacity: 0.8;
-    background-image: url(../img/icons/pfeil.png); }
+    background-image: url(../img/icons/pfeil-01.svg);
+    background-repeat: no-repeat;
+    background-position: center; }
 
 .weiter-box {
   position: absolute;
@@ -8229,7 +8234,8 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   width: 100%; }
   .slider.image-slider .slider-slide img, .image-slider .slider-slide img {
     max-width: 100%;
-    max-height: 100%; }
+    max-height: 100%;
+    pointer-events: none; }
   .slider.image-slider .slider-slide video, .image-slider .slider-slide video {
     width: 100%;
     max-width: 100%;
@@ -8391,7 +8397,8 @@ FONTS AFTER THIS MAY BE ACTIVATED BY UNCOMMENTING:
   height: 100%;
   width: 100%; }
   .tutorial .slider img, .tutorial .slider.slides img, .tutorial .slide img {
-    width: 100%; }
+    width: 100%;
+    pointer-events: none; }
 .tutorial div.last-slide {
   text-align: center;
   position: absolute;

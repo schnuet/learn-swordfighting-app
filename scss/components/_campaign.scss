@@ -5,12 +5,16 @@
 	bottom: 0px;
 	right: 0px;
 	z-index: 4;
-	background-image: url(../img/icons/pfeil.png);
+	background-image: url(../img/icons/pfeil-01.svg);
+	background-repeat: no-repeat;
+	background-position: center;
 	@include transition(all cubic-bezier(.1, .7, .1, 1) 400ms);
 	&.activated, &:active  {
 		@include translate3d(20px, 0, 0);
 		opacity: 0.8;
-		background-image: url(../img/icons/pfeil.png);
+		background-image: url(../img/icons/pfeil-01.svg);
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 }
 .weiter-box {
