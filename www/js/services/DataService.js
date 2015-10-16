@@ -243,8 +243,8 @@ angular.module('starter.services')
 			outroPrizeImage: 'lessons/02/2.png',
 			outroText: '<h4>Der Griff</h4>'+				
 					'<p>Super! Jetzt hast du schon die zweite Lektion geschafft! <br>'+
-					'Da du jetzt weißt, wie man ein Schwert richtig hält, bekommst du diese schicken Handschuhe. Die Handschuhe schützen nicht nur deine Finger, sondern auch das Schwert.</p>'+
-					'<p> Fasst du ein Stahlschwert an, kann die Feuchtigkeit deiner Finger es schnell zum Rosten bringen.</p>'+
+					'Da du jetzt weißt, wie man ein Schwert richtig hält, bekommst du diese schicken Handschuhe. Die Handschuhe schützen nicht nur deine Finger, sondern auch das Schwert vor der Feuchtigkeit deiner Finger. Diese lässt das Schwert rosten.</p>'+
+					<!--'<p> Fasst du ein Stahlschwert an, kann die Feuchtigkeit deiner Finger es schnell zum Rosten bringen.</p>'+ -->
 					'<p>In der nächsten Lektion geht es mit der Bewegung los! Zuerst sind die Beine dran!</p>',
 			outroButtonText: 'WEITER GEHT\'S!'
 		},
