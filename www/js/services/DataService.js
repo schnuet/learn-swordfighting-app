@@ -226,7 +226,7 @@ angular.module('starter.services')
 			introBgImage: 'lessons/01/01a.png',
 			introText: '<h1>Schwertbegriffe</h1><p>Willkommen in der Lerntour!</p>'+ 
 			'<p>Schön, dass du dich entschieden hast die alte Kunst des Schwertkampfes zu erlernen! </p>'+
-			'<p>Zuerst lernst du hier, wie man die einzelnen Teile des Schwerts nennt. Damit wird es leichter für dich die nächsten Lektionen zu verstehen und du bist reif für ein eigenes Schwert!</p>',
+			'<p>Zuerst lernst du hier, wie man die einzelnen Teile des Schwerts nennt. Damit wird es leichter für dich, die nächsten Lektionen zu verstehen und du bist reif für ein eigenes Schwert!</p>',
 			outroPrizeImage: 'lessons/01/1.png',
 			outroText: '<h4>Schwertbegriffe</h4>' +
 					'<p>Klasse! Die erste Lektion hast du mit Bravour gemeistert!</p>'+
