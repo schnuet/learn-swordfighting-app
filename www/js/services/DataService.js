@@ -251,7 +251,7 @@ angular.module('starter.services')
 		{
 			introBgImage: 'lessons/03/03a.png',
 			introText: '<h1>Beinarbeit</h1>'+
-				'<p>Wie du dein Schwert festhältst weißt du ja schon. Zeit, dass wir uns um deine Beine kümmern!</p>'+
+				'<p>Wie du dein Schwert festhältst, weißt du ja schon. Zeit, dass wir uns um deine Beine kümmern!</p>'+
 				'<p>Im Kampf musst du ohne viel nachzudenken immer in die richtige Position kommen. <br>Damit du dabei nicht verwundbar bist, ist es wichtig die richtigen Schritte zu kennen.</p>',
 			outroPrizeImage: 'lessons/03/3.png',
 			outroText: '<h4>Beinarbeit</h4>'+
@@ -274,7 +274,7 @@ angular.module('starter.services')
 		{
 			introBgImage: 'lessons/05/05a.png',
 			introText: '<h1>Quellen</h1>' +
-				'<p>Was Huten sind weißt du ja schon, aber woher kommt das Wort Huten eigentlich? <br>'+
+				'<p>Was Huten sind, weißt du ja schon, aber woher kommt das Wort Huten eigentlich? <br>'+
 				'Hier lernst du die Ursprünge des historischen Schwertkampfes kennen. Also die Quellen, aus denen der gesamte moderne Sport abgeleitet wird. <br> Du darfst dich auch selbst an einer Interpretation versuchen!</p>',
 			outroPrizeImage: 'lessons/05/5.png',
 			outroText: '<h4>Quellen</h4>'+
@@ -340,9 +340,8 @@ angular.module('starter.services')
 			outroPrizeImage: 'lessons/10/10.png',
 			outroText: '<h4>Die fünf Wörter</h4>'+
 					'<p>'+
-						'Herzlichen Glückwunsch! Das war das zehnte und letzte Kapitel der Lerntour. <br>Dieses Pferd soll dich auf deinem weiteren Weg standesgemäß zu neuen Fechtlehrern tragen! Sein Name ist Plötze.<br>'+
-						'Du kennst jetzt die Grundlagen des historischen Schwertkampfes der deutschen Schule. Damit bist du bestens ausgerüstet dir eine eigene Trainingsgruppe zu suchen oder Seminare von Fechtlehrern zu besuchen. <br>'+
-						//'Bleib offen für neue Eindrücke! Der Schwertkampf basiert auf vielen unterschiedlichen Interpretationen der Quellen und jeder Lehrer hat seine eigene Art eine Technik auszuführen und eigene Tricks zu zeigen. Versuche, welche der Variationen dir am besten liegen und finde heraus, welcher Stil für dich am besten funktioniert.<br>'+
+						'Herzlichen Glückwunsch! Das war das zehnte und letzte Kapitel der Lerntour. <br>Dieses Pferd namens Plötze soll dich auf deinem weiteren Weg standesgemäß zu neuen Fechtlehrern tragen!<br>'+
+						'Mit diesen Grundlagen kannst du dich nun ins Training stürzen.<br>'+
 						'Du weißt nicht, ob es in deiner Nähe einen Verein gibt? Kein Problem.<br> <a href="https://www.google.com/maps/d/viewer?mid=z3ItaHt6Fhqs.knoxa-yaqWs8&ie=UTF8&hl=de&om=1&msa=0&z=6">Hier findest du eine Karte</a> auf der du den Verein suchen kannst, der deinem Wohnort am nächsten liegt.</p>',
 			outroButtonText: 'Abschluss'
 		}
