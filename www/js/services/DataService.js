@@ -340,9 +340,8 @@ angular.module('starter.services')
 			outroPrizeImage: 'lessons/10/10.png',
 			outroText: '<h4>Die fünf Wörter</h4>'+
 					'<p>'+
-						'Herzlichen Glückwunsch! Das war das zehnte und letzte Kapitel der Lerntour. <br>Dieses Pferd soll dich auf deinem weiteren Weg standesgemäß zu neuen Fechtlehrern tragen! Sein Name ist Plötze.<br>'+
-						'Du kennst jetzt die Grundlagen des historischen Schwertkampfes der deutschen Schule. Damit bist du bestens ausgerüstet dir eine eigene Trainingsgruppe zu suchen oder Seminare von Fechtlehrern zu besuchen. <br>'+
-						
+						'Herzlichen Glückwunsch! Das war das zehnte und letzte Kapitel der Lerntour. <br>Dieses Pferd namens Plötze soll dich auf deinem weiteren Weg standesgemäß zu neuen Fechtlehrern tragen!<br>'+
+						'Mit diesen Grundlagen kannst du dich nun ins Training stürzen.<br>'+
 						'Du weißt nicht, ob es in deiner Nähe einen Verein gibt? Kein Problem.<br> <a href="https://www.google.com/maps/d/viewer?mid=z3ItaHt6Fhqs.knoxa-yaqWs8&ie=UTF8&hl=de&om=1&msa=0&z=6">Hier findest du eine Karte</a> auf der du den Verein suchen kannst, der deinem Wohnort am nächsten liegt.</p>',
 			outroButtonText: 'Abschluss'
 		}
