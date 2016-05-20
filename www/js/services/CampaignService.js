@@ -60,8 +60,9 @@ function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, Feedback) {
 			// clean up the modals when we leave the page:
 			$scope.$on('$destroy', function() {
 				console.log ('destroyed scope!');
+
 				//Data.introModal.hide();
-				//Data.outroModal.hide();
+				Data.outroModal.hide();
 
 				scopes[scopes.indexOf($scope)] = null;
 			});
@@ -78,12 +79,15 @@ function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, Feedback) {
 				_self.end();
 			};*/
 		},
+		/*
+			Add the 'end lesson' button to get to the next lesson
+		*/
 		addEnd : function () {
 
 			console.log ('END FUNCTION CALLED!');
 			// only add the button if the scope was defined
 			if (scopes.length === 0 || scopes[scopes.length-1] === null) {
-				console.log ('No scope defined.');
+				console.log ('No scope defined. -> Is not in campaign mode.');
 				return;
 			}
 			var btn = angular.element(document.getElementById("endLessonButton"));        // Create a <button> element
@@ -98,6 +102,8 @@ function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, Feedback) {
 			};
 			angular.element(btn).on('click', nextLessonButtonClick);
 
+			// add an event listener to the destruction of the scope 
+			// so that the button disappears when leaving the lesson
 			scopes[scopes.length-1].$on('$destroy', function () {
 				if (btn !== null) {
 					btn.addClass('hidden');
@@ -108,6 +114,7 @@ function (Data, $ionicModal, $ionicSlideBoxDelegate, Profile, Feedback) {
 		},
 		end : function () {
 			console.log ('End was called');
+			// add points if the lesson was done for the first time.
 			if (Profile.data.levelprogress <= _self.lessonnumber) {
 				Profile.data.levelprogress++;
 				Profile.data.score += 200;

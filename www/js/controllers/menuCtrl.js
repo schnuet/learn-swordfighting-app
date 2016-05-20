@@ -48,6 +48,13 @@ function($scope, $ionicModal, $ionicHistory, $state, Profile, Data) {
 		$state.go (chosenState);
 	};
 	$scope.gotoCampaignLesson = function (chosenLesson) {
+		console.log ('going to lesson number:' + chosenLesson);
+		// return to profile if lesson is lesson 11 (there are only 10).
+		if (chosenLesson === 11) {
+			$state.go('menu.dashboard');
+			return;
+		}
+
 		if (Data.outroModal.isShown()){
 			Data.outroModal.hide().then(function () {
 				Data.lessonData = Data.lessons[chosenLesson-1];
