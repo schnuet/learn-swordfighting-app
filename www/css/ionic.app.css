@@ -7730,8 +7730,10 @@ a.button {
 
 .breitbild {
   max-width: 100%;
-  height: auto;
-  pointer-events: none; }
+  height: 100%;
+  pointer-events: none;
+  object-fit: contain;
+  margin: 0px auto; }
 
 /*.scroll {
 	min-height: 100%;
