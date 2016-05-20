@@ -28,8 +28,9 @@ function (CssDoctor, $ionicGesture, $rootScope) {
 
 	var gesturesToWatchArray = [];
 
-	// to be bound with: $ionicGesture.on('dragstart', dragStartEvent, $element);
+	// to be bound with: $ionicGesture.on('dragstart', dragStartEvent, $element); (bound in watchElement)
 	var dragStartEvent = function (e) {
+		e.preventDefault();
 		if (e.target.className.indexOf('drag-item') !== -1) {
 			draggedElement = e.target;
 			aElement = angular.element(draggedElement);
@@ -48,6 +49,11 @@ function (CssDoctor, $ionicGesture, $rootScope) {
 			draggedElement.style.left = (pos_x + e.gesture.deltaX) + 'px';
 			draggedElement.style.top = (pos_y + e.gesture.deltaY) + 'px';
 			*/
+
+			/*if (angular.isUndefined(e.gesture)) return;
+			else {
+				//console.log (e);
+			}*/
 
 			var trans = 'translate3d(' + e.gesture.deltaX + 'px, ' + e.gesture.deltaY +'px, 0)';
 			draggedElement.style[ionic.CSS.TRANSFORM] = trans;
@@ -124,6 +130,10 @@ function (CssDoctor, $ionicGesture, $rootScope) {
 		aElement.removeClass('dragged-item');
 	};
 
+	/*
+		Adds event listeners to the drag gestures
+		element : jQueryLite element
+	*/
 	var watchElement = function ($element) {
 		if (angular.isUndefined (moveAutomatically)) moveAutomatically = true;
 		gesturesToWatchArray.push ({

@@ -27,7 +27,6 @@ function ($ionicSlideBoxDelegate) {
 
 		// function for halting the scrolling of the slidebox
 		deactivateScrolling : function () {
-			console.log (angular);
 			_self.pageSliderBox = angular.element(document.getElementsByClassName('slider-pager')[0]);
 			_self.pageSliderBox.addClass('hidden');
 			_self.slideEnabled = false;
