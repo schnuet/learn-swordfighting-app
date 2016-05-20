@@ -8,17 +8,17 @@
 				<p>Ein junger Knappe wird deinen Lernweg in der App begleiten und sich mit deinen Fortschritten weiterentwickeln.</p>
 				<p>Gib ihm einen Namen und starte durch.</p>
 				<form ng-submit="createChar();">
-					<input type="text" placeholder="Sein Name?" ng-model="data.username" class="nameInput">
+					<input type="text" placeholder="Name" ng-model="data.username" class="nameInput">
 					<input type="submit" value="Profil erstellen" class="createCharButton button button-block button-primary">
 				</form>
 
 				
 			</div>
 			<div class="col col-33">
-				<img src="./img/character/1.png" class="character-pic" alt="Das Bild des Charakters">
+				<img src="./img/character/0.png" class="character-pic" alt="Das Bild des Charakters">
 			</div>
 			<div ng-show="data.userList.length > 0" class="col col-33 ng-hide">
-				<h2>Oder benutze einen der bestehenden Charaktere:</h2> 
+				<h2>Bestehende Profile</h2> 
 				<ul class="userlist">
 					<li ng-repeat="user in data.userList" class="button button-primary button-block" ng-click="selectChar(user.name);">{{user.name}}</li>
 				</ul>
