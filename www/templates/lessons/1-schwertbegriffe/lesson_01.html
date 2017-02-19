@@ -1,115 +1,115 @@
 <ion-view view-title="Ausrüstung" cache-view="false">
-	<ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)">
-	<!-- SEITENINHALT START: -->
+	<ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)" add-controls>
+		<!-- SEITENINHALT START: -->
 
-	<!-- RICHTET SICH NACH DEM IONIC GRID: http://ionicframework.com/docs/components/#grid-offset -->
+		<!-- RICHTET SICH NACH DEM IONIC GRID: http://ionicframework.com/docs/components/#grid-offset -->
 
-	<!-- SEITE 1 -->
-	  <ion-slide>
-		<ion-content class="padding pagecontent" scroll="false" has-bouncing="false" >
-			<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
-			<h1>Schwertbegriffe</h1>
-			<div class="first-page-container">
-			<div class="row height-67"> 
-				<!-- SPALTE: col-x definiert breite. -->
-				<div class="col">
-					<img src="./img/lessons/01/01b.png" class="breitbild" />
-				</div>
-			</div>
-			<!-- DARUNTER LIEGENDER TEXT -->
-			<div class="row height-33">
-				<!-- Spalte 1 -->                        
-				<div class="col col-33">                        	
-					<p>In dieser App lernst du den Kampf mit dem Langen Schwert. <br> Natürlich gab es viele unterschiedliche Schwerter. Zu einigen davon sind, wie zum Langen Schwert, historische Quellen erhalten.  </p>
-				</div>
-				<!-- Spalte 2 -->                        
-				<div class="col col-33">
-					<p>Beispiele dafür sind das Lange Messer oder der Kampf mit Schwert und Buckler. Wenn in dieser App von Schwertkampf die Rede ist, ist jedoch das Lange Schwert gemeint. Dieses wirst du in den folgenden Kapiteln  </p>
-				</div >
-				
-				<!-- Spalte 3 -->                        
-				<div class="col col-33">
-					<p> besser kennen lernen. Zunächst ist es wichtig die einzelnen Teile des Schwerts benennen zu können. Später werden diese Begriffe verwendet, um Techniken genauer zu erklären, weshalb man sie sich einprägen sollte. </p>
-				</div >
-			</div>
-			</div>
-		</ion-content>
-	  </ion-slide>
-
-      
-
-	<!-- SEITE ´4 -->
-	  <ion-slide>
-	  	<ion-content class="padding pagecontent" scroll="false" has-bouncing="false" >
-			<game-sword-parts>
-				<div class="game-container sword-parts pagecontent">
-					<div class="textContainer border-left" ng-bind-html="vars.gameText">
-					</div>
-					<div class="target-box">
-						<div class="width-limiter">
-							<div class="sword-ratio-container drop-target-box">
-								<div id="knauf-target" class="drag-target hidden"></div>
-								<div id="griff-target" class="drag-target hidden"></div>
-								<div id="parierstange-target" class="drag-target hidden"></div>
-								<div id="staerke-target" class="drag-target hidden"></div>
-								<div id="schwaeche-target" class="drag-target hidden"></div>
-								<div id="ort-target" class="drag-target hidden"></div>
-
-								<div id="begriff-knauf-target" class="drag-target hidden"></div>
-								<div id="begriff-griff-target" class="drag-target hidden"></div>
-								<div id="begriff-parierstange-target" class="drag-target hidden"></div>
-								<div id="begriff-staerke-target" class="drag-target hidden"></div>
-								<div id="begriff-schwaeche-target" class="drag-target hidden"></div>
-								<div id="begriff-ort-target" class="drag-target hidden"></div>
-								<div id="begriff-klinge-target" class="drag-target hidden"></div>
-								<div id="begriff-heft-target" class="drag-target hidden"></div>
-							</div>
+		<!-- SEITE 1 -->
+		<ion-slide>
+			<ion-content class="padding pagecontent" scroll="false" has-bouncing="false" >
+				<!-- ZEILE: (aufteilbar mit height-75 / height-50 / height-25) -->
+				<h1>Schwertbegriffe</h1>
+				<div class="first-page-container">
+					<div class="row height-67">
+						<!-- SPALTE: col-x definiert breite. -->
+						<div class="col">
+							<img src="./img/lessons/01/01b.png" class="breitbild" />
 						</div>
-						<div class="swordparts">
+					</div>
+					<!-- DARUNTER LIEGENDER TEXT -->
+					<div class="row height-33">
+						<!-- Spalte 1 -->
+						<div class="col col-33">
+							<p>In dieser App lernst du den Kampf mit dem Langen Schwert. <br> Natürlich gab es viele unterschiedliche Schwerter. Zu einigen davon sind, wie zum Langen Schwert, historische Quellen erhalten.  </p>
+						</div>
+						<!-- Spalte 2 -->
+						<div class="col col-33">
+							<p>Beispiele dafür sind das Lange Messer oder der Kampf mit Schwert und Buckler. Wenn in dieser App von Schwertkampf die Rede ist, ist jedoch das Lange Schwert gemeint. Dieses wirst du in den folgenden Kapiteln  </p>
+						</div >
+
+						<!-- Spalte 3 -->
+						<div class="col col-33">
+							<p> besser kennen lernen. Zunächst ist es wichtig die einzelnen Teile des Schwerts benennen zu können. Später werden diese Begriffe verwendet, um Techniken genauer zu erklären, weshalb man sie sich einprägen sollte. </p>
+						</div >
+					</div>
+				</div>
+			</ion-content>
+		</ion-slide>
+
+
+
+		<!-- SEITE ´4 -->
+		<ion-slide>
+			<ion-content class="padding pagecontent" scroll="false" has-bouncing="false" >
+				<game-sword-parts>
+					<div class="game-container sword-parts pagecontent">
+						<div class="textContainer border-left" ng-bind-html="vars.gameText">
+						</div>
+						<div class="target-box">
 							<div class="width-limiter">
-								<div class="sword-ratio-container">
-									<div id="knauf" class="drag-item sword-part transparent"></div>
-									<div id="griff" class="drag-item sword-part transparent"></div>
-									<div id="parierstange" class="drag-item sword-part transparent"></div>
-									<div id="staerke" class="drag-item sword-part transparent"></div>
-									<div id="schwaeche" class="drag-item sword-part transparent"></div>
-									<div id="ort" class="drag-item sword-part transparent"></div>
+								<div class="sword-ratio-container drop-target-box">
+									<div id="knauf-target" class="drag-target hidden"></div>
+									<div id="griff-target" class="drag-target hidden"></div>
+									<div id="parierstange-target" class="drag-target hidden"></div>
+									<div id="staerke-target" class="drag-target hidden"></div>
+									<div id="schwaeche-target" class="drag-target hidden"></div>
+									<div id="ort-target" class="drag-target hidden"></div>
+
+									<div id="begriff-knauf-target" class="drag-target hidden"></div>
+									<div id="begriff-griff-target" class="drag-target hidden"></div>
+									<div id="begriff-parierstange-target" class="drag-target hidden"></div>
+									<div id="begriff-staerke-target" class="drag-target hidden"></div>
+									<div id="begriff-schwaeche-target" class="drag-target hidden"></div>
+									<div id="begriff-ort-target" class="drag-target hidden"></div>
+									<div id="begriff-klinge-target" class="drag-target hidden"></div>
+									<div id="begriff-heft-target" class="drag-target hidden"></div>
+								</div>
+							</div>
+							<div class="swordparts">
+								<div class="width-limiter">
+									<div class="sword-ratio-container">
+										<div id="knauf" class="drag-item sword-part transparent"></div>
+										<div id="griff" class="drag-item sword-part transparent"></div>
+										<div id="parierstange" class="drag-item sword-part transparent"></div>
+										<div id="staerke" class="drag-item sword-part transparent"></div>
+										<div id="schwaeche" class="drag-item sword-part transparent"></div>
+										<div id="ort" class="drag-item sword-part transparent"></div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="sword-texts">
-						<div id="begriff-knauf" class="drag-item sword-text transparent hidden">Knauf</div>
-						<div id="begriff-griff" class="drag-item sword-text transparent hidden">Griff</div>
-						<div id="begriff-parierstange" class="drag-item sword-text transparent hidden">Parierstange</div>
-						<div id="begriff-staerke" class="drag-item sword-text transparent hidden">Stärke</div>
-						<div id="begriff-schwaeche" class="drag-item sword-text transparent hidden">Schwäche</div>
-						<div id="begriff-ort" class="drag-item sword-text transparent hidden">Ort</div>
-						<div id="begriff-klinge" class="drag-item sword-text transparent hidden">Klinge</div>
-						<div id="begriff-heft" class="drag-item sword-text transparent hidden">Heft</div>
-					</div>
-				</div>
-			</game-sword-parts>
-			<div class="row" id="preGameScreen"> 
-				<h2>Schwertbegriffe</h2>
-				<div class="col col-80 col-offset-10 text-center">
-					<h3>Übung: Schwertaufbau</h3>
-					<div class="row"> 
-						<div class="col col-80 col-offset-10 instruction-box">
-							<p>Baue ein Schwert zusammen und ordne die richtigen Fachbegriffe zu!</p>
-							<p>Pass auf: Während das Spiel läuft, kannst du die anderen Seiten erst mal nicht mehr anschauen!</p>
+						<div class="sword-texts">
+							<div id="begriff-knauf" class="drag-item sword-text transparent hidden">Knauf</div>
+							<div id="begriff-griff" class="drag-item sword-text transparent hidden">Griff</div>
+							<div id="begriff-parierstange" class="drag-item sword-text transparent hidden">Parierstange</div>
+							<div id="begriff-staerke" class="drag-item sword-text transparent hidden">Stärke</div>
+							<div id="begriff-schwaeche" class="drag-item sword-text transparent hidden">Schwäche</div>
+							<div id="begriff-ort" class="drag-item sword-text transparent hidden">Ort</div>
+							<div id="begriff-klinge" class="drag-item sword-text transparent hidden">Klinge</div>
+							<div id="begriff-heft" class="drag-item sword-text transparent hidden">Heft</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col col-30 col-offset-40">
-							<button class="button button-block button-primary" ng-click="game.start();">Spiel Starten!</button>
+				</game-sword-parts>
+				<div class="row" id="preGameScreen">
+					<h2>Schwertbegriffe</h2>
+					<div class="col col-80 col-offset-10 text-center">
+						<h3>Übung: Schwertaufbau</h3>
+						<div class="row">
+							<div class="col col-80 col-offset-10 instruction-box">
+								<p>Baue ein Schwert zusammen und ordne die richtigen Fachbegriffe zu!</p>
+								<p>Pass auf: Während das Spiel läuft, kannst du die anderen Seiten erst mal nicht mehr anschauen!</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col col-30 col-offset-40">
+								<button class="button button-block button-primary" ng-click="game.start();">Spiel Starten!</button>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</ion-content>
-	  </ion-slide>
+			</ion-content>
+		</ion-slide>
 
-	  <!-- SEITENINHALT ENDE -->
+		<!-- SEITENINHALT ENDE -->
 	</ion-slide-box>
 </ion-view>

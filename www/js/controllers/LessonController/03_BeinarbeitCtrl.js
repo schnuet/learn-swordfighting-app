@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('03_BeinarbeitCtrl', 
+.controller('03_BeinarbeitCtrl',
 ['$scope', 'Data', '$ionicSlideBoxDelegate', 'Campaign', '$stateParams', 'GameHelper', 'Feedback',
 function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelper, Feedback) {
 
@@ -13,6 +13,7 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 	$scope.isInCampaign = isInCampaign;
 
 	var slideBox = null;
+	var lesson_video = [];
 
 	/*
 		Startup-functions:
@@ -29,10 +30,21 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 		}
 
 		slideBox = GameHelper.getPageSlider();
+		lesson_video[0] = document.getElementById('lesson_video_0');
+		lesson_video[1] = document.getElementById('lesson_video_1');
 	});
 	$scope.$on('$ionicView.beforeLeave', function () {
 		Data.exitIntroButtonVisible = false;
 	});
+
+	/*
+		Image-Slider functions
+	*/
+	var currentImageSlide = 0;
+	$scope.changedImageSlide = function (index) {
+		lesson_video[currentImageSlide].pause();
+		currentImageSlide = index;
+	}
 
 	/*
 		Game
@@ -78,7 +90,7 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 				console.log ('video can play');*/
 				vid0.play();
 			/*	canVideoPlay = false;
-			} 
+			}
 			else {
 				console.log ('video can\'t play');
 				currentVideo = vid0;
@@ -121,7 +133,7 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 				function () {
 					restartGame();
 				});
-				
+
 			}
 		}
 	};

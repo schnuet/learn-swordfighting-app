@@ -1,6 +1,6 @@
 angular.module('starter.directives')
 
-.directive('addControls', ['$ionicSlideBoxDelegate', 
+.directive('addControls', ['$ionicSlideBoxDelegate',
 function ($ionicSlideBoxDelegate) {
   return {
     restrict: 'A',
@@ -12,7 +12,7 @@ function ($ionicSlideBoxDelegate) {
 
       var buttonNext = document.createElement('button');
       buttonNext.className = 'button button-icon imagebox-next-button icon ion-chevron-right';
-      
+
       $element.append(buttonBack);
       $element.append(buttonNext);
 
@@ -20,21 +20,36 @@ function ($ionicSlideBoxDelegate) {
 
       angular.element(buttonBack).on('click', function() {
         sb.previous();
-        buttonNext.disabled = false;
-        if (sb.currentIndex() === 0) {
-          buttonBack.disabled = true;
-        }
+        //buttonNext.disabled = false;
+        //if (sb.currentIndex() === 0) {
+        //  buttonBack.disabled = true;
+        //}
       });
       angular.element(buttonNext).on('click', function (){
         sb.next();
-        buttonBack.disabled = false;
-        if (sb.currentIndex() === (sb.count()-1)) {
-          buttonNext.disabled = true;
-        }
+        //buttonBack.disabled = false;
+        //if (sb.currentIndex() === (sb.count()-1)) {
+        //  buttonNext.disabled = true;
+        //}
       });
 
       sb = $ionicSlideBoxDelegate.$getByHandle($element.attr('delegate-handle'));
-      sb.enableSlide(false);
+
+      if ($element.hasClass('lesson-page-container') === false) {
+          sb.enableSlide(false);
+      }
+
+      $scope.$on('slideBox.slideChanged', function (event, index) {
+          console.debug('Slide box with controls has been changed, current index is ' + index);
+          buttonBack.disabled = false;
+          buttonNext.disabled = false;
+          if (sb.currentIndex() === 0) {
+            buttonBack.disabled = true;
+          }
+          if (sb.currentIndex() === (sb.count()-1)) {
+            buttonNext.disabled = true;
+          }
+      });
 
       $scope.$on('destroy', function () {
         $element.remove();

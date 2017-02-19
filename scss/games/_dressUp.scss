@@ -15,8 +15,9 @@
 		text-align: center;
 		.width-limiter {
 			position: relative;
-			width: 100%;
+			width: calc((100vh - 140px) / 2);
 			height: 100%;
+			max-width: 310px;
 			display: inline-block;
 		}
 		.aspect-ratio-container {
@@ -40,7 +41,7 @@
 	}
 	.bg-image {
 		max-width: 100%;
-		position: relative; 
+		position: relative;
 		display: inline-block;
 		top: 0px;
 		left: 0px;
