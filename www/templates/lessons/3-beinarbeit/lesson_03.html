@@ -1,5 +1,5 @@
 <ion-view view-title="Praxis am Schwert" cache-view="false">
-	<ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)">
+	<ion-slide-box class="lesson-page-container" on-slide-changed="slideHasChanged($index)" show-pager="true" delegate-handle="pageSlidebox" pager-click="pagerClick(index)" add-controls>
 	<!-- SEITENINHALT START: -->
 
 	<!-- SEITE 1 -->
@@ -70,8 +70,8 @@
 						<ion-slide-box class="image-slider" delegate-handle="img_1" add-controls on-slide-changed="changedImageSlide($index)">
 							<ion-slide>
 								<video id="lesson_video_0" controls>
-									<source src="./img/lessons/03/Halber_Schritt.mp4" type="video/mp4" />
 									<source src="./img/lessons/03/Halber_Schritt.webm" type="video/webm" />
+									<source src="./img/lessons/03/Halber_Schritt.mp4" type="video/mp4" />
 								</video>
 								<div class="bildname">
 									<p>Passierschritt</p>

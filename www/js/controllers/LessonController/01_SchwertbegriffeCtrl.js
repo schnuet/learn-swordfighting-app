@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('01_SchwertbegriffeCtrl', 
+.controller('01_SchwertbegriffeCtrl',
 ['$scope', 'Data', '$ionicSlideBoxDelegate', 'Campaign', '$timeout', '$stateParams',
 function($scope, Data, $ionicSlideBoxDelegate, Campaign, $timeout, $stateParams) {
 
@@ -34,6 +34,12 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $timeout, $stateParams)
 
 		slideBox = $ionicSlideBoxDelegate.$getByHandle('pageSlidebox');
 
+		slideBox.enableSlide(true);
+
+		ionic.onGesture('dragright', function (event) {
+			console.log (event);
+		}, document.querySelector('.lesson-page-container'), {});
+
 		$scope.Lesson = Campaign;
 		$scope.data = Data;
 
@@ -42,6 +48,7 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $timeout, $stateParams)
 			Campaign.start (1, $scope);
 		}
 	});
+
 	$scope.$on('$ionicView.beforeLeave', function () {
 		Data.exitIntroButtonVisible = false;
 	});

@@ -34,10 +34,10 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper, Feedback, 
 					partArm = e.target.id.substr(4);
 				}
 				// leg part:
-				else {
-					otherParts = beinParts;
-					partBein = e.target.id.substr(5);
-				}
+				//else {
+				//	otherParts = beinParts;
+				//	partBein = e.target.id.substr(5);
+				//}
 
 				// do the selection:
 				for (var i = 3; i >= 0; i--) {
@@ -48,17 +48,16 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper, Feedback, 
 				};
 
 				// enable button if two parts selected:
-				if (partArm !== '' && partBein !== '') {
+				if (partArm !== '') { 				// && partBein !== '') {
 					finishedButton[0].disabled = false;
 					$scope.$apply(function () {
 						$scope.game.buttonText = 'Das ist die Hut!';
 					});
-					
 				}
 			};
 
 			var checkParts = function () {
-				if (partArm === partBein && partArm === requiredHute) {
+				if (partArm === requiredHute) { // partArm === partBein &&
 					console.log ('The parts fit.');
 					Feedback.congratulation('Richtig', 'Gut gemacht! ' + $scope.game.nextHute + ' erkannt.')
 					.then (function () {
@@ -82,12 +81,12 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper, Feedback, 
 						}
 					});
 				}
-				else if (partArm === partBein) {
-					Feedback.sorry('Hmm...', 'Die Teile passen zusammen, sind aber eine andere Hut! ' + $scope.game.nextHute + ' sieht anders aus.')
-					.then (function () {
-						deselectAllParts();
-					});
-				}
+				// else if (partArm === partBein) {
+				//	Feedback.sorry('Hmm...', 'Die Teile passen zusammen, sind aber eine andere Hut! ' + $scope.game.nextHute + ' sieht anders aus.')
+				//	.then (function () {
+				//		deselectAllParts();
+				//	});
+				//}
 				else {
 					console.log ('The parts don\'t fit.');
 					Feedback.sorry('Leider Falsch', 'Die Teile passen nicht so ganz! ' + $scope.game.nextHute + ' sieht anders aus. Versuchs noch mal.')
@@ -143,7 +142,7 @@ function($ionicGesture, $ionicSlideBoxDelegate, Campaign, GameHelper, Feedback, 
 			*/
 			var pageSlider = GameHelper.getPageSlider();
 			$ionicGesture.on('touch', GameHelper.preventSlide, $element);
-			
+
 
 			$scope.$on('$destroy', function() {
 				$element.remove();
