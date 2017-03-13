@@ -3,6 +3,7 @@
 	height: 100%;
 	width: 100%;
 	.slider-slide {
+		padding-bottom: 1.8em;
 		img {
 			max-width: 100%;
 			max-height: 100%;
@@ -12,6 +13,33 @@
 			width: 100%;
 			max-width: 100%;
 			max-height: 100%;
+		}
+		.video-play-button {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			height: 60px;
+			width: 60px;
+			margin-left: -30px;
+			margin-top: -40px;
+			background-color: #000;
+			border: none;
+			transition: background-color 0.1s ease-in;
+			&:hover {
+				background-color: #444;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				display: block;
+				top: 10px;
+				left: 10px;
+				width: 0;
+				height: 0;
+				border-width: 20px 0 20px 40px;
+	     		border-color: transparent transparent transparent #fff;
+				border-style: solid;
+			}
 		}
 		.normalbild {
 			object-fit: contain;

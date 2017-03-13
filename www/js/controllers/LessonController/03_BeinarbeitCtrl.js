@@ -14,6 +14,7 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 
 	var slideBox = null;
 	var lesson_video = [];
+	var video_play_button = [];
 
 	/*
 		Startup-functions:
@@ -30,8 +31,15 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 		}
 
 		slideBox = GameHelper.getPageSlider();
+
+		// get videos and play buttons
 		lesson_video[0] = document.getElementById('lesson_video_0');
 		lesson_video[1] = document.getElementById('lesson_video_1');
+
+		video_play_button[0] = document.getElementById('play_button_0');
+		video_play_button[1] = document.getElementById('play_button_1');
+
+		prepareVideos(lesson_video);
 	});
 	$scope.$on('$ionicView.beforeLeave', function () {
 		Data.exitIntroButtonVisible = false;
@@ -44,6 +52,30 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, GameHelpe
 	$scope.changedImageSlide = function (index) {
 		lesson_video[currentImageSlide].pause();
 		currentImageSlide = index;
+	}
+
+	/*
+		Video functions
+	*/
+	$scope.playLessonVideo = function ($event, index) {
+		$event.target.classList.add('hidden');
+		lesson_video[index].play();
+	};
+
+	function showVideoPlayButton (id) {
+		video_play_button[id].classList.remove('hidden');
+	}
+	function hideVideoPlayButton (id) {
+		video_play_button[id].classList.add('hidden');
+	}
+
+	function prepareVideos (vidArray) {
+		for (var i = 0; i < vidArray.length; i++) {
+			let id = i;
+			vidArray[i].addEventListener('ended', showVideoPlayButton.bind(null, id));
+			vidArray[i].addEventListener('pause', showVideoPlayButton.bind(null, id));
+			vidArray[i].addEventListener('play', hideVideoPlayButton.bind(null, id));
+		}
 	}
 
 	/*

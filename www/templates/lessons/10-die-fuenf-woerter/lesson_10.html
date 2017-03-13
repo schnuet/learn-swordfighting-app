@@ -53,10 +53,12 @@
 				<div class="col col-67">
 					<div class="row height-67 image-slider">
 						<div class="slider-slide">
-							<video controls>
+							<video id="lesson_video_0" controls>
 								<source src="./img/lessons/10/Vor_und_Nach_Indes.mp4" type="video/mp4" />
 								<source src="./img/lessons/10/Vor_und_Nach_Indes.webm" type="video/webm" />
 							</video>
+							<button id="play_button_0" class="video-play-button" ng-click="playLessonVideo($event, 0);"></button>
+
 							<div class="bildname">
 								<p>Vor, Nach und Indes</p>
 							</div>

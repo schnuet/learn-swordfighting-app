@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('10_DieFuenfWoerterCtrl', 
+.controller('10_DieFuenfWoerterCtrl',
 ['$scope', 'Data', '$ionicSlideBoxDelegate', 'Campaign', '$stateParams', '$timeout',
 function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, $timeout) {
 
@@ -13,6 +13,8 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, $timeout)
 	$scope.isInCampaign = isInCampaign;
 
 	var slideBox = null;
+	var lesson_video = [];
+	var video_play_button = [];
 
 	/*
 		Startup-functions:
@@ -35,10 +37,39 @@ function($scope, Data, $ionicSlideBoxDelegate, Campaign, $stateParams, $timeout)
 			Campaign.start (10, $scope);
 			Data.exitIntroButtonVisible = true;
 		}
+
+		// get videos and play buttons
+		lesson_video[0] = document.getElementById('lesson_video_0');
+		video_play_button[0] = document.getElementById('play_button_0');
+		prepareVideos(lesson_video);
 	});
 	$scope.$on('$ionicView.beforeLeave', function () {
 		Data.exitIntroButtonVisible = false;
 	});
+
+	/*
+		Video functions
+	*/
+	$scope.playLessonVideo = function ($event, index) {
+		$event.target.classList.add('hidden');
+		lesson_video[index].play();
+	};
+
+	function showVideoPlayButton (id) {
+		video_play_button[id].classList.remove('hidden');
+	}
+	function hideVideoPlayButton (id) {
+		video_play_button[id].classList.add('hidden');
+	}
+
+	function prepareVideos (vidArray) {
+		for (var i = 0; i < vidArray.length; i++) {
+			let id = i;
+			vidArray[i].addEventListener('ended', showVideoPlayButton.bind(null, id));
+			vidArray[i].addEventListener('pause', showVideoPlayButton.bind(null, id));
+			vidArray[i].addEventListener('play', hideVideoPlayButton.bind(null, id));
+		}
+	}
 
 	/*
 		Slidebox-related functions

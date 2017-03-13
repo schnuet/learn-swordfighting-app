@@ -60,9 +60,10 @@
 						<!-- Hier wird ein Video eingefügt -->
 						<div class="row height-67 image-slider">
 							<div class="slider-slide">
-								<video controls preload='metadata'>
+								<video id="lesson_video_0" controls preload='metadata'>
 									<source src="./img/lessons/06/Oberhau.mp4" type="video/mp4" />
 								</video>
+								<button id="play_button_0" class="video-play-button" ng-click="playLessonVideo($event, 0);"></button>
 								<div class="bildname">
 									<p>Der Oberhau von vorn und von der Seite</p>
 								</div>
@@ -123,9 +124,10 @@
 							<!-- Hier wird ein Video eingefügt -->
 							<div class="row height-67 image-slider">
 								<div class="slider-slide">
-									<video controls preload='metadata'>
+									<video id="lesson_video_1" controls preload='metadata'>
 										<source src="./img/lessons/06/Unterhau.mp4" type="video/mp4" />
 									</video>
+									<button id="play_button_1" class="video-play-button" ng-click="playLessonVideo($event, 1);"></button>
 									<div class="bildname">
 										<p>Der Unterhau von vorn und von der Seite</p>
 									</div>
@@ -175,9 +177,10 @@
 							<!-- Hier wird ein Video eingefügt -->
 							<div class="row height-67 image-slider">
 								<div class="slider-slide">
-									<video controls preload='metadata'>
+									<video id="lesson_video_2" controls preload='metadata'>
 										<source src="./img/lessons/06/Stich.mp4" type="video/mp4" />
 									</video>
+									<button id="play_button_2" class="video-play-button" ng-click="playLessonVideo($event, 2);"></button>
 									<div class="bildname">
 										<p>Der Stich von vorn und von der Seite</p>
 									</div>
